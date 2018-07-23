@@ -8,6 +8,7 @@
     "start": "node server.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "nb": "echo 'Install using yarn install --ignore-engines'",
     "postinstall": "node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'bower_components', 'junction') } catch (e) { }\""
   },
   "keywords": [],
@@ -16,7 +17,25 @@
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "@bower_components/dom-delegate": "ftlabs/dom-delegate#^2.1.0",
+    "@bower_components/fontfaceobserver": "bramstein/fontfaceobserver#^2.0.9",
+    "@bower_components/ftdomdelegate": "ftlabs/ftdomdelegate#^2.0.3",
+    "@bower_components/hogan": "twitter/hogan.js#^3.0.2",
+    "@bower_components/mathsass": "terkel/mathsass#^0.10.1",
+    "@bower_components/o-ads": "Financial-Times/o-ads#^8.0.0",
+    "@bower_components/o-assets": "Financial-Times/o-assets#>=0.4.1 <4",
+    "@bower_components/o-brand": "Financial-Times/o-brand#>=2.2.0 <4",
+    "@bower_components/o-buttons": "Financial-Times/o-buttons#^5.0.0",
+    "@bower_components/o-colors": "Financial-Times/o-colors#^4.1.5",
+    "@bower_components/o-comment-utilities": "Financial-Times/o-comment-utilities#^2.3.0",
+    "@bower_components/o-fonts": "Financial-Times/o-fonts#^3.0.4",
+    "@bower_components/o-grid": "Financial-Times/o-grid#^4.3.7",
+    "@bower_components/o-icons": "Financial-Times/o-icons#>=4.4.2 <6",
+    "@bower_components/o-labels": "Financial-Times/o-labels#^3.0.0",
+    "@bower_components/o-teaser": "Financial-Times/o-teaser#^2.2.2",
+    "@bower_components/o-visual-effects": "Financial-Times/o-visual-effects#^2.0.0",
+    "@bower_components/sass-mq": "sass-mq/sass-mq#^5.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.8",
@@ -37,6 +56,7 @@
     "style-loader": "^0.21.0"
   },
   "engines": {
-    "yarn": ">= 1.0.0"
+    "yarn": ">= 1.0.0",
+    "node": ">= 8.6.0"
   }
 }
