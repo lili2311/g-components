@@ -3,24 +3,27 @@
  * Main page layout view
  */
 
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { flagsPropType } from './proptypes';
-import Header from './includes/header';
-import HtmlHead from './includes/html-head';
-import ArticleHead from './includes/article-head';
-import OnwardJourney from './includes/onwardjourney';
-import Comments from './includes/comments';
-import Footer from './includes/footer';
-import { strftime } from './filters';
-import ArticleBody from '../client/app';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import { flagsPropType } from "../helpers/proptypes";
+import Header from "./header";
+import HtmlHead from "./html-head";
+import ArticleHead from "./article-head";
+import OnwardJourney from "./onwardjourney";
+import Comments from "./comments";
+import Footer from "./footer";
+import { strftime } from "../helpers";
 
 const Layout = ({ flags = {}, ...props }) => (
   <Fragment>
     <HtmlHead {...props} />
     {flags.header && <Header />}
     <main role="main">
-      <article className="article" itemScope itemType="http://schema.org/Article">
+      <article
+        className="article"
+        itemScope
+        itemType="http://schema.org/Article"
+      >
         <div className="article-head o-grid-container">
           <div className="o-grid-row">
             <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
@@ -28,13 +31,14 @@ const Layout = ({ flags = {}, ...props }) => (
             </header>
           </div>
         </div>
-        <div className="article-body o-typography-wrapper" itemProp="articleBody">
+        <div
+          className="article-body o-typography-wrapper"
+          itemProp="articleBody"
+        >
           <div className="o-grid-container">
             <div className="o-grid-row">
               <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-                <div>
-                  <ArticleBody {...props} />
-                </div>
+                <div>{props.children}</div>
               </div>
             </div>
           </div>
@@ -55,10 +59,11 @@ const Layout = ({ flags = {}, ...props }) => (
                     >
                       Copyright
                     </a>
-                    <span itemProp="name">The Financial Times</span> Limited{' '}
-                    {strftime('%Y')(new Date())}. All rights reserved. You may share using our
-                    article tools. Please don&apos;t cut articles from FT.com and redistribute by
-                    email or post to the web.
+                    <span itemProp="name">The Financial Times</span> Limited{" "}
+                    {strftime("%Y")(new Date())}. All rights reserved. You may
+                    share using our article tools. Please don&apos;t cut
+                    articles from FT.com and redistribute by email or post to
+                    the web.
                   </small>
                 </div>
               </div>
@@ -75,11 +80,11 @@ const Layout = ({ flags = {}, ...props }) => (
 
 Layout.propTypes = {
   id: PropTypes.string,
-  flags: flagsPropType.isRequired,
+  flags: flagsPropType.isRequired
 };
 
 Layout.defaultProps = {
-  id: '',
+  id: ""
 };
 
 export default Layout;

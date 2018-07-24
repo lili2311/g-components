@@ -2,8 +2,8 @@
  * @file
  * Footer component
  */
-import React from 'react';
-import { strftime } from '../filters';
+import React from "react";
+import { strftime } from "../helpers";
 
 const Footer = () => (
   <footer
@@ -21,7 +21,10 @@ const Footer = () => (
                 <a className="o-footer__matrix-link" href="//www.ft.com/help">
                   Help
                 </a>
-                <a className="o-footer__matrix-link" href="//www.ft.com/aboutus">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/aboutus"
+                >
                   About Us
                 </a>
               </div>
@@ -31,13 +34,22 @@ const Footer = () => (
             <div className="o-footer__matrix-title">Legal &amp; Privacy</div>
             <div className="o-footer__matrix-content" id="o-footer-section-1">
               <div className="o-footer__matrix-column">
-                <a className="o-footer__matrix-link" href="//www.ft.com/servicestools/help/terms">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/servicestools/help/terms"
+                >
                   Terms &amp; Conditions
                 </a>
-                <a className="o-footer__matrix-link" href="//www.ft.com/servicestools/help/privacy">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/servicestools/help/privacy"
+                >
                   Privacy
                 </a>
-                <a className="o-footer__matrix-link" href="//www.ft.com/cookiepolicy">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/cookiepolicy"
+                >
                   Cookies
                 </a>
                 <a
@@ -50,7 +62,10 @@ const Footer = () => (
             </div>
           </div>
           <div className="o-footer__matrix-group o-footer__matrix-group--2">
-            <div className="o-footer__matrix-title" aria-controls="o-footer-section-2">
+            <div
+              className="o-footer__matrix-title"
+              aria-controls="o-footer-section-2"
+            >
               Services
             </div>
             <div className="o-footer__matrix-content" id="o-footer-section-2">
@@ -70,7 +85,10 @@ const Footer = () => (
                 >
                   Republishing
                 </a>
-                <a className="o-footer__matrix-link" href="//www.businessesforsale.com/ft2/notices">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.businessesforsale.com/ft2/notices"
+                >
                   Contracts &amp; Tenders
                 </a>
                 <a
@@ -81,7 +99,10 @@ const Footer = () => (
                 </a>
               </div>
               <div className="o-footer__matrix-column">
-                <a className="o-footer__matrix-link" href="//www.exec-appointments.com/">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.exec-appointments.com/"
+                >
                   Executive Job Search
                 </a>
                 <a
@@ -102,7 +123,10 @@ const Footer = () => (
             </div>
           </div>
           <div className="o-footer__matrix-group o-footer__matrix-group--2">
-            <div className="o-footer__matrix-title" aria-controls="o-footer-section-3">
+            <div
+              className="o-footer__matrix-title"
+              aria-controls="o-footer-section-3"
+            >
               Tools
             </div>
             <div className="o-footer__matrix-content" id="o-footer-section-3">
@@ -116,7 +140,10 @@ const Footer = () => (
                 <a className="o-footer__matrix-link" href="//ftepaper.ft.com">
                   Today's Paper
                 </a>
-                <a className="o-footer__matrix-link" href="//markets.ft.com/data/alerts/">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//markets.ft.com/data/alerts/"
+                >
                   Alerts Hub
                 </a>
                 <a className="o-footer__matrix-link" href="//lexicon.ft.com/">
@@ -136,7 +163,10 @@ const Footer = () => (
                 >
                   Economic Calendar
                 </a>
-                <a className="o-footer__matrix-link" href="//nbe.ft.com/nbe/profile.cfm">
+                <a
+                  className="o-footer__matrix-link"
+                  href="//nbe.ft.com/nbe/profile.cfm"
+                >
                   Newsletters
                 </a>
                 <a
@@ -169,13 +199,15 @@ const Footer = () => (
 
       <div className="o-footer__copyright" role="contentinfo">
         <small>
-          Markets data delayed by at least 15 minutes. &#xA9; THE FINANCIAL TIMES LTD{' '}
-          {strftime('%Y')(new Date())}.
+          Markets data delayed by at least 15 minutes. &#xA9; THE FINANCIAL
+          TIMES LTD {strftime("%Y")(new Date())}.
           <abbr title="Financial Times" aria-label="F T">
             FT
-          </abbr>{' '}
-          and &#x2018;Financial Times&#x2019; are trademarks of The Financial Times Ltd.<br />
-          The Financial Times and its journalism are subject to a self-regulation regime under the{' '}
+          </abbr>{" "}
+          and &#x2018;Financial Times&#x2019; are trademarks of The Financial
+          Times Ltd.<br />
+          The Financial Times and its journalism are subject to a
+          self-regulation regime under the{" "}
           <a
             href="http://aboutus.ft.com/en-gb/ft-editorial-code/"
             aria-label="F T Editorial Code of Practice"

@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-export const topAd = () => (
+export const TopAd = () => (
   <div
     className="o-ads o-ads--center o-ads--background o-ads--reserve-90"
     data-o-ads-name="top-ad"
@@ -19,7 +19,7 @@ export const topAd = () => (
   />
 );
 
-export const middleAd = () => (
+export const MiddleAd = () => (
   <div
     className="o-ads o-ads--center o-ads--background o-ads--reserve-250"
     data-o-ads-name="mid-ad"

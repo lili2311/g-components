@@ -3,32 +3,32 @@
  * Analytics code
  */
 
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { flagsPropType } from '../proptypes';
-import { spoorTrackingPixel } from '../filters';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import { flagsPropType } from "../helpers/proptypes";
+import { spoorTrackingPixel } from "../helpers";
 
 // Lol this won't work
 const Analytics = props => (
   <Fragment>
     {/* Add fallback if browsers don't cut the mustard */}
     {spoorTrackingPixel({
-      action: 'view',
-      category: 'page',
+      action: "view",
+      category: "page",
       context: {
         content: {
-          asset_type: 'interactive',
-          uuid: props.id,
+          asset_type: "interactive",
+          uuid: props.id
         },
-        product: 'IG',
-        microsite_name: props.tracking.micrositeName,
+        product: "IG",
+        microsite_name: props.tracking.micrositeName
       },
       system: {
         is_live: props.flags.prod,
-        apiKey: 'qUb9maKfKbtpRsdp0p2J7uWxRPGJEP',
-        source: 'o-tracking-ns',
-        version: '1.0.0',
-      },
+        apiKey: "qUb9maKfKbtpRsdp0p2J7uWxRPGJEP",
+        source: "o-tracking-ns",
+        version: "1.0.0"
+      }
     })}
     {props.flags.googleAnalytics && (
       <script>
@@ -63,8 +63,8 @@ Analytics.propTypes = {
   id: PropTypes.string.isRequired,
   flags: flagsPropType.isRequired,
   tracking: PropTypes.shape({
-    micrositeName: PropTypes.string,
-  }),
+    micrositeName: PropTypes.string
+  })
 };
 
 export default Analytics;

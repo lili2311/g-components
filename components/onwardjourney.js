@@ -6,7 +6,11 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-const OnwardJourney = ({ onwardJourney }) => (
+const OnwardJourney = ({
+  onwardJourney = {
+    relatedContent: [],
+  },
+}) => (
   <Fragment>
     <aside className="onward-journey__block">
       {onwardJourney.relatedContent.map(sectionData => (

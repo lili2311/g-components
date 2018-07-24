@@ -6,9 +6,9 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
-import Analytics from '../includes/analytics';
-import * as Ads from '../ads';
-import { getMainImage } from '../filters';
+import Analytics from './analytics';
+import { TopAd } from './ads';
+import { getMainImage } from '../helpers';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */
@@ -29,7 +29,7 @@ const HtmlHead = ({
   stylesheets,
   summary,
   title,
-  topic,
+  topic = {},
   tracking,
   twitterCard,
   twitterCreator,
@@ -38,8 +38,38 @@ const HtmlHead = ({
   twitterImage,
   url,
 }) => {
-  const testCommentsUuid =
-    flags.prod && flags.comments ? '3a499586-b2e0-11e4-a058-00144feab7de' : '';
+  // This is not the way to bundle dependencies... :weary:
+  const origamiBuildServiceCSS = [
+    'o-normalise@^1.5.3',
+    'o-fonts@^3.0.4',
+    'o-grid@^4.3.7',
+    'o-typography@^5.4.2',
+    'o-header@^7.2.8',
+    'o-footer@^6.0.8',
+    'o-teaser@^2.2.2',
+    flags.comments && 'o-comments@^4.0.7',
+    flags.shareButtons && 'o-share@^6.1.0',
+    flags.ads && 'o-ads@^8.0.0',
+  ]
+    .filter(i => i)
+    .join(',');
+
+  const origamiBuildServiceJS = [
+    'o-header@^7.2.8',
+    'o-footer@^6.0.8',
+    'o-date@^2.10.3',
+    'o-errors@^3.6.1',
+    'o-teaser@^2.2.2',
+    flags.comments && 'o-comments@^4.0.7',
+    flags.shareButtons && 'o-share@^6.1.0',
+    flags.analytics && 'o-tracking@^1.2.3',
+    flags.ads && 'o-ads@^8.0.0',
+  ]
+    .filter(i => i)
+    .join(',');
+
+  const polyfillFeatures = ['default', 'fetch'].join(',');
+  const testCommentsUuid = flags.prod && flags.comments ? '3a499586-b2e0-11e4-a058-00144feab7de' : '';
   const htmlAttributes = {
     lang: 'en-GB',
     className: 'core',
@@ -62,9 +92,7 @@ const HtmlHead = ({
         <link rel="stylesheet" href="components/core/top.css" />
         <link
           rel="stylesheet"
-          href={`https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-normalise@^1.5.3,o-fonts@^3.0.4,o-grid@^4.3.7,o-typography@^5.4.2,o-header@^7.2.8,o-footer@^6.0.8,o-teaser@^2.2.2${
-            flags.comments ? ',o-comments@^4.0.7' : ''
-          }${flags.shareButtons ? ',o-share@^6.1.0' : ''}${flags.ads ? ',o-ads@^8.0.0' : ''}`}
+          href={`https://www.ft.com/__origami/service/build/v2/bundles/css?modules=${origamiBuildServiceCSS}`}
         />
 
         {stylesheets && stylesheets.map(stylesheet => <link rel="stylesheet" href={stylesheet} />)}
@@ -104,8 +132,8 @@ const HtmlHead = ({
             }),
           }}
         />
-        {topic.name &&
-          topic.url && (
+        {topic.name
+          && topic.url && (
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
@@ -126,7 +154,7 @@ const HtmlHead = ({
                 }),
               }}
             />
-          )}
+        )}
 
         {flags.errorReporting && (
           <script
@@ -143,7 +171,7 @@ const HtmlHead = ({
         {/* Prioritised JavaScript */}
 
         {/* Add polyfill service */}
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" />
+        <script src={`https://cdn.polyfill.io/v2/polyfill.min.js?features=${polyfillFeatures}`} />
 
         {/* Add CTM checks */}
         <script
@@ -229,8 +257,8 @@ const HtmlHead = ({
           o.src = src;
           var s = document.getElementsByTagName('script')[0];
 
-          ${flags.analytics &&
-            `
+          ${flags.analytics
+            && `
             if (o.hasOwnProperty('onreadystatechange')) {
                 o.onreadystatechange = function() {
                     if (o.readyState === "loaded") {
@@ -243,16 +271,13 @@ const HtmlHead = ({
             `}
           s.parentNode.insertBefore(o, s);
         }
-      }('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-header@^7.2.8,o-footer@^6.0.8,o-date@^2.10.3,o-errors@^3.6.1,o-teaser@^2.2.2${
-        flags.comments ? ',o-comments@^4.0.7' : ''
-      }${flags.shareButtons ? ',o-share@^6.1.0' : ''}${
-              flags.analytics ? ',o-tracking@^1.2.3' : ''
-            }${flags.ads ? ',o-ads@^8.0.0' : ''}'));
-      `,
+      }('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=${origamiBuildServiceJS}')`,
           }}
         />
 
-        <title>{title || headline}</title>
+        <title>
+          {title || headline}
+        </title>
         <meta name="twitter:title" content={twitterHeadline || socialHeadline || headline} />
         <meta property="og:title" content={facebookHeadline || socialHeadline || headline} />
 
@@ -307,7 +332,7 @@ const HtmlHead = ({
           />
         )}
         {flags.analytics && <Analytics />}
-        {flags.ads && <Ads.topAd />}
+        {flags.ads && <TopAd />}
       </Helmet>
     </Fragment>
   );
