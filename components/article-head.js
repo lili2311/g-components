@@ -7,50 +7,58 @@ import React, { Fragment } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import Share from './share';
-import { ftdate } from '../helpers';
+import { ftdate, getMainImage, getSeparator } from '../helpers';
+import { mainImagePropType, topicPropType } from '../helpers/proptypes';
 
-export const Byline = ({ bylines }) => (Array.isArray(bylines) ? (
-  bylines.map(
-    (
-      author,
-      idx, // @TODO comma separation
-    ) => (author.url ? (
-      <Fragment>
-        <a href={author.url} className="o-typography-author">
-          {author.name}
-        </a>
-      </Fragment>
+export const Byline = ({ bylines }) => (
+  <Fragment>
+    By
+    {' '}
+    {Array.isArray(bylines) ? (
+      bylines.map(
+        (author, idx) => (author.url ? (
+          <Fragment key={author}>
+            <a href={author.url} className="o-typography-author">
+              {author.name}
+            </a>
+            {getSeparator(idx, bylines)}
+          </Fragment>
+        ) : (
+          <span className="o-typography-author">
+            {author.name}
+          </span>
+        )),
+      )
     ) : (
-      <span className="o-typography-author">
-        {author.name}
-      </span>
-    )),
-  )
-) : (
-  <ReactMarkdown input={bylines} />
-));
+      <ReactMarkdown input={bylines} />
+    )}
+  </Fragment>
+);
+
+const BylinesPropType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string,
+      name: PropTypes.string.isRequired,
+    }),
+  ),
+]);
 
 Byline.propTypes = {
-  bylines: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(
-      PropTypes.shape({
-        url: PropTypes.string,
-        name: PropTypes.string.isRequired,
-      }),
-    ),
-  ]).isRequired,
+  bylines: BylinesPropType.isRequired,
 };
 
 const ArticleHead = ({
-  topic = {},
+  topic,
   headline,
   summary,
-  relatedArticle = {},
-  mainImage = {},
-  flags = {},
-  byline = {},
-  publishedDate = new Date(),
+  relatedArticle,
+  mainImage,
+  flags,
+  bylines,
+  publishedDate,
+  ...props
 }) => (
   <Fragment>
     <div>
@@ -60,22 +68,22 @@ const ArticleHead = ({
     </div>
 
     <h1 className="o-typography-headline" itemProp="headline">
-      {<ReactMarkdown source={headline} />}
+      {headline}
     </h1>
 
-    <p className="o-typography-standfirst">
-      {<ReactMarkdown source={summary} />}
+    <div className="o-typography-standfirst">
+      {summary}
       {relatedArticle && (
         <a href={relatedArticle.url} className="o-typography-link">
           {relatedArticle.text}
         </a>
       )}
-    </p>
+    </div>
     <meta itemProp="dateModified" content={publishedDate.toISOString()} />
 
     {(mainImage.url || mainImage.uuid) && (
       <figure className="graphic graphic-b-1 graphic-pad-1">
-        <img alt="" src="{{ mainImage | getMainImage }}" />
+        <img alt={mainImage.description} src={getMainImage(mainImage)} />
         <figcaption className="o-typography-caption">
           {mainImage.description}
           {mainImage.credit}
@@ -83,10 +91,10 @@ const ArticleHead = ({
       </figure>
     )}
 
-    {flags && flags.shareButtons && <Share {...props} />}
+    {flags && flags.shareButtons && <Share headline={headline} {...props} />}
 
     <div>
-      {byline && <Byline bylines={byline} />}
+      {bylines && <Byline bylines={bylines} />}
 
       {publishedDate && (
         <span
@@ -102,14 +110,25 @@ const ArticleHead = ({
 );
 
 ArticleHead.propTypes = {
-  flags: PropTypes.shape({}),
-  mainImage: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    uuid: PropTypes.string.isRequired,
-  }),
+  flags: PropTypes.shape({}).isRequired,
+  headline: PropTypes.string.isRequired,
+  summary: PropTypes.string,
+  mainImage: mainImagePropType,
   relatedArticle: PropTypes.shape({}),
-  publishedDate: PropTypes.date,
-  topic: PropTypes.shape({}),
+  publishedDate: PropTypes.instanceOf(Date),
+  topic: topicPropType,
+  bylines: BylinesPropType,
+};
+
+ArticleHead.defaultProps = {
+  mainImage: {
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
+  },
+  relatedArticle: {},
+  publishedDate: new Date(),
+  summary: '',
+  topic: {},
+  bylines: [],
 };
 
 export default ArticleHead;

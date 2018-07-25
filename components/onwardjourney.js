@@ -3,69 +3,58 @@
  * OnwardJourney component
  */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const OnwardJourney = ({
-  onwardJourney = {
-    relatedContent: [],
-  },
-}) => (
-  <Fragment>
-    <aside className="onward-journey__block">
-      {onwardJourney.relatedContent.map(sectionData => (
-        <section
-          className="onward-journey__section"
-          data-g-component="onward-journey"
-          data-list={sectionData.list}
-          data-rows={sectionData.rows || 1}
-        />
-      ))}
-    </aside>
-    <style>
-      {`
-      .onward-journey__link {
-        color: #333;
-        text-decoration: none;
-      }
-      `}
-    </style>
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-    (function() {
-      [].forEach.call(document.querySelectorAll('[data-g-component="onward-journey"]'), function(tag) {
-        if (!tag.classList.contains('is-rendered')) {
-          var list = tag.getAttribute('data-list');
-          var layout = tag.getAttribute('data-layout') || '';
-          var limit = parseInt(tag.getAttribute('data-rows') || '1') * 4;
-          var urlBase = 'https://ig.ft.com/onwardjourney/v3/';
-          var url = [urlBase, list, '/html/', layout, '?limit=', limit].join('');
-          if (list) {
-            fetch(url)
-              .then(function(res) {
-                return res.text();
-              })
-              .then(function(html) {
-                tag.innerHTML = html;
-              })
-              .catch(function() {
-                tag.remove();
-              });
-          }
-        }
+class OnwardJourney extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sections: [],
+    };
+  }
 
-        tag.classList.add('is-rendered');
-      });
-    })();
-    `,
-      }}
-    />
-  </Fragment>
-);
+  async componentWillMount() {
+    const { urlBase, layout, relatedContent } = this.props;
+
+    const sections = await Promise.all(
+      relatedContent.map(({ list, rows = 1 }) => {
+        const limit = rows * 4;
+        const url = `${urlBase}${list}/html/${layout}?limit=${limit}`;
+        return fetch(url).then(res => res.text());
+      }),
+    );
+    this.setState({ sections });
+  }
+
+  render() {
+    const { sections } = this.state;
+    return sections.map((section, idx) => (
+      <section
+        key={idx} // eslint-disable-line react/no-array-index-key
+        className="onward-journey__section"
+        data-g-component="onward-journey"
+        dangerouslySetInnerHTML={{ __html: section }} // eslint-disable-line react/no-danger
+      />
+    ));
+  }
+}
 
 OnwardJourney.propTypes = {
-  onwardJourney: PropTypes.arrayOf(PropTypes.shape({})),
+  relatedContent: PropTypes.arrayOf(
+    PropTypes.shape({
+      rows: PropTypes.number.isRequired,
+      list: PropTypes.string,
+    }),
+  ),
+  urlBase: PropTypes.string,
+  layout: PropTypes.string,
+};
+
+OnwardJourney.defaultProps = {
+  relatedContent: [],
+  urlBase: 'https://ig.ft.com/onwardjourney/v3/',
+  layout: '',
 };
 
 export default OnwardJourney;

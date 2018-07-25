@@ -1,3 +1,9 @@
+/**
+ * @file
+ * Various helper functions
+ */
+
+import React from 'react';
 import removeMarkdown from 'remove-markdown';
 import { utcFormat } from 'd3-time-format';
 
@@ -7,7 +13,8 @@ const defaultFTDateFormat = '%A, %-e %B %Y';
 export function isotime(date) {
   if (!date) {
     return '';
-  } if (!(date instanceof Date)) {
+  }
+  if (!(date instanceof Date)) {
     return date;
   }
 
@@ -33,21 +40,24 @@ export function plain(str, stripListLeaders = true) {
   return removeMarkdown(str, { stripListLeaders, gfm: true });
 }
 
-export function encodedJSON(str) {
+export function encodedJSON(_data) {
+  const data = _data instanceof String ? JSON.parse(_data) : _data;
   try {
-    return encodeURIComponent(JSON.stringify(JSON.parse(str || ''), null, ''));
+    return encodeURIComponent(JSON.stringify(data, null, ''));
   } catch (e) {
     return '';
   }
 }
 
-export function spoorTrackingPixel(str) {
-  const jsonString = encodedJSON(str.trim());
+export function spoorTrackingPixel(data) {
+  const jsonString = encodedJSON(data);
+  const ieVersion = document.documentMode ? document.documentMode : 99; // eslint-disable-line
   const img = `<img src="https://spoor-api.ft.com/px.gif?data=${jsonString}" height="1" width="1" />`;
-  return `<!--[if lt IE 9]>
-  ${img}
-  <![endif]-->
-  <noscript data-o-component="o-tracking">${img}</noscript>`;
+  return ieVersion < 9 ? img : (
+    <noscript data-o-component="o-tracking">
+      {img}
+    </noscript>
+  );
 }
 
 export function imageUUID(uuid) {
@@ -59,3 +69,6 @@ export function getMainImage(img = {}) {
   if (Object.prototype.hasOwnProperty.call(img, 'url')) return img.url;
   return '';
 }
+
+// eslint-disable-next-line no-nested-ternary
+export const getSeparator = (idx, arr) => (arr.length > 1 ? (idx !== arr.length - 1 ? ', ' : ' ') : ' ');

@@ -55,3 +55,9 @@ body {
 .graphic-b-1 {
   max-width: 700px;
 }
+
+/* @TODO migrate into default Starter Kit styles */
+.onward-journey__link {
+  color: #333;
+  text-decoration: none;
+}

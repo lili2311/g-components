@@ -9,17 +9,25 @@ import PropTypes from 'prop-types';
 import Analytics from './analytics';
 import { TopAd } from './ads';
 import { getMainImage } from '../helpers';
+import {
+  flagsPropType,
+  StringBoolPropType,
+  mainImagePropType,
+  trackingPropType,
+  topicPropType,
+} from '../helpers/proptypes';
+import '../static/top.css';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */
 
 const HtmlHead = ({
+  flags,
   ads,
   description,
   facebookDescription,
   facebookHeadline,
   facebookImage,
-  flags = {},
   headline,
   id,
   mainImage,
@@ -29,7 +37,7 @@ const HtmlHead = ({
   stylesheets,
   summary,
   title,
-  topic = {},
+  topic,
   tracking,
   twitterCard,
   twitterCreator,
@@ -89,7 +97,6 @@ const HtmlHead = ({
         <link rel="preconnect" href="https://cdn.polyfill.io" />
 
         {/* Stylesheets */}
-        <link rel="stylesheet" href="components/core/top.css" />
         <link
           rel="stylesheet"
           href={`https://www.ft.com/__origami/service/build/v2/bundles/css?modules=${origamiBuildServiceCSS}`}
@@ -339,29 +346,68 @@ const HtmlHead = ({
 };
 
 HtmlHead.propTypes = {
-  ads: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  facebookDescription: PropTypes.string.isRequired,
-  facebookHeadline: PropTypes.string.isRequired,
-  facebookImage: PropTypes.string.isRequired,
-  flags: PropTypes.string.isRequired,
+  ads: PropTypes.shape({
+    gptSite: PropTypes.string.isRequired,
+    gptZone: StringBoolPropType.isRequired,
+    dfpTargeting: StringBoolPropType.isRequired,
+  }),
+  description: PropTypes.string,
+  facebookDescription: PropTypes.string,
+  facebookHeadline: PropTypes.string,
+  facebookImage: PropTypes.string,
+  flags: flagsPropType,
   headline: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  mainImage: PropTypes.string.isRequired,
-  socialDescription: PropTypes.string.isRequired,
-  socialHeadline: PropTypes.string.isRequired,
-  socialImage: PropTypes.string.isRequired,
-  stylesheets: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
+  mainImage: mainImagePropType,
+  socialDescription: PropTypes.string,
+  socialHeadline: PropTypes.string,
+  socialImage: PropTypes.string,
+  stylesheets: PropTypes.arrayOf(PropTypes.string),
+  summary: PropTypes.string,
   title: PropTypes.string.isRequired,
-  topic: PropTypes.string.isRequired,
-  tracking: PropTypes.string.isRequired,
-  twitterCard: PropTypes.string.isRequired,
-  twitterCreator: PropTypes.string.isRequired,
-  twitterDescription: PropTypes.string.isRequired,
-  twitterHeadline: PropTypes.string.isRequired,
-  twitterImage: PropTypes.string.isRequired,
+  topic: topicPropType,
+  tracking: trackingPropType,
+  twitterCard: PropTypes.string,
+  twitterCreator: PropTypes.string,
+  twitterDescription: PropTypes.string,
+  twitterHeadline: PropTypes.string,
+  twitterImage: PropTypes.string,
   url: PropTypes.string.isRequired,
+};
+
+const DEFAULTS = {
+  headline: 'New Starter Kit Project',
+  desc: 'A Starter Kit page',
+};
+
+HtmlHead.defaultProps = {
+  ads: {
+    gptSite: 'ft.com', // Ad unit hierarchy makes ads more granular.
+    gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
+    dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
+  },
+  mainImage: {
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
+  },
+  flags: {},
+  topic: {},
+  description: DEFAULTS.desc,
+  facebookDescription: '',
+  facebookHeadline: '',
+  facebookImage: '',
+  twitterCard: '',
+  twitterCreator: '',
+  twitterDescription: '',
+  twitterHeadline: '',
+  twitterImage: '',
+  socialDescription: '',
+  socialHeadline: '',
+  socialImage: '',
+  stylesheets: [],
+  summary: '',
+  tracking: {
+    product: 'IG',
+  },
 };
 
 export default HtmlHead;

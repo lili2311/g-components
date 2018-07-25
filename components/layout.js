@@ -3,27 +3,23 @@
  * Main page layout view
  */
 
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import { flagsPropType } from "../helpers/proptypes";
-import Header from "./header";
-import HtmlHead from "./html-head";
-import ArticleHead from "./article-head";
-import OnwardJourney from "./onwardjourney";
-import Comments from "./comments";
-import Footer from "./footer";
-import { strftime } from "../helpers";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { flagsPropType } from '../helpers/proptypes';
+import Header from './header';
+import HtmlHead from './html-head';
+import ArticleHead from './article-head';
+import OnwardJourney from './onwardjourney';
+import Comments from './comments';
+import Footer from './footer';
+import { strftime } from '../helpers';
 
-const Layout = ({ flags = {}, ...props }) => (
+const Layout = ({ flags = {}, children, ...props }) => (
   <Fragment>
-    <HtmlHead {...props} />
-    {flags.header && <Header />}
+    <HtmlHead flags={flags} {...props} />
+    {flags.header && <Header {...props} />}
     <main role="main">
-      <article
-        className="article"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <article className="article" itemScope itemType="http://schema.org/Article">
         <div className="article-head o-grid-container">
           <div className="o-grid-row">
             <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
@@ -31,14 +27,13 @@ const Layout = ({ flags = {}, ...props }) => (
             </header>
           </div>
         </div>
-        <div
-          className="article-body o-typography-wrapper"
-          itemProp="articleBody"
-        >
+        <div className="article-body o-typography-wrapper" itemProp="articleBody">
           <div className="o-grid-container">
             <div className="o-grid-row">
               <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-                <div>{props.children}</div>
+                <div>
+                  {children}
+                </div>
               </div>
             </div>
           </div>
@@ -59,11 +54,15 @@ const Layout = ({ flags = {}, ...props }) => (
                     >
                       Copyright
                     </a>
-                    <span itemProp="name">The Financial Times</span> Limited{" "}
-                    {strftime("%Y")(new Date())}. All rights reserved. You may
-                    share using our article tools. Please don&apos;t cut
-                    articles from FT.com and redistribute by email or post to
-                    the web.
+                    <span itemProp="name">
+The Financial Times
+                    </span>
+                    {' '}
+Limited
+                    {' '}
+                    {strftime('%Y')(new Date())}
+                    . All rights reserved. You may share using our article tools. Please don&apos;t
+                    cut articles from FT.com and redistribute by email or post to the web.
                   </small>
                 </div>
               </div>
@@ -80,11 +79,13 @@ const Layout = ({ flags = {}, ...props }) => (
 
 Layout.propTypes = {
   id: PropTypes.string,
-  flags: flagsPropType.isRequired
+  flags: flagsPropType.isRequired,
+  children: PropTypes.node,
 };
 
 Layout.defaultProps = {
-  id: ""
+  id: '',
+  children: <Fragment />,
 };
 
 export default Layout;
