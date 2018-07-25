@@ -61,6 +61,8 @@ const DEFAULT = {
   headline: 'New Starter Kit site',
   title: 'New Starter Kit site',
   uuid: 'xxx-xxx-xxx',
+  pubdate: new Date('2018-07-25T17:43:37.00Z'),
+  buildTime: new Date('2018-07-25T17:43:37.00Z'),
 };
 
 // Ads
@@ -86,6 +88,7 @@ storiesOf('ArticleHead', module).add('default', () => (
     mainImage={DEFAULT.image}
     topic={DEFAULT.topic}
     bylines={DEFAULT.bylines}
+    publishedDate={DEFAULT.pubdate}
   />
 ));
 storiesOf('Comments', module).add('default', () => <Comments />);
@@ -103,6 +106,7 @@ You won&apos;t see anything here as &quot;HtmlHead&quot; has no visual output
       headline={DEFAULT.headline}
       id={DEFAULT.uuid}
       url={DEFAULT.url}
+      buildTime={DEFAULT.buildTime}
     />
   </Fragment>
 ));
@@ -113,7 +117,42 @@ storiesOf('Layout', module).add('default', () => (
     title={DEFAULT.title}
     topic={DEFAULT.topic}
     url={DEFAULT.url}
-  />
+    publishedDate={DEFAULT.pubdate}
+    buildTime={DEFAULT.buildTime}
+  >
+    <p>
+      Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.
+      Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores
+      omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr
+      dolore praesent est.
+    </p>
+
+    <p>
+      Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne.
+      Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis
+      consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel gubergren
+      constituto.
+    </p>
+
+    <p>
+      Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea
+      sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis vide
+      laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit ut
+      his.
+    </p>
+
+    <p>
+      Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At
+      laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei,
+      tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos.
+    </p>
+
+    <p>
+      Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum
+      salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim
+      soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.
+    </p>
+  </Layout>
 ));
 storiesOf('OnwardJourney', module).add('default', () => (
   <OnwardJourney

@@ -24,6 +24,7 @@ import '../static/top.css';
 const HtmlHead = ({
   flags,
   ads,
+  buildTime,
   description,
   facebookDescription,
   facebookHeadline,
@@ -81,7 +82,7 @@ const HtmlHead = ({
   const htmlAttributes = {
     lang: 'en-GB',
     className: 'core',
-    'data-buildtime': new Date(),
+    'data-buildtime': buildTime,
     'data-content-id': id || testCommentsUuid,
   };
   const mainImageUrl = getMainImage(mainImage);
@@ -386,6 +387,7 @@ HtmlHead.defaultProps = {
     gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
     dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
   },
+  buildTime: new Date(),
   mainImage: {
     uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
   },

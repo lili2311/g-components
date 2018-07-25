@@ -72,3 +72,25 @@ export function getMainImage(img = {}) {
 
 // eslint-disable-next-line no-nested-ternary
 export const getSeparator = (idx, arr) => (arr.length > 1 ? (idx !== arr.length - 1 ? ', ' : ' ') : ' ');
+
+// Via: https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html
+
+export const makeCancelable = (promise) => {
+  let hasCanceled = false;
+
+  const wrappedPromise = new Promise((resolve, reject) => {
+    /* eslint-disable prefer-promise-reject-errors */
+    promise.then(
+      val => (hasCanceled ? reject({ isCanceled: true }) : resolve(val)),
+      error => (hasCanceled ? reject({ isCanceled: true }) : reject(error)),
+    );
+    /* eslint-enable */
+  });
+
+  return {
+    promise: wrappedPromise,
+    cancel() {
+      hasCanceled = true;
+    },
+  };
+};

@@ -5,6 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { makeCancelable } from '../helpers';
 
 class OnwardJourney extends React.Component {
   constructor(props) {
@@ -14,17 +15,30 @@ class OnwardJourney extends React.Component {
     };
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     const { urlBase, layout, relatedContent } = this.props;
 
-    const sections = await Promise.all(
-      relatedContent.map(({ list, rows = 1 }) => {
-        const limit = rows * 4;
-        const url = `${urlBase}${list}/html/${layout}?limit=${limit}`;
-        return fetch(url).then(res => res.text());
-      }),
+    this.sectionP = makeCancelable(
+      Promise.all(
+        relatedContent.map(({ list, rows = 1 }) => {
+          const limit = rows * 4;
+          const url = `${urlBase}${list}/html/${layout}?limit=${limit}`;
+          return fetch(url).then(res => res.text());
+        }),
+      ),
     );
-    this.setState({ sections });
+
+    try {
+      const sections = await this.sectionP.promise;
+      this.setState({ sections });
+    } catch (e) {
+      if (e.isCanceled) return;
+      console.error(e); // eslint-disable-line no-console
+    }
+  }
+
+  componentWillUnmount() {
+    this.sectionP.cancel();
   }
 
   render() {

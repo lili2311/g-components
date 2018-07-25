@@ -1,0 +1,1215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Ads Middle ad 1`] = `
+<div
+  aria-hidden="true"
+  className="o-ads o-ads--center o-ads--background o-ads--reserve-250"
+  data-o-ads-formats-default="Responsive"
+  data-o-ads-formats-extra="MediumRectangle,Responsive"
+  data-o-ads-formats-large="MediumRectangle,Responsive"
+  data-o-ads-formats-medium="MediumRectangle,Responsive"
+  data-o-ads-formats-small="MediumRectangle,Responsive"
+  data-o-ads-name="mid-ad"
+  data-o-ads-targeting="pos=mid;"
+/>
+`;
+
+exports[`Storyshots Ads Top ad 1`] = `
+<div
+  aria-hidden="true"
+  className="o-ads o-ads--center o-ads--background o-ads--reserve-90"
+  data-o-ads-formats-default="false"
+  data-o-ads-formats-extra="Billboard,SuperLeaderboard,Leaderboard,Responsive"
+  data-o-ads-formats-large="SuperLeaderboard,Leaderboard,Responsive"
+  data-o-ads-formats-medium="Leaderboard,Responsive"
+  data-o-ads-formats-small="false"
+  data-o-ads-name="top-ad"
+  data-o-ads-targeting="pos=top;"
+/>
+`;
+
+exports[`Storyshots Analytics default 1`] = `
+Array [
+  <h4>
+    You won't see anything here as "Analytics" has no visual output
+  </h4>,
+  <noscript
+    data-o-component="o-tracking"
+  >
+    &lt;img src="https://spoor-api.ft.com/px.gif?data=%7B%22action%22%3A%22view%22%2C%22category%22%3A%22page%22%2C%22context%22%3A%7B%22content%22%3A%7B%22asset_type%22%3A%22interactive%22%2C%22uuid%22%3A%22xxx-xxx-xxx%22%7D%2C%22product%22%3A%22IG%22%7D%2C%22system%22%3A%7B%22is_live%22%3Afalse%2C%22apiKey%22%3A%22qUb9maKfKbtpRsdp0p2J7uWxRPGJEP%22%2C%22source%22%3A%22o-tracking-ns%22%2C%22version%22%3A%221.0.0%22%7D%7D" height="1" width="1" /&gt;
+  </noscript>,
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+      var spoorId = /spoor-id=([^;]+)/.exec(document.cookie)[1] || 'cj5y2utdx00003i5z6l6po8c1';
+      var endpoint = 'https://4235225.fls.doubleclick.net/activityi;src=4235225;type=homeo886;cat=ft-ne000;u10=' + spoorId + ';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + Date.now() + ';num=1';
+      var img = document.createElement('img');
+      img.setAttribute('width', 1);
+      img.setAttribute('height', 1);
+      img.setAttribute('src', endpoint);
+      img.style.position = 'absolute';
+      document.body.insertBefore(img, document.body.firstElementChild);
+      ",
+      }
+    }
+  />,
+]
+`;
+
+exports[`Storyshots ArticleHead default 1`] = `
+Array [
+  <div>
+    <a
+      className="o-typography-topic"
+      href="https://local.ft.com/"
+    >
+      Testing
+    </a>
+  </div>,
+  <h1
+    className="o-typography-headline"
+    itemProp="headline"
+  >
+    Testing &lt;ArticleHead&gt; component
+  </h1>,
+  <div
+    className="o-typography-standfirst"
+  >
+    This is a standfirst
+    <a
+      className="o-typography-link"
+    />
+  </div>,
+  <meta
+    content="2018-07-25T17:43:37.000Z"
+    itemProp="dateModified"
+  />,
+  <figure
+    className="graphic graphic-b-1 graphic-pad-1"
+  >
+    <img
+      src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig"
+    />
+    <figcaption
+      className="o-typography-caption"
+    />
+  </figure>,
+  <div
+    className="article__share article__share--top n-util-clearfix"
+    data-trackable="share | top"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="o-share"
+        data-o-component="o-share"
+      >
+        <ul>
+          <li
+            className="o-share__action o-share__action--twitter"
+          >
+            <a
+              className="o-share__icon o-share__icon--twitter"
+              href="https://twitter.com/intent/tweet?url=https://local.ft.com/&amp;text=FT article: &amp;related=&amp;via=FinancialTimes"
+              rel="noopener"
+            >
+              <span
+                className="o-share__text"
+              >
+                Share on Twitter. Opens in a new window.
+              </span>
+            </a>
+          </li>
+          <li
+            className="o-share__action o-share__icon--facebook"
+          >
+            <a
+              href="http://www.facebook.com/sharer.php?u=https://local.ft.com/"
+              rel="noopener"
+            >
+              <span
+                className="o-share__text"
+              >
+                Share on Facebook. Opens in a new window.
+              </span>
+            </a>
+          </li>
+          <li
+            className="o-share__action o-share__icon--linkedin"
+          >
+            <a
+              href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://local.ft.com/&amp;source=Financial%20Times"
+              rel="noopener"
+            >
+              <span
+                className="o-share__text"
+              >
+                Share on LinkedIn. Opens in a new window.
+              </span>
+            </a>
+          </li>
+          <li
+            className="o-share__action o-share__icon--whatsapp"
+          >
+            <a
+              data-trackable="whatsapp"
+              href="whatsapp://send?text=Testing <ArticleHead> component%20-%20https://local.ft.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span
+                className="o-share__text"
+              >
+                Share on Whatsapp. Opens in a new window.
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  <div>
+    By
+     
+    <a
+      className="o-typography-author"
+      href="https://ft.com/ændrew-rininsland"
+    >
+      Ændrew Rininsland
+    </a>
+     
+    <span
+      className="o-date o-typography-timestamp"
+      data-o-component="o-date"
+      dateTime="2018-07-25T17:43:37.000Z"
+    >
+      Wednesday, 25 July 2018
+    </span>
+  </div>,
+]
+`;
+
+exports[`Storyshots Comments default 1`] = `
+<div
+  className="o-grid-container"
+>
+  <div
+    className="o-grid-row"
+  >
+    <div
+      data-o-comments-auto-init="true"
+      data-o-comments-config-article-id="3a499586-b2e0-11e4-a058-00144feab7de"
+      data-o-comments-config-title="Comments"
+      data-o-comments-config-url="https://local.ft.com/comments-test"
+      data-o-component="o-comments"
+      data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+      id="comments"
+    >
+      <div
+        className="o--if-no-js"
+      >
+        To participate in this chat, you need to upgrade to a newer web browser.
+         
+        <a
+          href="http://help.ft.com/tools-services/browser-compatibility/"
+        >
+          Learn more.
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Footer default 1`] = `
+<footer
+  className="o-footer o-footer--theme-dark"
+  data-o-component="o-footer"
+  data-o-footer--no-js=""
+>
+  <div
+    className="o-footer__container"
+  >
+    <div
+      className="o-footer__row"
+    >
+      <nav
+        aria-label="Useful links"
+        className="o-footer__matrix"
+      >
+        <div
+          className="o-footer__matrix-group o-footer__matrix-group--1"
+        >
+          <div
+            className="o-footer__matrix-title"
+          >
+            Support
+          </div>
+          <div
+            className="o-footer__matrix-content"
+            id="o-footer-section-0"
+          >
+            <div
+              className="o-footer__matrix-column"
+            >
+              <a
+                className="o-footer__matrix-link"
+                href="//www.ft.com/help"
+              >
+                Help
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//www.ft.com/aboutus"
+              >
+                About Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="o-footer__matrix-group o-footer__matrix-group--1"
+        >
+          <div
+            className="o-footer__matrix-title"
+          >
+            Legal & Privacy
+          </div>
+          <div
+            className="o-footer__matrix-content"
+            id="o-footer-section-1"
+          >
+            <div
+              className="o-footer__matrix-column"
+            >
+              <a
+                className="o-footer__matrix-link"
+                href="//www.ft.com/servicestools/help/terms"
+              >
+                Terms & Conditions
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//www.ft.com/servicestools/help/privacy"
+              >
+                Privacy
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//www.ft.com/cookiepolicy"
+              >
+                Cookies
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//www.ft.com/servicestools/help/copyright"
+              >
+                Copyright
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="o-footer__matrix-group o-footer__matrix-group--2"
+        >
+          <div
+            aria-controls="o-footer-section-2"
+            className="o-footer__matrix-title"
+          >
+            Services
+          </div>
+          <div
+            className="o-footer__matrix-content"
+            id="o-footer-section-2"
+          >
+            <div
+              className="o-footer__matrix-column"
+            >
+              <a
+                className="o-footer__matrix-link"
+                href="//sub.ft.com/spa_5"
+              >
+                Individual Subscriptions
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//enterprise.ft.com/en-gb/services/group-subscriptions/"
+              >
+                Group Subscriptions
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//enterprise.ft.com/en-gb/services/republishing/"
+              >
+                Republishing
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//www.businessesforsale.com/ft2/notices"
+              >
+                Contracts & Tenders
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//commerce.uk.reuters.com/purchase/mostPopular.do?rpc&#x3D;471"
+              >
+                Analysts Research
+              </a>
+            </div>
+            <div
+              className="o-footer__matrix-column"
+            >
+              <a
+                className="o-footer__matrix-link"
+                href="//www.exec-appointments.com/"
+              >
+                Executive Job Search
+              </a>
+              <a
+                aria-label="Advertise with the F T"
+                className="o-footer__matrix-link"
+                href="//fttoolkit.co.uk/d/"
+              >
+                Advertise with the FT
+              </a>
+              <a
+                aria-label="Follow the F T on Twitter"
+                className="o-footer__matrix-link"
+                href="//twitter.com/ft"
+              >
+                Follow the FT on Twitter
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="o-footer__matrix-group o-footer__matrix-group--2"
+        >
+          <div
+            aria-controls="o-footer-section-3"
+            className="o-footer__matrix-title"
+          >
+            Tools
+          </div>
+          <div
+            className="o-footer__matrix-content"
+            id="o-footer-section-3"
+          >
+            <div
+              className="o-footer__matrix-column"
+            >
+              <a
+                className="o-footer__matrix-link"
+                href="//markets.ft.com/data/portfolio/dashboard"
+              >
+                Portfolio
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//ftepaper.ft.com"
+              >
+                Today's Paper
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//markets.ft.com/data/alerts/"
+              >
+                Alerts Hub
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//lexicon.ft.com/"
+              >
+                Lexicon
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//rankings.ft.com/businessschoolrankings/global-mba-ranking-2016"
+              >
+                MBA Rankings
+              </a>
+            </div>
+            <div
+              className="o-footer__matrix-column"
+            >
+              <a
+                className="o-footer__matrix-link"
+                href="//markets.ft.com/Research/Economic-Calendar"
+              >
+                Economic Calendar
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//nbe.ft.com/nbe/profile.cfm"
+              >
+                Newsletters
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                href="//markets.ft.com/research/Markets/Currencies?segid&#x3D;70113"
+              >
+                Currency Converter
+              </a>
+              <a
+                aria-label="E-books"
+                className="o-footer__matrix-link"
+                href="//www.ft.com/ebooks"
+              >
+                Ebooks
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        className="o-footer__external-link o-footer__matrix-title"
+      >
+        <a
+          className="o-footer__more-from-ft o-footer__matrix-title"
+          href="http://ft.com/more-from-ft-group"
+        >
+          More from the FT Group
+        </a>
+      </div>
+    </div>
+    <div
+      className="o-footer__copyright"
+      role="contentinfo"
+    >
+      <small>
+        Markets data delayed by at least 15 minutes. © THE FINANCIAL TIMES LTD
+         
+        2018
+        . 
+        <abbr
+          aria-label="F T"
+          title="Financial Times"
+        >
+          FT
+        </abbr>
+         
+        and ‘Financial Times’ are trademarks of The Financial Times Ltd.
+        <br />
+        The Financial Times and its journalism are subject to a self-regulation regime under the
+         
+        <a
+          aria-label="F T Editorial Code of Practice"
+          href="http://aboutus.ft.com/en-gb/ft-editorial-code/"
+        >
+          FT Editorial Code of Practice
+        </a>
+        .
+      </small>
+    </div>
+  </div>
+  <div
+    className="o-footer__brand"
+  >
+    <div
+      className="o-footer__container"
+    >
+      <div
+        className="o-footer__brand-logo"
+      />
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`Storyshots Header default 1`] = `
+<header
+  className="o-header o-header--simple"
+  data-o-component="o-header"
+  data-o-header--no-js=""
+>
+  <div
+    className="o-header__row o-header__top"
+  >
+    <div
+      className="o-header__container"
+    >
+      <div
+        className="o-header__top-wrapper"
+      >
+        <div
+          className="o-header__top-column o-header__top-column--center"
+        >
+          <a
+            className="o-header__top-logo"
+            href="http://www.ft.com/"
+            title="Go to Financial Times homepage"
+          >
+            <span
+              className="o-header__visually-hidden"
+            >
+              Financial Times
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Storyshots HtmlHead default 1`] = `
+<h4>
+  You won't see anything here as "HtmlHead" has no visual output
+</h4>
+`;
+
+exports[`Storyshots Layout default 1`] = `
+Array [
+  <header
+    className="o-header o-header--simple"
+    data-o-component="o-header"
+    data-o-header--no-js=""
+  >
+    <div
+      className="o-header__row o-header__top"
+    >
+      <div
+        className="o-header__container"
+      >
+        <div
+          className="o-header__top-wrapper"
+        >
+          <div
+            className="o-header__top-column o-header__top-column--center"
+          >
+            <a
+              className="o-header__top-logo"
+              href="http://www.ft.com/"
+              title="Go to Financial Times homepage"
+            >
+              <span
+                className="o-header__visually-hidden"
+              >
+                Financial Times
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>,
+  <main
+    role="main"
+  >
+    <article
+      className="article"
+      itemScope={true}
+      itemType="http://schema.org/Article"
+    >
+      <div
+        className="article-head o-grid-container"
+      >
+        <div
+          className="o-grid-row"
+        >
+          <header
+            data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+          >
+            <div>
+              <a
+                className="o-typography-topic"
+                href="https://local.ft.com/"
+              >
+                Testing
+              </a>
+            </div>
+            <h1
+              className="o-typography-headline"
+              itemProp="headline"
+            >
+              New Starter Kit site
+            </h1>
+            <div
+              className="o-typography-standfirst"
+            >
+              
+              <a
+                className="o-typography-link"
+              />
+            </div>
+            <meta
+              content="2018-07-25T17:43:37.000Z"
+              itemProp="dateModified"
+            />
+            <figure
+              className="graphic graphic-b-1 graphic-pad-1"
+            >
+              <img
+                src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig"
+              />
+              <figcaption
+                className="o-typography-caption"
+              />
+            </figure>
+            <div
+              className="article__share article__share--top n-util-clearfix"
+              data-trackable="share | top"
+            >
+              <div
+                className="container"
+              >
+                <div
+                  className="o-share"
+                  data-o-component="o-share"
+                >
+                  <ul>
+                    <li
+                      className="o-share__action o-share__action--twitter"
+                    >
+                      <a
+                        className="o-share__icon o-share__icon--twitter"
+                        href="https://twitter.com/intent/tweet?url=https://local.ft.com/&amp;text=FT article: &amp;related=&amp;via=FinancialTimes"
+                        rel="noopener"
+                      >
+                        <span
+                          className="o-share__text"
+                        >
+                          Share on Twitter. Opens in a new window.
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      className="o-share__action o-share__icon--facebook"
+                    >
+                      <a
+                        href="http://www.facebook.com/sharer.php?u=https://local.ft.com/"
+                        rel="noopener"
+                      >
+                        <span
+                          className="o-share__text"
+                        >
+                          Share on Facebook. Opens in a new window.
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      className="o-share__action o-share__icon--linkedin"
+                    >
+                      <a
+                        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://local.ft.com/&amp;source=Financial%20Times"
+                        rel="noopener"
+                      >
+                        <span
+                          className="o-share__text"
+                        >
+                          Share on LinkedIn. Opens in a new window.
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      className="o-share__action o-share__icon--whatsapp"
+                    >
+                      <a
+                        data-trackable="whatsapp"
+                        href="whatsapp://send?text=New Starter Kit site%20-%20https://local.ft.com/"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <span
+                          className="o-share__text"
+                        >
+                          Share on Whatsapp. Opens in a new window.
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div>
+              By
+               
+              <span
+                className="o-date o-typography-timestamp"
+                data-o-component="o-date"
+                dateTime="2018-07-25T17:43:37.000Z"
+              >
+                Wednesday, 25 July 2018
+              </span>
+            </div>
+          </header>
+        </div>
+      </div>
+      <div
+        className="article-body o-typography-wrapper"
+        itemProp="articleBody"
+      >
+        <div
+          className="o-grid-container"
+        >
+          <div
+            className="o-grid-row"
+          >
+            <div
+              data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+            >
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint. Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr dolore praesent est.
+                </p>
+                <p>
+                  Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne. Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel gubergren constituto.
+                </p>
+                <p>
+                  Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis vide laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit ut his.
+                </p>
+                <p>
+                  Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei, tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos.
+                </p>
+                <p>
+                  Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer
+          className="o-typography-footer"
+          itemProp="publisher"
+          itemScope={true}
+          itemType="https://schema.org/Organization"
+        >
+          <div
+            className="o-grid-container"
+          >
+            <div
+              className="o-grid-row"
+            >
+              <div
+                data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+              >
+                <small>
+                  <a
+                    data-trackable="link-copyright"
+                    href="http://www.ft.com/servicestools/help/copyright"
+                  >
+                    Copyright
+                  </a>
+                  <span
+                    itemProp="name"
+                  >
+                    The Financial Times
+                  </span>
+                   
+                  Limited
+                   
+                  2018
+                  . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
+                </small>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>,
+  <div
+    className="o-grid-container"
+  >
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-comments-auto-init="true"
+        data-o-comments-config-article-id=""
+        data-o-comments-config-title="New Starter Kit site"
+        data-o-comments-config-url="https://local.ft.com/"
+        data-o-component="o-comments"
+        data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+        id="comments"
+      >
+        <div
+          className="o--if-no-js"
+        >
+          To participate in this chat, you need to upgrade to a newer web browser.
+           
+          <a
+            href="http://help.ft.com/tools-services/browser-compatibility/"
+          >
+            Learn more.
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="o-footer o-footer--theme-dark"
+    data-o-component="o-footer"
+    data-o-footer--no-js=""
+  >
+    <div
+      className="o-footer__container"
+    >
+      <div
+        className="o-footer__row"
+      >
+        <nav
+          aria-label="Useful links"
+          className="o-footer__matrix"
+        >
+          <div
+            className="o-footer__matrix-group o-footer__matrix-group--1"
+          >
+            <div
+              className="o-footer__matrix-title"
+            >
+              Support
+            </div>
+            <div
+              className="o-footer__matrix-content"
+              id="o-footer-section-0"
+            >
+              <div
+                className="o-footer__matrix-column"
+              >
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/help"
+                >
+                  Help
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/aboutus"
+                >
+                  About Us
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-footer__matrix-group o-footer__matrix-group--1"
+          >
+            <div
+              className="o-footer__matrix-title"
+            >
+              Legal & Privacy
+            </div>
+            <div
+              className="o-footer__matrix-content"
+              id="o-footer-section-1"
+            >
+              <div
+                className="o-footer__matrix-column"
+              >
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/servicestools/help/terms"
+                >
+                  Terms & Conditions
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/servicestools/help/privacy"
+                >
+                  Privacy
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/cookiepolicy"
+                >
+                  Cookies
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/servicestools/help/copyright"
+                >
+                  Copyright
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-footer__matrix-group o-footer__matrix-group--2"
+          >
+            <div
+              aria-controls="o-footer-section-2"
+              className="o-footer__matrix-title"
+            >
+              Services
+            </div>
+            <div
+              className="o-footer__matrix-content"
+              id="o-footer-section-2"
+            >
+              <div
+                className="o-footer__matrix-column"
+              >
+                <a
+                  className="o-footer__matrix-link"
+                  href="//sub.ft.com/spa_5"
+                >
+                  Individual Subscriptions
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//enterprise.ft.com/en-gb/services/group-subscriptions/"
+                >
+                  Group Subscriptions
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//enterprise.ft.com/en-gb/services/republishing/"
+                >
+                  Republishing
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.businessesforsale.com/ft2/notices"
+                >
+                  Contracts & Tenders
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//commerce.uk.reuters.com/purchase/mostPopular.do?rpc&#x3D;471"
+                >
+                  Analysts Research
+                </a>
+              </div>
+              <div
+                className="o-footer__matrix-column"
+              >
+                <a
+                  className="o-footer__matrix-link"
+                  href="//www.exec-appointments.com/"
+                >
+                  Executive Job Search
+                </a>
+                <a
+                  aria-label="Advertise with the F T"
+                  className="o-footer__matrix-link"
+                  href="//fttoolkit.co.uk/d/"
+                >
+                  Advertise with the FT
+                </a>
+                <a
+                  aria-label="Follow the F T on Twitter"
+                  className="o-footer__matrix-link"
+                  href="//twitter.com/ft"
+                >
+                  Follow the FT on Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-footer__matrix-group o-footer__matrix-group--2"
+          >
+            <div
+              aria-controls="o-footer-section-3"
+              className="o-footer__matrix-title"
+            >
+              Tools
+            </div>
+            <div
+              className="o-footer__matrix-content"
+              id="o-footer-section-3"
+            >
+              <div
+                className="o-footer__matrix-column"
+              >
+                <a
+                  className="o-footer__matrix-link"
+                  href="//markets.ft.com/data/portfolio/dashboard"
+                >
+                  Portfolio
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//ftepaper.ft.com"
+                >
+                  Today's Paper
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//markets.ft.com/data/alerts/"
+                >
+                  Alerts Hub
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//lexicon.ft.com/"
+                >
+                  Lexicon
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//rankings.ft.com/businessschoolrankings/global-mba-ranking-2016"
+                >
+                  MBA Rankings
+                </a>
+              </div>
+              <div
+                className="o-footer__matrix-column"
+              >
+                <a
+                  className="o-footer__matrix-link"
+                  href="//markets.ft.com/Research/Economic-Calendar"
+                >
+                  Economic Calendar
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//nbe.ft.com/nbe/profile.cfm"
+                >
+                  Newsletters
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  href="//markets.ft.com/research/Markets/Currencies?segid&#x3D;70113"
+                >
+                  Currency Converter
+                </a>
+                <a
+                  aria-label="E-books"
+                  className="o-footer__matrix-link"
+                  href="//www.ft.com/ebooks"
+                >
+                  Ebooks
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div
+          className="o-footer__external-link o-footer__matrix-title"
+        >
+          <a
+            className="o-footer__more-from-ft o-footer__matrix-title"
+            href="http://ft.com/more-from-ft-group"
+          >
+            More from the FT Group
+          </a>
+        </div>
+      </div>
+      <div
+        className="o-footer__copyright"
+        role="contentinfo"
+      >
+        <small>
+          Markets data delayed by at least 15 minutes. © THE FINANCIAL TIMES LTD
+           
+          2018
+          . 
+          <abbr
+            aria-label="F T"
+            title="Financial Times"
+          >
+            FT
+          </abbr>
+           
+          and ‘Financial Times’ are trademarks of The Financial Times Ltd.
+          <br />
+          The Financial Times and its journalism are subject to a self-regulation regime under the
+           
+          <a
+            aria-label="F T Editorial Code of Practice"
+            href="http://aboutus.ft.com/en-gb/ft-editorial-code/"
+          >
+            FT Editorial Code of Practice
+          </a>
+          .
+        </small>
+      </div>
+    </div>
+    <div
+      className="o-footer__brand"
+    >
+      <div
+        className="o-footer__container"
+      >
+        <div
+          className="o-footer__brand-logo"
+        />
+      </div>
+    </div>
+  </footer>,
+]
+`;
+
+exports[`Storyshots OnwardJourney default 1`] = `null`;
+
+exports[`Storyshots Share default 1`] = `
+<div
+  className="article__share article__share--top n-util-clearfix"
+  data-trackable="share | top"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="o-share"
+      data-o-component="o-share"
+    >
+      <ul>
+        <li
+          className="o-share__action o-share__action--twitter"
+        >
+          <a
+            className="o-share__icon o-share__icon--twitter"
+            href="https://twitter.com/intent/tweet?url=https://local.ft.com/&amp;text=FT article: &amp;related=&amp;via=FinancialTimes"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on Twitter. Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action o-share__icon--facebook"
+        >
+          <a
+            href="http://www.facebook.com/sharer.php?u=https://local.ft.com/"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on Facebook. Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action o-share__icon--linkedin"
+        >
+          <a
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://local.ft.com/&amp;source=Financial%20Times"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on LinkedIn. Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action o-share__icon--whatsapp"
+        >
+          <a
+            data-trackable="whatsapp"
+            href="whatsapp://send?text=%20-%20https://local.ft.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on Whatsapp. Opens in a new window.
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
