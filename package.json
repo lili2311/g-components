@@ -2,12 +2,15 @@
   "name": "@Financial-Times/g-components",
   "version": "1.0.0",
   "description": "Page furniture used by FT IG's Starter Kit",
-  "main": "build/index.js",
+  "main": "build/index.min.js",
   "repository": "https://github.com/Financial-Times/g-components",
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006 -s ./static",
-    "build-storybook": "build-storybook -s ./static -o ./docs"
+    "build": "npm run build:storybook && npm run build:module",
+    "build:storybook": "build-storybook -s ./static -o ./docs",
+    "build:components": "webpack -p",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +34,8 @@
     "@storybook/react": "^3.4.8",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.4.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.26.0",
@@ -50,7 +55,8 @@
     "react-test-renderer": "^16.4.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "webpack": "^4.16.2"
+    "webpack": "^3.12.0",
+    "webpack-command": "^0.4.1"
   },
   "engines": {
     "node": ">= 8.6.0"
@@ -59,6 +65,9 @@
     "presets": [
       "env",
       "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
     ]
   }
 }

@@ -1,17 +1,18 @@
 const path = require('path');
 
-module.exports = {
+const sharedConfig = {
   entry: './index.js',
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'index.js',
-  },
   resolve: {
     modules: ['node_modules', 'bower_components'],
   },
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        loaders: ['babel-loader'],
+        exclude: /node_modules/,
+      },
       {
         test: /\.scss$/,
         loaders: [
@@ -33,5 +34,15 @@ module.exports = {
         include: path.resolve(__dirname, '../'),
       },
     ],
+  },
+};
+
+module.exports = {
+  ...sharedConfig,
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'index.min.js',
+    libraryTarget: 'umd',
+    library: 'GComponents',
   },
 };
