@@ -1,5 +1,5 @@
 {
-  "name": "@Financial-Times/g-components",
+  "name": "@financial-times/g-components",
   "version": "1.0.0",
   "description": "Page furniture used by FT IG's Starter Kit",
   "main": "build/index.min.js",
@@ -7,13 +7,13 @@
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006 -s ./static",
-    "build": "npm run build:storybook && npm run build:module",
+    "build": "npm run build:storybook && npm run build:js",
     "build:storybook": "build-storybook -s ./static -o ./docs",
-    "build:components": "webpack -p",
-    "prepare": "npm run build"
+    "build:js": "webpack -p",
+    "prepare": "npm run build:js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ændrew Rininsland <andrew.rininsland@ft.com",
   "license": "ISC",
   "dependencies": {
     "d3-time-format": "^2.1.1",
