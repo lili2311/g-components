@@ -1,0 +1,63 @@
+:root {
+  --font-sans: MetricWeb, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-display: FinancierDisplayWeb, Georgia, serif;
+}
+
+body {
+  background: #fff1e5;
+  margin: 0;
+  border: 0;
+  font-family: var(--font-sans);
+}
+
+.article-head {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.article-head .article__share {
+  margin-bottom: 15px;
+}
+
+.article-body div[data-o-grid-colspan] > div {
+  max-width: 700px;
+}
+
+/* Hide whatsapp share button on desktop */
+@media (max-width: 489px) {
+  .article__share .o-share__icon--whatsapp {
+    display: none;
+  }
+}
+
+/* Graphic styles */
+.graphic {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.graphic > img,
+.graphic > svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.graphic-b-0 {
+  max-width: 625px;
+}
+
+.graphic-b-1 {
+  max-width: 700px;
+}
+
+/* @TODO migrate into default Starter Kit styles */
+.onward-journey__link {
+  color: #333;
+  text-decoration: none;
+}
