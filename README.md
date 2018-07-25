@@ -1,10 +1,10 @@
-# g-components #
+### g-components
 
 React 16.x-based components for Interactive Graphics Starter Kit projects.
 
-## Currently includes: #
+### Currently includes:
 
-### Starter Kit page furniture ported from Nunjucks
+#### Starter Kit page furniture ported from Nunjucks
 
 - [`<TopAd />`, `<MiddleAd />`][ads] -- Ad slots
 - [`<Analytics />`][analytics] -- Analytics tracking
@@ -17,7 +17,7 @@ React 16.x-based components for Interactive Graphics Starter Kit projects.
 - [`<OnwardJourney />`][oj] -- Onward Journey section
 - [`<Share />`][share] -- Sharing links
 
-## Usage: #
+### Usage:
 
 1.  Install from npm
 
@@ -37,7 +37,7 @@ import Layout from '@Financial-Times/g-components';
 const MyPage = ({ content, ...props }) => <Layout {...props}>{content}</Layout>;
 ```
 
-N.b., your content should be a child of `<Layout>`.
+N.b., your content should be a child of `<Layout>`!
 
 [ads]: https://github.com/Financial-Times/g-components/blob/master/components/ads.js
 [analytics]: https://github.com/Financial-Times/g-components/blob/master/components/analytics.js
