@@ -352,6 +352,7 @@ HtmlHead.propTypes = {
     gptZone: StringBoolPropType.isRequired,
     dfpTargeting: StringBoolPropType.isRequired,
   }),
+  buildTime: PropTypes.instanceOf(Date),
   description: PropTypes.string,
   facebookDescription: PropTypes.string,
   facebookHeadline: PropTypes.string,
