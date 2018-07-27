@@ -8,24 +8,11 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import json from 'rollup-plugin-json';
-import builtins from 'rollup-plugin-node-builtins';
+import pkg from './package.json';
 
-export default {
+const common = {
   input: './index.js',
-  output: [
-    {
-      format: 'umd',
-      file: './build/index.min.js',
-      name: 'GComponents',
-      exports: 'named',
-    },
-    {
-      format: 'es',
-      file: './build/index.mjs',
-    },
-  ],
   plugins: [
-    builtins(),
     babel({
       babelrc: false,
       exclude: 'node_modules/**',
@@ -35,13 +22,62 @@ export default {
     }),
     json(),
     resolve({
-      preferBuiltins: false,
+      browser: true,
+      module: true,
+      jsnext: true,
+      main: true,
     }),
     commonjs({
       namedExports: {
         react: ['Fragment'],
       },
     }),
-    terser(),
   ],
 };
+
+export default [
+  {
+    ...common,
+    output: {
+      format: 'umd',
+      file: pkg.main,
+      name: 'GComponents',
+      exports: 'named',
+      globals: {
+        react: 'React',
+      },
+    },
+    external: Object.keys(pkg.peerDependencies || {}),
+    plugins: [...common.plugins, terser()],
+  },
+  {
+    ...common,
+    output: {
+      format: 'umd',
+      file: './dist/gcomponents.umd.js',
+      name: 'GComponents',
+      exports: 'named',
+      globals: {
+        react: 'React',
+      },
+    },
+    external: Object.keys(pkg.peerDependencies || {}),
+  },
+  {
+    ...common,
+    output: {
+      format: 'es',
+      file: pkg.module,
+    },
+    external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+    plugins: [...common.plugins, terser()],
+  },
+  {
+    ...common,
+    output: {
+      format: 'es',
+      file: './dist/gcomponents.mjs',
+    },
+    external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+  },
+];

@@ -4,12 +4,12 @@
  */
 
 import React, { Fragment } from 'react';
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import Share from './share';
 import { ftdate, getMainImage, getSeparator } from '../helpers';
 import { mainImagePropType, topicPropType } from '../helpers/proptypes';
 
+/* eslint-disable no-nested-ternary */
 export const Byline = ({ bylines }) => (
   <Fragment>
     By
@@ -29,11 +29,19 @@ export const Byline = ({ bylines }) => (
           </span>
         )),
       )
+    ) : bylines.url ? (
+      <a href={bylines.url} className="o-typography-author">
+        {bylines.name}
+      </a>
     ) : (
-      <ReactMarkdown input={bylines} />
+      <span className="o-typography-author">
+        {bylines.name}
+      </span>
     )}
   </Fragment>
 );
+
+/* eslint-enable */
 
 const BylinesPropType = PropTypes.oneOfType([
   PropTypes.string,
