@@ -8,3 +8,7 @@ stories
 bower.json
 jest.*
 webpack.config.js
+node_modules
+components
+helpers
+static
