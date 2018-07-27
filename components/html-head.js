@@ -16,7 +16,6 @@ import {
   trackingPropType,
   topicPropType,
 } from '../helpers/proptypes';
-import '../static/top.css';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */
