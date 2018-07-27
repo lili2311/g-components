@@ -69,5 +69,14 @@
   },
   "engines": {
     "node": ">= 8.6.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
   }
 }

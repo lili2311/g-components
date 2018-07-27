@@ -3,7 +3,7 @@
  * Main Storybook.js stories
  */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { storiesOf, addDecorator } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
@@ -97,11 +97,7 @@ storiesOf('Layout', module).add(
     >
       {text('Content', lorem)
         .split(/\n\n/)
-        .map(par => (
-          <p>
-            {par}
-          </p>
-        ))}
+        .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
     </Layout>
   )),
 );
@@ -116,14 +112,12 @@ storiesOf('Analytics', module).add(
   withInfo(`
     The analytics module won't display because it's mainly a behind-the-scenes thing.
     You need to just simply import it whereever.
-  `)(() => (
-    <Fragment>
-      <h4>
+  `)(() => [
+    <h4 key="1">
 You won&apos;t see anything here as &quot;Analytics&quot; has no visual output
-      </h4>
-      <Analytics id={DEFAULT.uuid} flags={DEFAULT.flags} />
-    </Fragment>
-  )),
+    </h4>,
+    <Analytics key="2" id={DEFAULT.uuid} flags={DEFAULT.flags} />,
+  ]),
 );
 
 storiesOf('ArticleHead', module).add(
@@ -146,22 +140,21 @@ storiesOf('Footer', module).add('default', withInfo('')(() => <Footer />));
 storiesOf('Header', module).add('default', withInfo('')(() => <Header />));
 storiesOf('HtmlHead', module).add(
   'default',
-  withInfo('')(() => (
-    <Fragment>
-      <h4>
+  withInfo('')(() => [
+    <h4 key="1">
 You won&apos;t see anything here as &quot;HtmlHead&quot; has no visual output
-      </h4>
-      <HtmlHead
-        flags={defaultFlags}
-        title="Testing <HtmlHead>"
-        topic={DEFAULT.topic}
-        headline={DEFAULT.headline}
-        id={DEFAULT.uuid}
-        url={DEFAULT.url}
-        buildTime={DEFAULT.buildTime}
-      />
-    </Fragment>
-  )),
+    </h4>,
+    <HtmlHead
+      key="2"
+      flags={defaultFlags}
+      title="Testing <HtmlHead>"
+      topic={DEFAULT.topic}
+      headline={DEFAULT.headline}
+      id={DEFAULT.uuid}
+      url={DEFAULT.url}
+      buildTime={DEFAULT.buildTime}
+    />,
+  ]),
 );
 
 storiesOf('OnwardJourney', module).add(

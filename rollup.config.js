@@ -27,6 +27,7 @@ export default {
   plugins: [
     builtins(),
     babel({
+      babelrc: false,
       exclude: 'node_modules/**',
       presets: [['env', { modules: false }], 'react'],
       plugins: ['transform-object-rest-spread', 'external-helpers'],
