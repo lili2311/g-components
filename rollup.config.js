@@ -15,10 +15,10 @@ const common = {
   plugins: [
     babel({
       babelrc: false,
+      runtimeHelpers: true,
       exclude: 'node_modules/**',
       presets: [['env', { modules: false }], 'react'],
-      plugins: ['transform-object-rest-spread', 'external-helpers'],
-      externalHelpers: true,
+      plugins: ['external-helpers', 'transform-runtime', 'transform-object-rest-spread'],
     }),
     json(),
     resolve({
@@ -27,11 +27,7 @@ const common = {
       jsnext: true,
       main: true,
     }),
-    commonjs({
-      namedExports: {
-        react: ['Fragment'],
-      },
-    }),
+    commonjs(),
   ],
 };
 
@@ -54,7 +50,7 @@ export default [
     ...common,
     output: {
       format: 'umd',
-      file: './dist/gcomponents.umd.js',
+      file: pkg.main.replace('.min', ''),
       name: 'GComponents',
       exports: 'named',
       globals: {
@@ -76,7 +72,7 @@ export default [
     ...common,
     output: {
       format: 'es',
-      file: './dist/gcomponents.mjs',
+      file: pkg.module.replace('.min', ''),
     },
     external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
   },

@@ -2,8 +2,8 @@
   "name": "@financial-times/g-components",
   "version": "1.1.1",
   "description": "Page furniture used by FT IG's Starter Kit",
-  "main": "dist/gcomponents.min.js",
-  "module": "dist/gcomponents.min.mjs",
+  "main": "dist/gcomponents.min.umd.js",
+  "module": "dist/gcomponents.min.es.js",
   "repository": "https://github.com/Financial-Times/g-components",
   "scripts": {
     "test": "jest",
@@ -24,6 +24,7 @@
     "d3-time-format": "^2.1.1",
     "prop-types": "^15.6.2",
     "react-helmet": "^5.2.0",
+    "regenerator-runtime": "^0.12.0",
     "remove-markdown": "^0.3.0"
   },
   "devDependencies": {
@@ -39,6 +40,7 @@
     "babel-jest": "^23.4.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.26.0",
