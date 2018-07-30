@@ -5,6 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { HelmetProvider } from 'react-helmet-async';
 import { flagsPropType } from '../helpers/proptypes';
 import Header from './header';
 import HtmlHead from './html-head';
@@ -14,66 +15,68 @@ import Comments from './comments';
 import Footer from './footer';
 import { strftime } from '../helpers';
 
-const Layout = ({ flags = {}, children, ...props }) => [
-  <HtmlHead key="head" flags={flags} {...props} />,
-  flags.header && <Header key="header" {...props} />,
-  <main key="main" role="main">
-    <article className="article" itemScope itemType="http://schema.org/Article">
-      <div className="article-head o-grid-container">
-        <div className="o-grid-row">
-          <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-            <ArticleHead {...props} flags={flags} />
-          </header>
-        </div>
-      </div>
-      <div className="article-body o-typography-wrapper" itemProp="articleBody">
-        <div className="o-grid-container">
+const Layout = ({ flags = {}, children, ...props }) => (
+  <HelmetProvider>
+    <HtmlHead key="head" flags={flags} {...props} />
+    {flags.header && <Header key="header" {...props} />}
+    <main key="main" role="main">
+      <article className="article" itemScope itemType="http://schema.org/Article">
+        <div className="article-head o-grid-container">
           <div className="o-grid-row">
-            <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-              <div>
-                {children}
-              </div>
-            </div>
+            <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+              <ArticleHead {...props} flags={flags} />
+            </header>
           </div>
         </div>
-
-        <footer
-          className="o-typography-footer"
-          itemProp="publisher"
-          itemScope
-          itemType="https://schema.org/Organization"
-        >
+        <div className="article-body o-typography-wrapper" itemProp="articleBody">
           <div className="o-grid-container">
             <div className="o-grid-row">
               <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-                <small>
-                  <a
-                    href="http://www.ft.com/servicestools/help/copyright"
-                    data-trackable="link-copyright"
-                  >
-                    Copyright
-                  </a>
-                  <span itemProp="name">
-The Financial Times
-                  </span>
-                  {' '}
-Limited
-                  {' '}
-                  {strftime('%Y')(new Date())}
-                  . All rights reserved. You may share using our article tools. Please don&apos;t
-                  cut articles from FT.com and redistribute by email or post to the web.
-                </small>
+                <div>
+                  {children}
+                </div>
               </div>
             </div>
           </div>
-        </footer>
-      </div>
-    </article>
-  </main>,
-  flags.onwardjourney && <OnwardJourney key="oj" {...props} />,
-  flags.comments && <Comments key="comments" {...props} />,
-  flags.footer && <Footer key="footer" {...props} />,
-];
+
+          <footer
+            className="o-typography-footer"
+            itemProp="publisher"
+            itemScope
+            itemType="https://schema.org/Organization"
+          >
+            <div className="o-grid-container">
+              <div className="o-grid-row">
+                <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+                  <small>
+                    <a
+                      href="http://www.ft.com/servicestools/help/copyright"
+                      data-trackable="link-copyright"
+                    >
+                      Copyright
+                    </a>
+                    <span itemProp="name">
+The Financial Times
+                    </span>
+                    {' '}
+Limited
+                    {' '}
+                    {strftime('%Y')(new Date())}
+                    . All rights reserved. You may share using our article tools. Please don&apos;t
+                    cut articles from FT.com and redistribute by email or post to the web.
+                  </small>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </main>
+    {flags.onwardjourney && <OnwardJourney key="oj" {...props} />}
+    {flags.comments && <Comments key="comments" {...props} />}
+    {flags.footer && <Footer key="footer" {...props} />}
+  </HelmetProvider>
+);
 
 Layout.propTypes = {
   id: PropTypes.string,
