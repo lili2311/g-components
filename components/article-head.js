@@ -65,7 +65,7 @@ const ArticleHead = ({
   mainImage,
   flags,
   bylines,
-  buildDate,
+  buildTime,
   publishedDate,
   ...props
 }) => (
@@ -89,7 +89,7 @@ const ArticleHead = ({
         </a>
       )}
     </div>
-    <meta itemProp="dateModified" content={buildDate} />
+    <meta itemProp="dateModified" content={buildTime} />
 
     {(mainImage.url || mainImage.uuid) && (
       <figure className="graphic graphic-b-1 graphic-pad-1">
@@ -126,7 +126,7 @@ ArticleHead.propTypes = {
   mainImage: mainImagePropType,
   relatedArticle: PropTypes.shape({}),
   publishedDate: PropTypes.string,
-  buildDate: PropTypes.string,
+  buildTime: PropTypes.string,
   topic: topicPropType,
   bylines: BylinesPropType,
 };
@@ -137,7 +137,7 @@ ArticleHead.defaultProps = {
   },
   relatedArticle: {},
   publishedDate: new Date().toISOString(),
-  buildDate: new Date().toISOString(),
+  buildTime: new Date().toISOString(),
   summary: '',
   topic: {},
   bylines: [],
