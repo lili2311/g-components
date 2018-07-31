@@ -47,8 +47,8 @@ const DEFAULT = {
   headline: text('Headline', 'New Starter Kit site'),
   title: 'New Starter Kit site',
   uuid: 'xxx-xxx-xxx',
-  pubdate: new Date('2018-07-25T17:43:37.00Z'),
-  buildTime: new Date('2018-07-25T17:43:37.00Z'),
+  pubdate: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+  buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
 };
 
 const lorem = `Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.

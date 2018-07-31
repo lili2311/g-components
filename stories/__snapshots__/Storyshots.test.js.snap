@@ -1118,7 +1118,7 @@ exports[`Storyshots ArticleHead default 1`] = `
       />
     </div>
     <meta
-      content="2018-07-25T17:43:37.000Z"
+      content="2018-07-31T17:18:17.463Z"
       itemProp="dateModified"
     />
     <figure
@@ -1221,7 +1221,7 @@ exports[`Storyshots ArticleHead default 1`] = `
         data-o-component="o-date"
         dateTime="2018-07-25T17:43:37.000Z"
       >
-        Wednesday, 25 July 2018
+        , NaN  0NaN
       </span>
     </div>
   </div>
@@ -1817,18 +1817,18 @@ exports[`Storyshots ArticleHead default 1`] = `
                       <span
                         style={Object {}}
                       >
-                        {
+                        "
                         <span
                           style={
                             Object {
-                              "color": "#666",
+                              "color": "#22a",
+                              "wordBreak": "break-word",
                             }
                           }
                         >
-                          {
-                          }
+                          2018-07-25T17:43:37.000Z
                         </span>
-                        }
+                        "
                       </span>
                     </span>
                     <br />
@@ -2122,12 +2122,46 @@ exports[`Storyshots ArticleHead default 1`] = `
                     <span
                       style={
                         Object {
-                          "color": "#666",
+                          "color": "#22a",
+                          "wordBreak": "break-word",
                         }
                       }
                     >
-                      {
+                      2018-07-31T17:18:17.463Z
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    buildTime
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
                       }
+                    >
+                      2018-07-31T17:18:17.463Z
                     </span>
                   </td>
                   <td
@@ -2229,7 +2263,7 @@ exports[`Storyshots Comments default 1`] = `
         className="o-grid-row"
       >
         <div
-          data-o-comments-auto-init="true"
+          data-o-comments-auto-init="false"
           data-o-comments-config-article-id="3a499586-b2e0-11e4-a058-00144feab7de"
           data-o-comments-config-title="Comments"
           data-o-comments-config-url="https://local.ft.com/comments-test"
@@ -2499,6 +2533,40 @@ exports[`Storyshots Comments default 1`] = `
                     className="css-1ygfcef"
                   >
                     title
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      Comments
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    headline
                   </td>
                   <td
                     className="css-1ygfcef"
@@ -3523,7 +3591,7 @@ exports[`Storyshots HtmlHead default 1`] = `
           o.src = src;
           var s = document.getElementsByTagName('script')[0];
 
-          false
+          
           s.parentNode.insertBefore(o, s);
         }
       }('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-header@^7.2.8,o-footer@^6.0.8,o-date@^2.10.3,o-errors@^3.6.1,o-teaser@^2.2.2,o-comments@^4.0.7,o-share@^6.1.0'))",
@@ -4161,18 +4229,18 @@ exports[`Storyshots HtmlHead default 1`] = `
                       <span
                         style={Object {}}
                       >
-                        {
+                        "
                         <span
                           style={
                             Object {
-                              "color": "#666",
+                              "color": "#22a",
+                              "wordBreak": "break-word",
                             }
                           }
                         >
-                          {
-                          }
+                          2018-07-25T17:43:37.000Z
                         </span>
-                        }
+                        "
                       </span>
                     </span>
                     <br />
@@ -5291,7 +5359,7 @@ exports[`Storyshots Layout default 1`] = `
                   data-o-component="o-date"
                   dateTime="2018-07-25T17:43:37.000Z"
                 >
-                  Wednesday, 25 July 2018
+                  , NaN  0NaN
                 </span>
               </div>
             </header>
@@ -5365,6 +5433,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                     >
                       Copyright
                     </a>
+                     
                     <span
                       itemProp="name"
                     >
@@ -5390,7 +5459,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
         className="o-grid-row"
       >
         <div
-          data-o-comments-auto-init="true"
+          data-o-comments-auto-init="false"
           data-o-comments-config-article-id=""
           data-o-comments-config-title="New Starter Kit site"
           data-o-comments-config-url="https://local.ft.com/"
@@ -6182,18 +6251,18 @@ to maintain typographic styles.
                         <span
                           style={Object {}}
                         >
-                          {
+                          "
                           <span
                             style={
                               Object {
-                                "color": "#666",
+                                "color": "#22a",
+                                "wordBreak": "break-word",
                               }
                             }
                           >
-                            {
-                            }
+                            2018-07-25T17:43:37.000Z
                           </span>
-                          }
+                          "
                         </span>
                       </span>
                     </span>
@@ -6212,18 +6281,18 @@ to maintain typographic styles.
                         <span
                           style={Object {}}
                         >
-                          {
+                          "
                           <span
                             style={
                               Object {
-                                "color": "#666",
+                                "color": "#22a",
+                                "wordBreak": "break-word",
                               }
                             }
                           >
-                            {
-                            }
+                            2018-07-25T17:43:37.000Z
                           </span>
-                          }
+                          "
                         </span>
                       </span>
                       <br />

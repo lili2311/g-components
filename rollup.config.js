@@ -18,7 +18,12 @@ const common = {
       runtimeHelpers: true,
       exclude: 'node_modules/**',
       presets: [['env', { modules: false }], 'react'],
-      plugins: ['external-helpers', 'transform-runtime', 'transform-object-rest-spread'],
+      plugins: [
+        'external-helpers',
+        'transform-runtime',
+        'transform-object-rest-spread',
+        'transform-class-properties',
+      ],
     }),
     json(),
     resolve({
