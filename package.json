@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/g-components",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Page furniture used by FT IG's Starter Kit",
   "main": "dist/gcomponents.min.umd.js",
   "module": "dist/gcomponents.min.es.js",

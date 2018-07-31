@@ -65,6 +65,7 @@ const ArticleHead = ({
   mainImage,
   flags,
   bylines,
+  buildDate,
   publishedDate,
   ...props
 }) => (
@@ -88,7 +89,7 @@ const ArticleHead = ({
         </a>
       )}
     </div>
-    <meta itemProp="dateModified" content={publishedDate.toISOString()} />
+    <meta itemProp="dateModified" content={buildDate} />
 
     {(mainImage.url || mainImage.uuid) && (
       <figure className="graphic graphic-b-1 graphic-pad-1">
@@ -109,7 +110,7 @@ const ArticleHead = ({
         <span
           data-o-component="o-date"
           className="o-date o-typography-timestamp"
-          dateTime={publishedDate.toISOString()}
+          dateTime={publishedDate}
         >
           {ftdate(publishedDate)}
         </span>
@@ -124,7 +125,8 @@ ArticleHead.propTypes = {
   summary: PropTypes.string,
   mainImage: mainImagePropType,
   relatedArticle: PropTypes.shape({}),
-  publishedDate: PropTypes.instanceOf(Date),
+  publishedDate: PropTypes.string,
+  buildDate: PropTypes.string,
   topic: topicPropType,
   bylines: BylinesPropType,
 };
@@ -134,7 +136,8 @@ ArticleHead.defaultProps = {
     uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
   },
   relatedArticle: {},
-  publishedDate: new Date(),
+  publishedDate: new Date().toISOString(),
+  buildDate: new Date().toISOString(),
   summary: '',
   topic: {},
   bylines: [],
