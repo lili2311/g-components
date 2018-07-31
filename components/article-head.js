@@ -81,6 +81,7 @@ const ArticleHead = ({
 
     <div className="o-typography-standfirst">
       {summary}
+      {' '}
       {relatedArticle && (
         <a href={relatedArticle.url} className="o-typography-link">
           {relatedArticle.text}

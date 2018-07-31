@@ -1112,6 +1112,7 @@ exports[`Storyshots ArticleHead default 1`] = `
       className="o-typography-standfirst"
     >
       This is a standfirst
+       
       <a
         className="o-typography-link"
       />
@@ -3405,6 +3406,208 @@ exports[`Storyshots HtmlHead default 1`] = `
     <h4>
       You won't see anything here as "HtmlHead" has no visual output
     </h4>
+    <head>
+      <meta
+        charSet="utf-8"
+      />
+      <meta
+        content="IE=edge"
+        httpEquiv="X-UA-Compatible"
+      />
+      <meta
+        content="width=device-width, initial-scale=1"
+        name="viewport"
+      />
+      <link
+        href="https://www.ft.com"
+        rel="preconnect"
+      />
+      <link
+        href="https://cdn.polyfill.io"
+        rel="preconnect"
+      />
+      <link
+        href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-normalise@^1.5.3,o-fonts@^3.0.4,o-grid@^4.3.7,o-typography@^5.4.2,o-header@^7.2.8,o-footer@^6.0.8,o-teaser@^2.2.2,o-comments@^4.0.7,o-share@^6.1.0"
+        rel="stylesheet"
+      />
+      <link
+        href="https://plus.google.com/113457471429583444041/"
+        rel="publisher"
+      />
+      <meta
+        content="429755910551755"
+        property="fb:app_id"
+      />
+      <link
+        href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=32&height=32&format=png"
+        rel="icon"
+        sizes="32x32"
+        type="image/png"
+      />
+      <link
+        href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=194&height=194&format=png"
+        rel="icon"
+        sizes="194x194"
+        type="image/png"
+      />
+      <link
+        href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=180&height=180&format=png"
+        rel="apple-touch-icon"
+        sizes="180x180"
+      />
+      <meta
+        content="telephone=no"
+        name="format-detection"
+      />
+      <meta
+        content="index,follow"
+        name="robots"
+      />
+      <meta
+        content="Financial Times"
+        name="copyright"
+      />
+      <meta
+        content="#fff1e5"
+        name="theme-color"
+      />
+      <script
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"WebSite\\",\\"name\\":\\"Financial Times\\",\\"alternateName\\":\\"FT.com\\",\\"url\\":\\"http://www.ft.com\\"}",
+          }
+        }
+        type="application/ld+json"
+      />
+      <script
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BreadcrumbList\\",\\"itemListElement\\":[{\\"@type\\":\\"ListItem\\",\\"position\\":1,\\"item\\":{\\"@id\\":\\"https://local.ft.com/\\",\\"name\\":\\"Testing\\",\\"image\\":\\"https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig\\"}}]}",
+          }
+        }
+        type="application/ld+json"
+      />
+      <script
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "{\\"sentryEndpoint\\":\\"https://ddbd80489ff549538250bbe37fa52bbd@sentry.io/71130\\"}",
+          }
+        }
+        data-o-errors-config={true}
+        type="application/json"
+      />
+      <script
+        src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch"
+      />
+      <script
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+          cutsTheMustard = 'querySelector' in document && 'localStorage' in window &&
+          'addEventListener' in window && typeof Function.prototype.bind !== 'undefined'; if
+          (cutsTheMustard) document.documentElement.className =
+          document.documentElement.className.replace( /core/g, 'enhanced', );
+          ",
+          }
+        }
+        type="text/javascript"
+      />
+      <script
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+      (function(src) {
+        if (cutsTheMustard) {
+          var o = document.createElement('script');
+          o.async = o.defer = true;
+          o.src = src;
+          var s = document.getElementsByTagName('script')[0];
+
+          false
+          s.parentNode.insertBefore(o, s);
+        }
+      }('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-header@^7.2.8,o-footer@^6.0.8,o-date@^2.10.3,o-errors@^3.6.1,o-teaser@^2.2.2,o-comments@^4.0.7,o-share@^6.1.0'))",
+          }
+        }
+        type="text/javascript"
+      />
+      <title>
+        Testing &lt;HtmlHead&gt;
+      </title>
+      <meta
+        content="New Starter Kit site"
+        name="twitter:title"
+      />
+      <meta
+        content="New Starter Kit site"
+        property="og:title"
+      />
+      <meta
+        content="A Starter Kit page"
+        name="description"
+      />
+      <meta
+        content="A Starter Kit page"
+        name="twitter:description"
+      />
+      <meta
+        content="A Starter Kit page"
+        property="og:description"
+      />
+      <link
+        href="https://local.ft.com/"
+        rel="canonical"
+      />
+      <meta
+        content="https://local.ft.com/"
+        name="twitter:url"
+      />
+      <meta
+        content="https://local.ft.com/"
+        property="og:url"
+      />
+      <link
+        href="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig"
+        rel="image_src"
+      />
+      <meta
+        content="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig"
+        name="twitter:image"
+      />
+      <meta
+        content="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig"
+        property="og:image"
+      />
+      <meta
+        content=""
+        name="twitter:card"
+      />
+      <meta
+        content="@FinancialTimes"
+        name="twitter:site"
+      />
+      
+      <meta
+        content="8860325749"
+        property="fb:pages"
+      />
+      <meta
+        content="121862597867466"
+        property="fb:pages"
+      />
+      <meta
+        content="622419751233155"
+        property="fb:pages"
+      />
+      <meta
+        content="23117544640"
+        property="fb:pages"
+      />
+      <meta
+        content="293710391064899"
+        property="fb:pages"
+      />
+    </head>
   </div>
   <button
     onClick={[Function]}
@@ -4171,40 +4374,6 @@ exports[`Storyshots HtmlHead default 1`] = `
                   <td
                     className="css-1ygfcef"
                   >
-                    buildTime
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#666",
-                        }
-                      }
-                    >
-                      {
-                      }
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
                     description
                   </td>
                   <td
@@ -4376,31 +4545,6 @@ exports[`Storyshots HtmlHead default 1`] = `
                     className="css-1ygfcef"
                   >
                     headline
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    yes
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    id
                   </td>
                   <td
                     className="css-1ygfcef"
@@ -5045,6 +5189,7 @@ exports[`Storyshots Layout default 1`] = `
                 className="o-typography-standfirst"
               >
                 
+                 
                 <a
                   className="o-typography-link"
                 />

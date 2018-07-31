@@ -3,12 +3,10 @@
  * Main page layout view
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { HelmetProvider } from 'react-helmet-async';
 import { flagsPropType } from '../helpers/proptypes';
 import Header from './header';
-import HtmlHead from './html-head';
 import ArticleHead from './article-head';
 import OnwardJourney from './onwardjourney';
 import Comments from './comments';
@@ -16,8 +14,7 @@ import Footer from './footer';
 import { strftime } from '../helpers';
 
 const Layout = ({ flags = {}, children, ...props }) => (
-  <HelmetProvider>
-    <HtmlHead key="head" flags={flags} {...props} />
+  <Fragment>
     {flags.header && <Header key="header" {...props} />}
     <main key="main" role="main">
       <article className="article" itemScope itemType="http://schema.org/Article">
@@ -75,7 +72,7 @@ Limited
     {flags.onwardjourney && <OnwardJourney key="oj" {...props} />}
     {flags.comments && <Comments key="comments" {...props} />}
     {flags.footer && <Footer key="footer" {...props} />}
-  </HelmetProvider>
+  </Fragment>
 );
 
 Layout.propTypes = {

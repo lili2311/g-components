@@ -38,73 +38,11 @@ if (window.cutsTheMustard)
 <link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-normalise@^1.5.3,o-fonts@^3.0.4,o-grid@^4.3.7,o-typography@^5.4.2,o-header@^7.2.8,o-footer@^6.0.8,o-teaser@^2.2.2,o-comments@^4.0.7,o-share@^6.1.0,o-ads@^8.0.0">
 <script id="origami-js" src="https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-header@^7.2.8,o-footer@^6.0.10,o-date@^2.10.3,o-errors@^3.6.1,o-teaser@^2.2.2,o-comments@^4.0.7,o-share@^6.1.0,o-tracking@^1.2.3,o-ads@^8.0.0"></script>
 
-<!-- Setup o-tracking -->
-<script>
-function oTrackinginit() {
-  var oTracking = Origami['o-tracking'];
-
-  var page_data = {
-    content: { asset_type: 'interactive' },
-  };
-
-  var properties = [].reduce.call(
-    document.querySelectorAll('head meta[property^="ft.track:"]') || [],
-    function(o, el) {
-      o[el.getAttribute('property').replace('ft.track:', '')] = el.getAttribute('content');
-      return o;
-    },
-    {},
-  );
-
-  var id = document.documentElement.getAttribute('data-content-id');
-
-  if (id) {
-    page_data.content.uuid = id;
-  }
-
-  if (properties.microsite_name) {
-    page_data.microsite_name = properties.microsite_name;
-  }
-
-  // Setup
-  oTracking.init({
-    server: 'https://spoor-api.ft.com/px.gif',
-    system: {
-      is_live: typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false,
-    },
-    context: { product: properties.product || 'IG' },
-  });
-
-  // Page
-  oTracking.page(page_data);
-
-  // Links
-  oTracking.link.init();
-}
-</script>
-
-<script>
-  (function(src) {
-    if (cutsTheMustard) {
-      var o = document.getElementById('origami-js');
-      if (o.hasOwnProperty('onreadystatechange')) {
-          o.onreadystatechange = function() {
-              if (o.readyState === "loaded") {
-                  oTrackinginit();
-              }
-          };
-      } else {
-          o.onload = oTrackinginit;
-      }
-    }
-  }());
-</script>
-
 </head>
 
 <body>
     <div id="root"></div>
     <div id="error-display"></div>
-<script type="text/javascript" src="static/preview.008e779fce9854add2c7.bundle.js"></script></body>
+<script type="text/javascript" src="static/preview.081373a9f7a3234eb4f2.bundle.js"></script></body>
 
 </html>
