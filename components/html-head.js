@@ -253,8 +253,9 @@ const HtmlHead = ({
           o.src = src;
           var s = document.getElementsByTagName('script')[0];
 
-          ${flags.analytics
-            && `
+          ${
+            flags.analytics
+              ? `
             if (o.hasOwnProperty('onreadystatechange')) {
                 o.onreadystatechange = function() {
                     if (o.readyState === "loaded") {
@@ -264,7 +265,9 @@ const HtmlHead = ({
             } else {
                 o.onload = oTrackinginit;
             }
-            `}
+            `
+              : ''
+          }
           s.parentNode.insertBefore(o, s);
         }
       }('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=${origamiBuildServiceJS}'))`,

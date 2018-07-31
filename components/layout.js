@@ -52,6 +52,7 @@ const Layout = ({ flags = {}, children, ...props }) => (
                     >
                       Copyright
                     </a>
+                    {' '}
                     <span itemProp="name">
 The Financial Times
                     </span>
