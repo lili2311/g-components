@@ -6,33 +6,40 @@
 
 const path = require('path');
 const BowerResolvePlugin = require('bower-resolve-webpack-plugin');
+const webpackMerge = require('webpack-merge');
 
 module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.module.rules.push({
-    test: /\.scss$/,
-    use: [
-      'style-loader',
-      'css-loader',
-      {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: true,
-          includePaths: ['bower_components'],
+  const overrides = {
+    resolve: {
+      modules: ['bower_components'],
+      plugins: [new BowerResolvePlugin()],
+      descriptionFiles: ['bower.json', 'package.json'],
+      mainFields: ['browser', 'main'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+                includePaths: ['bower_components'],
+              },
+            },
+          ],
+          include: path.resolve(__dirname, '../'),
         },
-      },
-    ],
-    include: path.resolve(__dirname, '../'),
-  });
+        {
+          test: /\.txt/,
+          loader: 'raw-loader',
+        },
+      ],
+    },
+  };
 
-  defaultConfig.module.rules.push({
-    test: /\.txt/,
-    loader: 'raw-loader',
-  });
-
-  defaultConfig.resolve.modules.push('bower_components');
-  defaultConfig.resolve.plugins = [new BowerResolvePlugin()];
-  defaultConfig.resolve.descriptionFiles = ['bower.json', 'package.json'];
-  defaultConfig.resolve.mainFields = ['browser', 'main'];
-
-  return defaultConfig;
+  return webpackMerge(defaultConfig, overrides);
 };
