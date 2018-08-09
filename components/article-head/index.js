@@ -3,11 +3,14 @@
  * Top of the article
  */
 
-import React, { Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import oDate from 'o-date/main';
 import Share from '../share';
-import { ftdate, getMainImage, getSeparator } from '../../helpers';
-import { mainImagePropType, topicPropType } from '../../helpers/proptypes';
+import { ftdate, getMainImage, getSeparator } from '../../shared/helpers';
+import { mainImagePropType, topicPropType } from '../../shared/proptypes';
+import './styles.scss';
+import '../../shared/styles.scss';
 
 /* eslint-disable no-nested-ternary */
 export const Byline = ({ bylines }) => (
@@ -17,14 +20,14 @@ export const Byline = ({ bylines }) => (
     {Array.isArray(bylines) ? (
       bylines.map(
         (author, idx) => (author.url ? (
-          <Fragment key={author}>
+          <Fragment key={author.name}>
             <a href={author.url} className="o-typography-author">
               {author.name}
             </a>
             {getSeparator(idx, bylines)}
           </Fragment>
         ) : (
-          <span className="o-typography-author">
+          <span key={author.name} className="o-typography-author">
             {author.name}
           </span>
         )),
@@ -57,67 +60,80 @@ Byline.propTypes = {
   bylines: BylinesPropType.isRequired,
 };
 
-const ArticleHead = ({
-  topic,
-  headline,
-  summary,
-  relatedArticle,
-  mainImage,
-  flags,
-  bylines,
-  buildTime,
-  publishedDate,
-  ...props
-}) => (
-  <Fragment>
-    <div>
-      <a href={topic.url} className="o-typography-topic">
-        {topic.name}
-      </a>
-    </div>
+class ArticleHead extends PureComponent {
+  dateRef = React.createRef();
 
-    <h1 className="o-typography-headline" itemProp="headline">
-      {headline}
-    </h1>
+  componentDidMount() {
+    new oDate(this.dateRef.current); // eslint-disable-line new-cap,no-new
+  }
 
-    <div className="o-typography-standfirst">
-      {summary}
-      {' '}
-      {relatedArticle && (
-        <a href={relatedArticle.url} className="o-typography-link">
-          {relatedArticle.text}
-        </a>
-      )}
-    </div>
-    <meta itemProp="dateModified" content={buildTime} />
+  render() {
+    const {
+      topic,
+      headline,
+      summary,
+      relatedArticle,
+      mainImage,
+      flags,
+      bylines,
+      buildTime,
+      publishedDate,
+      ...props
+    } = this.props;
 
-    {(mainImage.url || mainImage.uuid) && (
-      <figure className="graphic graphic-b-1 graphic-pad-1">
-        <img alt={mainImage.description} src={getMainImage(mainImage)} />
-        <figcaption className="o-typography-caption">
-          {mainImage.description}
-          {mainImage.credit}
-        </figcaption>
-      </figure>
-    )}
+    return (
+      <Fragment>
+        <div>
+          <a href={topic.url} className="o-typography-topic">
+            {topic.name}
+          </a>
+        </div>
 
-    {flags && flags.shareButtons && <Share headline={headline} {...props} />}
+        <h1 className="o-typography-headline" itemProp="headline">
+          {headline}
+        </h1>
 
-    <div>
-      {bylines && <Byline bylines={bylines} />}
+        <div className="o-typography-standfirst">
+          {summary}
+          {' '}
+          {relatedArticle && (
+            <a href={relatedArticle.url} className="o-typography-link">
+              {relatedArticle.text}
+            </a>
+          )}
+        </div>
+        <meta itemProp="dateModified" content={buildTime} />
 
-      {publishedDate && (
-        <span
-          data-o-component="o-date"
-          className="o-date o-typography-timestamp"
-          dateTime={publishedDate}
-        >
-          {ftdate(publishedDate)}
-        </span>
-      )}
-    </div>
-  </Fragment>
-);
+        {(mainImage.url || mainImage.uuid) && (
+          <figure className="graphic graphic-b-1 graphic-pad-1">
+            <img alt={mainImage.description} src={getMainImage(mainImage)} />
+            <figcaption className="o-typography-caption">
+              {mainImage.description}
+              {mainImage.credit}
+            </figcaption>
+          </figure>
+        )}
+
+        {flags && flags.shareButtons && <Share headline={headline} {...props} />}
+
+        <div>
+          {bylines && <Byline bylines={bylines} />}
+
+          {publishedDate && (
+            <span
+              ref={this.dateRef}
+              data-o-component="o-date"
+              className="o-date o-typography-timestamp"
+              dateTime={publishedDate}
+            >
+              {ftdate(publishedDate)}
+            </span>
+          )}
+        </div>
+      </Fragment>
+    );
+  }
+}
 
 ArticleHead.propTypes = {
   flags: PropTypes.shape({}).isRequired,

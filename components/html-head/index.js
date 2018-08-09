@@ -7,15 +7,16 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Analytics from '../analytics';
 import { TopAd } from '../ads';
-import { getMainImage } from '../../helpers';
+import { getMainImage } from '../../shared/helpers';
 import {
   flagsPropType,
   StringBoolPropType,
   mainImagePropType,
   trackingPropType,
   topicPropType,
-} from '../../helpers/proptypes';
+} from '../../shared/proptypes';
 import './styles.scss';
+import '../../shared/styles.scss';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */

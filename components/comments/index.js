@@ -7,39 +7,40 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import oComments from 'o-comments/main';
 import './styles.scss';
+import '../../shared/styles.scss';
 
 class Comments extends PureComponent {
+  ref = React.createRef();
+
   componentDidMount() {
-    oComments.init();
+    new oComments(this.ref.current); // eslint-disable-line no-new,new-cap
   }
 
   render() {
     const {
       title, id, url, headline,
     } = this.props;
-    const { oCommentsIsBroken } = this.state;
     return (
       <div className="o-grid-container">
         <div className="o-grid-row">
-          {!oCommentsIsBroken && (
-            <div
-              data-o-component="o-comments"
-              id="comments"
-              data-o-comments-auto-init="false"
-              data-o-comments-config-title={title || headline}
-              data-o-comments-config-url={url}
-              data-o-comments-config-article-id={id}
-              data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
-            >
-              <div className="o--if-no-js">
-                To participate in this chat, you need to upgrade to a newer web browser.
-                {' '}
-                <a href="http://help.ft.com/tools-services/browser-compatibility/">
+          <div
+            ref={this.ref}
+            data-o-component="o-comments"
+            id="comments"
+            data-o-comments-auto-init="false"
+            data-o-comments-config-title={title || headline}
+            data-o-comments-config-url={url}
+            data-o-comments-config-article-id={id}
+            data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+          >
+            <div className="o--if-no-js">
+              To participate in this chat, you need to upgrade to a newer web browser.
+              {' '}
+              <a href="http://help.ft.com/tools-services/browser-compatibility/">
 Learn more.
-                </a>
-              </div>
+              </a>
             </div>
-          )}
+          </div>
         </div>
       </div>
     );

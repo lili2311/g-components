@@ -4,6 +4,9 @@
  */
 
 import React from 'react';
+import './styles.scss';
+import '../../shared/styles.scss';
+import oAds from 'o-ads/main'; // @TODO configure
 
 export const TopAd = () => (
   <div

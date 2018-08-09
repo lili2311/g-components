@@ -19,6 +19,14 @@ module.exports = (baseConfig, env, defaultConfig) => {
     module: {
       rules: [
         {
+          test: /\.jsx?/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          options: {
+            plugins: ['add-module-exports', /* <-- wtfits */ 'transform-runtime'],
+          },
+        },
+        {
           test: /\.scss$/,
           use: [
             'style-loader',
@@ -41,5 +49,5 @@ module.exports = (baseConfig, env, defaultConfig) => {
     },
   };
 
-  return webpackMerge(defaultConfig, overrides);
+  return webpackMerge.smart(defaultConfig, overrides);
 };

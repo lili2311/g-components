@@ -5,13 +5,14 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { strftime } from '../../helpers';
-import { flagsPropType } from '../../helpers/proptypes';
+import { strftime } from '../../shared/helpers';
+import { flagsPropType } from '../../shared/proptypes';
 import Header from '../header';
 import ArticleHead from '../article-head';
 import OnwardJourney from '../onwardjourney';
 import Comments from '../comments';
 import Footer from '../footer';
+import '../../shared/styles.scss';
 
 const Layout = ({ flags = {}, children, ...props }) => (
   <Fragment>
