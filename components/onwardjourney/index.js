@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeCancelable } from '../helpers';
+import { makeCancelable } from '../../helpers';
 
 class OnwardJourney extends React.Component {
   constructor(props) {

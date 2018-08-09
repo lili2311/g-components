@@ -5,23 +5,12 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import oComments from 'o-comments/main';
+import './styles.scss';
 
 class Comments extends PureComponent {
-  state = {
-    oCommentsIsBroken: false,
-  };
-
   componentDidMount() {
-    // Sure would be nice to use node_modules here... :P
-    if (window && window.Origami) {
-      try {
-        window.Origami['o-comments'].init();
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.error('o-comments not loaded: \n', e);
-        this.setState({ oCommentsIsBroken: true });
-      }
-    }
+    oComments.init();
   }
 
   render() {

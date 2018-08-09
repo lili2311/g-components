@@ -3,7 +3,8 @@
  * Footer component
  */
 import React from 'react';
-import { strftime } from '../helpers';
+import { strftime } from '../../helpers';
+import './styles.scss';
 
 const Footer = () => (
   <footer

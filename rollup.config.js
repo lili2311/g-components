@@ -3,7 +3,8 @@
  * Rollup config for production builds
  */
 
-import resolve from 'rollup-plugin-node-resolve';
+import nodeResolve from 'rollup-plugin-node-resolve';
+import bowerResolve from 'rollup-plugin-bower-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
@@ -26,7 +27,8 @@ const common = {
       ],
     }),
     json(),
-    resolve({
+    bowerResolve(),
+    nodeResolve({
       browser: true,
       module: true,
       jsnext: true,

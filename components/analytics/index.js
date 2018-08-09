@@ -5,8 +5,8 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { flagsPropType } from '../helpers/proptypes';
-import { spoorTrackingPixel } from '../helpers';
+import { flagsPropType } from '../../helpers/proptypes';
+import { spoorTrackingPixel } from '../../helpers';
 
 // Lol this won't work
 const Analytics = ({

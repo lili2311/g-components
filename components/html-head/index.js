@@ -5,16 +5,17 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Analytics from './analytics';
-import { TopAd } from './ads';
-import { getMainImage } from '../helpers';
+import Analytics from '../analytics';
+import { TopAd } from '../ads';
+import { getMainImage } from '../../helpers';
 import {
   flagsPropType,
   StringBoolPropType,
   mainImagePropType,
   trackingPropType,
   topicPropType,
-} from '../helpers/proptypes';
+} from '../../helpers/proptypes';
+import './styles.scss';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */
@@ -22,6 +23,7 @@ import {
 const HtmlHead = ({
   flags,
   ads,
+  dataMeta,
   description,
   facebookDescription,
   facebookHeadline,
@@ -43,36 +45,6 @@ const HtmlHead = ({
   twitterImage,
   url,
 }) => {
-  // This is not the way to bundle dependencies... :weary:
-  const origamiBuildServiceCSS = [
-    'o-normalise@^1.5.3',
-    'o-fonts@^3.0.4',
-    'o-grid@^4.3.7',
-    'o-typography@^5.4.2',
-    'o-header@^7.2.8',
-    'o-footer@^6.0.8',
-    'o-teaser@^2.2.2',
-    flags.comments && 'o-comments@^4.0.7',
-    flags.shareButtons && 'o-share@^6.1.0',
-    flags.ads && 'o-ads@^8.0.0',
-  ]
-    .filter(i => i)
-    .join(',');
-
-  const origamiBuildServiceJS = [
-    'o-header@^7.2.8',
-    'o-footer@^6.0.8',
-    'o-date@^2.10.3',
-    'o-errors@^3.6.1',
-    'o-teaser@^2.2.2',
-    flags.comments && 'o-comments@^4.0.7',
-    flags.shareButtons && 'o-share@^6.1.0',
-    flags.analytics && 'o-tracking@^1.2.3',
-    flags.ads && 'o-ads@^8.0.0',
-  ]
-    .filter(i => i)
-    .join(',');
-
   const polyfillFeatures = ['default', 'fetch'].join(',');
   const mainImageUrl = getMainImage(mainImage);
   return (
@@ -84,12 +56,6 @@ const HtmlHead = ({
       {/* resource hints */}
       <link rel="preconnect" href="https://www.ft.com" />
       <link rel="preconnect" href="https://cdn.polyfill.io" />
-
-      {/* Stylesheets */}
-      <link
-        rel="stylesheet"
-        href={`https://www.ft.com/__origami/service/build/v2/bundles/css?modules=${origamiBuildServiceCSS}`}
-      />
 
       {stylesheets && stylesheets.map(stylesheet => <link rel="stylesheet" href={stylesheet} />)}
 
@@ -116,6 +82,14 @@ const HtmlHead = ({
       <meta name="robots" content="index,follow" />
       <meta name="copyright" content="Financial Times" />
       <meta name="theme-color" content="#fff1e5" />
+      {dataMeta && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(dataMeta),
+          }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

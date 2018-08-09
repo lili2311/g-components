@@ -5,9 +5,9 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Share from './share';
-import { ftdate, getMainImage, getSeparator } from '../helpers';
-import { mainImagePropType, topicPropType } from '../helpers/proptypes';
+import Share from '../share';
+import { ftdate, getMainImage, getSeparator } from '../../helpers';
+import { mainImagePropType, topicPropType } from '../../helpers/proptypes';
 
 /* eslint-disable no-nested-ternary */
 export const Byline = ({ bylines }) => (

@@ -9,3 +9,9 @@ rules:
 env:
   browser: true
 parser: babel-eslint
+settings:
+  import/resolver:
+    node:
+      moduleDirectory:
+        - node_modules
+        - bower_components

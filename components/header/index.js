@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import './styles.scss';
 
 const Header = () => (
   <header className="o-header o-header--simple" data-o-component="o-header" data-o-header--no-js="">
@@ -16,7 +17,9 @@ const Header = () => (
               href="http://www.ft.com/"
               title="Go to Financial Times homepage"
             >
-              <span className="o-header__visually-hidden">Financial Times</span>
+              <span className="o-header__visually-hidden">
+Financial Times
+              </span>
             </a>
           </div>
         </div>
