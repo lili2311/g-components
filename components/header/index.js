@@ -4,7 +4,7 @@
  */
 
 import React, { PureComponent } from 'react';
-import oHeader from 'o-header/main';
+import OHeader from 'o-header/main';
 import './styles.scss';
 import '../../shared/styles.scss';
 
@@ -12,7 +12,7 @@ class Header extends PureComponent {
   ref = React.createRef();
 
   componentDidMount() {
-    new oHeader(this.ref.current); // eslint-disable-line no-new,new-cap
+    new OHeader(this.ref.current); // eslint-disable-line no-new
   }
 
   render() {

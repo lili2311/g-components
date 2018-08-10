@@ -3,7 +3,7 @@
  * Footer component
  */
 import React, { PureComponent } from 'react';
-import oFooter from 'o-footer/main';
+import OFooter from 'o-footer/main';
 import { strftime } from '../../shared/helpers';
 import './styles.scss';
 import '../../shared/styles.scss';
@@ -12,7 +12,7 @@ class Footer extends PureComponent {
   ref = React.createRef();
 
   componentDidMount() {
-    new oFooter(this.ref.current); // eslint-disable-line no-new,new-cap
+    new OFooter(this.ref.current); // eslint-disable-line no-new
   }
 
   render() {

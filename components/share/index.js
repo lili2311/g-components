@@ -5,7 +5,7 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import oShare from 'o-share/main';
+import OShare from 'o-share/main';
 import './styles.scss';
 import '../../shared/styles.scss';
 
@@ -13,7 +13,7 @@ class Share extends PureComponent {
   ref = React.createRef();
 
   componentDidMount() {
-    new oShare(this.ref.current); // eslint-disable-line no-new,new-cap
+    new OShare(this.ref.current, {}); // eslint-disable-line no-new
   }
 
   render() {

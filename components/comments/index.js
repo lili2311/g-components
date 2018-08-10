@@ -5,7 +5,7 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import oComments from 'o-comments/main';
+import OComments from 'o-comments/main';
 import './styles.scss';
 import '../../shared/styles.scss';
 
@@ -13,13 +13,17 @@ class Comments extends PureComponent {
   ref = React.createRef();
 
   componentDidMount() {
-    new oComments(this.ref.current); // eslint-disable-line no-new,new-cap
+    const { title, id, url } = this.props;
+
+    // prettier-ignore
+    new OComments(this.ref.current, { // eslint-disable-line no-new
+      title,
+      url,
+      articleId: id,
+    });
   }
 
   render() {
-    const {
-      title, id, url, headline,
-    } = this.props;
     return (
       <div className="o-grid-container">
         <div className="o-grid-row">
@@ -28,9 +32,6 @@ class Comments extends PureComponent {
             data-o-component="o-comments"
             id="comments"
             data-o-comments-auto-init="false"
-            data-o-comments-config-title={title || headline}
-            data-o-comments-config-url={url}
-            data-o-comments-config-article-id={id}
             data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
           >
             <div className="o--if-no-js">
@@ -49,14 +50,12 @@ Learn more.
 
 Comments.propTypes = {
   title: PropTypes.string,
-  headline: PropTypes.string,
   id: PropTypes.string,
   url: PropTypes.string,
 };
 
 Comments.defaultProps = {
   title: 'Comments',
-  headline: 'Comments',
   id: '3a499586-b2e0-11e4-a058-00144feab7de',
   url: 'https://local.ft.com/comments-test',
 };

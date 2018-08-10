@@ -5,7 +5,7 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import oDate from 'o-date/main';
+import ODate from 'o-date/main';
 import Share from '../share';
 import { ftdate, getMainImage, getSeparator } from '../../shared/helpers';
 import { mainImagePropType, topicPropType } from '../../shared/proptypes';
@@ -64,7 +64,7 @@ class ArticleHead extends PureComponent {
   dateRef = React.createRef();
 
   componentDidMount() {
-    new oDate(this.dateRef.current); // eslint-disable-line new-cap,no-new
+    new ODate(this.dateRef.current); // eslint-disable-line no-new
   }
 
   render() {
