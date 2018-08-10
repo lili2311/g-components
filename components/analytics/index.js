@@ -16,6 +16,7 @@ import '../../shared/styles.scss';
 
 class Analytics extends PureComponent {
   componentDidMount() {
+    if (!window.cutsTheMustard) return;
     const pageData = {
       content: { asset_type: 'interactive' },
     };

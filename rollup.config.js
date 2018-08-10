@@ -5,6 +5,7 @@
 
 import nodeResolve from 'rollup-plugin-node-resolve';
 import bowerResolve from 'rollup-plugin-bower-resolve';
+import sass from 'rollup-plugin-sass';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
@@ -26,6 +27,7 @@ const common = {
         'transform-class-properties',
       ],
     }),
+    sass(),
     json(),
     bowerResolve(),
     nodeResolve({
