@@ -1,0 +1,1 @@
+{"version":3,"file":"static/preview.c938fd7c1c627330b548.bundle.js","sources":["webpack:///./bower_components/o-comment-ui/src/templates/environmentDisplay.txt"],"sourcesContent":["module.exports = \"<div class=\\\"o-comment-ui--env-display\\\">Comments environment: <strong>{{envName}}</strong></div>\\n\""],"mappings":"AAAA","sourceRoot":""}
