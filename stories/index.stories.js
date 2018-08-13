@@ -6,7 +6,7 @@
 import React from 'react';
 
 import { storiesOf, addDecorator } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs/react';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { TopAd, MiddleAd } from '../components/ads';
 import Analytics from '../components/analytics';
@@ -30,6 +30,7 @@ const defaultFlags = {
   header: true,
   footer: true,
   comments: true,
+  data: false,
 };
 
 const DEFAULT = {

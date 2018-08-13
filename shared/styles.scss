@@ -1,6 +1,122 @@
 // Shared styles used across multiple components
 // Putting them in one file instead of importing separately should reduce bundle size.
 
+// top.css
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  background-color: #fff1e5;
+  font-family: MetricWeb, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: block;
+}
+
+.core .o--if-js,
+.enhanced .o--if-no-js,
+.is-next .hide-next,
+.is-falcon .hide-falcon,
+.is-loggedin .hide-loggedin,
+.is-anonymous .hide-anonymous {
+  display: none !important;
+}
+
+.show-loggedin,
+.show-anonymous,
+.show-next,
+.show-falcon,
+.hide-falcon,
+.hide-next,
+.hide-loggedin,
+.hide-anonymous {
+  display: none;
+}
+
+.is-loggedin .show-loggedin,
+.is-anonymous .show-anonymous,
+.is-next .show-next,
+.is-falcon .show-falcon,
+.is-falcon .hide-next,
+.is-next .hide-falcon {
+  display: inherit;
+}
+
+// starter-kit.css
+
+:root {
+  --font-sans: MetricWeb, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-display: FinancierDisplayWeb, Georgia, serif;
+}
+
+body {
+  background: #fff1e5;
+  margin: 0;
+  border: 0;
+  font-family: var(--font-sans);
+}
+
+.article-head {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.article-head .article__share {
+  margin-bottom: 15px;
+}
+
+.article-body div[data-o-grid-colspan] > div {
+  max-width: 700px;
+}
+
+/* Hide whatsapp share button on desktop */
+@media (max-width: 489px) {
+  .article__share .o-share__icon--whatsapp {
+    display: none;
+  }
+}
+
+/* Graphic styles */
+.graphic {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.graphic > img,
+.graphic > svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.graphic-b-0 {
+  max-width: 625px;
+}
+
+.graphic-b-1 {
+  max-width: 700px;
+}
+
+/* @TODO migrate into default Starter Kit styles */
+.onward-journey__link {
+  color: #333;
+  text-decoration: none;
+}
+
+// Common
+
 $o-typography-is-silent: false;
 $o-normalise-is-silent: false;
 $o-grid-is-silent: false;

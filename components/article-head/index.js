@@ -5,7 +5,7 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import * as ODate from 'o-date/main.js';
+import ODate from 'o-date/main.js';
 import Share from '../share';
 import { ftdate, getMainImage, getSeparator } from '../../shared/helpers';
 import { mainImagePropType, topicPropType } from '../../shared/proptypes';

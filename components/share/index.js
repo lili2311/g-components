@@ -13,7 +13,7 @@ class Share extends PureComponent {
   ref = React.createRef();
 
   componentDidMount() {
-    new OShare(this.ref.current, {}); // eslint-disable-line no-new
+    new OShare(this.ref.current); // eslint-disable-line no-new
   }
 
   render() {

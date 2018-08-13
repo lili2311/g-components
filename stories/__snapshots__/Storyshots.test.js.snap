@@ -506,15 +506,15 @@ exports[`Storyshots Analytics default 1`] = `
       dangerouslySetInnerHTML={
         Object {
           "__html": "
-      var spoorId = /spoor-id=([^;]+)/.exec(document.cookie)[1] || 'cj5y2utdx00003i5z6l6po8c1';
-      var endpoint = 'https://4235225.fls.doubleclick.net/activityi;src=4235225;type=homeo886;cat=ft-ne000;u10=' + spoorId + ';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + Date.now() + ';num=1';
-      var img = document.createElement('img');
-      img.setAttribute('width', 1);
-      img.setAttribute('height', 1);
-      img.setAttribute('src', endpoint);
-      img.style.position = 'absolute';
-      document.body.insertBefore(img, document.body.firstElementChild);
-      ",
+          var spoorId = /spoor-id=([^;]+)/.exec(document.cookie)[1] || 'cj5y2utdx00003i5z6l6po8c1';
+          var endpoint = 'https://4235225.fls.doubleclick.net/activityi;src=4235225;type=homeo886;cat=ft-ne000;u10=' + spoorId + ';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + Date.now() + ';num=1';
+          var img = document.createElement('img');
+          img.setAttribute('width', 1);
+          img.setAttribute('height', 1);
+          img.setAttribute('src', endpoint);
+          img.style.position = 'absolute';
+          document.body.insertBefore(img, document.body.firstElementChild);
+          ",
         }
       }
     />
@@ -1068,7 +1068,37 @@ You need to just simply import it whereever.
                   <td
                     className="css-d52hbj"
                   >
-                    -
+                    <span
+                      style={
+                        Object {
+                          "color": "#666",
+                        }
+                      }
+                    >
+                      {
+                      <span>
+                        <span
+                          style={
+                            Object {
+                              "color": "#666",
+                            }
+                          }
+                        >
+                          micrositeName
+                        </span>
+                      </span>
+                      : 
+                      <span
+                        style={
+                          Object {
+                            "color": "#777",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     className="css-d52hbj"
@@ -1118,7 +1148,7 @@ exports[`Storyshots ArticleHead default 1`] = `
       />
     </div>
     <meta
-      content="2018-07-31T17:18:17.463Z"
+      content="2018-08-13T17:47:01.786Z"
       itemProp="dateModified"
     />
     <figure
@@ -2127,7 +2157,7 @@ exports[`Storyshots ArticleHead default 1`] = `
                         }
                       }
                     >
-                      2018-07-31T17:18:17.463Z
+                      2018-08-13T17:47:01.786Z
                     </span>
                   </td>
                   <td
@@ -2161,7 +2191,7 @@ exports[`Storyshots ArticleHead default 1`] = `
                         }
                       }
                     >
-                      2018-07-31T17:18:17.463Z
+                      2018-08-13T17:47:01.786Z
                     </span>
                   </td>
                   <td
@@ -2264,9 +2294,6 @@ exports[`Storyshots Comments default 1`] = `
       >
         <div
           data-o-comments-auto-init="false"
-          data-o-comments-config-article-id="3a499586-b2e0-11e4-a058-00144feab7de"
-          data-o-comments-config-title="Comments"
-          data-o-comments-config-url="https://local.ft.com/comments-test"
           data-o-component="o-comments"
           data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
           id="comments"
@@ -2533,40 +2560,6 @@ exports[`Storyshots Comments default 1`] = `
                     className="css-1ygfcef"
                   >
                     title
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      Comments
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    headline
                   </td>
                   <td
                     className="css-1ygfcef"
@@ -3495,10 +3488,6 @@ exports[`Storyshots HtmlHead default 1`] = `
         rel="preconnect"
       />
       <link
-        href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-normalise@^1.5.3,o-fonts@^3.0.4,o-grid@^4.3.7,o-typography@^5.4.2,o-header@^7.2.8,o-footer@^6.0.8,o-teaser@^2.2.2,o-comments@^4.0.7,o-share@^6.1.0"
-        rel="stylesheet"
-      />
-      <link
         href="https://plus.google.com/113457471429583444041/"
         rel="publisher"
       />
@@ -3571,30 +3560,11 @@ exports[`Storyshots HtmlHead default 1`] = `
         dangerouslySetInnerHTML={
           Object {
             "__html": "
-          cutsTheMustard = 'querySelector' in document && 'localStorage' in window &&
-          'addEventListener' in window && typeof Function.prototype.bind !== 'undefined'; if
-          (cutsTheMustard) document.documentElement.className =
-          document.documentElement.className.replace( /core/g, 'enhanced', );
-          ",
-          }
-        }
-        type="text/javascript"
-      />
-      <script
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "
-      (function(src) {
-        if (cutsTheMustard) {
-          var o = document.createElement('script');
-          o.async = o.defer = true;
-          o.src = src;
-          var s = document.getElementsByTagName('script')[0];
-
-          
-          s.parentNode.insertBefore(o, s);
-        }
-      }('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-header@^7.2.8,o-footer@^6.0.8,o-date@^2.10.3,o-errors@^3.6.1,o-teaser@^2.2.2,o-comments@^4.0.7,o-share@^6.1.0'))",
+              cutsTheMustard = 'querySelector' in document && 'localStorage' in window &&
+              'addEventListener' in window && typeof Function.prototype.bind !== 'undefined'; if
+              (cutsTheMustard) document.documentElement.className =
+              document.documentElement.className.replace( /core/g, 'enhanced', );
+              ",
           }
         }
         type="text/javascript"
@@ -4433,6 +4403,31 @@ exports[`Storyshots HtmlHead default 1`] = `
                       </span>
                       }
                     </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    dataMeta
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
                   <td
                     className="css-d52hbj"
@@ -5460,9 +5455,6 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
       >
         <div
           data-o-comments-auto-init="false"
-          data-o-comments-config-article-id=""
-          data-o-comments-config-title="New Starter Kit site"
-          data-o-comments-config-url="https://local.ft.com/"
           data-o-component="o-comments"
           data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
           id="comments"

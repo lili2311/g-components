@@ -278,7 +278,7 @@ HtmlHead.defaultProps = {
     gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
     dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
   },
-  dataMeta: {},
+  dataMeta: undefined,
   mainImage: {
     uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
   },

@@ -41,31 +41,31 @@ export const topicPropType = PropTypes.shape({
 });
 
 export const dataMetaPropType = PropTypes.shape({
-  '@context': 'http://schema.org/',
-  '@type': 'Dataset',
+  '@context': PropTypes.oneOf(['http://schema.org/']),
+  '@type': PropTypes.oneOf(['Dataset']),
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   sameAs: PropTypes.string.isRequired,
   keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
   creator: PropTypes.shape({
-    '@type': 'Organization',
+    '@type': PropTypes.oneOf(['Organization']),
     url: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     contactPoint: PropTypes.shape({
-      '@type': 'ContactPoint',
+      '@type': PropTypes.oneOf(['ContactPoint']),
       contactType: PropTypes.string,
       telephone: PropTypes.string,
       email: PropTypes.string,
     }),
   }).isRequired,
   includedInDataCatalog: PropTypes.shape({
-    '@type': 'DataCatalog',
+    '@type': PropTypes.oneOf(['DataCatalog']),
     name: PropTypes.string.isRequired,
   }),
   distribution: PropTypes.arrayOf(
     PropTypes.shape({
-      '@type': 'DataDownload',
+      '@type': PropTypes.oneOf(['DataDownload']),
       encodingFormat: PropTypes.string.isRequired,
       contentUrl: PropTypes.string.isRequired,
     }),
@@ -74,9 +74,9 @@ export const dataMetaPropType = PropTypes.shape({
   temporalCoverage: PropTypes.string.isRequired,
   // Where the dataset covers. See spec.
   spatialCoverage: PropTypes.shape({
-    '@type': 'Place',
+    '@type': PropTypes.oneOf(['Place']),
     geo: PropTypes.shape({
-      '@type': 'GeoShape',
+      '@type': PropTypes.oneOf(['GeoShape']),
       box: PropTypes.string.isRequired,
     }),
   }),

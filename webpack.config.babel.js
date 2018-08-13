@@ -9,14 +9,18 @@ import BowerResolvePlugin from 'bower-resolve-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import merge from 'webpack-merge';
 
-module.exports = (mode = 'development') => {
+module.exports = (mode = 'production') => {
   const common = {
+    mode,
     entry: ['./index.js'],
     resolve: {
       modules: ['bower_components', 'node_modules'],
       plugins: [new BowerResolvePlugin()],
       descriptionFiles: ['bower.json', 'package.json'],
       mainFields: ['browser', 'main'],
+      alias: {
+        ftdomdelegate: 'dom-delegate',
+      },
     },
     devtool: 'source-map',
     module: {
