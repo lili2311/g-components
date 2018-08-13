@@ -1,21 +1,21 @@
-### g-components
+# g-components
 
 React 16.x-based components for Interactive Graphics Starter Kit projects.
 
-### Currently includes:
+## Currently includes:
 
-#### Starter Kit page furniture ported from Nunjucks
+- #### Starter Kit page furniture ported from Nunjucks
 
-- [`<TopAd />`, `<MiddleAd />`][ads] -- Ad slots
-- [`<Analytics />`][analytics] -- Analytics tracking
-- [`<ArticleHead />`][articlehead] -- Article topper
-- [`<Comments />`][comments] -- Comments section
-- [`<Footer />`][footer] -- Page footer
-- [`<Header />`][header] -- Page header
-- [`<HtmlHead />`][htmlhead] -- HTML document structure
-- [`<Layout />`][layout] -- Container component composed of all these
-- [`<OnwardJourney />`][oj] -- Onward Journey section
-- [`<Share />`][share] -- Sharing links
+  - [`<TopAd />`, `<MiddleAd />`][ads] ➡ Ad slots
+  - [`<Analytics />`][analytics] ➡ Analytics tracking
+  - [`<ArticleHead />`][articlehead] ➡ Article topper
+  - [`<Comments />`][comments] ➡ Comments section
+  - [`<Footer />`][footer] ➡ Page footer
+  - [`<Header />`][header] ➡ Page header
+  - [`<HtmlHead />`][htmlhead] ➡ HTML document structure
+  - [`<Layout />`][layout] ➡ Container component composed of all these
+  - [`<OnwardJourney />`][oj] ➡ Onward Journey section
+  - [`<Share />`][share] ➡ Sharing links
 
 ### Usage:
 
