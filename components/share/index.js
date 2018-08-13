@@ -5,7 +5,7 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OShare from 'o-share/main';
+import OShare from 'o-share/main.js';
 import './styles.scss';
 import '../../shared/styles.scss';
 

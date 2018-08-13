@@ -5,7 +5,7 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OAds from 'o-ads/main';
+import OAds from 'o-ads/main.js';
 import Analytics from '../analytics';
 import { TopAd } from '../ads';
 import { getMainImage } from '../../shared/helpers';
@@ -17,7 +17,6 @@ import {
   topicPropType,
   dataMetaPropType,
 } from '../../shared/proptypes';
-import './styles.scss';
 import '../../shared/styles.scss';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.

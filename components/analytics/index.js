@@ -5,11 +5,9 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OTracking from 'o-tracking';
+import OTracking from 'o-tracking/main.js';
 import { flagsPropType } from '../../shared/proptypes';
 import { spoorTrackingPixel } from '../../shared/helpers';
-import './styles.scss';
-import '../../shared/styles.scss';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */

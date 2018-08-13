@@ -5,7 +5,7 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OComments from 'o-comments/main';
+import OComments from 'o-comments/main.js';
 import './styles.scss';
 import '../../shared/styles.scss';
 

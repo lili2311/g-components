@@ -4,7 +4,7 @@
  */
 
 import React, { PureComponent } from 'react';
-import OHeader from 'o-header/main';
+import OHeader from 'o-header/main.js';
 import './styles.scss';
 import '../../shared/styles.scss';
 

@@ -3,7 +3,7 @@
  * Footer component
  */
 import React, { PureComponent } from 'react';
-import OFooter from 'o-footer/main';
+import OFooter from 'o-footer/main.js';
 import { strftime } from '../../shared/helpers';
 import './styles.scss';
 import '../../shared/styles.scss';

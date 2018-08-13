@@ -5,7 +5,6 @@
 
 import React from 'react';
 import './styles.scss';
-import '../../shared/styles.scss';
 
 export const TopAd = () => (
   <div

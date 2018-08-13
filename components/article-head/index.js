@@ -5,11 +5,10 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import ODate from 'o-date/main';
+import * as ODate from 'o-date/main.js';
 import Share from '../share';
 import { ftdate, getMainImage, getSeparator } from '../../shared/helpers';
 import { mainImagePropType, topicPropType } from '../../shared/proptypes';
-import './styles.scss';
 import '../../shared/styles.scss';
 
 /* eslint-disable no-nested-ternary */
