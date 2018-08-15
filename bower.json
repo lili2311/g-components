@@ -18,7 +18,7 @@
   "dependencies": {
     "o-normalise": "^1.5.3",
     "o-fonts": "^3.0.4",
-    "o-grid": "^4.3.7",
+    "o-grid": "^4.4.3",
     "o-typography": "^5.4.2",
     "o-header": "^7.2.8",
     "o-footer": "^6.0.8",
