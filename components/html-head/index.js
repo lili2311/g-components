@@ -16,14 +16,13 @@ import {
   topicPropType,
   dataMetaPropType,
 } from '../../shared/proptypes';
-import '../../shared/styles.scss';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */
 
 class HtmlHead extends PureComponent {
   async componentDidMount() {
-    const OAds = await import('o-ads/main.js');
+    const { default: OAds } = await import('o-ads/main.js');
     OAds.init();
   }
 

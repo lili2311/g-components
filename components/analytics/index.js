@@ -14,7 +14,7 @@ import { spoorTrackingPixel } from '../../shared/helpers';
 class Analytics extends PureComponent {
   async componentDidMount() {
     if (!window.cutsTheMustard) return;
-    const OTracking = await import('o-tracking/main.js');
+    const { default: OTracking } = await import('o-tracking/main.js');
     const pageData = {
       content: { asset_type: 'interactive' },
     };

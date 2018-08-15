@@ -12,7 +12,7 @@ import ArticleHead from '../article-head';
 import OnwardJourney from '../onwardjourney';
 import Comments from '../comments';
 import Footer from '../footer';
-import '../../shared/styles.scss';
+import './styles.scss';
 
 const Layout = ({ flags = {}, children, ...props }) => (
   <Fragment>

@@ -18,6 +18,7 @@ import HtmlHead from '../components/html-head';
 import Layout from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
+import '../shared/critical-path.scss';
 
 const defaultFlags = {
   prod: false,

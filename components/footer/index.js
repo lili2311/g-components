@@ -5,13 +5,12 @@
 import React, { PureComponent } from 'react';
 import { strftime } from '../../shared/helpers';
 import './styles.scss';
-import '../../shared/styles.scss';
 
 class Footer extends PureComponent {
   ref = React.createRef();
 
   async componentDidMount() {
-    const OFooter = await import('o-footer/main.js');
+    const { default: OFooter } = await import('o-footer/main.js');
     new OFooter(this.ref.current); // eslint-disable-line no-new
   }
 

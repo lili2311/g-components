@@ -5,13 +5,12 @@
 
 import React, { PureComponent } from 'react';
 import './styles.scss';
-import '../../shared/styles.scss';
 
 class Header extends PureComponent {
   ref = React.createRef();
 
   async componentDidMount() {
-    const OHeader = await import('o-header/main.js');
+    const { default: OHeader } = await import('o-header/main.js');
     new OHeader(this.ref.current); // eslint-disable-line no-new
   }
 
