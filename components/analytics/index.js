@@ -5,7 +5,6 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OTracking from 'o-tracking/main.js';
 import { flagsPropType } from '../../shared/proptypes';
 import { spoorTrackingPixel } from '../../shared/helpers';
 
@@ -13,8 +12,9 @@ import { spoorTrackingPixel } from '../../shared/helpers';
 /* eslint-disable react/no-danger */
 
 class Analytics extends PureComponent {
-  componentDidMount() {
+  async componentDidMount() {
     if (!window.cutsTheMustard) return;
+    const OTracking = await import('o-tracking/main.js');
     const pageData = {
       content: { asset_type: 'interactive' },
     };

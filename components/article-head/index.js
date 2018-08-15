@@ -5,7 +5,6 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import ODate from 'o-date/main.js';
 import Share from '../share';
 import { ftdate, getMainImage, getSeparator } from '../../shared/helpers';
 import { mainImagePropType, topicPropType } from '../../shared/proptypes';
@@ -62,7 +61,8 @@ Byline.propTypes = {
 class ArticleHead extends PureComponent {
   dateRef = React.createRef();
 
-  componentDidMount() {
+  async componentDidMount() {
+    const ODate = await import('o-date/main.js');
     new ODate(this.dateRef.current); // eslint-disable-line no-new
   }
 

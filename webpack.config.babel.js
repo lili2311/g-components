@@ -35,6 +35,7 @@ module.exports = (mode = 'production') => {
               'add-module-exports' /* <-- wtfits */,
               'transform-runtime',
               'transform-class-properties',
+              'syntax-dynamic-import',
             ],
           },
         },

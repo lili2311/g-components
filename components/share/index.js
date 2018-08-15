@@ -5,14 +5,14 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OShare from 'o-share/main.js';
 import './styles.scss';
 import '../../shared/styles.scss';
 
 class Share extends PureComponent {
   ref = React.createRef();
 
-  componentDidMount() {
+  async componentDidMount() {
+    const OShare = await import('o-share/main.js');
     new OShare(this.ref.current); // eslint-disable-line no-new
   }
 

@@ -3,7 +3,6 @@
  * Footer component
  */
 import React, { PureComponent } from 'react';
-import OFooter from 'o-footer/main.js';
 import { strftime } from '../../shared/helpers';
 import './styles.scss';
 import '../../shared/styles.scss';
@@ -11,7 +10,8 @@ import '../../shared/styles.scss';
 class Footer extends PureComponent {
   ref = React.createRef();
 
-  componentDidMount() {
+  async componentDidMount() {
+    const OFooter = await import('o-footer/main.js');
     new OFooter(this.ref.current); // eslint-disable-line no-new
   }
 
