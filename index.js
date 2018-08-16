@@ -3,7 +3,7 @@
  * g-components entry point
  */
 
-export * from './components/ads';
+export { TopAd, MiddleAd } from './components/ads';
 export { default as Analytics } from './components/analytics';
 export { default as ArticleHead } from './components/article-head';
 export { default as Comments } from './components/comments';

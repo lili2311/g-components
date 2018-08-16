@@ -4,17 +4,16 @@
  * This isn't used for any actual bundling; we use Rollup for that.
  */
 
-import { resolve } from 'path';
 import BowerResolvePlugin from 'bower-resolve-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-module.exports = (mode = 'production') => ({
+module.exports = (mode = 'development') => ({
   mode,
   output: {
-    libraryTarget: 'umd',
-    library: 'GComponents',
+    libraryTarget: 'commonjs2',
+    // library: 'GComponents',
     path: __dirname,
     filename: 'dist/gcomponents.js',
     sourceMapFilename: 'dist/gcomponents.map',

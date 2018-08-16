@@ -5,13 +5,13 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import OComments from 'o-comments/main.js';
 import './styles.scss';
 
 class Comments extends PureComponent {
   ref = React.createRef();
 
   async componentDidMount() {
-    const { default: OComments } = await import('o-comments/main.js');
     const { title, id, url } = this.props;
 
     // prettier-ignore
