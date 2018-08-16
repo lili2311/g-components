@@ -119,14 +119,17 @@ class ArticleHead extends PureComponent {
           {bylines && <Byline bylines={bylines} />}
 
           {publishedDate && (
-            <span
-              ref={this.dateRef}
-              data-o-component="o-date"
-              className="o-date o-typography-timestamp"
-              dateTime={publishedDate}
-            >
-              {ftdate(publishedDate)}
-            </span>
+            <Fragment>
+              {' '}
+              <span
+                ref={this.dateRef}
+                data-o-component="o-date"
+                className="o-date o-typography-timestamp"
+                dateTime={publishedDate}
+              >
+                {ftdate(new Date(publishedDate))}
+              </span>
+            </Fragment>
           )}
         </div>
       </Fragment>
