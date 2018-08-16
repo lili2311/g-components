@@ -90,7 +90,6 @@ exports[`Storyshots Ads Middle ad 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -150,7 +149,7 @@ exports[`Storyshots Ads Middle ad 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div
@@ -184,11 +183,11 @@ exports[`Storyshots Ads Middle ad 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -332,7 +331,6 @@ exports[`Storyshots Ads Top ad 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -392,7 +390,7 @@ exports[`Storyshots Ads Top ad 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div
@@ -426,11 +424,11 @@ exports[`Storyshots Ads Top ad 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -587,7 +585,6 @@ exports[`Storyshots Analytics default 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -667,7 +664,7 @@ You need to just simply import it whereever.
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div>
@@ -919,11 +916,11 @@ You need to just simply import it whereever.
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -967,32 +964,32 @@ You need to just simply import it whereever.
               " Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              className="css-1uhv8nx"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     description
                   </th>
@@ -1001,72 +998,72 @@ You need to just simply import it whereever.
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     id
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     flags
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     tracking
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -1101,7 +1098,7 @@ You need to just simply import it whereever.
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
               </tbody>
@@ -1148,7 +1145,7 @@ exports[`Storyshots ArticleHead default 1`] = `
       />
     </div>
     <meta
-      content="2018-08-13T17:47:01.786Z"
+      content="2018-08-16T12:49:47.363Z"
       itemProp="dateModified"
     />
     <figure
@@ -1246,12 +1243,13 @@ exports[`Storyshots ArticleHead default 1`] = `
         Ændrew Rininsland
       </a>
        
+       
       <span
         className="o-date o-typography-timestamp"
         data-o-component="o-date"
         dateTime="2018-07-25T17:43:37.000Z"
       >
-        , NaN  0NaN
+        Wednesday, 25 July 2018
       </span>
     </div>
   </div>
@@ -1323,7 +1321,6 @@ exports[`Storyshots ArticleHead default 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -1383,7 +1380,7 @@ exports[`Storyshots ArticleHead default 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div
@@ -1876,11 +1873,11 @@ exports[`Storyshots ArticleHead default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -1924,32 +1921,32 @@ exports[`Storyshots ArticleHead default 1`] = `
               " Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              className="css-1uhv8nx"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     description
                   </th>
@@ -1958,72 +1955,72 @@ exports[`Storyshots ArticleHead default 1`] = `
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     flags
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     headline
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     summary
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2037,27 +2034,27 @@ exports[`Storyshots ArticleHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     mainImage
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2093,27 +2090,27 @@ exports[`Storyshots ArticleHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     relatedArticle
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2127,27 +2124,27 @@ exports[`Storyshots ArticleHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     publishedDate
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2157,31 +2154,31 @@ exports[`Storyshots ArticleHead default 1`] = `
                         }
                       }
                     >
-                      2018-08-13T17:47:01.786Z
+                      2018-08-16T12:49:47.363Z
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     buildTime
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2191,31 +2188,31 @@ exports[`Storyshots ArticleHead default 1`] = `
                         }
                       }
                     >
-                      2018-08-13T17:47:01.786Z
+                      2018-08-16T12:49:47.363Z
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     topic
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2229,27 +2226,27 @@ exports[`Storyshots ArticleHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     bylines
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2263,7 +2260,7 @@ exports[`Storyshots ArticleHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
               </tbody>
@@ -2381,7 +2378,6 @@ exports[`Storyshots Comments default 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -2441,7 +2437,7 @@ exports[`Storyshots Comments default 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div
@@ -2475,11 +2471,11 @@ exports[`Storyshots Comments default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -2523,32 +2519,32 @@ exports[`Storyshots Comments default 1`] = `
               " Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              className="css-1uhv8nx"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     description
                   </th>
@@ -2557,22 +2553,22 @@ exports[`Storyshots Comments default 1`] = `
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     title
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2586,27 +2582,27 @@ exports[`Storyshots Comments default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     id
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2620,27 +2616,27 @@ exports[`Storyshots Comments default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     url
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -2654,7 +2650,7 @@ exports[`Storyshots Comments default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
               </tbody>
@@ -3038,7 +3034,6 @@ exports[`Storyshots Footer default 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -3098,7 +3093,7 @@ exports[`Storyshots Footer default 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div
@@ -3132,11 +3127,11 @@ exports[`Storyshots Footer default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -3302,7 +3297,6 @@ exports[`Storyshots Header default 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -3362,7 +3356,7 @@ exports[`Storyshots Header default 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div
@@ -3396,11 +3390,11 @@ exports[`Storyshots Header default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -3715,7 +3709,6 @@ exports[`Storyshots HtmlHead default 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -3775,7 +3768,7 @@ exports[`Storyshots HtmlHead default 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div>
@@ -4228,11 +4221,11 @@ exports[`Storyshots HtmlHead default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -4276,32 +4269,32 @@ exports[`Storyshots HtmlHead default 1`] = `
               " Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              className="css-1uhv8nx"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     description
                   </th>
@@ -4310,22 +4303,22 @@ exports[`Storyshots HtmlHead default 1`] = `
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     ads
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4405,52 +4398,52 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     dataMeta
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     description
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4464,27 +4457,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     facebookDescription
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4498,27 +4491,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     facebookHeadline
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4532,27 +4525,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     facebookImage
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4566,27 +4559,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     flags
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4600,52 +4593,52 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     headline
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     mainImage
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4681,27 +4674,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     socialDescription
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4715,27 +4708,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     socialHeadline
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4749,27 +4742,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     socialImage
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4783,27 +4776,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     stylesheets
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4817,27 +4810,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     summary
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4851,52 +4844,52 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     title
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     topic
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4910,27 +4903,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     tracking
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -4966,27 +4959,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     twitterCard
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -5000,27 +4993,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     twitterCreator
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -5034,27 +5027,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     twitterDescription
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -5068,27 +5061,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     twitterHeadline
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -5102,27 +5095,27 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     twitterImage
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -5136,32 +5129,32 @@ exports[`Storyshots HtmlHead default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     url
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
               </tbody>
@@ -5349,12 +5342,13 @@ exports[`Storyshots Layout default 1`] = `
               <div>
                 By
                  
+                 
                 <span
                   className="o-date o-typography-timestamp"
                   data-o-component="o-date"
                   dateTime="2018-07-25T17:43:37.000Z"
                 >
-                  , NaN  0NaN
+                  Wednesday, 25 July 2018
                 </span>
               </div>
             </header>
@@ -5834,7 +5828,6 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -5917,7 +5910,7 @@ to maintain typographic styles.
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div>
@@ -6681,11 +6674,11 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -6729,32 +6722,32 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
               " Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              className="css-1uhv8nx"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     description
                   </th>
@@ -6763,22 +6756,22 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     id
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -6792,52 +6785,52 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     flags
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     children
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -6850,7 +6843,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
               </tbody>
@@ -6941,7 +6934,6 @@ exports[`Storyshots OnwardJourney default 1`] = `
             "backgroundColor": "#fff",
             "border": "1px solid #eee",
             "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
             "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
@@ -7001,7 +6993,7 @@ exports[`Storyshots OnwardJourney default 1`] = `
             Story Source
           </h1>
           <pre
-            className="css-4akams"
+            className="css-r8d96o"
           >
             <div>
               <div
@@ -7120,11 +7112,11 @@ exports[`Storyshots OnwardJourney default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-1naocv3"
               onClick={[Function]}
             >
               <div
-                className="css-kv47nt"
+                className="css-lvl6aa"
               >
                 <div
                   style={
@@ -7168,32 +7160,32 @@ exports[`Storyshots OnwardJourney default 1`] = `
               " Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              className="css-1uhv8nx"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     description
                   </th>
@@ -7202,22 +7194,22 @@ exports[`Storyshots OnwardJourney default 1`] = `
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     relatedContent
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -7231,27 +7223,27 @@ exports[`Storyshots OnwardJourney default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     urlBase
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -7265,27 +7257,27 @@ exports[`Storyshots OnwardJourney default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     layout
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    className="css-1qcb1f7"
                   >
                     <span />
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   >
                     <span
                       style={
@@ -7299,7 +7291,7 @@ exports[`Storyshots OnwardJourney default 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    className="css-11b5gui"
                   />
                 </tr>
               </tbody>
@@ -7313,78 +7305,561 @@ exports[`Storyshots OnwardJourney default 1`] = `
 `;
 
 exports[`Storyshots Share default 1`] = `
-<div
-  className="article__share article__share--top n-util-clearfix"
-  data-trackable="share | top"
->
+<div>
   <div
-    className="container"
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
   >
     <div
-      className="o-share"
-      data-o-component="o-share"
+      className="article__share article__share--top n-util-clearfix"
+      data-trackable="share | top"
     >
-      <ul>
-        <li
-          className="o-share__action o-share__action--twitter"
+      <div
+        className="container"
+      >
+        <div
+          className="o-share"
+          data-o-component="o-share"
         >
-          <a
-            className="o-share__icon o-share__icon--twitter"
-            href="https://twitter.com/intent/tweet?url=https://local.ft.com/&amp;text=FT article: &amp;related=&amp;via=FinancialTimes"
-            rel="noopener"
-          >
-            <span
-              className="o-share__text"
+          <ul>
+            <li
+              className="o-share__action o-share__action--twitter"
             >
-              Share on Twitter. Opens in a new window.
-            </span>
-          </a>
-        </li>
-        <li
-          className="o-share__action o-share__icon--facebook"
+              <a
+                className="o-share__icon o-share__icon--twitter"
+                href="https://twitter.com/intent/tweet?url=https://local.ft.com/&amp;text=FT article: &amp;related=&amp;via=FinancialTimes"
+                rel="noopener"
+              >
+                <span
+                  className="o-share__text"
+                >
+                  Share on Twitter. Opens in a new window.
+                </span>
+              </a>
+            </li>
+            <li
+              className="o-share__action o-share__icon--facebook"
+            >
+              <a
+                href="http://www.facebook.com/sharer.php?u=https://local.ft.com/"
+                rel="noopener"
+              >
+                <span
+                  className="o-share__text"
+                >
+                  Share on Facebook. Opens in a new window.
+                </span>
+              </a>
+            </li>
+            <li
+              className="o-share__action o-share__icon--linkedin"
+            >
+              <a
+                href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://local.ft.com/&amp;source=Financial%20Times"
+                rel="noopener"
+              >
+                <span
+                  className="o-share__text"
+                >
+                  Share on LinkedIn. Opens in a new window.
+                </span>
+              </a>
+            </li>
+            <li
+              className="o-share__action o-share__icon--whatsapp"
+            >
+              <a
+                data-trackable="whatsapp"
+                href="whatsapp://send?text=%20-%20https://local.ft.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  className="o-share__text"
+                >
+                  Share on Whatsapp. Opens in a new window.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
         >
-          <a
-            href="http://www.facebook.com/sharer.php?u=https://local.ft.com/"
-            rel="noopener"
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
           >
-            <span
-              className="o-share__text"
-            >
-              Share on Facebook. Opens in a new window.
-            </span>
-          </a>
-        </li>
-        <li
-          className="o-share__action o-share__icon--linkedin"
-        >
-          <a
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://local.ft.com/&amp;source=Financial%20Times"
-            rel="noopener"
+            Share
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
           >
-            <span
-              className="o-share__text"
-            >
-              Share on LinkedIn. Opens in a new window.
-            </span>
-          </a>
-        </li>
-        <li
-          className="o-share__action o-share__icon--whatsapp"
-        >
-          <a
-            data-trackable="whatsapp"
-            href="whatsapp://send?text=%20-%20https://local.ft.com/"
-            rel="noopener noreferrer"
-            target="_blank"
+            default
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
           >
-            <span
-              className="o-share__text"
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o"
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }
+                >
+                  &lt;
+                  Share
+                </span>
+                <span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}
+                    >
+                      url
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}
+                      >
+                        "
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          https://local.ft.com/
+                        </span>
+                        "
+                      </span>
+                    </span>
+                     
+                  </span>
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }
+                >
+                  /&gt;
+                </span>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3"
+              onClick={[Function]}
             >
-              Share on Whatsapp. Opens in a new window.
-            </span>
-          </a>
-        </li>
-      </ul>
+              <div
+                className="css-lvl6aa"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              Share
+              " Component
+            </h2>
+            <table
+              className="css-1uhv8nx"
+            >
+              <thead>
+                <tr>
+                  <th
+                    className="css-11b5gui"
+                  >
+                    property
+                  </th>
+                  <th
+                    className="css-11b5gui"
+                  >
+                    propType
+                  </th>
+                  <th
+                    className="css-11b5gui"
+                  >
+                    required
+                  </th>
+                  <th
+                    className="css-11b5gui"
+                  >
+                    default
+                  </th>
+                  <th
+                    className="css-11b5gui"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    url
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    yes
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    socialHeadline
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    twitterHeadline
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    headline
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    twitterRelatedAccounts
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#666",
+                        }
+                      }
+                    >
+                      [
+                      ]
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    tweetText
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      FT article: 
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

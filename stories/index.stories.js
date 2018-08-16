@@ -77,17 +77,12 @@ salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique 
 soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.`;
 
 addDecorator(withKnobs);
+addDecorator(withInfo);
 
 // Layout
 storiesOf('Layout', module).add(
   'default',
-  withInfo(`
-    <Layout /> is the primary component you'll work with in Starter Kit.
-    All the other components in this story are already included with it, and it's
-    the default export of g-components. To use it, you supply it children, which
-    get wrapped as the main article body. Make sure to wrap paragraphs in <p> tags
-    to maintain typographic styles.
-  `)(() => (
+  () => (
     <Layout
       flags={DEFAULT.flags}
       headline={text('Headline', DEFAULT.headline)}
@@ -101,70 +96,73 @@ storiesOf('Layout', module).add(
         .split(/\n\n/)
         .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
     </Layout>
-  )),
+  ),
+  {
+    info: `
+    <Layout /> is the primary component you'll work with in Starter Kit.
+    All the other components in this story are already included with it, and it's
+    the default export of g-components. To use it, you supply it children, which
+    get wrapped as the main article body. Make sure to wrap paragraphs in <p> tags
+    to maintain typographic styles.
+  `,
+  },
 );
 
 // Ads
-storiesOf('Ads', module).add('Top ad', withInfo('')(() => <TopAd />));
-storiesOf('Ads', module).add('Middle ad', withInfo('')(() => <MiddleAd />));
+storiesOf('Ads', module).add('Top ad', () => <TopAd />);
+storiesOf('Ads', module).add('Middle ad', () => <MiddleAd />);
 
 // Analytics
 storiesOf('Analytics', module).add(
   'default',
-  withInfo(`
-    The analytics module won't display because it's mainly a behind-the-scenes thing.
-    You need to just simply import it whereever.
-  `)(() => [
+  () => [
     <h4 key="1">
 You won&apos;t see anything here as &quot;Analytics&quot; has no visual output
     </h4>,
     <Analytics key="2" id={DEFAULT.uuid} flags={DEFAULT.flags} />,
-  ]),
+  ],
+  {
+    info: `
+    The analytics module won't display because it's mainly a behind-the-scenes thing.
+    You need to just simply import it whereever.
+  `,
+  },
 );
 
-storiesOf('ArticleHead', module).add(
-  'default',
-  withInfo('')(() => (
-    <ArticleHead
-      flags={DEFAULT.flags}
-      url={DEFAULT.url}
-      headline="Testing <ArticleHead> component"
-      summary={DEFAULT.summary}
-      mainImage={DEFAULT.image}
-      topic={DEFAULT.topic}
-      bylines={DEFAULT.bylines}
-      publishedDate={DEFAULT.pubdate}
-    />
-  )),
-);
-storiesOf('Comments', module).add('default', withInfo('')(() => <Comments />));
-storiesOf('Footer', module).add('default', withInfo('')(() => <Footer />));
-storiesOf('Header', module).add('default', withInfo('')(() => <Header />));
-storiesOf('HtmlHead', module).add(
-  'default',
-  withInfo('')(() => [
-    <h4 key="1">
+storiesOf('ArticleHead', module).add('default', () => (
+  <ArticleHead
+    flags={DEFAULT.flags}
+    url={DEFAULT.url}
+    headline="Testing <ArticleHead> component"
+    summary={DEFAULT.summary}
+    mainImage={DEFAULT.image}
+    topic={DEFAULT.topic}
+    bylines={DEFAULT.bylines}
+    publishedDate={DEFAULT.pubdate}
+  />
+));
+storiesOf('Comments', module).add('default', () => <Comments />);
+storiesOf('Footer', module).add('default', () => <Footer />);
+storiesOf('Header', module).add('default', () => <Header />);
+storiesOf('HtmlHead', module).add('default', () => [
+  <h4 key="1">
 You won&apos;t see anything here as &quot;HtmlHead&quot; has no visual output
-    </h4>,
-    <HtmlHead
-      key="2"
-      flags={defaultFlags}
-      title="Testing <HtmlHead>"
-      topic={DEFAULT.topic}
-      headline={DEFAULT.headline}
-      id={DEFAULT.uuid}
-      url={DEFAULT.url}
-      buildTime={DEFAULT.buildTime}
-    />,
-  ]),
-);
+  </h4>,
+  <HtmlHead
+    key="2"
+    flags={defaultFlags}
+    title="Testing <HtmlHead>"
+    topic={DEFAULT.topic}
+    headline={DEFAULT.headline}
+    id={DEFAULT.uuid}
+    url={DEFAULT.url}
+    buildTime={DEFAULT.buildTime}
+  />,
+]);
 
-storiesOf('OnwardJourney', module).add(
-  'default',
-  withInfo('')(() => (
-    <OnwardJourney
-      relatedContent={[{ rows: 2, list: 'thing/adae44ca-4ea7-3cf8-8332-bf85ec89a558' }]}
-    />
-  )),
-);
+storiesOf('OnwardJourney', module).add('default', () => (
+  <OnwardJourney
+    relatedContent={[{ rows: 2, list: 'thing/adae44ca-4ea7-3cf8-8332-bf85ec89a558' }]}
+  />
+));
 storiesOf('Share', module).add('default', () => <Share url={DEFAULT.url} />);
