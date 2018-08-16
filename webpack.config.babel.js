@@ -13,7 +13,6 @@ module.exports = (mode = 'production') => ({
   mode,
   output: {
     libraryTarget: 'commonjs2',
-    // library: 'GComponents',
     path: __dirname,
     filename: 'dist/gcomponents.js',
     sourceMapFilename: 'dist/gcomponents.map',
@@ -63,7 +62,7 @@ module.exports = (mode = 'production') => ({
       {
         test: /\.scss$/,
         use: [
-          mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',
