@@ -9,7 +9,7 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-module.exports = (mode = 'development') => ({
+module.exports = (mode = 'production') => ({
   mode,
   output: {
     libraryTarget: 'commonjs2',
