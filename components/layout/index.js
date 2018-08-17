@@ -14,24 +14,34 @@ import Comments from '../comments';
 import Footer from '../footer';
 import './styles.scss';
 
-export const GridContainer = ({ children }) => (
-  <div className="o-grid-container">
+export const GridContainer = ({ bleed, children }) => (
+  <div className={`o-grid-container${bleed ? ' o-grid-container--bleed' : ''}`}>
     {children}
   </div>
 );
 
 GridContainer.propTypes = {
+  bleed: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
 
-export const GridRow = ({ children }) => (
-  <div className="o-grid-row">
+GridContainer.defaultProps = {
+  bleed: false,
+};
+
+export const GridRow = ({ compact, children }) => (
+  <div className={`o-grid-row ${compact ? ' o-grid-row--compact' : ''}`}>
     {children}
   </div>
 );
 
 GridRow.propTypes = {
+  compact: PropTypes.bool,
   children: PropTypes.node.isRequired,
+};
+
+GridRow.defaultProps = {
+  compact: false,
 };
 
 export const GridChild = ({ children, span }) => (
@@ -42,7 +52,7 @@ export const GridChild = ({ children, span }) => (
 
 GridChild.propTypes = {
   children: PropTypes.node.isRequired,
-  span: PropTypes.string,
+  span: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 GridChild.defaultProps = {
