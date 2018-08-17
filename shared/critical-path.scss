@@ -68,14 +68,6 @@ body {
       margin-bottom: 15px;
     }
   }
-
-  &-body {
-    div[data-o-grid-colspan] {
-      & > div {
-        max-width: 700px;
-      }
-    }
-  }
 }
 
 /* Hide whatsapp share button on desktop */
