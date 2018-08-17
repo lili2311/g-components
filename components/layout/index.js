@@ -53,7 +53,7 @@ const Layout = ({
   flags = {}, children, defaultContainer, ...props
 }) => {
   const hasCustomChildren = React.Children.toArray(children).some(
-    el => el.className.includes('o-grid-container') || el.type === GridContainer,
+    el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
   ) || !defaultContainer;
   return (
     <Fragment>
