@@ -119,9 +119,11 @@ export default class DataTable extends React.PureComponent {
     );
     const cellAttributes = (header, row) => {
       const classes = [
-        header.columnType === 'number' ? 'o-table__cell--numeric' : '',
-        header.columnIsVerticallyCentred ? 'o-table__cell--vertically-center' : '',
-      ].join(' ');
+        header.columnType === 'number' ? 'o-table__cell--numeric' : null,
+        header.columnIsVerticallyCentred ? 'o-table__cell--vertically-center' : null,
+      ]
+        .filter(x => x)
+        .join(' ');
       const attributes = [
         classes ? { className: classes } : {},
         header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {},
@@ -197,13 +199,15 @@ export default class DataTable extends React.PureComponent {
     const tableAttributes = () => {
       const classes = [
         'o-table',
-        responsive === 'flat' ? 'o-table--responsive-flat' : '',
-        responsive === 'scroll' ? 'o-table--responsive-scroll' : '',
-        isStriped ? 'o-table--row-stripes' : '',
-        isLinedHorizontal ? 'o-table--horizontal-lines' : '',
-        isLinedVertical ? 'o-table--vertical-lines' : '',
-        isCompact ? 'o-table--compact' : '',
-      ].join(' ');
+        responsive === 'flat' ? 'o-table--responsive-flat' : null,
+        responsive === 'scroll' ? 'o-table--responsive-scroll' : null,
+        isStriped ? 'o-table--row-stripes' : null,
+        isLinedHorizontal ? 'o-table--horizontal-lines' : null,
+        isLinedVertical ? 'o-table--vertical-lines' : null,
+        isCompact ? 'o-table--compact' : null,
+      ]
+        .filter(x => x)
+        .join(' ');
       const attributes = [
         classes ? { className: classes } : {},
         { 'data-o-component': 'o-table' },
