@@ -10,6 +10,7 @@ export default class DataFilter extends React.PureComponent {
     data: PropTypes.arrayOf(PropTypes.object),
     set: PropTypes.func,
     isAllSelectable: PropTypes.bool, // only if filtering by selection
+    isRadioSelectable: PropTypes.bool, // only if filtering by selection
   };
 
   static defaultProps = {
@@ -19,6 +20,7 @@ export default class DataFilter extends React.PureComponent {
     data: [],
     set: () => {},
     isAllSelectable: false,
+    isRadioSelectable: false,
   };
 
   constructor(props) {
@@ -89,11 +91,51 @@ export default class DataFilter extends React.PureComponent {
   };
 
   render() {
-    const { selectFrom, data, isAllSelectable } = this.props;
+    const {
+      selectFrom, data, isAllSelectable, isRadioSelectable,
+    } = this.props;
     const { isLoaded, text } = this.state;
     if (!isLoaded) return null; // render nothing statically
     if (selectFrom) {
       const options = Array.from(new Set(data.map(row => row[selectFrom])));
+      if (isRadioSelectable) {
+        return (
+          <fieldset className="g-data-filter o-forms o-forms--wide">
+            <div className="o-forms__group o-forms__group--inline-together">
+              {isAllSelectable === false ? null : (
+                <React.Fragment>
+                  <input
+                    type="radio"
+                    className="o-forms__radio-button"
+                    value=""
+                    checked={text === ''}
+                    onChange={this.setText}
+                    id="g-data-filter-all"
+                  />
+                  <label htmlFor="g-data-filter-all" className="o-forms__label">
+                    (All)
+                  </label>
+                </React.Fragment>
+              )}
+              {options.map(option => (
+                <React.Fragment>
+                  <input
+                    type="radio"
+                    className="o-forms__radio-button"
+                    value={option}
+                    checked={text === option}
+                    onChange={this.setText}
+                    id={`g-data-filter-${option}`}
+                  />
+                  <label htmlFor={`g-data-filter-${option}`} className="o-forms__label">
+                    {option}
+                  </label>
+                </React.Fragment>
+              ))}
+            </div>
+          </fieldset>
+        );
+      }
       return (
         <div className="g-data-filter o-forms o-forms--wide">
           {options.length === 0 ? null : (
