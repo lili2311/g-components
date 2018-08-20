@@ -29,7 +29,7 @@ references:
     save_cache:
       key: *npm_cache_key
       paths:
-        - ./node_modules/
+        - $HOME/.npm
 
   cache_bower_components: &cache_bower_components
     save_cache:
@@ -53,7 +53,7 @@ jobs:
       - *restore_bower_components
       - run:
           name: Install dependencies
-          command: npm ci
+          command: npm ci --unsafe-perm
       - *cache_node_modules
       - *cache_bower_components
       - persist_to_workspace:
