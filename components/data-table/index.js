@@ -26,7 +26,7 @@ export default class DataTable extends React.PureComponent {
         secondary: PropTypes.node,
       }),
     ),
-    responsive: PropTypes.oneOf(['none', 'flat', 'scroll']),
+    responsive: PropTypes.oneOf(['none', 'scroll', 'flat']),
     isHeaderHidden: PropTypes.bool,
     isSortable: PropTypes.bool,
     isStriped: PropTypes.bool,
@@ -121,11 +121,9 @@ export default class DataTable extends React.PureComponent {
       const classes = [
         header.columnType === 'number' ? 'o-table__cell--numeric' : null,
         header.columnIsVerticallyCentred ? 'o-table__cell--vertically-center' : null,
-      ]
-        .filter(x => x)
-        .join(' ');
+      ];
       const attributes = [
-        classes ? { className: classes } : {},
+        classes ? { className: classes.filter(x => x).join(' ') } : {},
         header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {},
         header.columnSortField ? { 'data-o-table-order': row[header.columnSortField] } : {},
       ];
@@ -199,17 +197,15 @@ export default class DataTable extends React.PureComponent {
     const tableAttributes = () => {
       const classes = [
         'o-table',
-        responsive === 'flat' ? 'o-table--responsive-flat' : null,
         responsive === 'scroll' ? 'o-table--responsive-scroll' : null,
+        responsive === 'flat' ? 'o-table--responsive-flat' : null,
         isStriped ? 'o-table--row-stripes' : null,
         isLinedHorizontal ? 'o-table--horizontal-lines' : null,
         isLinedVertical ? 'o-table--vertical-lines' : null,
         isCompact ? 'o-table--compact' : null,
-      ]
-        .filter(x => x)
-        .join(' ');
+      ];
       const attributes = [
-        classes ? { className: classes } : {},
+        classes ? { className: classes.filter(x => x).join(' ') } : {},
         { 'data-o-component': 'o-table' },
         responsive === 'flat' ? { 'data-o-table-responsive': 'flat' } : {},
       ];
