@@ -11,7 +11,8 @@
     "build:components": "webpack",
     "build": "npm run build:components && npm run build:storybook",
     "prepare": "npm run build:components",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postinstall": "bower install"
   },
   "keywords": [],
   "author": "Ændrew Rininsland <andrew.rininsland@ft.com",

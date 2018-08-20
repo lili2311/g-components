@@ -10,6 +10,8 @@ references:
 
   npm_cache_key: &npm_cache_key
     v1-dependency-npm-{{ checksum "package-lock.json" }}
+  bower_cache_key: &bower_cache_key
+    v1-dependency-bower-{{ checksum "bower.json" }}
 
   restore_node_modules: &restore_node_modules
     restore_cache:
@@ -17,11 +19,23 @@ references:
         - *npm_cache_key
         - v1-dependency-npm-
 
+  restore_bower_components: &restore_bower_components
+    restore_cache:
+      keys:
+        - *bower_cache_key
+        - v1-dependency-bower-
+
   cache_node_modules: &cache_node_modules
     save_cache:
       key: *npm_cache_key
       paths:
         - ./node_modules/
+
+  cache_bower_components: &cache_bower_components
+    save_cache:
+      key: *bower_cache_key
+      paths:
+        - ./bower_components/
 
   only_version_tags: &only_version_tags
     tags:
@@ -36,10 +50,12 @@ jobs:
           name: Upgrade npm
           command: npm i -g npm
       - *restore_node_modules
+      - *restore_bower_components
       - run:
           name: Install dependencies
           command: npm ci
       - *cache_node_modules
+      - *cache_bower_components
       - persist_to_workspace:
           root: .
           paths:
