@@ -68,6 +68,16 @@ body {
       margin-bottom: 15px;
     }
   }
+
+  // This was in the original Starter Kit styles.scss but prevents
+  // doing things like full-bleed images/tables so disabling.
+  // &-body {
+  //   div[data-o-grid-colspan] {
+  //     & > div {
+  //       max-width: 700px;
+  //     }
+  //   }
+  // }
 }
 
 /* Hide whatsapp share button on desktop */
