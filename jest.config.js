@@ -1,3 +1,5 @@
+const { resolve } = require('path');
+
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
@@ -58,9 +60,10 @@ module.exports = {
   // globals: {},
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  // moduleDirectories: [
-  //   "node_modules"
-  // ],
+  moduleDirectories: [
+    "node_modules",
+    "bower_components"
+  ],
 
   // An array of file extensions your modules use
   // moduleFileExtensions: [
@@ -72,7 +75,18 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(css|sass|scss)$": "identity-obj-proxy"
+    "\\.(css|sass|scss)$": "identity-obj-proxy",
+    "ftdomdelegate": "dom-delegate",
+    "o-comment-utilities": resolve(__dirname, "bower_components", "o-comment-utilities/main.js"),
+    "o-comment-api": resolve(__dirname, "bower_components", "o-comment-api/main.js"),
+    "o-comment-ui": resolve(__dirname, "bower_components", "o-comment-ui/main.js"),
+    "o-overlay": resolve(__dirname, "bower_components", "o-overlay/main.js"),
+    "o-viewport": resolve(__dirname, "bower_components", "o-viewport/main.js"),
+    "o-utils": resolve(__dirname, "bower_components", "o-utils/main.js"),
+    "o-layers": resolve(__dirname, "bower_components", "o-layers/main.js"),
+    "o-dom": resolve(__dirname, "bower_components", "o-dom/main.js"),
+    "o-toggle": resolve(__dirname, "bower_components", "o-toggle/main.js"),
+    "o-grid": resolve(__dirname, "bower_components", "o-grid/main.js"),
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -161,7 +175,10 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: null,
+  transform: {
+    "\\.js$": "babel-jest",
+    "\\.txt$": "jest-raw-loader"
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

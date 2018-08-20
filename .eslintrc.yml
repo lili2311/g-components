@@ -5,7 +5,14 @@ extends: airbnb
 root: true
 rules:
   import/no-extraneous-dependencies: [2, {}]
+  import/extensions: [0]
   react/jsx-filename-extension: [0]
 env:
   browser: true
 parser: babel-eslint
+settings:
+  import/resolver:
+    node:
+      moduleDirectory:
+        - node_modules
+        - bower_components
