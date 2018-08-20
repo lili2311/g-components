@@ -75,10 +75,12 @@ class ArticleHead extends PureComponent {
       mainImage,
       flags,
       bylines,
-      buildTime,
-      publishedDate,
       ...props
     } = this.props;
+
+    // These really mess with Storyshots' snapshot testing
+    const buildTime = this.props.buildTime || new Date().toISOString(); // eslint-disable-line
+    const publishedDate = this.props.publishedDate || new Date().toISOString(); // eslint-disable-line
 
     return (
       <Fragment>
@@ -154,8 +156,8 @@ ArticleHead.defaultProps = {
     uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
   },
   relatedArticle: {},
-  publishedDate: new Date().toISOString(),
-  buildTime: new Date().toISOString(),
+  publishedDate: false,
+  buildTime: false,
   summary: '',
   topic: {},
   bylines: [],

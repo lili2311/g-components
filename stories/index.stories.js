@@ -627,6 +627,7 @@ storiesOf('ArticleHead', module).add('default', () => (
     topic={DEFAULT.topic}
     bylines={DEFAULT.bylines}
     publishedDate={DEFAULT.pubdate}
+    buildTime={DEFAULT.buildTime}
   />
 ));
 storiesOf('Comments', module).add('default', () => <Comments />);
