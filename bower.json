@@ -28,7 +28,6 @@
     "o-ads": "^8.0.0",
     "o-date": "^2.10.3",
     "o-errors": "^3.6.1",
-    "o-tracking": "^1.2.3",
-    "dom-delegate": "ftdomdelegate#^2.1.0"
+    "o-tracking": "^1.2.3"
   }
 }
