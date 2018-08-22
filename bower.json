@@ -30,7 +30,6 @@
     "o-errors": "^3.6.1",
     "o-tracking": "^1.2.3",
     "o-table": "^6.9.0",
-    "o-forms": "^5.8.2",
-    "dom-delegate": "ftdomdelegate#^2.1.0"
+    "o-forms": "^5.8.2"
   }
 }
