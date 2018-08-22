@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-export default class DataFilter extends React.PureComponent {
+export default class DataFilter extends PureComponent {
   static propTypes = {
     initial: PropTypes.string,
     selectFrom: PropTypes.string, // for filtering by selection
@@ -35,15 +35,6 @@ export default class DataFilter extends React.PureComponent {
           && props.data[0][props.selectFrom])
         || '',
     };
-    if (props.selectFrom && props.searchOver.length > 0) {
-      throw new Error('Cannot set selectFrom as well as searchOver!');
-    }
-    if (props.selectFrom && props.initial && props.data.filter(row => row[props.selectFrom]) > 0) {
-      throw new Error('Initial value not found in selectFrom options!');
-    }
-    if (props.isAllSelectable && props.selectFrom === '') {
-      throw new Error('Setting isAllSelectable is meaningless without selectFrom!');
-    }
   }
 
   componentDidMount() {
@@ -92,8 +83,22 @@ export default class DataFilter extends React.PureComponent {
 
   render() {
     const {
-      selectFrom, data, isAllSelectable, isRadioSelectable,
+      initial,
+      selectFrom,
+      searchOver,
+      data,
+      isAllSelectable,
+      isRadioSelectable,
     } = this.props;
+    if (selectFrom && searchOver.length > 0) {
+      throw new Error('Cannot set selectFrom as well as searchOver!');
+    }
+    if (selectFrom && initial && data.filter(row => row[selectFrom]) > 0) {
+      throw new Error('Initial value not found in selectFrom options!');
+    }
+    if (isAllSelectable && selectFrom === '') {
+      throw new Error('Setting isAllSelectable is meaningless without selectFrom!');
+    }
     const { isLoaded, text } = this.state;
     if (!isLoaded) return null; // render nothing statically
     if (selectFrom) {
@@ -103,7 +108,7 @@ export default class DataFilter extends React.PureComponent {
           <fieldset className="g-data-filter o-forms o-forms--wide">
             <div className="o-forms__group o-forms__group--inline-together">
               {isAllSelectable === false ? null : (
-                <React.Fragment>
+                <Fragment>
                   <input
                     type="radio"
                     className="o-forms__radio-button"
@@ -115,10 +120,10 @@ export default class DataFilter extends React.PureComponent {
                   <label htmlFor="g-data-filter-all" className="o-forms__label">
                     (All)
                   </label>
-                </React.Fragment>
+                </Fragment>
               )}
               {options.map(option => (
-                <React.Fragment>
+                <Fragment>
                   <input
                     type="radio"
                     className="o-forms__radio-button"
@@ -130,7 +135,7 @@ export default class DataFilter extends React.PureComponent {
                   <label htmlFor={`g-data-filter-${option}`} className="o-forms__label">
                     {option}
                   </label>
-                </React.Fragment>
+                </Fragment>
               ))}
             </div>
           </fieldset>

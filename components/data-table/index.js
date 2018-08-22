@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import OTable from 'o-table/main.js';
 import './styles.scss';
 
-export default class DataTable extends React.PureComponent {
+export default class DataTable extends PureComponent {
   static propTypes = {
     captionTop: PropTypes.string,
     captionBottom: PropTypes.string,
@@ -68,12 +68,12 @@ export default class DataTable extends React.PureComponent {
       isLinedVertical,
       isCompact,
     } = this.props;
-    const captionAtTop = !captionTop ? null : (
+    const captionAtTop = captionTop && (
       <caption className="o-table__caption--top">
         {captionTop}
       </caption>
     );
-    const captionAtBottom = !captionBottom ? null : (
+    const captionAtBottom = captionBottom && (
       <caption className="o-table__caption--bottom">
         {captionBottom}
       </caption>
@@ -89,7 +89,7 @@ export default class DataTable extends React.PureComponent {
       ];
       return Object.assign(...attributes);
     };
-    const head = isHeaderHidden ? null : (
+    const head = !isHeaderHidden && (
       <thead>
         <tr>
           {headers.map((header) => {
@@ -119,8 +119,8 @@ export default class DataTable extends React.PureComponent {
     );
     const cellAttributes = (header, row) => {
       const classes = [
-        header.columnType === 'number' ? 'o-table__cell--numeric' : null,
-        header.columnIsVerticallyCentred ? 'o-table__cell--vertically-center' : null,
+        header.columnType === 'number' && 'o-table__cell--numeric',
+        header.columnIsVerticallyCentred && 'o-table__cell--vertically-center',
       ];
       const attributes = [
         classes ? { className: classes.filter(x => x).join(' ') } : {},
@@ -197,12 +197,12 @@ export default class DataTable extends React.PureComponent {
     const tableAttributes = () => {
       const classes = [
         'o-table',
-        responsive === 'scroll' ? 'o-table--responsive-scroll' : null,
-        responsive === 'flat' ? 'o-table--responsive-flat' : null,
-        isStriped ? 'o-table--row-stripes' : null,
-        isLinedHorizontal ? 'o-table--horizontal-lines' : null,
-        isLinedVertical ? 'o-table--vertical-lines' : null,
-        isCompact ? 'o-table--compact' : null,
+        responsive === 'scroll' && 'o-table--responsive-scroll',
+        responsive === 'flat' && 'o-table--responsive-flat',
+        isStriped && 'o-table--row-stripes',
+        isLinedHorizontal && 'o-table--horizontal-lines',
+        isLinedVertical && 'o-table--vertical-lines',
+        isCompact && 'o-table--compact',
       ];
       const attributes = [
         classes ? { className: classes.filter(x => x).join(' ') } : {},
