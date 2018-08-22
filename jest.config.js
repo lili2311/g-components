@@ -76,7 +76,7 @@ module.exports = {
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
     "\\.(css|sass|scss)$": "identity-obj-proxy",
-    "ftdomdelegate": "dom-delegate",
+    "ftdomdelegate": resolve(__dirname, "bower_components", "dom-delegate/lib/index.js"),
     "o-comment-utilities": resolve(__dirname, "bower_components", "o-comment-utilities/main.js"),
     "o-comment-api": resolve(__dirname, "bower_components", "o-comment-api/main.js"),
     "o-comment-ui": resolve(__dirname, "bower_components", "o-comment-ui/main.js"),
