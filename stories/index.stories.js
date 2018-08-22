@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, addDecorator } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select, array } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { TopAd, MiddleAd } from '../components/ads';
 import Analytics from '../components/analytics';
@@ -18,6 +18,8 @@ import HtmlHead from '../components/html-head';
 import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
+import DataTable from '../components/data-table';
+import DataFilter from '../components/data-filter';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -630,9 +632,13 @@ storiesOf('ArticleHead', module).add('default', () => (
     buildTime={DEFAULT.buildTime}
   />
 ));
+
 storiesOf('Comments', module).add('default', () => <Comments />);
+
 storiesOf('Footer', module).add('default', () => <Footer />);
+
 storiesOf('Header', module).add('default', () => <Header />);
+
 storiesOf('HtmlHead', module).add('default', () => [
   <h4 key="1">
 You won&apos;t see anything here as &quot;HtmlHead&quot; has no visual output
@@ -654,4 +660,55 @@ storiesOf('OnwardJourney', module).add('default', () => (
     relatedContent={[{ rows: 2, list: 'thing/adae44ca-4ea7-3cf8-8332-bf85ec89a558' }]}
   />
 ));
+
 storiesOf('Share', module).add('default', () => <Share url={DEFAULT.url} />);
+
+storiesOf('DataTable', module).add('default', () => (
+  <DataTable
+    captionTop={text('captionTop', 'FT editors')}
+    captionBottom={text('captionBottom', null)}
+    headers={[
+      {
+        contents: 'Year',
+        columnType: 'number',
+        columnName: 'appointed'
+      },
+      {
+        contents: 'Editor',
+        columnName: 'name',
+      },
+    ]}
+    rows={[
+      { appointed: '1945', name: 'Hargreaves Parkinson' },
+      { appointed: '1949', name: 'Sir Gordon Newton' },
+      { appointed: '1973', name: 'Fredy Fisher' },
+      { appointed: '1981', name: 'Sir Geoffrey Owen' },
+      { appointed: '1991', name: 'Richard Lambert' },
+      { appointed: '2001', name: 'Andrew Gowers' },
+      { appointed: '2006', name: 'Lionel Barber' },
+    ]}
+    responsive={select('responsive', ['none', 'scroll', 'flat'], 'none')}
+    isHeaderHidden={boolean('isHeaderHidden', false)}
+    isSortable={boolean('isSortable', true)}
+    isStriped={boolean('isStriped', false)}
+    isLinedHorizontal={boolean('isLinedHorizontal', false)}
+    isLinedVertical={boolean('isLinedVertical', false)}
+    isCompact={boolean('isCompact', false)}
+  />
+));
+
+storiesOf('DataFilter', module).add('default', () => (
+  <DataFilter
+    initial={text('initial', 'Paul')}
+    selectFrom={text('selectFrom', 'name')}
+    searchOver={array('searchOver', [])}
+    data={[
+      { name: 'John' },
+      { name: 'Paul' },
+      { name: 'George' },
+      { name: 'Ringo' },
+    ]}
+    isAllSelectable={boolean('isAllSelectable', false)}
+    isRadioSelectable={boolean('isRadioSelectable', false)}
+  />
+));

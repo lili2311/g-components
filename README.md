@@ -1,51 +1,27 @@
-# g-components
+# `g-components`
 
-React 16.x-based components for Interactive Graphics Starter Kit projects.
+Reusable React components for building graphics pages. [See how to use them in the component library.](https://financial-times.github.io/g-components)
 
-## Currently includes:
+## Contents
 
-- #### Starter Kit page furniture ported from Nunjucks
+### Data rendering
 
-  - [`<TopAd />`, `<MiddleAd />`][ads] ➡ Ad slots
-  - [`<Analytics />`][analytics] ➡ Analytics tracking
-  - [`<ArticleHead />`][articlehead] ➡ Article topper
-  - [`<Comments />`][comments] ➡ Comments section
-  - [`<Footer />`][footer] ➡ Page footer
-  - [`<Header />`][header] ➡ Page header
-  - [`<HtmlHead />`][htmlhead] ➡ HTML document structure
-  - [`<Layout />`][layout] ➡ Container component composed of all these
-  - [`<OnwardJourney />`][oj] ➡ Onward Journey section
-  - [`<Share />`][share] ➡ Sharing links
+| Component                      | Description                                   |
+|--------------------------------|-----------------------------------------------|
+| `<DataTable>`                  | A sortable table                              |
+| `<DataFilter>`                 | Filter tabular data by searching or selecting |
 
-### Usage:
+### Page furniture
 
-1.  Install from npm
-
-```bash
-$ npm install @Financial-Times/g-components
-```
-
-2.  Import
-
-```js
-import Layout from '@Financial-Times/g-components';
-```
-
-3.  Use
-
-```jsx
-const MyPage = ({ content, ...props }) => <Layout {...props}>{content}</Layout>;
-```
-
-N.b., your content should be a child of `<Layout>`!
-
-[ads]: https://github.com/Financial-Times/g-components/blob/master/components/ads.js
-[analytics]: https://github.com/Financial-Times/g-components/blob/master/components/analytics.js
-[articlehead]: https://github.com/Financial-Times/g-components/blob/master/components/article-head.js
-[comments]: https://github.com/Financial-Times/g-components/blob/master/components/comments.js
-[footer]: https://github.com/Financial-Times/g-components/blob/master/components/footer.js
-[header]: https://github.com/Financial-Times/g-components/blob/master/components/header.js
-[htmlhead]: https://github.com/Financial-Times/g-components/blob/master/components/html-head.js
-[layout]: https://github.com/Financial-Times/g-components/blob/master/components/layout.js
-[oj]: https://github.com/Financial-Times/g-components/blob/master/components/onwardjourney.js
-[share]: https://github.com/Financial-Times/g-components/blob/master/components/share.js
+| Component                      | Description                                   |
+|--------------------------------|-----------------------------------------------|
+| `<Layout />`                   | Container component and grid                  |
+| `<HtmlHead />`                 | HTML document structure                       |
+| `<Analytics />`                | Analytics tracking                            |
+| `<Header />`                   | Page header                                   |
+| `<ArticleHead />`              | Article topper                                |
+| `<Share />`                    | Sharing links                                 |
+| `<TopAd />` and `<MiddleAd />` | Ad slots                                      |
+| `<OnwardJourney />`            | Onward Journey section                        |
+| `<Comments />`                 | Comments section                              |
+| `<Footer />`                   | Page footer                                   |

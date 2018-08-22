@@ -15,3 +15,5 @@ export { default as Share } from './components/share';
 export {
   default, default as Layout, GridContainer, GridRow, GridChild,
 } from './components/layout';
+export { default as DataTable } from './components/data-table';
+export { default as DataFilter } from './components/data-filter';
