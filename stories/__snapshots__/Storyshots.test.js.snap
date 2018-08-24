@@ -3231,6 +3231,39 @@ exports[`Storyshots DataFilter default 1`] = `
                   <td
                     className="css-1qcb1f7"
                   >
+                    className
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      null
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
                     initial
                   </td>
                   <td
@@ -3323,6 +3356,39 @@ exports[`Storyshots DataFilter default 1`] = `
                     >
                       [
                       ]
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    searchPlaceholder
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      null
                     </span>
                   </td>
                   <td
@@ -4266,6 +4332,39 @@ exports[`Storyshots DataTable default 1`] = `
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    className
+                  </td>
+                  <td
+                    className="css-1qcb1f7"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#777",
+                        }
+                      }
+                    >
+                      null
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui"
+                  />
+                </tr>
                 <tr>
                   <td
                     className="css-1qcb1f7"
