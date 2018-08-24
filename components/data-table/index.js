@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import OTable from 'o-table/main.js';
 import './styles.scss';
@@ -51,10 +51,7 @@ export default class DataTable extends PureComponent {
     isCompact: false,
   };
 
-  constructor() {
-    super();
-    this.table = React.createRef();
-  }
+  table = React.createRef();
 
   componentDidMount() {
     this.tableOrigami = OTable.init(this.table.current);
@@ -106,7 +103,7 @@ export default class DataTable extends PureComponent {
     const head = !isHeaderHidden && (
       <thead>
         <tr>
-          {headers.map((header) => {
+          {headers.map((header, i) => {
             const attributes = headerAttributes(header);
             if (header.secondary) {
               const secondary = (
@@ -123,7 +120,7 @@ export default class DataTable extends PureComponent {
               );
             }
             return (
-              <th {...attributes}>
+              <th key={i} {...attributes}>
                 {header.contents}
               </th>
             );
@@ -145,9 +142,9 @@ export default class DataTable extends PureComponent {
     };
     const body = (
       <tbody>
-        {rows.map(row => (
-          <tr>
-            {headers.map((header) => {
+        {rows.map((row, i1) => (
+          <tr key={i1}>
+            {headers.map((header, i2) => {
               const attributes = cellAttributes(header, row);
               const valueFormat = typeof row[header.columnName] === 'number'
                 ? value => value.toLocaleString()
@@ -155,13 +152,13 @@ export default class DataTable extends PureComponent {
               const value = valueFormat(row[header.columnName] || '');
               if (header.columnIsHeader) {
                 return (
-                  <th {...attributes}>
+                  <th key={`${i1}-${i2}`} {...attributes}>
                     {value}
                   </th>
                 );
               }
               return (
-                <td {...attributes}>
+                <td key={`${i1}-${i2}`} {...attributes}>
                   {value}
                 </td>
               );

@@ -162,8 +162,8 @@ export default class DataFilter extends PureComponent {
 (All)
                 </option>
               )}
-              {options.map(option => (
-                <option value={option}>
+              {options.map((option, i) => (
+                <option key={i} value={option}>
                   {option}
                 </option>
               ))}
