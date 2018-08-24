@@ -102,7 +102,10 @@ export default class DataFilter extends PureComponent {
     if (selectFrom && initial && data.filter(row => row[selectFrom]) > 0) {
       throw new Error('Initial value not found in selectFrom options!');
     }
-    if (isAllSelectable && selectFrom === '') {
+    if (selectFrom && searchPlaceholder) {
+      throw new Error('Setting searchPlaceholder is meaningless when selectFrom set')
+    }
+    if (selectFrom === '' && isAllSelectable) {
       throw new Error('Setting isAllSelectable is meaningless without selectFrom!');
     }
     const { isLoaded, text } = this.state;
