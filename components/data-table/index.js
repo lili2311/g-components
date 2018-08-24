@@ -1,10 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import OTable from 'o-table/main.js';
 import './styles.scss';
 
 export default class DataTable extends PureComponent {
   static propTypes = {
+    className: PropTypes.string,
     captionTop: PropTypes.string,
     captionBottom: PropTypes.string,
     headers: PropTypes.arrayOf(
@@ -36,6 +37,7 @@ export default class DataTable extends PureComponent {
   };
 
   static defaultProps = {
+    className: null,
     captionTop: null,
     captionBottom: null,
     rows: [],
@@ -49,12 +51,21 @@ export default class DataTable extends PureComponent {
     isCompact: false,
   };
 
+  table = React.createRef();
+
   componentDidMount() {
-    OTable.init();
+    this.tableOrigami = OTable.init(this.table.current);
+  }
+
+  componentDidUpdate() {
+    const tableRows = Array.from(this.table.current.querySelectorAll('tr')).filter(row => Array.from(row.querySelectorAll('th')).length === 0);
+    const tableHeaders = Array.from(this.table.current.querySelectorAll('thead th'));
+    this.tableOrigami._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
   }
 
   render() {
     const {
+      className,
       captionTop,
       captionBottom,
       headers,
@@ -92,7 +103,7 @@ export default class DataTable extends PureComponent {
     const head = !isHeaderHidden && (
       <thead>
         <tr>
-          {headers.map((header) => {
+          {headers.map((header, i) => {
             const attributes = headerAttributes(header);
             if (header.secondary) {
               const secondary = (
@@ -109,7 +120,7 @@ export default class DataTable extends PureComponent {
               );
             }
             return (
-              <th {...attributes}>
+              <th key={i} {...attributes}>
                 {header.contents}
               </th>
             );
@@ -131,9 +142,9 @@ export default class DataTable extends PureComponent {
     };
     const body = (
       <tbody>
-        {rows.map(row => (
-          <tr>
-            {headers.map((header) => {
+        {rows.map((row, i1) => (
+          <tr key={i1}>
+            {headers.map((header, i2) => {
               const attributes = cellAttributes(header, row);
               const valueFormat = typeof row[header.columnName] === 'number'
                 ? value => value.toLocaleString()
@@ -141,13 +152,13 @@ export default class DataTable extends PureComponent {
               const value = valueFormat(row[header.columnName] || '');
               if (header.columnIsHeader) {
                 return (
-                  <th {...attributes}>
+                  <th key={`${i1}-${i2}`} {...attributes}>
                     {value}
                   </th>
                 );
               }
               return (
-                <td {...attributes}>
+                <td key={`${i1}-${i2}`} {...attributes}>
                   {value}
                 </td>
               );
@@ -212,9 +223,10 @@ export default class DataTable extends PureComponent {
       return Object.assign(...attributes);
     };
     const attributes = tableAttributes();
+    const namedClass = [className, 'g-data-table', 'o-table-wrapper'].filter(x => x).join(' ');
     return (
-      <div className="g-data-table o-table-wrapper">
-        <table {...attributes}>
+      <div className={namedClass}>
+        <table {...attributes} ref={this.table}>
           {captionAtTop}
           {captionAtBottom}
           {head}
