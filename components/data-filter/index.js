@@ -4,9 +4,11 @@ import './styles.scss';
 
 export default class DataFilter extends PureComponent {
   static propTypes = {
+    className: PropTypes.string,
     initial: PropTypes.string,
     selectFrom: PropTypes.string, // for filtering by selection
     searchOver: PropTypes.arrayOf(PropTypes.string), // for filtering by typing (default)
+    searchPlaceholder: PropTypes.string,
     data: PropTypes.arrayOf(PropTypes.object),
     set: PropTypes.func,
     isAllSelectable: PropTypes.bool, // only if filtering by selection
@@ -14,9 +16,11 @@ export default class DataFilter extends PureComponent {
   };
 
   static defaultProps = {
+    className: null,
     initial: '',
     selectFrom: '',
     searchOver: [],
+    searchPlaceholder: null,
     data: [],
     set: () => {},
     isAllSelectable: false,
@@ -83,9 +87,11 @@ export default class DataFilter extends PureComponent {
 
   render() {
     const {
+      className,
       initial,
       selectFrom,
       searchOver,
+      searchPlaceholder,
       data,
       isAllSelectable,
       isRadioSelectable,
@@ -101,11 +107,14 @@ export default class DataFilter extends PureComponent {
     }
     const { isLoaded, text } = this.state;
     if (!isLoaded) return null; // render nothing statically
+    const namedClass = [className, 'g-data-filter', 'o-forms', 'o-forms--wide']
+      .filter(x => x)
+      .join(' ');
     if (selectFrom) {
       const options = Array.from(new Set(data.map(row => row[selectFrom])));
       if (isRadioSelectable) {
         return (
-          <fieldset className="g-data-filter o-forms o-forms--wide">
+          <fieldset className={namedClass}>
             <div className="o-forms__group o-forms__group--inline-together">
               {isAllSelectable === false ? null : (
                 <Fragment>
@@ -142,7 +151,7 @@ export default class DataFilter extends PureComponent {
         );
       }
       return (
-        <div className="g-data-filter o-forms o-forms--wide">
+        <div className={namedClass}>
           {options.length === 0 ? null : (
             <select className="o-forms__select" value={text} onChange={this.setText}>
               {isAllSelectable === false ? null : (
@@ -161,8 +170,14 @@ export default class DataFilter extends PureComponent {
       );
     }
     return (
-      <div className="g-data-filter o-forms o-forms--wide">
-        <input type="text" className="o-forms__text" value={text} onChange={this.setText} />
+      <div className={namedClass}>
+        <input
+          type="text"
+          className="o-forms__text"
+          value={text}
+          placeholder={searchPlaceholder}
+          onChange={this.setText}
+        />
       </div>
     );
   }

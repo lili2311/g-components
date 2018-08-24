@@ -702,6 +702,7 @@ storiesOf('DataFilter', module).add('default', () => (
     initial={text('initial', 'Paul')}
     selectFrom={text('selectFrom', 'name')}
     searchOver={array('searchOver', [])}
+    searchPlaceholder={text('searchPlaceholder', null)}
     data={[
       { name: 'John' },
       { name: 'Paul' },

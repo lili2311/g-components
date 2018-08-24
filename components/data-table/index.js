@@ -5,6 +5,7 @@ import './styles.scss';
 
 export default class DataTable extends PureComponent {
   static propTypes = {
+    className: PropTypes.string,
     captionTop: PropTypes.string,
     captionBottom: PropTypes.string,
     headers: PropTypes.arrayOf(
@@ -36,6 +37,7 @@ export default class DataTable extends PureComponent {
   };
 
   static defaultProps = {
+    className: null,
     captionTop: null,
     captionBottom: null,
     rows: [],
@@ -49,12 +51,24 @@ export default class DataTable extends PureComponent {
     isCompact: false,
   };
 
+  constructor() {
+    super();
+    this.table = React.createRef();
+  }
+
   componentDidMount() {
-    OTable.init();
+    this.tableOrigami = OTable.init(this.table.current);
+  }
+
+  componentDidUpdate() {
+    const tableRows = Array.from(this.table.current.querySelectorAll('tr')).filter(row => Array.from(row.querySelectorAll('th')).length === 0);
+    const tableHeaders = Array.from(this.table.current.querySelectorAll('thead th'));
+    this.tableOrigami._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
   }
 
   render() {
     const {
+      className,
       captionTop,
       captionBottom,
       headers,
@@ -212,9 +226,10 @@ export default class DataTable extends PureComponent {
       return Object.assign(...attributes);
     };
     const attributes = tableAttributes();
+    const namedClass = [className, 'g-data-table', 'o-table-wrapper'].filter(x => x).join(' ');
     return (
-      <div className="g-data-table o-table-wrapper">
-        <table {...attributes}>
+      <div className={namedClass}>
+        <table {...attributes} ref={this.table}>
           {captionAtTop}
           {captionAtBottom}
           {head}
