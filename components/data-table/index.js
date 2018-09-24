@@ -58,9 +58,13 @@ export default class DataTable extends PureComponent {
   }
 
   componentDidUpdate() {
-    const tableRows = Array.from(this.table.current.querySelectorAll('tr')).filter(row => Array.from(row.querySelectorAll('th')).length === 0);
+    const tableRows = Array.from(this.table.current.querySelectorAll('tr')).filter(
+      row => Array.from(row.querySelectorAll('th')).length === 0,
+    );
     const tableHeaders = Array.from(this.table.current.querySelectorAll('thead th'));
-    this.tableOrigami._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
+    if (this.props.responsive === 'flat') {
+      this.tableOrigami._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
+    }
   }
 
   render() {
