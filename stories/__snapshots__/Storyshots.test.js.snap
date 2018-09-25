@@ -3552,8 +3552,9 @@ exports[`Storyshots DataTable default 1`] = `
       className="g-data-table o-table-wrapper"
     >
       <table
-        className="o-table"
+        className="o-table o-table--responsive-flat"
         data-o-component="o-table"
+        data-o-table-responsive="flat"
       >
         <caption
           className="o-table__caption--top"
@@ -3819,7 +3820,10 @@ exports[`Storyshots DataTable default 1`] = `
                 </span>
                 <span>
                   <span>
-                     
+                    <span>
+                      <br />
+                        
+                    </span>
                     <span
                       style={Object {}}
                     >
@@ -3846,7 +3850,10 @@ exports[`Storyshots DataTable default 1`] = `
                     </span>
                   </span>
                   <span>
-                     
+                    <span>
+                      <br />
+                        
+                    </span>
                     <span
                       style={Object {}}
                     >
@@ -4011,7 +4018,10 @@ exports[`Storyshots DataTable default 1`] = `
                     </span>
                   </span>
                   <span>
-                     
+                    <span>
+                      <br />
+                        
+                    </span>
                     <span
                       style={Object {}}
                     >
@@ -4237,7 +4247,37 @@ exports[`Storyshots DataTable default 1`] = `
                         }
                       </span>
                     </span>
-                     
+                  </span>
+                  <span>
+                    <span>
+                      <br />
+                        
+                    </span>
+                    <span
+                      style={Object {}}
+                    >
+                      responsive
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}
+                      >
+                        "
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }
+                        >
+                          flat
+                        </span>
+                        "
+                      </span>
+                    </span>
+                    <br />
                   </span>
                 </span>
                 <span
