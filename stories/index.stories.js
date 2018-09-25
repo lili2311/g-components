@@ -6,7 +6,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, addDecorator } from '@storybook/react';
-import { withKnobs, text, boolean, select, array } from '@storybook/addon-knobs';
+import {
+  withKnobs, text, boolean, select, array,
+} from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { TopAd, MiddleAd } from '../components/ads';
 import Analytics from '../components/analytics';
@@ -671,7 +673,7 @@ storiesOf('DataTable', module).add('default', () => (
       {
         contents: 'Year',
         columnType: 'number',
-        columnName: 'appointed'
+        columnName: 'appointed',
       },
       {
         contents: 'Editor',
@@ -687,7 +689,7 @@ storiesOf('DataTable', module).add('default', () => (
       { appointed: '2001', name: 'Andrew Gowers' },
       { appointed: '2006', name: 'Lionel Barber' },
     ]}
-    responsive={select('responsive', ['none', 'scroll', 'flat'], 'none')}
+    responsive={select('responsive', ['none', 'scroll', 'flat'], 'flat')}
     isHeaderHidden={boolean('isHeaderHidden', false)}
     isSortable={boolean('isSortable', true)}
     isStriped={boolean('isStriped', false)}
@@ -703,12 +705,7 @@ storiesOf('DataFilter', module).add('default', () => (
     selectFrom={text('selectFrom', 'name')}
     searchOver={array('searchOver', [])}
     searchPlaceholder={text('searchPlaceholder', null)}
-    data={[
-      { name: 'John' },
-      { name: 'Paul' },
-      { name: 'George' },
-      { name: 'Ringo' },
-    ]}
+    data={[{ name: 'John' }, { name: 'Paul' }, { name: 'George' }, { name: 'Ringo' }]}
     isAllSelectable={boolean('isAllSelectable', false)}
     isRadioSelectable={boolean('isRadioSelectable', false)}
   />
