@@ -11,6 +11,8 @@ import './styles.scss';
 class Comments extends PureComponent {
   ref = React.createRef();
 
+  static displayName = 'GComments';
+
   async componentDidMount() {
     const { title, id, url } = this.props;
 

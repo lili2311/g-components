@@ -20,6 +20,8 @@ export const GridContainer = ({ bleed, children }) => (
   </div>
 );
 
+GridContainer.displayName = 'GGridContainer';
+
 GridContainer.propTypes = {
   bleed: PropTypes.bool,
   children: PropTypes.node.isRequired,
@@ -35,6 +37,8 @@ export const GridRow = ({ compact, children }) => (
   </div>
 );
 
+GridRow.displayName = 'GGridRow';
+
 GridRow.propTypes = {
   compact: PropTypes.bool,
   children: PropTypes.node.isRequired,
@@ -49,6 +53,8 @@ export const GridChild = ({ children, span }) => (
     {children}
   </div>
 );
+
+GridChild.displayName = 'GGridChild';
 
 GridChild.propTypes = {
   children: PropTypes.node.isRequired,
@@ -133,6 +139,8 @@ Limited
     </Fragment>
   );
 };
+
+Layout.displayName = 'GLayout';
 
 Layout.propTypes = {
   id: PropTypes.string,

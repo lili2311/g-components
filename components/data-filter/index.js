@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 export default class DataFilter extends PureComponent {
+  static displayName = 'GDataFilter';
+
   static propTypes = {
     className: PropTypes.string,
     initial: PropTypes.string,
@@ -103,7 +105,7 @@ export default class DataFilter extends PureComponent {
       throw new Error('Initial value not found in selectFrom options!');
     }
     if (selectFrom && searchPlaceholder) {
-      throw new Error('Setting searchPlaceholder is meaningless when selectFrom set')
+      throw new Error('Setting searchPlaceholder is meaningless when selectFrom set');
     }
     if (selectFrom === '' && isAllSelectable) {
       throw new Error('Setting isAllSelectable is meaningless without selectFrom!');
