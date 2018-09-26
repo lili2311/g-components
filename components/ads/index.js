@@ -20,6 +20,8 @@ export const TopAd = () => (
   />
 );
 
+TopAd.displayName = 'GTopAd';
+
 export const MiddleAd = () => (
   <div
     className="o-ads o-ads--center o-ads--background o-ads--reserve-250"
@@ -33,3 +35,5 @@ export const MiddleAd = () => (
     aria-hidden="true"
   />
 );
+
+MiddleAd.displayName = 'GMiddleAd';

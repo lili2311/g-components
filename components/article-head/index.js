@@ -43,6 +43,8 @@ export const Byline = ({ bylines }) => (
   </Fragment>
 );
 
+Byline.displayName = 'GByline';
+
 /* eslint-enable */
 
 const BylinesPropType = PropTypes.oneOfType([
@@ -61,6 +63,8 @@ Byline.propTypes = {
 
 class ArticleHead extends PureComponent {
   dateRef = React.createRef();
+
+  static displayName = 'GArticleHead';
 
   async componentDidMount() {
     new ODate(this.dateRef.current); // eslint-disable-line no-new

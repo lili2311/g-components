@@ -8,6 +8,8 @@ import PropTypes from 'prop-types';
 import { makeCancelable } from '../../shared/helpers';
 
 class OnwardJourney extends React.Component {
+  static displayName = 'GOnwardJourney';
+
   constructor(props) {
     super(props);
     this.state = {

@@ -10,6 +10,8 @@ import './styles.scss';
 class Footer extends PureComponent {
   ref = React.createRef();
 
+  static displayName = 'GFooter';
+
   async componentDidMount() {
     new OFooter(this.ref.current); // eslint-disable-line no-new
   }

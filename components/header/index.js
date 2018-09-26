@@ -10,6 +10,8 @@ import './styles.scss';
 class Header extends PureComponent {
   ref = React.createRef();
 
+  static displayName = 'GHeader';
+
   async componentDidMount() {
     new OHeader(this.ref.current); // eslint-disable-line no-new
   }

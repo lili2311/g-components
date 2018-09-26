@@ -22,6 +22,8 @@ import {
 /* eslint-disable react/no-danger */
 
 class HtmlHead extends PureComponent {
+  static displayName = 'GHtmlHead';
+
   async componentDidMount() {
     // OAds.init();
   }
