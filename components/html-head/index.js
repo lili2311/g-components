@@ -23,19 +23,23 @@ class HtmlHead extends PureComponent {
   static displayName = 'GHtmlHead';
 
   async componentDidMount() {
-    const OAds = await import('o-ads/main.js');
-    const { flags } = this.props;
-    const { ads } = this.props;
+    try {
+      const OAds = await import('o-ads/main.js');
+      const { flags } = this.props;
+      const { ads } = this.props;
 
-    if (flags.ads) {
-      OAds.init({
-        gpt: {
-          network: 5887,
-          site: ads.gptSite,
-          zone: ads.gptZone,
-        },
-        dfp_targeting: ads.dfpTargeting,
-      });
+      if (flags.ads) {
+        OAds.init({
+          gpt: {
+            network: 5887,
+            site: ads.gptSite,
+            zone: ads.gptZone,
+          },
+          dfp_targeting: ads.dfpTargeting,
+        });
+      }
+    } catch (e) {
+      console.error(e);
     }
   }
 

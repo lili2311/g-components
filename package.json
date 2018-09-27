@@ -38,9 +38,11 @@
     "babel-jest": "^23.4.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dynamic-import-node": "^2.1.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-dynamic-import": "^2.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
@@ -93,7 +95,11 @@
     ],
     "plugins": [
       "transform-object-rest-spread",
-      "transform-class-properties"
+      "transform-class-properties",
+      "add-module-exports",
+      "transform-runtime",
+      "syntax-dynamic-import",
+      "transform-dynamic-import"
     ],
     "sourceMaps": "inline"
   }
