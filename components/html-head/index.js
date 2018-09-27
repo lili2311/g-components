@@ -5,7 +5,6 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OAds from 'o-ads/main.js';
 import Analytics from '../analytics';
 import { getMainImage } from '../../shared/helpers';
 import {
@@ -24,6 +23,7 @@ class HtmlHead extends PureComponent {
   static displayName = 'GHtmlHead';
 
   async componentDidMount() {
+    const OAds = await import('o-ads/main.js');
     const { flags } = this.props;
     const { ads } = this.props;
 
