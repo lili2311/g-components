@@ -16,7 +16,7 @@ import ArticleHead from '../components/article-head';
 import Comments from '../components/comments';
 import Footer from '../components/footer';
 import Header from '../components/header';
-import HtmlHead from '../components/html-head';
+// import HtmlHead from '../components/html-head';
 import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
@@ -641,21 +641,21 @@ storiesOf('Footer', module).add('default', () => <Footer />);
 
 storiesOf('Header', module).add('default', () => <Header />);
 
-storiesOf('HtmlHead', module).add('default', () => [
-  <h4 key="1">
-You won&apos;t see anything here as &quot;HtmlHead&quot; has no visual output
-  </h4>,
-  <HtmlHead
-    key="2"
-    flags={defaultFlags}
-    title="Testing <HtmlHead>"
-    topic={DEFAULT.topic}
-    headline={DEFAULT.headline}
-    id={DEFAULT.uuid}
-    url={DEFAULT.url}
-    buildTime={DEFAULT.buildTime}
-  />,
-]);
+// storiesOf('HtmlHead', module).add('default', () => [
+//   <h4 key="1">
+// You won&apos;t see anything here as &quot;HtmlHead&quot; has no visual output
+//   </h4>,
+//   <HtmlHead
+//     key="2"
+//     flags={defaultFlags}
+//     title="Testing <HtmlHead>"
+//     topic={DEFAULT.topic}
+//     headline={DEFAULT.headline}
+//     id={DEFAULT.uuid}
+//     url={DEFAULT.url}
+//     buildTime={DEFAULT.buildTime}
+//   />,
+// ]);
 
 storiesOf('OnwardJourney', module).add('default', () => (
   <OnwardJourney
