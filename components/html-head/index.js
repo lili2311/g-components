@@ -5,9 +5,8 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-// import OAds from 'o-ads/main.js';
+import OAds from 'o-ads/main.js';
 import Analytics from '../analytics';
-import { TopAd } from '../ads';
 import { getMainImage } from '../../shared/helpers';
 import {
   flagsPropType,
@@ -25,13 +24,24 @@ class HtmlHead extends PureComponent {
   static displayName = 'GHtmlHead';
 
   async componentDidMount() {
-    // OAds.init();
+    const { flags } = this.props;
+    const { ads } = this.props;
+
+    if (flags.ads) {
+      OAds.init({
+        gpt: {
+          network: 5887,
+          site: ads.gptSite,
+          zone: ads.gptZone,
+        },
+        dfp_targeting: ads.dfpTargeting,
+      });
+    }
   }
 
   render() {
     const {
       flags,
-      ads,
       dataMeta,
       description,
       facebookDescription,
@@ -215,24 +225,7 @@ class HtmlHead extends PureComponent {
         <meta property="fb:pages" content="23117544640" />
         <meta property="fb:pages" content="293710391064899" />
 
-        {flags.ads && (
-          <script
-            data-o-ads-config=""
-            type="application/json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                gpt: {
-                  network: 5887,
-                  site: ads.gptSite,
-                  zone: ads.gptZone,
-                },
-                dfp_targeting: ads.dfpTargeting,
-              }),
-            }}
-          />
-        )}
         {flags.analytics && <Analytics />}
-        {flags.ads && <TopAd />}
       </head>
     );
   }
