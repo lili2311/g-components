@@ -29,7 +29,7 @@ const defaultFlags = {
   errorReporting: true,
   analytics: false,
   googleAnalytics: false,
-  ads: false,
+  ads: true,
   onwardjourney: true,
   shareButtons: true,
   header: true,

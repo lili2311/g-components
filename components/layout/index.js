@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import { strftime } from '../../shared/helpers';
 import { flagsPropType } from '../../shared/proptypes';
 import Header from '../header';
+import { TopAd } from '../ads';
 import ArticleHead from '../article-head';
 import OnwardJourney from '../onwardjourney';
 import Comments from '../comments';
@@ -73,6 +74,7 @@ const Layout = ({
   ) || !defaultContainer;
   return (
     <Fragment>
+      {flags.ads && <TopAd />}
       {flags.header && <Header key="header" {...props} />}
       <main key="main" role="main">
         <article className="article" itemScope itemType="http://schema.org/Article">
