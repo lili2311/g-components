@@ -17,7 +17,7 @@ import Comments from '../components/comments';
 import Footer from '../components/footer';
 import Header from '../components/header';
 // import HtmlHead from '../components/html-head';
-// import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
+import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
 import DataTable from '../components/data-table';
@@ -29,7 +29,7 @@ const defaultFlags = {
   errorReporting: true,
   analytics: false,
   googleAnalytics: false,
-  ads: true,
+  ads: false,
   onwardjourney: true,
   shareButtons: true,
   header: true,
@@ -88,62 +88,62 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
 addDecorator(withKnobs);
 addDecorator(withInfo);
 
-// // Layout
-// storiesOf('Layout', module)
-//   .add(
-//     'default',
-//     () => (
-//       <Layout
-//         flags={DEFAULT.flags}
-//         headline={text('Headline', DEFAULT.headline)}
-//         title={text('Title', DEFAULT.title)}
-//         topic={DEFAULT.topic}
-//         url={text('Url', DEFAULT.url)}
-//         publishedDate={DEFAULT.pubdate}
-//         buildTime={DEFAULT.buildTime}
-//         ads={DEFAULT.ads}
-//       >
-//         {[
-//           ...text('Content', lorem)
-//             .split(/\n\n/)
-//             .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
-//           <MiddleAd />,
-//         ]}
-//       </Layout>
-//     ),
-//     {
-//       info: `
-//     <Layout /> is the primary component you'll work with in Starter Kit.
-//     All the other components in this story are already included with it, and it's
-//     the default export of g-components. To use it, you supply it children, which
-//     get wrapped as the main article body. Make sure to wrap paragraphs in <p> tags
-//     to maintain typographic styles.
-//   `,
-//     },
-//   )
-//   .add('With custom children', () => (
-//     <Layout
-//       flags={DEFAULT.flags}
-//       headline={text('Headline', DEFAULT.headline)}
-//       title={text('Title', DEFAULT.title)}
-//       topic={DEFAULT.topic}
-//       url={text('Url', DEFAULT.url)}
-//       publishedDate={DEFAULT.pubdate}
-//       buildTime={DEFAULT.buildTime}
-//     >
-//       <GridContainer>
-//         <GridRow>
-//           <GridChild>
-//             <div>
-//               {text('Content', lorem)
-//                 .split(/\n\n/)
-//                 .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
-//             </div>
-//           </GridChild>
-//         </GridRow>
-//       </GridContainer>
-//     </Layout>
-//   ));
+// Layout
+storiesOf('Layout', module)
+  .add(
+    'default',
+    () => (
+      <Layout
+        flags={DEFAULT.flags}
+        headline={text('Headline', DEFAULT.headline)}
+        title={text('Title', DEFAULT.title)}
+        topic={DEFAULT.topic}
+        url={text('Url', DEFAULT.url)}
+        publishedDate={DEFAULT.pubdate}
+        buildTime={DEFAULT.buildTime}
+        ads={DEFAULT.ads}
+      >
+        {[
+          ...text('Content', lorem)
+            .split(/\n\n/)
+            .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+          <MiddleAd />,
+        ]}
+      </Layout>
+    ),
+    {
+      info: `
+    <Layout /> is the primary component you'll work with in Starter Kit.
+    All the other components in this story are already included with it, and it's
+    the default export of g-components. To use it, you supply it children, which
+    get wrapped as the main article body. Make sure to wrap paragraphs in <p> tags
+    to maintain typographic styles.
+  `,
+    },
+  )
+  .add('With custom children', () => (
+    <Layout
+      flags={DEFAULT.flags}
+      headline={text('Headline', DEFAULT.headline)}
+      title={text('Title', DEFAULT.title)}
+      topic={DEFAULT.topic}
+      url={text('Url', DEFAULT.url)}
+      publishedDate={DEFAULT.pubdate}
+      buildTime={DEFAULT.buildTime}
+    >
+      <GridContainer>
+        <GridRow>
+          <GridChild>
+            <div>
+              {text('Content', lorem)
+                .split(/\n\n/)
+                .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
+            </div>
+          </GridChild>
+        </GridRow>
+      </GridContainer>
+    </Layout>
+  ));
 
 const DemoCell = ({ children }) => (
   <div

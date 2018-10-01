@@ -5,6 +5,7 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import OAds from 'o-ads/main.js';
 import { strftime } from '../../shared/helpers';
 import { flagsPropType, StringBoolPropType } from '../../shared/proptypes';
 import Header from '../header';
@@ -71,7 +72,6 @@ class Layout extends PureComponent {
     try {
       const { flags } = this.props;
       if (flags.ads) {
-        const OAds = await import('o-ads/main.js');
         const { ads } = this.props;
 
         const initialised = await OAds.init({

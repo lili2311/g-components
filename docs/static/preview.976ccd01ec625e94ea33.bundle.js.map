@@ -1,1 +1,0 @@
-{"version":3,"file":"static/preview.976ccd01ec625e94ea33.bundle.js","sources":["webpack:///./bower_components/o-layers/main.js"],"sourcesContent":["const dom = require('o-dom');\n\nmodule.exports = {\n\tgetLayerContext: function (el) {\n\t\treturn dom.getClosestMatch(el, '.o-layers__context') || document.body;\n\t}\n};\n"],"mappings":"AAAA","sourceRoot":""}
