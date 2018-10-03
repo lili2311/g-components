@@ -7,68 +7,95 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ODate from 'o-date/main.js';
 import Share from '../share';
-import { ftdate, getMainImage, getSeparator } from '../../shared/helpers';
+import { ftdate, getMainImage } from '../../shared/helpers';
 import { mainImagePropType, topicPropType } from '../../shared/proptypes';
 import './styles.scss';
-
-/* eslint-disable no-nested-ternary */
-export const Byline = ({ bylines }) => (
-  <Fragment>
-    By
-    {' '}
-    {Array.isArray(bylines) ? (
-      bylines.map(
-        (author, idx) => (author.url ? (
-          <Fragment key={author.name}>
-            <a href={author.url} className="o-typography-author">
-              {author.name}
-            </a>
-            {getSeparator(idx, bylines)}
-          </Fragment>
-        ) : (
-          <span key={author.name} className="o-typography-author">
-            {author.name}
-          </span>
-        )),
-      )
-    ) : bylines.url ? (
-      <a href={bylines.url} className="o-typography-author">
-        {bylines.name}
-      </a>
-    ) : (
-      <span className="o-typography-author">
-        {bylines.name}
-      </span>
-    )}
-  </Fragment>
-);
-
-Byline.displayName = 'GByline';
-
-/* eslint-enable */
 
 const BylinesPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.arrayOf(
     PropTypes.shape({
-      url: PropTypes.string,
       name: PropTypes.string.isRequired,
+      url: PropTypes.string,
+      location: PropTypes.string,
     }),
   ),
 ]);
 
-Byline.propTypes = {
-  bylines: BylinesPropType.isRequired,
-};
-
-class ArticleHead extends PureComponent {
+export class Byline extends PureComponent {
   dateRef = React.createRef();
 
-  static displayName = 'GArticleHead';
+  static displayName = 'GByline';
+
+  static propTypes = {
+    names: BylinesPropType,
+    date: PropTypes.string,
+  };
+
+  static defaultProps = {
+    names: null,
+    date: null,
+  };
 
   async componentDidMount() {
     new ODate(this.dateRef.current); // eslint-disable-line no-new
   }
+
+  render() {
+    const { names, date } = this.props;
+    if (!names && !date) return null;
+    const namesList = Array.isArray(names) ? names : [names];
+    const namesElements = namesList.reduce((a, name, i) => {
+      /* eslint-disable no-nested-ternary */
+      const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
+      const location = name.location && (
+        <Fragment>
+          {' '}
+          {name.location}
+        </Fragment>
+      );
+      const author = name.url ? (
+        <Fragment key={`author-${name.name}`}>
+          <a href={name.url} className="o-typography-author">
+            {name.name}
+          </a>
+          {location}
+        </Fragment>
+      ) : (
+        <Fragment key={`author-${name.name}`}>
+          <span>
+            {name.name}
+          </span>
+          {location}
+        </Fragment>
+      );
+      return a.concat(separator, author);
+    }, []);
+    const dateElement = (
+      <Fragment>
+        {' '}
+        <span
+          ref={this.dateRef}
+          data-o-component="o-date"
+          className="o-date o-typography-timestamp"
+          dateTime={date}
+          suppressHydrationWarning
+        >
+          {ftdate(new Date(date))}
+        </span>
+      </Fragment>
+    );
+    return (
+      <div className="byline">
+        {names && namesElements}
+        {date && dateElement}
+      </div>
+    );
+  }
+}
+
+class ArticleHead extends PureComponent {
+  static displayName = 'GArticleHead';
 
   render() {
     const {
@@ -121,24 +148,7 @@ class ArticleHead extends PureComponent {
 
         {flags && flags.shareButtons && <Share headline={headline} {...props} />}
 
-        <div>
-          {bylines && <Byline bylines={bylines} />}
-
-          {publishedDate && (
-            <Fragment>
-              {' '}
-              <span
-                ref={this.dateRef}
-                data-o-component="o-date"
-                className="o-date o-typography-timestamp"
-                dateTime={publishedDate}
-                suppressHydrationWarning
-              >
-                {ftdate(new Date(publishedDate))}
-              </span>
-            </Fragment>
-          )}
-        </div>
+        <Byline names={bylines} date={publishedDate} />
       </Fragment>
     );
   }
