@@ -77,8 +77,10 @@ class Layout extends PureComponent {
         const initialised = await OAds.init({
           gpt: {
             network: 5887,
-            site: ads.gptSite,
+            site: ads.gptSite || 'ft.com',
+            zone: ads.gptZone || 'unclassified',
           },
+          dfp_targeting: ads.dfpTargeting,
         });
 
         const slots = Array.from(document.querySelectorAll('.o-ads, [data-o-ads-name]'));
