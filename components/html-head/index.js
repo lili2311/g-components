@@ -156,8 +156,6 @@ class HtmlHead extends PureComponent {
           }}
         />
 
-        <meta content={JSON.stringify(flags)} />
-
         {flags.analytics && (
           <Fragment>
             <link rel="preconnect" href="https://spoor-api.ft.com" />
