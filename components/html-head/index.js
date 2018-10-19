@@ -156,6 +156,8 @@ class HtmlHead extends PureComponent {
           }}
         />
 
+        <meta content={JSON.stringify(flags)} />
+
         {flags.analytics && (
           <Fragment>
             <link rel="preconnect" href="https://spoor-api.ft.com" />
@@ -207,7 +209,7 @@ class HtmlHead extends PureComponent {
         <meta property="fb:pages" content="23117544640" />
         <meta property="fb:pages" content="293710391064899" />
 
-        {flags.analytics && <Analytics />}
+        {flags.analytics && <Analytics {...this.props} />}
       </head>
     );
   }
