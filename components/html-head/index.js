@@ -207,7 +207,7 @@ class HtmlHead extends PureComponent {
         <meta property="fb:pages" content="23117544640" />
         <meta property="fb:pages" content="293710391064899" />
 
-        {flags.analytics && <Analytics />}
+        {flags.analytics && <Analytics {...this.props} />}
       </head>
     );
   }
