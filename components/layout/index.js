@@ -9,6 +9,7 @@ import OAds from 'o-ads/main.js';
 import { strftime } from '../../shared/helpers';
 import { flagsPropType, StringBoolPropType } from '../../shared/proptypes';
 import Header from '../header';
+import Analytics from '../analytics';
 import { TopAd } from '../ads';
 import ArticleHead from '../article-head';
 import OnwardJourney from '../onwardjourney';
@@ -101,6 +102,7 @@ class Layout extends PureComponent {
     ) || !defaultContainer;
     return (
       <Fragment>
+        {flags.analytics && <Analytics {...this.props} />}
         {flags.ads && <TopAd />}
         {flags.header && <Header key="header" {...props} />}
         <main key="main" role="main">
