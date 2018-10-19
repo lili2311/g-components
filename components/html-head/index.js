@@ -5,7 +5,6 @@
 
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Analytics from '../analytics';
 import { getMainImage } from '../../shared/helpers';
 import {
   flagsPropType,
@@ -206,8 +205,6 @@ class HtmlHead extends PureComponent {
         <meta property="fb:pages" content="622419751233155" />
         <meta property="fb:pages" content="23117544640" />
         <meta property="fb:pages" content="293710391064899" />
-
-        {flags.analytics && <Analytics {...this.props} />}
       </head>
     );
   }
