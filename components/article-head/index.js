@@ -107,7 +107,7 @@ class ArticleHead extends PureComponent {
             </a>
           )}
         </div>
-        <meta itemProp="dateModified" content={buildTime} />
+        <meta itemProp="dateModified" content={buildTime} suppressHydrationWarning />
 
         {(mainImage.url || mainImage.uuid) && (
           <figure className="graphic graphic-b-1 graphic-pad-1">
@@ -132,6 +132,7 @@ class ArticleHead extends PureComponent {
                 data-o-component="o-date"
                 className="o-date o-typography-timestamp"
                 dateTime={publishedDate}
+                suppressHydrationWarning
               >
                 {ftdate(new Date(publishedDate))}
               </span>
