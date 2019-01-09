@@ -44,8 +44,9 @@ class HtmlHead extends PureComponent {
       twitterHeadline,
       twitterImage,
       url,
+      polyfills,
     } = this.props;
-    const polyfillFeatures = ['default', 'fetch'].join(',');
+    const polyfillFeatures = polyfills.join(',');
     const mainImageUrl = getMainImage(mainImage);
     return (
       <head>
@@ -233,6 +234,7 @@ HtmlHead.propTypes = {
   twitterHeadline: PropTypes.string,
   twitterImage: PropTypes.string,
   url: PropTypes.string.isRequired,
+  polyfills: PropTypes.arrayOf(PropTypes.string),
 };
 
 const DEFAULTS = {
@@ -264,6 +266,7 @@ HtmlHead.defaultProps = {
   tracking: {
     product: 'IG',
   },
+  polyfills: ['default', 'fetch'],
 };
 
 export default HtmlHead;
