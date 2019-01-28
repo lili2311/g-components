@@ -22,6 +22,7 @@ import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
+import ImageSet from '../components/image-set';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -717,5 +718,18 @@ storiesOf('DataFilter', module).add('default', () => (
     data={[{ name: 'John' }, { name: 'Paul' }, { name: 'George' }, { name: 'Ringo' }]}
     isAllSelectable={boolean('isAllSelectable', false)}
     isRadioSelectable={boolean('isRadioSelectable', false)}
+  />
+));
+
+storiesOf('ImageSet', module).add('default', () => (
+  <ImageSet
+    graphicsData={{
+      alt: 'How MPs voted on the Brexit deal and vote of no confidence',
+      sources: {
+        small: 'c16840e6-19c8-11e9-9e64-d150b3105d21',
+        medium: 'bea78b14-19c8-11e9-9e64-d150b3105d21',
+        large: 'bea78b14-19c8-11e9-9e64-d150b3105d21',
+      },
+    }}
   />
 ));
