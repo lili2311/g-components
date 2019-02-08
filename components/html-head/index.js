@@ -152,9 +152,8 @@ class HtmlHead extends PureComponent {
           dangerouslySetInnerHTML={{
             __html: `
               cutsTheMustard = 'querySelector' in document && 'localStorage' in window &&
-              'addEventListener' in window && typeof Function.prototype.bind !== 'undefined'; if
-              (cutsTheMustard) document.documentElement.className =
-              document.documentElement.className.replace( /core/g, 'enhanced', );
+              'addEventListener' in window && typeof Function.prototype.bind !== 'undefined'; 
+              if (cutsTheMustard) document.documentElement.className = document.documentElement.className.replace( /core/g, 'enhanced');
               `,
           }}
         />
