@@ -1207,16 +1207,16 @@ exports[`Storyshots ArticleHead default 1`] = `
         </div>
       </div>
     </div>
-    <div>
-      By
-       
+    <div
+      className="byline"
+    >
+      
       <a
         className="o-typography-author"
         href="https://ft.com/ændrew-rininsland"
       >
         Ændrew Rininsland
       </a>
-       
        
       <span
         className="o-date o-typography-timestamp"
@@ -5739,9 +5739,9 @@ exports[`Storyshots Layout With custom children 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                By
-                 
+              <div
+                className="byline"
+              >
                  
                 <span
                   className="o-date o-typography-timestamp"
@@ -7744,9 +7744,9 @@ exports[`Storyshots Layout default 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                By
-                 
+              <div
+                className="byline"
+              >
                  
                 <span
                   className="o-date o-typography-timestamp"
