@@ -74,9 +74,6 @@ export function getMainImage(img = {}) {
   return '';
 }
 
-// eslint-disable-next-line no-nested-ternary
-export const getSeparator = (idx, arr) => (arr.length > 1 ? (idx !== arr.length - 1 ? ', ' : ' ') : ' ');
-
 // Via: https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html
 
 export const makeCancelable = (promise) => {

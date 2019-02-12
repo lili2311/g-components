@@ -5,7 +5,7 @@
 
 export { TopAd, MiddleAd } from './components/ads';
 export { default as Analytics } from './components/analytics';
-export { default as ArticleHead } from './components/article-head';
+export { default as ArticleHead, Byline } from './components/article-head';
 export { default as Comments } from './components/comments';
 export { default as Footer } from './components/footer';
 export { default as Header } from './components/header';
