@@ -9980,27 +9980,31 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
       </article>
     </main>
     <div
-      className="o-grid-container pink"
+      className="pink"
     >
       <div
-        className="o-grid-row"
+        className="o-grid-container"
       >
         <div
-          data-o-comments-auto-init="false"
-          data-o-component="o-comments"
-          data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
-          id="comments"
+          className="o-grid-row"
         >
           <div
-            className="o--if-no-js"
+            data-o-comments-auto-init="false"
+            data-o-component="o-comments"
+            data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+            id="comments"
           >
-            To participate in this chat, you need to upgrade to a newer web browser.
-             
-            <a
-              href="http://help.ft.com/tools-services/browser-compatibility/"
+            <div
+              className="o--if-no-js"
             >
-              Learn more.
-            </a>
+              To participate in this chat, you need to upgrade to a newer web browser.
+               
+              <a
+                href="http://help.ft.com/tools-services/browser-compatibility/"
+              >
+                Learn more.
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -11996,27 +12000,31 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
       </article>
     </main>
     <div
-      className="o-grid-container pink"
+      className="pink"
     >
       <div
-        className="o-grid-row"
+        className="o-grid-container"
       >
         <div
-          data-o-comments-auto-init="false"
-          data-o-component="o-comments"
-          data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
-          id="comments"
+          className="o-grid-row"
         >
           <div
-            className="o--if-no-js"
+            data-o-comments-auto-init="false"
+            data-o-component="o-comments"
+            data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+            id="comments"
           >
-            To participate in this chat, you need to upgrade to a newer web browser.
-             
-            <a
-              href="http://help.ft.com/tools-services/browser-compatibility/"
+            <div
+              className="o--if-no-js"
             >
-              Learn more.
-            </a>
+              To participate in this chat, you need to upgrade to a newer web browser.
+               
+              <a
+                href="http://help.ft.com/tools-services/browser-compatibility/"
+              >
+                Learn more.
+              </a>
+            </div>
           </div>
         </div>
       </div>
