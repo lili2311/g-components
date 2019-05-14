@@ -6,6 +6,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+function imageUUID(uuid, width) {
+  return `https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F${uuid}?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=${width}`;
+}
+
+function imageURL(url, width) {
+  return `https://www.ft.com/__origami/service/image/v2/images/raw/${url}?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=${width}`;
+}
+
+function getImageURL(imgString, width) {
+  if (imgString.indexOf('http') > -1) return imageURL(imgString, width);
+  return imageUUID(imgString, width);
+}
+
 const imageSet = ({ graphicsData }) => (
   <div className="g-imageset">
     <figure>
@@ -14,28 +27,19 @@ const imageSet = ({ graphicsData }) => (
           && graphicsData.sources.small && (
             <source
               media="screen and (max-width: 490px)"
-              srcSet={`https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F${
-                graphicsData.sources.small
-              }?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=490`}
+              srcSet={getImageURL(graphicsData.sources.small, 490)}
             />
         )}
         {graphicsData.sources
           && graphicsData.sources.large && (
             <source
               media="screen and (min-width: 980px)"
-              srcSet={`https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F${
-                graphicsData.sources.large
-              }?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=1260`}
+              srcSet={getImageURL(graphicsData.sources.large, 1260)}
             />
         )}
         {graphicsData.sources
           && graphicsData.sources.medium && (
-            <img
-              src={`https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F${
-                graphicsData.sources.medium
-              }?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=700`}
-              alt={graphicsData.alt}
-            />
+            <img srcSet={getImageURL(graphicsData.sources.medium, 700)} alt={graphicsData.alt} />
         )}
       </picture>
     </figure>
