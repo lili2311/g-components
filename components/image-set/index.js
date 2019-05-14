@@ -15,7 +15,7 @@ function imageURL(url, width) {
 }
 
 function getImageURL(imgString, width) {
-  if (imgString.indexOf('http') > -1) return imageURL(imgString, width);
+  if (imgString.startsWith('http')) return imageURL(imgString, width);
   return imageUUID(imgString, width);
 }
 
