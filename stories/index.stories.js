@@ -147,7 +147,47 @@ storiesOf('Layout', module)
         </GridRow>
       </GridContainer>
     </Layout>
-  ));
+  ))
+  .add(
+    'With custom article head',
+    () => {
+      const CustomArticleHead = (
+        <h1>
+New starter kit site
+        </h1>
+      );
+      return (
+        <Layout
+          flags={DEFAULT.flags}
+          headline={text('Headline', DEFAULT.headline)}
+          title={text('Title', DEFAULT.title)}
+          topic={DEFAULT.topic}
+          url={text('Url', DEFAULT.url)}
+          publishedDate={DEFAULT.pubdate}
+          buildTime={DEFAULT.buildTime}
+          ads={DEFAULT.ads}
+          id={DEFAULT.id}
+          customArticleHead={CustomArticleHead}
+        >
+          {[
+            ...text('Content', lorem)
+              .split(/\n\n/)
+              .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+            <MiddleAd />,
+          ]}
+        </Layout>
+      );
+    },
+    {
+      info: `
+    <Layout /> is the primary component you'll work with in Starter Kit.
+    All the other components in this story are already included with it, and it's
+    the default export of g-components. To use it, you supply it children, which
+    get wrapped as the main article body. Make sure to wrap paragraphs in <p> tags
+    to maintain typographic styles.
+  `,
+    },
+  );
 
 storiesOf('Layout, dark theme', module)
   .addDecorator((story) => {
@@ -171,7 +211,7 @@ storiesOf('Layout, dark theme', module)
         {[
           ...text('Content', lorem)
             .split(/\n\n/)
-              .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+            .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
           <MiddleAd />,
         ]}
       </Layout>
