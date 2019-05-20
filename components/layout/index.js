@@ -94,12 +94,13 @@ class Layout extends PureComponent {
 
   render() {
     const {
-      flags = {}, children, defaultContainer, ...props
+      flags = {}, children, defaultContainer, customArticleHead, ...props
     } = this.props;
 
     const hasCustomChildren = React.Children.toArray(children).some(
       el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
     ) || !defaultContainer;
+    const articleHeadComponent = customArticleHead || <ArticleHead {...props} flags={flags} />;
     return (
       <Fragment>
         {flags.analytics && <Analytics {...this.props} />}
@@ -110,7 +111,7 @@ class Layout extends PureComponent {
             <div className="article-head o-grid-container">
               <div className="o-grid-row">
                 <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-                  <ArticleHead {...props} flags={flags} />
+                  {articleHeadComponent}
                 </header>
               </div>
             </div>
@@ -184,6 +185,7 @@ Layout.propTypes = {
   flags: flagsPropType.isRequired,
   children: PropTypes.node,
   defaultContainer: PropTypes.bool,
+  customArticleHead: PropTypes.node,
 };
 
 Layout.defaultProps = {
@@ -195,6 +197,7 @@ Layout.defaultProps = {
   },
   children: null,
   defaultContainer: true,
+  customArticleHead: null,
 };
 
 export default Layout;
