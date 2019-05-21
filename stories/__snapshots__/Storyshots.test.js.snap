@@ -1118,7 +1118,7 @@ exports[`Storyshots ArticleHead default 1`] = `
       />
     </div>
     <meta
-      content="2018-07-25T17:43:37.000Z"
+      content="2019-01-31T00:00:00.000Z"
       itemProp="dateModified"
       suppressHydrationWarning={true}
     />
@@ -1221,10 +1221,10 @@ exports[`Storyshots ArticleHead default 1`] = `
       <span
         className="o-date o-typography-timestamp"
         data-o-component="o-date"
-        dateTime="2018-07-25T17:43:37.000Z"
+        dateTime="2019-01-31T00:00:00.000Z"
         suppressHydrationWarning={true}
       >
-        Wednesday, 25 July 2018
+        Thursday, 31 January 2019
       </span>
     </div>
   </div>
@@ -1828,7 +1828,7 @@ exports[`Storyshots ArticleHead default 1`] = `
                             }
                           }
                         >
-                          2018-07-25T17:43:37.000Z
+                          2019-01-31T00:00:00.000Z
                         </span>
                         "
                       </span>
@@ -1858,7 +1858,7 @@ exports[`Storyshots ArticleHead default 1`] = `
                             }
                           }
                         >
-                          2018-07-25T17:43:37.000Z
+                          2019-01-31T00:00:00.000Z
                         </span>
                         "
                       </span>
@@ -6664,7 +6664,7 @@ to maintain typographic styles.
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -6694,7 +6694,7 @@ to maintain typographic styles.
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -7709,7 +7709,7 @@ exports[`Storyshots Layout With custom children 1`] = `
                 />
               </div>
               <meta
-                content="2018-07-25T17:43:37.000Z"
+                content="2019-01-31T00:00:00.000Z"
                 itemProp="dateModified"
                 suppressHydrationWarning={true}
               />
@@ -7805,10 +7805,10 @@ exports[`Storyshots Layout With custom children 1`] = `
                 <span
                   className="o-date o-typography-timestamp"
                   data-o-component="o-date"
-                  dateTime="2018-07-25T17:43:37.000Z"
+                  dateTime="2019-01-31T00:00:00.000Z"
                   suppressHydrationWarning={true}
                 >
-                  Wednesday, 25 July 2018
+                  Thursday, 31 January 2019
                 </span>
               </div>
             </header>
@@ -8676,7 +8676,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -8706,7 +8706,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -9741,7 +9741,7 @@ exports[`Storyshots Layout default 1`] = `
                 />
               </div>
               <meta
-                content="2018-07-25T17:43:37.000Z"
+                content="2019-01-31T00:00:00.000Z"
                 itemProp="dateModified"
                 suppressHydrationWarning={true}
               />
@@ -9837,10 +9837,10 @@ exports[`Storyshots Layout default 1`] = `
                 <span
                   className="o-date o-typography-timestamp"
                   data-o-component="o-date"
-                  dateTime="2018-07-25T17:43:37.000Z"
+                  dateTime="2019-01-31T00:00:00.000Z"
                   suppressHydrationWarning={true}
                 >
-                  Wednesday, 25 July 2018
+                  Thursday, 31 January 2019
                 </span>
               </div>
             </header>
@@ -10742,7 +10742,7 @@ to maintain typographic styles.
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -10772,7 +10772,7 @@ to maintain typographic styles.
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -11758,7 +11758,7 @@ exports[`Storyshots Layout, dark theme With custom children 1`] = `
                 />
               </div>
               <meta
-                content="2018-07-25T17:43:37.000Z"
+                content="2019-01-31T00:00:00.000Z"
                 itemProp="dateModified"
                 suppressHydrationWarning={true}
               />
@@ -11854,10 +11854,10 @@ exports[`Storyshots Layout, dark theme With custom children 1`] = `
                 <span
                   className="o-date o-typography-timestamp"
                   data-o-component="o-date"
-                  dateTime="2018-07-25T17:43:37.000Z"
+                  dateTime="2019-01-31T00:00:00.000Z"
                   suppressHydrationWarning={true}
                 >
-                  Wednesday, 25 July 2018
+                  Thursday, 31 January 2019
                 </span>
               </div>
             </header>
@@ -12729,7 +12729,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -12759,7 +12759,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -13794,7 +13794,7 @@ exports[`Storyshots Layout, dark theme default 1`] = `
                 />
               </div>
               <meta
-                content="2018-07-25T17:43:37.000Z"
+                content="2019-01-31T00:00:00.000Z"
                 itemProp="dateModified"
                 suppressHydrationWarning={true}
               />
@@ -13890,10 +13890,10 @@ exports[`Storyshots Layout, dark theme default 1`] = `
                 <span
                   className="o-date o-typography-timestamp"
                   data-o-component="o-date"
-                  dateTime="2018-07-25T17:43:37.000Z"
+                  dateTime="2019-01-31T00:00:00.000Z"
                   suppressHydrationWarning={true}
                 >
-                  Wednesday, 25 July 2018
+                  Thursday, 31 January 2019
                 </span>
               </div>
             </header>
@@ -14799,7 +14799,7 @@ to maintain typographic styles.
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
@@ -14829,7 +14829,7 @@ to maintain typographic styles.
                               }
                             }
                           >
-                            2018-07-25T17:43:37.000Z
+                            2019-01-31T00:00:00.000Z
                           </span>
                           "
                         </span>
