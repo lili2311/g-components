@@ -26,6 +26,12 @@ import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
 import '../shared/critical-path.scss';
 
+const mockedDate = new Date(2019, 1, 1);
+const originalDate = Date;
+
+global.Date = jest.fn(() => mockedDate);
+global.Date.setDate = originalDate.setDate;
+
 const defaultFlags = {
   prod: false,
   errorReporting: true,
