@@ -1,6 +1,8 @@
 @import "o-colors/main.scss";
 @import "o-grid/main.scss";
 
+@include oGridSurfaceLayoutSizes;
+
 $font-sans: MetricWeb, sans-serif;
 $font-serif: Georgia, serif;
 $font-display: FinancierDisplayWeb, Georgia, serif;
