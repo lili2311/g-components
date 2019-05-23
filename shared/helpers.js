@@ -6,6 +6,7 @@
 import React from 'react';
 import removeMarkdown from 'remove-markdown';
 import { utcFormat } from 'd3-time-format';
+import { getGridBreakpoints } from 'o-grid';
 
 const formatterCache = new Map();
 const defaultFTDateFormat = '%A, %-e %B %Y';
@@ -94,4 +95,106 @@ export const makeCancelable = (promise) => {
       hasCanceled = true;
     },
   };
+};
+
+export const registerLayoutChangeEvents = () => {
+  // Create a map containing all breakpoints exposed via html:before
+  const { layouts } = getGridBreakpoints();
+  if (layouts) {
+    const breakpoints = new Map([...Object.entries(layouts), ['default', '240px']]);
+    const decr1 = val => `${Number(val.replace('px', '') - 1)}px`;
+
+    const setupQuery = (query, size) => {
+      // matchMedia listener handler: Dispatch `o-grid.layoutChange` event if a match
+      const handleMQChange = (mql) => {
+        if (mql.matches) {
+          window.dispatchEvent(
+            new CustomEvent('o-grid.layoutChange', {
+              detail: size,
+            }),
+          );
+        }
+      };
+
+      const mql = window.matchMedia(query);
+      mql.addListener(handleMQChange);
+      handleMQChange(mql);
+
+      return [query, handleMQChange];
+    };
+
+    // Generate media queries for each
+    return [...breakpoints].map(([size, width]) => {
+      switch (size) {
+        case 'S':
+          return setupQuery(
+            `(min-width: ${width}) and (max-width: ${decr1(breakpoints.get('M'))})`,
+            size,
+          );
+        case 'M':
+          return setupQuery(
+            `(min-width: ${width}) and (max-width: ${decr1(breakpoints.get('L'))})`,
+            size,
+          );
+        case 'L':
+          return setupQuery(
+            `(min-width: ${width}) and (max-width: ${decr1(breakpoints.get('XL'))})`,
+            size,
+          );
+        case 'XL':
+          return setupQuery(`(min-width: ${width})`, size);
+        case 'default':
+        default:
+          return setupQuery(`(max-width: ${decr1(breakpoints.get('S'))})`, size);
+      }
+    });
+  }
+
+  throw new Error(
+    'To enable grid layout change events, include oGridSurfaceLayoutSizes in your Sass',
+  );
+};
+
+export const unregisterLayoutChangeEvents = (listeners) => {
+  const { layouts } = getGridBreakpoints();
+  if (layouts) {
+    const breakpoints = new Map([...Object.entries(layouts), ['default', '240px']]);
+    const decr1 = val => `${Number(val.replace('px', '') - 1)}px`;
+
+    const removeQuery = (query) => {
+      const [, listener] = listeners.find(([q]) => q === query);
+      const mql = window.matchMedia(query);
+      mql.removeListener(listener);
+    };
+
+    breakpoints.forEach((width, size) => {
+      switch (size) {
+        case 'S':
+          removeQuery(
+            `(min-width: ${width}) and (max-width: ${decr1(breakpoints.get('M'))})`,
+            size,
+          );
+          break;
+        case 'M':
+          removeQuery(
+            `(min-width: ${width}) and (max-width: ${decr1(breakpoints.get('L'))})`,
+            size,
+          );
+          break;
+        case 'L':
+          removeQuery(
+            `(min-width: ${width}) and (max-width: ${decr1(breakpoints.get('XL'))})`,
+            size,
+          );
+          break;
+        case 'XL':
+          removeQuery(`(min-width: ${width})`, size);
+          break;
+        case 'default':
+        default:
+          removeQuery(`(max-width: ${decr1(breakpoints.get('S'))})`, size);
+          break;
+      }
+    });
+  }
 };

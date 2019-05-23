@@ -5782,30 +5782,135 @@ exports[`Storyshots Layout With custom article head 1`] = `
                 data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
               >
                 <div>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.
 Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores
 omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr
 dolore praesent est.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne.
 Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis
 consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel
 gubergren constituto.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea
 sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis
 vide laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit
 ut his.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At
 laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei,
 tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum
 salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim
 soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.
@@ -9860,30 +9965,135 @@ exports[`Storyshots Layout default 1`] = `
                 data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
               >
                 <div>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.
 Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores
 omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr
 dolore praesent est.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne.
 Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis
 consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel
 gubergren constituto.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea
 sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis
 vide laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit
 ut his.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At
 laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei,
 tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum
 salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim
 soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.
@@ -13913,30 +14123,135 @@ exports[`Storyshots Layout, dark theme default 1`] = `
                 data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
               >
                 <div>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.
 Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores
 omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr
 dolore praesent est.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne.
 Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis
 consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel
 gubergren constituto.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea
 sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis
 vide laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit
 ut his.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At
 laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei,
 tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos.
                   </p>
-                  <p>
+                  <p
+                    ads={
+                      Object {
+                        "dfpTargeting": false,
+                        "gptSite": "test.5887.origami",
+                        "gptZone": false,
+                      }
+                    }
+                    breakpoint="default"
+                    buildTime="2019-01-31T00:00:00.000Z"
+                    headline="New Starter Kit site"
+                    id="3a499586-b2e0-11e4-a058-00144feab7de"
+                    publishedDate="2019-01-31T00:00:00.000Z"
+                    title="New Starter Kit site"
+                    topic={
+                      Object {
+                        "name": "Testing",
+                        "url": "https://local.ft.com/",
+                      }
+                    }
+                    url="https://local.ft.com/"
+                  >
                     Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum
 salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim
 soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.
