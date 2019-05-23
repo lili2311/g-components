@@ -6,7 +6,11 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import OAds from 'o-ads/main.js';
-import { strftime } from '../../shared/helpers';
+import {
+  strftime,
+  registerLayoutChangeEvents,
+  unregisterLayoutChangeEvents,
+} from '../../shared/helpers';
 import { flagsPropType, StringBoolPropType } from '../../shared/proptypes';
 import Header from '../header';
 import Analytics from '../analytics';
@@ -69,8 +73,15 @@ GridChild.defaultProps = {
 };
 
 class Layout extends PureComponent {
+  state = {
+    breakpoint: 'default',
+  };
+
   async componentDidMount() {
     try {
+      window.addEventListener('o-grid.layoutChange', this.update);
+      this.listeners = registerLayoutChangeEvents();
+
       const { flags } = this.props;
       if (flags.ads) {
         const { ads } = this.props;
@@ -92,10 +103,21 @@ class Layout extends PureComponent {
     }
   }
 
+  componentWillUnmount = () => {
+    unregisterLayoutChangeEvents(this.listeners);
+    window.removeEventListener('o-grid.layoutChange', this.update);
+  };
+
+  update = ({ detail }) => {
+    this.setState({ breakpoint: detail });
+  };
+
   render() {
     const {
       flags = {}, children, defaultContainer, customArticleHead, ...props
     } = this.props;
+
+    const { breakpoint } = this.state;
 
     const hasCustomChildren = React.Children.toArray(children).some(
       el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
@@ -103,9 +125,9 @@ class Layout extends PureComponent {
     const articleHeadComponent = customArticleHead || <ArticleHead {...props} flags={flags} />;
     return (
       <Fragment>
-        {flags.analytics && <Analytics {...this.props} />}
+        {flags.analytics && <Analytics {...{ ...this.props, breakpoint }} />}
         {flags.ads && <TopAd />}
-        {flags.header && <Header key="header" {...{ ...props, flags }} />}
+        {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
         <main key="main" role="main">
           <article className="article" itemScope itemType="http://schema.org/Article">
             <div className="article-head o-grid-container">
@@ -117,13 +139,13 @@ class Layout extends PureComponent {
             </div>
             <div className="article-body o-typography-wrapper" itemProp="articleBody">
               {hasCustomChildren ? (
-                children
+                React.Children.map(children, child => React.cloneElement(child, { ...props, breakpoint }))
               ) : (
                 <GridContainer>
                   <GridRow>
                     <GridChild>
                       <div>
-                        {children}
+                        {React.Children.map(children, child => React.cloneElement(child, { ...props, breakpoint }))}
                       </div>
                     </GridChild>
                   </GridRow>
@@ -165,9 +187,9 @@ Limited
             </div>
           </article>
         </main>
-        {flags.onwardjourney && <OnwardJourney key="oj" {...props} />}
-        {flags.comments && <Comments key="comments" {...{ ...props, flags }} />}
-        {flags.footer && <Footer key="footer" {...props} />}
+        {flags.onwardjourney && <OnwardJourney key="oj" {...{ ...props, breakpoint }} />}
+        {flags.comments && <Comments key="comments" {...{ ...props, flags, breakpoint }} />}
+        {flags.footer && <Footer key="footer" {...{ ...props, flags, breakpoint }} />}
       </Fragment>
     );
   }
