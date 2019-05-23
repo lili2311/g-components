@@ -1,4 +1,11 @@
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import '../shared/critical-path.scss';
+
+const mockedDate = new Date(2019, 1, 0);
+const originalDate = Date;
+
+global.Date = jest.fn(() => mockedDate);
+global.Date.setDate = originalDate.setDate;
 
 global.IntersectionObserver = jest.fn().mockImplementation(() => ({
   observe: () => ({}),

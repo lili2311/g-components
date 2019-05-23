@@ -99,7 +99,7 @@ class Layout extends PureComponent {
         slots.forEach(initialised.slots.initSlot.bind(initialised.slots));
       }
     } catch (e) {
-      console.error(e); // eslint-disable-line no-console
+      if (!global.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
     }
   }
 

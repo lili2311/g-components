@@ -7,21 +7,21 @@
     <base target="_parent">
     <title>Storybook</title>
     <link rel="shortcut icon" href="favicon.ico?v=1" />
-    <!-- Add CTM checks -->
+    <link rel="../shared/critical-path.scss" />
+<!-- Add CTM checks -->
 <script>
-document.documentElement.className = 'core';
-var script = document.createElement('script');
-var supportsDeferredScripts = "defer" in script && "async" in script;
-window.cutsTheMustard = (
-	typeof document.documentElement.dataset === 'object'
-	&& ('visibilityState' in document)
-	&& supportsDeferredScripts
-);
-if (window.cutsTheMustard)
-  document.documentElement.className = document.documentElement.className.replace(
-    /core/g,
-    'enhanced'
-  );
+  document.documentElement.className = "core";
+  var script = document.createElement("script");
+  var supportsDeferredScripts = "defer" in script && "async" in script;
+  window.cutsTheMustard =
+    typeof document.documentElement.dataset === "object" &&
+    "visibilityState" in document &&
+    supportsDeferredScripts;
+  if (window.cutsTheMustard)
+    document.documentElement.className = document.documentElement.className.replace(
+      /core/g,
+      "enhanced"
+    );
 </script>
 
     <style>
@@ -101,5 +101,5 @@ if (window.cutsTheMustard)
             <code id="error-stack"></code>
         </pre>
     </div>
-<script type="text/javascript" src="static/preview.afa67055166c10c1fecd.bundle.js"></script><script type="text/javascript" src="static/vendors~preview.d78e7217b25fbd6b4f66.bundle.js"></script><script type="text/javascript" src="static/runtime~preview.54cc4290e870f934d9e1.bundle.js"></script></body>
+<script type="text/javascript" src="static/preview.cef1aae59a6ed036910e.bundle.js"></script><script type="text/javascript" src="static/vendors~preview.d78e7217b25fbd6b4f66.bundle.js"></script><script type="text/javascript" src="static/runtime~preview.54cc4290e870f934d9e1.bundle.js"></script></body>
 </html>
