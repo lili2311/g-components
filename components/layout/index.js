@@ -139,13 +139,19 @@ class Layout extends PureComponent {
             </div>
             <div className="article-body o-typography-wrapper" itemProp="articleBody">
               {hasCustomChildren ? (
-                React.Children.map(children, child => React.cloneElement(child, { ...props, breakpoint }))
+                React.Children.map(children, child => React.cloneElement(
+                  child,
+                  typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint },
+                ))
               ) : (
                 <GridContainer>
                   <GridRow>
                     <GridChild>
                       <div>
-                        {React.Children.map(children, child => React.cloneElement(child, { ...props, breakpoint }))}
+                        {React.Children.map(children, child => React.cloneElement(
+                          child,
+                          !child.type || typeof child.type === 'string' ? {} : { ...props, breakpoint },
+                        ))}
                       </div>
                     </GridChild>
                   </GridRow>
