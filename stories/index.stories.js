@@ -3,7 +3,7 @@
  * Main Storybook.js stories
  */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, addDecorator } from '@storybook/react';
 import {
@@ -18,7 +18,9 @@ import Comments from '../components/comments';
 import Footer from '../components/footer';
 import Header from '../components/header';
 // import HtmlHead from '../components/html-head';
-import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
+import Layout, {
+  GridContainer, GridRow, GridChild, Context,
+} from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
 import DataTable from '../components/data-table';
@@ -187,7 +189,35 @@ New starter kit site
     to maintain typographic styles.
   `,
     },
-  );
+  )
+  .add('Using context', () => {
+    // Note that this accepts no props — we're purely consuming Layout's Context.
+    const DeepChild = () => {
+      const ctx = useContext(Context);
+      return (
+        <pre>
+          {JSON.stringify(ctx)}
+        </pre>
+      );
+    };
+
+    return (
+      <Layout {...DEFAULT}>
+        <div width="100%" style={{ overflow: 'scroll' }}>
+          This should resemble config:
+          {' '}
+          <br />
+          <DeepChild
+            {
+              ...{
+                /* Look ma, no props! */
+              }
+            }
+          />
+        </div>
+      </Layout>
+    );
+  });
 
 storiesOf('Layout, dark theme', module)
   .addDecorator((story) => {
