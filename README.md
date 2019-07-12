@@ -42,9 +42,10 @@ $ npm link ../g-components
 
 # Releasing
 
-Tag a new release and push, eg.
+Build, tag a new release and push, eg.
 
 ```bash
+$ npm run build
 $ git tag v9.9.9
 $ git push origin v9.9.9
 ```
