@@ -46,6 +46,7 @@ Build, tag a new release and push, eg.
 
 ```bash
 $ npm run build
+$ git add styles.css docs/*
 $ git tag v9.9.9
 $ git push origin v9.9.9
 ```
