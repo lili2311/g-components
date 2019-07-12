@@ -114,7 +114,7 @@ class Layout extends PureComponent {
 
   render() {
     const {
-      flags = {}, children, defaultContainer, customArticleHead, oGridArticleHeadDivs, ...props
+      flags = {}, children, defaultContainer, customArticleHead, wrapArticleHead, ...props
     } = this.props;
 
     const { breakpoint } = this.state;
@@ -130,7 +130,7 @@ class Layout extends PureComponent {
         {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
         <main key="main" role="main">
           <article className="article" itemScope itemType="http://schema.org/Article">
-            {oGridArticleHeadDivs ? (
+            {wrapArticleHead ? (
               <div className="article-head o-grid-container">
                 <div className="o-grid-row">
                   <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
@@ -221,7 +221,7 @@ Layout.propTypes = {
   children: PropTypes.node,
   defaultContainer: PropTypes.bool,
   customArticleHead: PropTypes.node,
-  oGridArticleHeadDivs: PropTypes.bool,
+  wrapArticleHead: PropTypes.bool,
 };
 
 Layout.defaultProps = {
@@ -234,7 +234,7 @@ Layout.defaultProps = {
   children: null,
   defaultContainer: true,
   customArticleHead: null,
-  oGridArticleHeadDivs: true,
+  wrapArticleHead: true,
 };
 
 export default Layout;
