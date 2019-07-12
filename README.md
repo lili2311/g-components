@@ -42,14 +42,18 @@ $ npm link ../g-components
 
 # Releasing
 
-Build, tag a new release and push, eg.
+Make sure your local is up to date with the origin, then update the docs if necessary:
 
 ```bash
 $ npm run build
 $ git add styles.css docs/*
 $ git commit -m 'Update docs'
+$ git push
+```
+
+Work out the next version number (use `git tag -l`, here `v9.9.9` is an example), then release:
+
+```bash
 $ git tag v9.9.9
 $ git push origin v9.9.9
 ```
-
-(Where `v9.9.9` is the version number you want to use.)
