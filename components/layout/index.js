@@ -114,7 +114,7 @@ class Layout extends PureComponent {
 
   render() {
     const {
-      flags = {}, children, defaultContainer, customArticleHead, ...props
+      flags = {}, children, defaultContainer, customArticleHead, wrapArticleHead, ...props
     } = this.props;
 
     const { breakpoint } = this.state;
@@ -130,13 +130,18 @@ class Layout extends PureComponent {
         {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
         <main key="main" role="main">
           <article className="article" itemScope itemType="http://schema.org/Article">
-            <div className="article-head o-grid-container">
-              <div className="o-grid-row">
-                <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-                  {articleHeadComponent}
-                </header>
+            {wrapArticleHead ? (
+              <div className="article-head o-grid-container">
+                <div className="o-grid-row">
+                  <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+                    {articleHeadComponent}
+                  </header>
+                </div>
               </div>
-            </div>
+            ) : (
+              articleHeadComponent
+            )}
+
             <div className="article-body o-typography-wrapper" itemProp="articleBody">
               {hasCustomChildren ? (
                 React.Children.map(children, child => React.cloneElement(
@@ -150,7 +155,9 @@ class Layout extends PureComponent {
                       <div>
                         {React.Children.map(children, child => React.cloneElement(
                           child,
-                          !child.type || typeof child.type === 'string' ? {} : { ...props, breakpoint },
+                          !child.type || typeof child.type === 'string'
+                            ? {}
+                            : { ...props, breakpoint },
                         ))}
                       </div>
                     </GridChild>
@@ -214,6 +221,7 @@ Layout.propTypes = {
   children: PropTypes.node,
   defaultContainer: PropTypes.bool,
   customArticleHead: PropTypes.node,
+  wrapArticleHead: PropTypes.bool,
 };
 
 Layout.defaultProps = {
@@ -226,6 +234,7 @@ Layout.defaultProps = {
   children: null,
   defaultContainer: true,
   customArticleHead: null,
+  wrapArticleHead: true,
 };
 
 export default Layout;
