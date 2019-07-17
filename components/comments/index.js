@@ -3,59 +3,66 @@
  * Comments component
  */
 
-import React, { PureComponent } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import OComments from 'o-comments/main.js';
 import { flagsPropType } from '../../shared/proptypes';
 import './styles.scss';
 
-class Comments extends PureComponent {
-  ref = React.createRef();
+const Comments = ({
+  title, id, url, flags,
+}) => {
+  const ref = useRef();
 
-  static displayName = 'GComments';
+  const { dark } = flags;
 
-  async componentDidMount() {
-    const { title, id, url } = this.props;
+  useEffect(() => {
+    (async () => {
+      // prettier-ignore
+      new OComments(ref.current, { // eslint-disable-line no-new
+        title,
+        url,
+        articleId: id,
+      });
+    })();
+  }, []);
 
-    // prettier-ignore
-    new OComments(this.ref.current, { // eslint-disable-line no-new
-      title,
-      url,
-      articleId: id,
-    });
-  }
-
-  render() {
-    const {
-      flags: { dark },
-    } = this.props;
-    const comments = (
-      <div className="o-grid-container">
-        <div className="o-grid-row">
-          <div
-            ref={this.ref}
-            data-o-component="o-comments"
-            id="comments"
-            data-o-comments-auto-init="false"
-            data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
-          >
-            <div className="o--if-no-js">
-              To participate in this chat, you need to upgrade to a newer web browser.
-              {' '}
-              <a href="http://help.ft.com/tools-services/browser-compatibility/">Learn more.</a>
-            </div>
+  const comments = (
+    <div className="o-grid-container">
+      <div className="o-grid-row">
+        <div
+          ref={ref}
+          data-o-component="o-comments"
+          id="comments"
+          data-o-comments-auto-init="false"
+          data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
+        >
+          <div className="o--if-no-js">
+            To participate in this chat, you need to upgrade to a newer web browser.
+            {' '}
+            <a href="http://help.ft.com/tools-services/browser-compatibility/">
+Learn more.
+            </a>
           </div>
         </div>
       </div>
+    </div>
+  );
+
+  if (dark) {
+    return (
+      <div className="pink">
+        {comments}
+      </div>
     );
-
-    if (dark) {
-      return <div className="pink">{comments}</div>;
-    }
-
-    return comments;
   }
-}
+
+  return comments;
+};
+
+export default Comments;
+
+Comments.displayName = 'GComments';
 
 Comments.propTypes = {
   title: PropTypes.string,
@@ -72,5 +79,3 @@ Comments.defaultProps = {
     dark: false,
   },
 };
-
-export default Comments;
