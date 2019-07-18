@@ -46,8 +46,6 @@ Financial Times
   );
 };
 
-export default Header;
-
 Header.displayName = 'GHeader';
 
 Header.propTypes = {
@@ -59,3 +57,5 @@ Header.defaultProps = {
     dark: false,
   },
 };
+
+export default Header;

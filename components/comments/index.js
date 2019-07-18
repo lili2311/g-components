@@ -60,8 +60,6 @@ Learn more.
   return comments;
 };
 
-export default Comments;
-
 Comments.displayName = 'GComments';
 
 Comments.propTypes = {
@@ -79,3 +77,5 @@ Comments.defaultProps = {
     dark: false,
   },
 };
+
+export default Comments;

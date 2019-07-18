@@ -219,6 +219,6 @@ Legal &amp; Privacy
   );
 };
 
-export default Footer;
-
 Footer.displayName = 'GFooter';
+
+export default Footer;
