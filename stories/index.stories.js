@@ -1071,8 +1071,20 @@ Currently viewing line:
   );
 
 // Autocomplete search
-storiesOf('AutocompleteSearch', module).add('default', () => <AutocompleteSearch />, {
-  info: `
+storiesOf('AutocompleteSearch', module).add(
+  'default',
+  () => (
+    <AutocompleteSearch
+      searchList={[
+        { value: 'jeremycorbyn', display: 'Jeremy Corbyn' },
+        { value: 'borisjohnson', display: 'Boris Johnson' },
+        { value: 'joswinson', display: 'Jo Swinson' },
+      ]}
+    />
+  ),
+  {
+    info: `
       <AutocompleteSearch /> can...
     `,
-});
+  },
+);
