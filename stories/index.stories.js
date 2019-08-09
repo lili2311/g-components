@@ -24,6 +24,7 @@ import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
+import AutocompleteSearch from '../components/autocomplete-search';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1068,3 +1069,10 @@ Currently viewing line:
   `,
     },
   );
+
+// Autocomplete search
+storiesOf('AutocompleteSearch', module).add('default', () => <AutocompleteSearch />, {
+  info: `
+      <AutocompleteSearch /> can...
+    `,
+});
