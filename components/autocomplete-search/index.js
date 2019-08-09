@@ -35,7 +35,7 @@ const AutocompleteSearch = ({
   getSuggestions,
   getSuggestionValue,
   renderSuggestion,
-  onSelect,
+  onSelectCallback,
   placeholder,
 }) => {
   const inputRef = useRef();
@@ -54,7 +54,8 @@ const AutocompleteSearch = ({
 
   // Run callback
   const onSuggestionSelected = (event, { suggestion, suggestionValue }) => {
-    onSelect(suggestion, suggestionValue);
+    if (onSelectCallback) onSelectCallback(suggestion, suggestionValue);
+    setSearchValue(suggestionValue);
     inputRef.current.input.blur();
   };
 
@@ -94,7 +95,7 @@ AutocompleteSearch.propTypes = {
   getSuggestions: PropTypes.func,
   getSuggestionValue: PropTypes.func,
   renderSuggestion: PropTypes.func,
-  onSelect: PropTypes.func,
+  onSelectCallback: PropTypes.func,
   placeholder: PropTypes.string,
 };
 
@@ -102,7 +103,6 @@ AutocompleteSearch.defaultProps = {
   className: 'g-autocomplete-search',
   getSuggestions,
   renderSuggestion: RenderSuggestion,
-  onSelect: () => {},
   getSuggestionValue,
 };
 
