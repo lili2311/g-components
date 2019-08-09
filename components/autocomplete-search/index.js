@@ -36,6 +36,7 @@ const AutocompleteSearch = ({
   getSuggestionValue,
   renderSuggestion,
   onSelectCallback,
+  onSubmitCallback,
   placeholder,
 }) => {
   const inputRef = useRef();
@@ -59,6 +60,12 @@ const AutocompleteSearch = ({
     inputRef.current.input.blur();
   };
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (onSubmitCallback) onSelectCallback(searchValue);
+    inputRef.current.input.blur();
+  };
+
   // Update search value state
   const onChange = (event) => {
     const { value } = event.target;
@@ -66,7 +73,7 @@ const AutocompleteSearch = ({
   };
 
   return (
-    <form className={`${className}__form`}>
+    <form className={`${className}__form`} onSubmit={onSubmit}>
       <Autosuggest
         ref={inputRef}
         suggestions={suggestions}
@@ -96,6 +103,7 @@ AutocompleteSearch.propTypes = {
   getSuggestionValue: PropTypes.func,
   renderSuggestion: PropTypes.func,
   onSelectCallback: PropTypes.func,
+  onSubmitCallback: PropTypes.func,
   placeholder: PropTypes.string,
 };
 
