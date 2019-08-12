@@ -1076,6 +1076,7 @@ storiesOf('AutosuggestSearch', module).add(
   () => (
     <AutosuggestSearch
       placeholder="Search here..."
+      width={300}
       searchList={[
         { value: 'jeremycorbyn', display: 'Jeremy Corbyn' },
         { value: 'borisjohnson', display: 'Boris Johnson' },

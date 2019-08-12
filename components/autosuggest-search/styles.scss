@@ -2,6 +2,8 @@
 
 // Container styles
 .g-autosuggest-search {
+  position: relative;
+
   // Add error styles
   &--error {
     .react-autosuggest__input {
@@ -19,8 +21,14 @@
     background: none;
     border: none;
 
-    i {
+    i.icon {
       vertical-align: middle;
+      background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=o-icons&format=svg');
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50%;
+      background-color: transparent;
     }
   }
 

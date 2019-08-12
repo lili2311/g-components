@@ -83,12 +83,19 @@ const AutosuggestSearch = ({
     setErrorState({ isError: false, errorMessage: '' });
   };
 
+  //
+  const clearSearch = () => {
+    setSearchValue('');
+    setErrorState({ isError: false, errorMessage: '' });
+    inputRef.current.input.focus();
+  };
+
   const { isError, errorMessage } = errorState;
   // Generate form classes
   const formClasses = [className, isError && `${className}--error`].filter(i => i).join(' ');
 
   return (
-    <form className={formClasses} onSubmit={onSubmit}>
+    <form className={formClasses} onSubmit={onSubmit} style={{ width }}>
       <Autosuggest
         ref={inputRef}
         suggestions={suggestions}
@@ -102,13 +109,17 @@ const AutosuggestSearch = ({
           placeholder: placeholder || '',
           value: searchValue,
           onChange,
-          style: { width },
         }}
       />
       {isError && (
       <div className={`${className}__error-message`}>
         {errorMessage}
       </div>
+      )}
+      {searchValue !== '' && (
+        <button className={`${className}__clear-button`} type="button" onClick={clearSearch}>
+          <i className="icon" style={{ width: 20, height: 20 }} />
+        </button>
       )}
     </form>
   );
