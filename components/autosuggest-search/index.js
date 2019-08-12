@@ -1,6 +1,6 @@
 /**
  * @file
- * Autocomplete search component
+ * Autosuggest search component
  */
 
 import React, { useRef, useState } from 'react';
@@ -32,7 +32,7 @@ const RenderSuggestion = ({ display }) => (
 // Default mapping from suggestion to value
 const getSuggestionValue = ({ display }) => display;
 
-const AutocompleteSearch = ({
+const AutosuggestSearch = ({
   className,
   searchList,
   getSuggestions,
@@ -99,9 +99,9 @@ const AutocompleteSearch = ({
   );
 };
 
-AutocompleteSearch.displayName = 'GAutocompleteSearch';
+AutosuggestSearch.displayName = 'GAutosuggestSearch';
 
-AutocompleteSearch.propTypes = {
+AutosuggestSearch.propTypes = {
   className: PropTypes.string,
   searchList: PropTypes.arrayOf(PropTypes.object),
   placeholder: PropTypes.string,
@@ -113,11 +113,11 @@ AutocompleteSearch.propTypes = {
   placeholder: PropTypes.string,
 };
 
-AutocompleteSearch.defaultProps = {
+AutosuggestSearch.defaultProps = {
   className: 'g-autocomplete-search',
   getSuggestions,
   renderSuggestion: RenderSuggestion,
   getSuggestionValue,
 };
 
-export default AutocompleteSearch;
+export default AutosuggestSearch;

@@ -24,7 +24,7 @@ import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
-import AutocompleteSearch from '../components/autocomplete-search';
+import AutosuggestSearch from '../components/autosuggest-search';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1070,11 +1070,11 @@ Currently viewing line:
     },
   );
 
-// Autocomplete search
-storiesOf('AutocompleteSearch', module).add(
+// Autosuggest search
+storiesOf('AutosuggestSearch', module).add(
   'default',
   () => (
-    <AutocompleteSearch
+    <AutosuggestSearch
       searchList={[
         { value: 'jeremycorbyn', display: 'Jeremy Corbyn' },
         { value: 'borisjohnson', display: 'Boris Johnson' },
@@ -1084,7 +1084,7 @@ storiesOf('AutocompleteSearch', module).add(
   ),
   {
     info: `
-      <AutocompleteSearch /> can...
+      <AutosuggestSearch /> can...
     `,
   },
 );
