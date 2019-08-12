@@ -16,7 +16,10 @@ const getSuggestions = (value, searchList) => {
   // Match from the beginning of the string
   return inputLength === 0
     ? []
-    : searchList.filter(({ value }) => value.slice(0, inputLength) === inputValue);
+    : searchList.filter(({ display }) => {
+      const words = display.toLowerCase().split(' ');
+      return words.some(word => word.toLowerCase().slice(0, inputLength) === inputValue);
+    });
 };
 
 // Default component/function to render suggestion
@@ -53,22 +56,25 @@ const AutocompleteSearch = ({
     updateSuggestions([]);
   };
 
-  // Run callback
+  // Run callback when suggestion selected from dropdown
   const onSuggestionSelected = (event, { suggestion, suggestionValue }) => {
     if (onSelectCallback) onSelectCallback(suggestion, suggestionValue);
     setSearchValue(suggestionValue);
     inputRef.current.input.blur();
   };
 
+  // Run callback on submit (ENTER)
   const onSubmit = (event) => {
     event.preventDefault();
     if (onSubmitCallback) onSelectCallback(searchValue);
     inputRef.current.input.blur();
   };
 
-  // Update search value state
+  // Update search value state on input change
   const onChange = (event) => {
-    const { value } = event.target;
+    const {
+      target: { value },
+    } = event;
     setSearchValue(value);
   };
 
