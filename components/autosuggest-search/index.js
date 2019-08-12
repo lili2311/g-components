@@ -34,26 +34,29 @@ const getSuggestionValue = ({ display }) => display;
 
 const AutosuggestSearch = ({
   className,
+  placeholder,
+  width,
   searchList,
   getSuggestions,
   getSuggestionValue,
   renderSuggestion,
   onSelectCallback,
   onSubmitCallback,
-  placeholder,
+  validateInput,
 }) => {
   const inputRef = useRef();
   const [searchValue, setSearchValue] = useState('');
-  const [suggestions, updateSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
+  const [errorState, setErrorState] = useState({ isError: false, errorMessage: '' });
 
   // Update suggestions based on search value
   const onSuggestionsFetchRequested = ({ value }) => {
-    updateSuggestions(getSuggestions(value, searchList));
+    setSuggestions(getSuggestions(value, searchList));
   };
 
   // Clear suggestions
   const onSuggestionsClearRequested = () => {
-    updateSuggestions([]);
+    setSuggestions([]);
   };
 
   // Run callback when suggestion selected from dropdown
@@ -67,6 +70,7 @@ const AutosuggestSearch = ({
   const onSubmit = (event) => {
     event.preventDefault();
     if (onSubmitCallback) onSelectCallback(searchValue);
+    if (validateInput) setErrorState(validateInput(searchValue));
     inputRef.current.input.blur();
   };
 
@@ -76,10 +80,15 @@ const AutosuggestSearch = ({
       target: { value },
     } = event;
     setSearchValue(value);
+    setErrorState({ isError: false, errorMessage: '' });
   };
 
+  const { isError, errorMessage } = errorState;
+  // Generate form classes
+  const formClasses = [className, isError && `${className}--error`].filter(i => i).join(' ');
+
   return (
-    <form className={`${className}__form`} onSubmit={onSubmit}>
+    <form className={formClasses} onSubmit={onSubmit}>
       <Autosuggest
         ref={inputRef}
         suggestions={suggestions}
@@ -93,8 +102,14 @@ const AutosuggestSearch = ({
           placeholder: placeholder || '',
           value: searchValue,
           onChange,
+          style: { width },
         }}
       />
+      {isError && (
+      <div className={`${className}__error-message`}>
+        {errorMessage}
+      </div>
+      )}
     </form>
   );
 };
@@ -110,14 +125,17 @@ AutosuggestSearch.propTypes = {
   renderSuggestion: PropTypes.func,
   onSelectCallback: PropTypes.func,
   onSubmitCallback: PropTypes.func,
-  placeholder: PropTypes.string,
+  validateInput: PropTypes.func,
+  errorMessage: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 AutosuggestSearch.defaultProps = {
-  className: 'g-autocomplete-search',
+  className: 'g-autosuggest-search',
   getSuggestions,
   renderSuggestion: RenderSuggestion,
   getSuggestionValue,
+  width: '100%',
 };
 
 export default AutosuggestSearch;

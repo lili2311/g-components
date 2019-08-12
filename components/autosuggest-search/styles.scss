@@ -1,26 +1,12 @@
 @import 'o-grid/main';
 
-.country-results-search {
-  @include oGridRespondTo(S) {
-    display: none;
-  }
-
-  &__title {
-    font-size: 16px;
-    letter-spacing: 0.3px;
-    color: #161717;
-    margin: 20px 10px;
-  }
-
-  &__form {
-    position: relative;
-
-    // Add error styles
-    &--error {
-      .react-autosuggest__input {
-        border: solid 1px #cc0000;
-        color: #cc0000;
-      }
+// Container styles
+.g-autosuggest-search {
+  // Add error styles
+  &--error {
+    .react-autosuggest__input {
+      border: solid 1px #cc0000;
+      color: #cc0000;
     }
   }
 
@@ -46,6 +32,7 @@
   }
 }
 
+// Override react autosuggest defaults
 .react-autosuggest {
   &__container {
     position: relative;

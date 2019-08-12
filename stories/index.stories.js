@@ -1075,11 +1075,18 @@ storiesOf('AutosuggestSearch', module).add(
   'default',
   () => (
     <AutosuggestSearch
+      placeholder="Search here..."
       searchList={[
         { value: 'jeremycorbyn', display: 'Jeremy Corbyn' },
         { value: 'borisjohnson', display: 'Boris Johnson' },
         { value: 'joswinson', display: 'Jo Swinson' },
       ]}
+      validateInput={(input) => {
+        if (input === '') {
+          return { isError: true, errorMessage: 'ERROR!!!' };
+        }
+        return { isError: false, errorMessage: '' };
+      }}
     />
   ),
   {
