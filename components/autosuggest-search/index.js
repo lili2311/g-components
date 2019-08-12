@@ -69,7 +69,7 @@ const AutosuggestSearch = ({
   // Run callback on submit (ENTER)
   const onSubmit = (event) => {
     event.preventDefault();
-    if (onSubmitCallback) onSelectCallback(searchValue);
+    if (onSubmitCallback) onSubmitCallback(searchValue);
     if (validateInput) setErrorState(validateInput(searchValue));
     inputRef.current.input.blur();
   };
@@ -83,7 +83,7 @@ const AutosuggestSearch = ({
     setErrorState({ isError: false, errorMessage: '' });
   };
 
-  //
+  // Clear search value on button click
   const clearSearch = () => {
     setSearchValue('');
     setErrorState({ isError: false, errorMessage: '' });
