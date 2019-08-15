@@ -9,7 +9,7 @@ import Autosuggest from 'react-autosuggest';
 import './styles.scss';
 
 // Default get suggestions method
-const getSuggestions = (value, searchList) => {
+const defaultGetSuggestions = (value, searchList) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
@@ -23,14 +23,10 @@ const getSuggestions = (value, searchList) => {
 };
 
 // Default component/function to render suggestion
-const RenderSuggestion = ({ display }) => (
-  <div>
-    {display}
-  </div>
-);
+const RenderSuggestion = ({ display }) => <div>{display}</div>;
 
 // Default mapping from suggestion to value
-const getSuggestionValue = ({ display }) => display;
+const defaultGetSuggestionValue = ({ display }) => display;
 
 const AutosuggestSearch = ({
   className,
@@ -60,8 +56,8 @@ const AutosuggestSearch = ({
   };
 
   // Run callback when suggestion selected from dropdown
-  const onSuggestionSelected = (event, { suggestion, suggestionValue }) => {
-    if (onSelectCallback) onSelectCallback(suggestion, suggestionValue);
+  const onSuggestionSelected = (event, { suggestionValue }) => {
+    if (onSelectCallback) onSelectCallback(suggestionValue);
     setSearchValue(suggestionValue);
     inputRef.current.input.blur();
   };
@@ -106,16 +102,12 @@ const AutosuggestSearch = ({
         onSuggestionSelected={onSuggestionSelected}
         focusInputOnSuggestionClick={false}
         inputProps={{
-          placeholder: placeholder || '',
+          placeholder,
           value: searchValue,
           onChange,
         }}
       />
-      {isError && (
-      <div className={`${className}__error-message`}>
-        {errorMessage}
-      </div>
-      )}
+      {isError && <div className={`${className}__error-message`}>{errorMessage}</div>}
       {searchValue !== '' && (
         <button className={`${className}__clear-button`} type="button" onClick={clearSearch}>
           <i className="icon" style={{ width: 20, height: 20 }} />
@@ -129,24 +121,27 @@ AutosuggestSearch.displayName = 'GAutosuggestSearch';
 
 AutosuggestSearch.propTypes = {
   className: PropTypes.string,
-  searchList: PropTypes.arrayOf(PropTypes.object),
+  searchList: PropTypes.arrayOf(PropTypes.object).isRequired,
   placeholder: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   getSuggestions: PropTypes.func,
   getSuggestionValue: PropTypes.func,
   renderSuggestion: PropTypes.func,
   onSelectCallback: PropTypes.func,
   onSubmitCallback: PropTypes.func,
   validateInput: PropTypes.func,
-  errorMessage: PropTypes.string,
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 AutosuggestSearch.defaultProps = {
   className: 'g-autosuggest-search',
-  getSuggestions,
-  renderSuggestion: RenderSuggestion,
-  getSuggestionValue,
+  placeholder: '',
   width: '100%',
+  getSuggestions: defaultGetSuggestions,
+  getSuggestionValue: defaultGetSuggestionValue,
+  renderSuggestion: RenderSuggestion,
+  onSelectCallback: () => {},
+  onSubmitCallback: () => {},
+  validateInput: () => {},
 };
 
 export default AutosuggestSearch;

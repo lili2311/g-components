@@ -142,7 +142,9 @@ storiesOf('Layout', module)
             <div>
               {text('Content', lorem)
                 .split(/\n\n/)
-                .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
+                .map((par, idx) => (
+                  <p key={idx /* eslint-disable-line */}>{par}</p>
+                ))}
             </div>
           </GridChild>
         </GridRow>
@@ -152,11 +154,7 @@ storiesOf('Layout', module)
   .add(
     'With custom article head',
     () => {
-      const CustomArticleHead = (
-        <h1>
-New starter kit site
-        </h1>
-      );
+      const CustomArticleHead = <h1>New starter kit site</h1>;
       return (
         <Layout
           flags={DEFAULT.flags}
@@ -243,7 +241,9 @@ storiesOf('Layout, dark theme', module)
             <div>
               {text('Content', lorem)
                 .split(/\n\n/)
-                .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
+                .map((par, idx) => (
+                  <p key={idx /* eslint-disable-line */}>{par}</p>
+                ))}
             </div>
           </GridChild>
         </GridRow>
@@ -723,9 +723,7 @@ storiesOf('Ads', module).add('Middle ad', () => <MiddleAd />);
 storiesOf('Analytics', module).add(
   'default',
   () => [
-    <h4 key="1">
-You won&apos;t see anything here as &quot;Analytics&quot; has no visual output
-    </h4>,
+    <h4 key="1">You won&apos;t see anything here as &quot;Analytics&quot; has no visual output</h4>,
     <Analytics key="2" id={DEFAULT.uuid} flags={DEFAULT.flags} />,
   ],
   {
@@ -843,7 +841,7 @@ storiesOf('Sticky', module)
               Percentage:
               {' '}
               {(percentage * 100).toFixed(1)}
-              %
+%
               {' '}
               <br />
               {' '}
@@ -857,121 +855,121 @@ In viewport:
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
                 {percentage}
-                ; inview:
+; inview:
                 {inView}
               </h1>
             </div>
@@ -1014,7 +1012,7 @@ In viewport:
               Percentage:
               {' '}
               {(percentage * 100).toFixed(1)}
-              %
+%
               {' '}
               <br />
               {' '}
@@ -1036,11 +1034,7 @@ Currently viewing line:
                   <Observer>
                     {({ inView }) => {
                       if (inView) updateGraphic(idx);
-                      return (
-                        <h1>
-                          {label}
-                        </h1>
-                      );
+                      return <h1>{label}</h1>;
                     }}
                   </Observer>
                 ),
@@ -1092,7 +1086,19 @@ storiesOf('AutosuggestSearch', module).add(
   ),
   {
     info: `
-      <AutosuggestSearch /> can...
+      <AutosuggestSearch /> can be used to create a text input which automatically
+        suggests search queries based on a given list. It takes an array of objects
+        \`searchList\` which are filtered using the (or default) \`getSuggestions\`
+        function. The component takes these functions as (optional) props;
+        - \`getSuggestions(value, searchList)\` which should return a filtered searchList
+        - \`getSuggestionValue(suggestionObject)\` which should return the value to display
+          in the search input after a suggestion has been selected from the dropdown list
+        - \`renderSuggestion(suggestionObject)\` which should return how the suggestion should
+          rendered in the dropdown list.
+        - \`onSelectCallback(suggestionValue)\` which takes the value returned by getSuggestionValue
+        - \`onSubmitCallback(searchValue)\` which takes the current input searchValue
+        - \`validateInput(searchValue)\` which takes the current input searchValue and should return
+          an object with isError (boolean) and errorMessage (string) attributes
     `,
   },
 );
