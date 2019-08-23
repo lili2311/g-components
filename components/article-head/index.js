@@ -96,3 +96,4 @@ ArticleHead.defaultProps = {
 };
 
 export default ArticleHead;
+export { Byline };
