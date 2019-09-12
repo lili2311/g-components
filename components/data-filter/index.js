@@ -14,7 +14,7 @@ export default class DataFilter extends PureComponent {
     data: PropTypes.arrayOf(PropTypes.object),
     set: PropTypes.func,
     isAllSelectable: PropTypes.bool, // only if filtering by selection
-    isRadioSelectable: PropTypes.bool, // only if filtering by selection
+    isRadioSelectable: PropTypes.bool // only if filtering by selection
   };
 
   static defaultProps = {
@@ -26,7 +26,7 @@ export default class DataFilter extends PureComponent {
     data: [],
     set: () => {},
     isAllSelectable: false,
-    isRadioSelectable: false,
+    isRadioSelectable: false
   };
 
   constructor(props) {
@@ -34,12 +34,12 @@ export default class DataFilter extends PureComponent {
     this.state = {
       isLoaded: false,
       text:
-        props.initial
-        || (props.selectFrom
-          && !props.isAllSelectable
-          && props.data[0]
-          && props.data[0][props.selectFrom])
-        || '',
+        props.initial ||
+        (props.selectFrom &&
+          !props.isAllSelectable &&
+          props.data[0] &&
+          props.data[0][props.selectFrom]) ||
+        ''
     };
   }
 
@@ -52,15 +52,13 @@ export default class DataFilter extends PureComponent {
     this.update();
   }
 
-  setText = (event) => {
+  setText = event => {
     event.stopPropagation();
     this.setState({ text: event.target.value });
   };
 
   update = () => {
-    const {
-      selectFrom, searchOver, data, set,
-    } = this.props;
+    const { selectFrom, searchOver, data, set } = this.props;
     const { text } = this.state;
     const textNormalised = text
       .trim()
@@ -73,15 +71,17 @@ export default class DataFilter extends PureComponent {
       set(dataFiltered);
     } else {
       const keywords = textNormalised.split(/ +/).filter(x => x);
-      const dataFiltered = data.filter((row) => {
+      const dataFiltered = data.filter(row => {
         const columns = searchOver.length > 0 ? searchOver : Object.keys(row);
-        return keywords.every(keyword => columns.some((column) => {
-          if (!row[column]) return false;
-          return row[column]
-            .toString()
-            .toLowerCase()
-            .includes(keyword);
-        }));
+        return keywords.every(keyword =>
+          columns.some(column => {
+            if (!row[column]) return false;
+            return row[column]
+              .toString()
+              .toLowerCase()
+              .includes(keyword);
+          })
+        );
       });
       set(dataFiltered);
     }
@@ -96,7 +96,7 @@ export default class DataFilter extends PureComponent {
       searchPlaceholder,
       data,
       isAllSelectable,
-      isRadioSelectable,
+      isRadioSelectable
     } = this.props;
     if (selectFrom && searchOver.length > 0) {
       throw new Error('Cannot set selectFrom as well as searchOver!');
@@ -122,7 +122,7 @@ export default class DataFilter extends PureComponent {
           <fieldset className={namedClass}>
             <div className="o-forms__group o-forms__group--inline-together">
               {isAllSelectable === false ? null : (
-                <Fragment>
+                <>
                   <input
                     type="radio"
                     className="o-forms__radio-button"
@@ -134,10 +134,10 @@ export default class DataFilter extends PureComponent {
                   <label htmlFor="g-data-filter-all" className="o-forms__label">
                     (All)
                   </label>
-                </Fragment>
+                </>
               )}
               {options.map(option => (
-                <Fragment>
+                <>
                   <input
                     type="radio"
                     className="o-forms__radio-button"
@@ -149,7 +149,7 @@ export default class DataFilter extends PureComponent {
                   <label htmlFor={`g-data-filter-${option}`} className="o-forms__label">
                     {option}
                   </label>
-                </Fragment>
+                </>
               ))}
             </div>
           </fieldset>
@@ -159,11 +159,7 @@ export default class DataFilter extends PureComponent {
         <div className={namedClass}>
           {options.length === 0 ? null : (
             <select className="o-forms__select" value={text} onChange={this.setText}>
-              {isAllSelectable === false ? null : (
-                <option value="">
-(All)
-                </option>
-              )}
+              {isAllSelectable === false ? null : <option value="">(All)</option>}
               {options.map((option, i) => (
                 <option key={i} value={option}>
                   {option}

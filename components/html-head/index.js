@@ -11,7 +11,7 @@ import {
   mainImagePropType,
   trackingPropType,
   topicPropType,
-  dataMetaPropType,
+  dataMetaPropType
 } from '../../shared/proptypes';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
@@ -46,7 +46,7 @@ class HtmlHead extends PureComponent {
       twitterHeadline,
       twitterImage,
       url,
-      polyfills,
+      polyfills
     } = this.props;
     const polyfillFeatures = polyfills.join(',');
     const mainImageUrl = getMainImage(mainImage);
@@ -86,14 +86,13 @@ class HtmlHead extends PureComponent {
         <meta name="robots" content="index,follow" />
         <meta name="copyright" content="Financial Times" />
         <meta name="theme-color" content="#fff1e5" />
-        {flags.data
-          && dataMeta && (
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(dataMeta),
-              }}
-            />
+        {flags.data && dataMeta && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(dataMeta)
+            }}
+          />
         )}
         <script
           type="application/ld+json"
@@ -103,32 +102,31 @@ class HtmlHead extends PureComponent {
               '@type': 'WebSite',
               name: 'Financial Times',
               alternateName: 'FT.com',
-              url: 'http://www.ft.com',
-            }),
+              url: 'http://www.ft.com'
+            })
           }}
         />
-        {topic.name
-          && topic.url && (
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  '@context': 'http://schema.org',
-                  '@type': 'BreadcrumbList',
-                  itemListElement: [
-                    {
-                      '@type': 'ListItem',
-                      position: 1,
-                      item: {
-                        '@id': topic.url,
-                        name: topic.name,
-                        image: getMainImage(mainImage),
-                      },
-                    },
-                  ],
-                }),
-              }}
-            />
+        {topic.name && topic.url && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'http://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  {
+                    '@type': 'ListItem',
+                    position: 1,
+                    item: {
+                      '@id': topic.url,
+                      name: topic.name,
+                      image: getMainImage(mainImage)
+                    }
+                  }
+                ]
+              })
+            }}
+          />
         )}
 
         {flags.errorReporting && (
@@ -137,8 +135,8 @@ class HtmlHead extends PureComponent {
             data-o-errors-config
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
-                sentryEndpoint: 'https://ddbd80489ff549538250bbe37fa52bbd@sentry.io/71130',
-              }),
+                sentryEndpoint: 'https://ddbd80489ff549538250bbe37fa52bbd@sentry.io/71130'
+              })
             }}
           />
         )}
@@ -154,24 +152,22 @@ class HtmlHead extends PureComponent {
               cutsTheMustard = 'querySelector' in document && 'localStorage' in window &&
               'addEventListener' in window && typeof Function.prototype.bind !== 'undefined'; 
               if (cutsTheMustard) document.documentElement.className = document.documentElement.className.replace( /core/g, 'enhanced');
-              `,
+              `
           }}
         />
 
         {flags.analytics && (
-          <Fragment>
+          <>
             <link rel="preconnect" href="https://spoor-api.ft.com" />
             <meta property="ft.track:is_live" content="true" />
             {tracking.product && <meta property="ft.track:product" content="tracking.product" />}
             {tracking.micrositeName && (
               <meta property="ft.track:microsite_name" content="tracking.micrositeName" />
             )}
-          </Fragment>
+          </>
         )}
 
-        <title>
-          {title || headline}
-        </title>
+        <title>{title || headline}</title>
         <meta name="twitter:title" content={twitterHeadline || socialHeadline || headline} />
         <meta property="og:title" content={facebookHeadline || socialHeadline || headline} />
 
@@ -241,19 +237,19 @@ HtmlHead.propTypes = {
   twitterHeadline: PropTypes.string,
   twitterImage: PropTypes.string,
   url: PropTypes.string.isRequired,
-  polyfills: PropTypes.arrayOf(PropTypes.string),
+  polyfills: PropTypes.arrayOf(PropTypes.string)
 };
 
 const DEFAULTS = {
   headline: 'New Starter Kit Project',
-  desc: 'A Starter Kit page',
+  desc: 'A Starter Kit page'
 };
 
 HtmlHead.defaultProps = {
   children: null,
   dataMeta: undefined,
   mainImage: {
-    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4'
   },
   flags: {},
   topic: {},
@@ -273,9 +269,9 @@ HtmlHead.defaultProps = {
   stylesheets: [],
   summary: '',
   tracking: {
-    product: 'IG',
+    product: 'IG'
   },
-  polyfills: ['default', 'fetch'],
+  polyfills: ['default', 'fetch']
 };
 
 export default HtmlHead;

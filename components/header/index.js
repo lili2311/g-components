@@ -20,8 +20,8 @@ class Header extends PureComponent {
   render() {
     const {
       props: {
-        flags: { dark },
-      },
+        flags: { dark }
+      }
     } = this;
 
     const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
@@ -44,9 +44,7 @@ class Header extends PureComponent {
                   href="http://www.ft.com/"
                   title="Go to Financial Times homepage"
                 >
-                  <span className="o-header__visually-hidden">
-Financial Times
-                  </span>
+                  <span className="o-header__visually-hidden">Financial Times</span>
                 </a>
               </div>
             </div>
@@ -60,11 +58,11 @@ Financial Times
 export default Header;
 
 Header.propTypes = {
-  flags: flagsPropType,
+  flags: flagsPropType
 };
 
 Header.defaultProps = {
   flags: {
-    dark: false,
-  },
+    dark: false
+  }
 };

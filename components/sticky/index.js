@@ -12,10 +12,10 @@ class Sticky extends PureComponent {
   static displayName = 'GSticky';
 
   state = {
-    current: null,
+    current: null
   };
 
-  updateGraphic = (label) => {
+  updateGraphic = label => {
     this.setState({ current: label });
   };
 
@@ -29,9 +29,7 @@ class Sticky extends PureComponent {
             <article className="sticky__text">
               {article({ percentage, inView, updateGraphic: this.updateGraphic })}
             </article>
-            <figure className="sticky__figure">
-              {graphic({ percentage, inView, current })}
-            </figure>
+            <figure className="sticky__figure">{graphic({ percentage, inView, current })}</figure>
           </div>
         )}
       </Observer>
@@ -41,7 +39,7 @@ class Sticky extends PureComponent {
 
 Sticky.propTypes = {
   article: PropTypes.func.isRequired,
-  graphic: PropTypes.func.isRequired,
+  graphic: PropTypes.func.isRequired
 };
 
 export default Sticky;

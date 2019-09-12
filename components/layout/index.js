@@ -9,7 +9,7 @@ import OAds from 'o-ads/main.js';
 import {
   strftime,
   registerLayoutChangeEvents,
-  unregisterLayoutChangeEvents,
+  unregisterLayoutChangeEvents
 } from '../../shared/helpers';
 import { flagsPropType, StringBoolPropType } from '../../shared/proptypes';
 import Header from '../header';
@@ -22,59 +22,51 @@ import Footer from '../footer';
 import './styles.scss';
 
 export const GridContainer = ({ bleed, children }) => (
-  <div className={`o-grid-container${bleed ? ' o-grid-container--bleed' : ''}`}>
-    {children}
-  </div>
+  <div className={`o-grid-container${bleed ? ' o-grid-container--bleed' : ''}`}>{children}</div>
 );
 
 GridContainer.displayName = 'GGridContainer';
 
 GridContainer.propTypes = {
   bleed: PropTypes.bool,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 GridContainer.defaultProps = {
-  bleed: false,
+  bleed: false
 };
 
 export const GridRow = ({ compact, children }) => (
-  <div className={`o-grid-row ${compact ? ' o-grid-row--compact' : ''}`}>
-    {children}
-  </div>
+  <div className={`o-grid-row ${compact ? ' o-grid-row--compact' : ''}`}>{children}</div>
 );
 
 GridRow.displayName = 'GGridRow';
 
 GridRow.propTypes = {
   compact: PropTypes.bool,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 GridRow.defaultProps = {
-  compact: false,
+  compact: false
 };
 
-export const GridChild = ({ children, span }) => (
-  <div data-o-grid-colspan={span}>
-    {children}
-  </div>
-);
+export const GridChild = ({ children, span }) => <div data-o-grid-colspan={span}>{children}</div>;
 
 GridChild.displayName = 'GGridChild';
 
 GridChild.propTypes = {
   children: PropTypes.node.isRequired,
-  span: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  span: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 GridChild.defaultProps = {
-  span: '12 S11 Scenter M9 L8 XL7',
+  span: '12 S11 Scenter M9 L8 XL7'
 };
 
 class Layout extends PureComponent {
   state = {
-    breakpoint: 'default',
+    breakpoint: 'default'
   };
 
   async componentDidMount() {
@@ -90,9 +82,9 @@ class Layout extends PureComponent {
           gpt: {
             network: 5887,
             site: ads.gptSite || 'ft.com',
-            zone: ads.gptZone || 'unclassified',
+            zone: ads.gptZone || 'unclassified'
           },
-          dfp_targeting: ads.dfpTargeting,
+          dfp_targeting: ads.dfpTargeting
         });
 
         const slots = Array.from(document.querySelectorAll('.o-ads, [data-o-ads-name]'));
@@ -114,17 +106,23 @@ class Layout extends PureComponent {
 
   render() {
     const {
-      flags = {}, children, defaultContainer, customArticleHead, wrapArticleHead, ...props
+      flags = {},
+      children,
+      defaultContainer,
+      customArticleHead,
+      wrapArticleHead,
+      ...props
     } = this.props;
 
     const { breakpoint } = this.state;
 
-    const hasCustomChildren = React.Children.toArray(children).some(
-      el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
-    ) || !defaultContainer;
+    const hasCustomChildren =
+      React.Children.toArray(children).some(
+        el => (el.className || '').includes('o-grid-container') || el.type === GridContainer
+      ) || !defaultContainer;
     const articleHeadComponent = customArticleHead || <ArticleHead {...props} flags={flags} />;
     return (
-      <Fragment>
+      <>
         {flags.analytics && <Analytics {...{ ...this.props, breakpoint }} />}
         {flags.ads && <TopAd />}
         {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
@@ -144,21 +142,25 @@ class Layout extends PureComponent {
 
             <div className="article-body o-typography-wrapper" itemProp="articleBody">
               {hasCustomChildren ? (
-                React.Children.map(children, child => React.cloneElement(
-                  child,
-                  typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint },
-                ))
+                React.Children.map(children, child =>
+                  React.cloneElement(
+                    child,
+                    typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint }
+                  )
+                )
               ) : (
                 <GridContainer>
                   <GridRow>
                     <GridChild>
                       <div>
-                        {React.Children.map(children, child => React.cloneElement(
-                          child,
-                          !child.type || typeof child.type === 'string'
-                            ? {}
-                            : { ...props, breakpoint },
-                        ))}
+                        {React.Children.map(children, child =>
+                          React.cloneElement(
+                            child,
+                            !child.type || typeof child.type === 'string'
+                              ? {}
+                              : { ...props, breakpoint }
+                          )
+                        )}
                       </div>
                     </GridChild>
                   </GridRow>
@@ -180,18 +182,12 @@ class Layout extends PureComponent {
                           data-trackable="link-copyright"
                         >
                           Copyright
-                        </a>
-                        {' '}
-                        <span itemProp="name">
-The Financial Times
-                        </span>
-                        {' '}
-Limited
-                        {' '}
-                        {strftime('%Y')(new Date())}
-                        . All rights reserved. You may share using our article tools. Please
-                        don&apos;t cut articles from FT.com and redistribute by email or post to the
-                        web.
+                        </a>{' '}
+                        <span itemProp="name">The Financial Times</span> Limited
+{' '}
+                        {strftime('%Y')(new Date())}. All rights reserved. You may share using our
+                        article tools. Please don&apos;t cut articles from FT.com and redistribute
+                        by email or post to the web.
                       </small>
                     </div>
                   </div>
@@ -203,7 +199,7 @@ Limited
         {flags.onwardjourney && <OnwardJourney key="oj" {...{ ...props, breakpoint }} />}
         {flags.comments && <Comments key="comments" {...{ ...props, flags, breakpoint }} />}
         {flags.footer && <Footer key="footer" {...{ ...props, flags, breakpoint }} />}
-      </Fragment>
+      </>
     );
   }
 }
@@ -215,13 +211,13 @@ Layout.propTypes = {
   ads: PropTypes.shape({
     gptSite: PropTypes.string.isRequired,
     gptZone: StringBoolPropType.isRequired,
-    dfpTargeting: StringBoolPropType.isRequired,
+    dfpTargeting: StringBoolPropType.isRequired
   }),
   flags: flagsPropType.isRequired,
   children: PropTypes.node,
   defaultContainer: PropTypes.bool,
   customArticleHead: PropTypes.node,
-  wrapArticleHead: PropTypes.bool,
+  wrapArticleHead: PropTypes.bool
 };
 
 Layout.defaultProps = {
@@ -229,12 +225,12 @@ Layout.defaultProps = {
   ads: {
     gptSite: 'test.5887.origami', // Ad unit hierarchy makes ads more granular.
     gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
-    dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
+    dfpTargeting: false // granular targeting is optional and will be specified by the ads team
   },
   children: null,
   defaultContainer: true,
   customArticleHead: null,
-  wrapArticleHead: true,
+  wrapArticleHead: true
 };
 
 export default Layout;

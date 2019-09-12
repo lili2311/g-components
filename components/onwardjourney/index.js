@@ -14,7 +14,7 @@ class OnwardJourney extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sections: [],
+      sections: []
     };
   }
 
@@ -27,8 +27,8 @@ class OnwardJourney extends React.Component {
           const limit = rows * 4;
           const url = `${urlBase}${list}/html/${layout}?limit=${limit}`;
           return fetch(url).then(res => res.text());
-        }),
-      ),
+        })
+      )
     );
 
     try {
@@ -61,17 +61,17 @@ OnwardJourney.propTypes = {
   relatedContent: PropTypes.arrayOf(
     PropTypes.shape({
       rows: PropTypes.number.isRequired,
-      list: PropTypes.string,
-    }),
+      list: PropTypes.string
+    })
   ),
   urlBase: PropTypes.string,
-  layout: PropTypes.string,
+  layout: PropTypes.string
 };
 
 OnwardJourney.defaultProps = {
   relatedContent: [],
   urlBase: 'https://ig.ft.com/onwardjourney/v3/',
-  layout: '',
+  layout: ''
 };
 
 export default OnwardJourney;

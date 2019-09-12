@@ -27,7 +27,7 @@ class Comments extends PureComponent {
 
   render() {
     const {
-      flags: { dark },
+      flags: { dark }
     } = this.props;
     const comments = (
       <div className="o-grid-container">
@@ -41,7 +41,7 @@ class Comments extends PureComponent {
           >
             <div className="o--if-no-js">
               To participate in this chat, you need to upgrade to a newer web browser.
-              {' '}
+{' '}
               <a href="http://help.ft.com/tools-services/browser-compatibility/">Learn more.</a>
             </div>
           </div>
@@ -61,7 +61,7 @@ Comments.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
   url: PropTypes.string,
-  flags: flagsPropType,
+  flags: flagsPropType
 };
 
 Comments.defaultProps = {
@@ -69,8 +69,8 @@ Comments.defaultProps = {
   id: '3a499586-b2e0-11e4-a058-00144feab7de',
   url: 'https://local.ft.com/comments-test',
   flags: {
-    dark: false,
-  },
+    dark: false
+  }
 };
 
 export default Comments;

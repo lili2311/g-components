@@ -18,7 +18,7 @@ class Analytics extends PureComponent {
   async componentDidMount() {
     if (!window.cutsTheMustard) return;
     const pageData = {
-      content: { asset_type: 'interactive' },
+      content: { asset_type: 'interactive' }
     };
 
     const properties = [].reduce.call(
@@ -28,7 +28,7 @@ class Analytics extends PureComponent {
         o[attName] = el.getAttribute('content'); // eslint-disable-line no-param-reassign
         return o;
       },
-      {},
+      {}
     );
 
     const id = document.documentElement.getAttribute('data-content-id');
@@ -45,9 +45,9 @@ class Analytics extends PureComponent {
     OTracking.init({
       server: 'https://spoor-api.ft.com/px.gif',
       system: {
-        is_live: typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false,
+        is_live: typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false
       },
-      context: { product: properties.product || 'IG' },
+      context: { product: properties.product || 'IG' }
     });
 
     // Page
@@ -60,7 +60,7 @@ class Analytics extends PureComponent {
   render() {
     const { id, tracking, flags } = this.props;
     return (
-      <Fragment>
+      <>
         {/* Add fallback if browsers don't cut the mustard */}
         {spoorTrackingPixel({
           action: 'view',
@@ -68,17 +68,17 @@ class Analytics extends PureComponent {
           context: {
             content: {
               asset_type: 'interactive',
-              uuid: id,
+              uuid: id
             },
             product: 'IG',
-            microsite_name: tracking.micrositeName,
+            microsite_name: tracking.micrositeName
           },
           system: {
             is_live: flags.prod,
             apiKey: 'qUb9maKfKbtpRsdp0p2J7uWxRPGJEP',
             source: 'o-tracking-ns',
-            version: '1.0.0',
-          },
+            version: '1.0.0'
+          }
         })}
         {flags.googleAnalytics && (
           <script
@@ -91,7 +91,7 @@ class Analytics extends PureComponent {
           ga('create', 'UA-35229645-1', 'auto');
           ga('require','displayfeatures');
           ga('send', 'pageview');
-          `,
+          `
             }}
           />
         )}
@@ -107,10 +107,10 @@ class Analytics extends PureComponent {
           img.setAttribute('src', endpoint);
           img.style.position = 'absolute';
           document.body.insertBefore(img, document.body.firstElementChild);
-          `,
+          `
           }}
         />
-      </Fragment>
+      </>
     );
   }
 }
@@ -119,14 +119,14 @@ Analytics.propTypes = {
   id: PropTypes.string.isRequired,
   flags: flagsPropType.isRequired,
   tracking: PropTypes.shape({
-    micrositeName: PropTypes.string,
-  }),
+    micrositeName: PropTypes.string
+  })
 };
 
 Analytics.defaultProps = {
   tracking: {
-    micrositeName: undefined,
-  },
+    micrositeName: undefined
+  }
 };
 
 export default Analytics;

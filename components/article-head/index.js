@@ -31,7 +31,7 @@ class ArticleHead extends PureComponent {
     const publishedDate = this.props.publishedDate || new Date().toISOString(); // eslint-disable-line
 
     return (
-      <Fragment>
+      <>
         <div>
           <a href={topic.url} className="o-typography-topic">
             {topic.name}
@@ -43,8 +43,7 @@ class ArticleHead extends PureComponent {
         </h1>
 
         <div className="o-typography-standfirst">
-          {summary}
-          {' '}
+          {summary}{' '}
           {relatedArticle && (
             <a href={relatedArticle.url} className="o-typography-link">
               {relatedArticle.text}
@@ -66,7 +65,7 @@ class ArticleHead extends PureComponent {
         {flags && flags.shareButtons && <Share headline={headline} {...{ ...props, flags }} />}
 
         <Byline names={bylines} date={publishedDate} />
-      </Fragment>
+      </>
     );
   }
 }
@@ -80,19 +79,19 @@ ArticleHead.propTypes = {
   publishedDate: PropTypes.string,
   buildTime: PropTypes.string,
   topic: topicPropType,
-  bylines: BylinesPropType,
+  bylines: BylinesPropType
 };
 
 ArticleHead.defaultProps = {
   mainImage: {
-    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4'
   },
   relatedArticle: {},
   publishedDate: false,
   buildTime: false,
   summary: '',
   topic: {},
-  bylines: [],
+  bylines: []
 };
 
 export default ArticleHead;

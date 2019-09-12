@@ -19,15 +19,15 @@ export default class DataTable extends PureComponent {
         columnSortField: PropTypes.string,
         columnIsHeader: PropTypes.bool,
         columnIsSortable: PropTypes.bool,
-        columnIsVerticallyCentred: PropTypes.bool,
-      }),
+        columnIsVerticallyCentred: PropTypes.bool
+      })
     ).isRequired,
     rows: PropTypes.arrayOf(PropTypes.object),
     footers: PropTypes.arrayOf(
       PropTypes.exact({
         contents: PropTypes.node.isRequired,
-        secondary: PropTypes.node,
-      }),
+        secondary: PropTypes.node
+      })
     ),
     responsive: PropTypes.oneOf(['none', 'scroll', 'flat']),
     isHeaderHidden: PropTypes.bool,
@@ -35,7 +35,7 @@ export default class DataTable extends PureComponent {
     isStriped: PropTypes.bool,
     isLinedHorizontal: PropTypes.bool,
     isLinedVertical: PropTypes.bool,
-    isCompact: PropTypes.bool,
+    isCompact: PropTypes.bool
   };
 
   static defaultProps = {
@@ -50,7 +50,7 @@ export default class DataTable extends PureComponent {
     isStriped: false,
     isLinedHorizontal: false,
     isLinedVertical: false,
-    isCompact: false,
+    isCompact: false
   };
 
   table = React.createRef();
@@ -61,7 +61,7 @@ export default class DataTable extends PureComponent {
 
   componentDidUpdate() {
     const tableRows = Array.from(this.table.current.querySelectorAll('tr')).filter(
-      row => Array.from(row.querySelectorAll('th')).length === 0,
+      row => Array.from(row.querySelectorAll('th')).length === 0
     );
     const tableHeaders = Array.from(this.table.current.querySelectorAll('thead th'));
     if (this.props.responsive === 'flat') {
@@ -83,26 +83,22 @@ export default class DataTable extends PureComponent {
       isStriped,
       isLinedHorizontal,
       isLinedVertical,
-      isCompact,
+      isCompact
     } = this.props;
     const captionAtTop = captionTop && (
-      <caption className="o-table__caption--top">
-        {captionTop}
-      </caption>
+      <caption className="o-table__caption--top">{captionTop}</caption>
     );
     const captionAtBottom = captionBottom && (
-      <caption className="o-table__caption--bottom">
-        {captionBottom}
-      </caption>
+      <caption className="o-table__caption--bottom">{captionBottom}</caption>
     );
-    const headerAttributes = (header) => {
+    const headerAttributes = header => {
       const classes = header.columnType === 'number' ? 'o-table__cell--numeric' : '';
       const attributes = [
         classes ? { className: classes } : {},
         header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {},
         isSortable === false || header.columnIsSortable === false
           ? { 'data-o-table-heading-disable-sort': '' }
-          : {},
+          : {}
       ];
       return Object.assign(...attributes);
     };
@@ -113,15 +109,13 @@ export default class DataTable extends PureComponent {
             const attributes = headerAttributes(header);
             if (header.secondary) {
               const secondary = (
-                <span className="o-table__cell--content-secondary">
-                  {header.secondary}
-                </span>
+                <span className="o-table__cell--content-secondary">{header.secondary}</span>
               );
               return (
                 <th {...attributes}>
-                  {header.contents}
-                  {' '}
-                  {secondary}
+                  {header.contents} 
+{' '}
+{secondary}
                 </th>
               );
             }
@@ -137,12 +131,12 @@ export default class DataTable extends PureComponent {
     const cellAttributes = (header, row) => {
       const classes = [
         header.columnType === 'number' && 'o-table__cell--numeric',
-        header.columnIsVerticallyCentred && 'o-table__cell--vertically-center',
+        header.columnIsVerticallyCentred && 'o-table__cell--vertically-center'
       ];
       const attributes = [
         classes ? { className: classes.filter(x => x).join(' ') } : {},
         header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {},
-        header.columnSortField ? { 'data-o-table-order': row[header.columnSortField] } : {},
+        header.columnSortField ? { 'data-o-table-order': row[header.columnSortField] } : {}
       ];
       return Object.assign(...attributes);
     };
@@ -152,9 +146,10 @@ export default class DataTable extends PureComponent {
           <tr key={i1}>
             {headers.map((header, i2) => {
               const attributes = cellAttributes(header, row);
-              const valueFormat = typeof row[header.columnName] === 'number'
-                ? value => value.toLocaleString()
-                : value => value;
+              const valueFormat =
+                typeof row[header.columnName] === 'number'
+                  ? value => value.toLocaleString()
+                  : value => value;
               const value = valueFormat(row[header.columnName] || '');
               if (header.columnIsHeader) {
                 return (
@@ -173,44 +168,39 @@ export default class DataTable extends PureComponent {
         ))}
       </tbody>
     );
-    const footerAttributes = (header) => {
+    const footerAttributes = header => {
       const classes = header.columnType === 'number' ? 'o-table__cell--numeric' : '';
       const attributes = [
         classes ? { className: classes } : {},
-        header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {},
+        header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {}
       ];
       return Object.assign(...attributes);
     };
-    const foot = footers.length === 0 ? null : (
-      <tfoot>
-        <tr>
-          {headers.map((header, i) => {
-            const attributes = footerAttributes(header);
-            const footer = footers[i];
-            if (!footer) return <th {...attributes} />;
-            if (footer.secondary) {
-              const secondary = (
-                <span className="o-table__cell--content-secondary">
-                  {footer.secondary}
-                </span>
-              );
-              return (
-                <th {...attributes}>
-                  {footer.contents}
-                  {' '}
-                  {secondary}
-                </th>
-              );
-            }
-            return (
-              <th {...attributes}>
-                {header.contents}
-              </th>
-            );
-          })}
-        </tr>
-      </tfoot>
-    );
+    const foot =
+      footers.length === 0 ? null : (
+        <tfoot>
+          <tr>
+            {headers.map((header, i) => {
+              const attributes = footerAttributes(header);
+              const footer = footers[i];
+              if (!footer) return <th {...attributes} />;
+              if (footer.secondary) {
+                const secondary = (
+                  <span className="o-table__cell--content-secondary">{footer.secondary}</span>
+                );
+                return (
+                  <th {...attributes}>
+                    {footer.contents} 
+{' '}
+{secondary}
+                  </th>
+                );
+              }
+              return <th {...attributes}>{header.contents}</th>;
+            })}
+          </tr>
+        </tfoot>
+      );
     const tableAttributes = () => {
       const classes = [
         'o-table',
@@ -219,12 +209,12 @@ export default class DataTable extends PureComponent {
         isStriped && 'o-table--row-stripes',
         isLinedHorizontal && 'o-table--horizontal-lines',
         isLinedVertical && 'o-table--vertical-lines',
-        isCompact && 'o-table--compact',
+        isCompact && 'o-table--compact'
       ];
       const attributes = [
         classes ? { className: classes.filter(x => x).join(' ') } : {},
         { 'data-o-component': 'o-table' },
-        responsive === 'flat' ? { 'data-o-table-responsive': 'flat' } : {},
+        responsive === 'flat' ? { 'data-o-table-responsive': 'flat' } : {}
       ];
       return Object.assign(...attributes);
     };

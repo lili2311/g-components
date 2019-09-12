@@ -26,7 +26,7 @@ class Share extends PureComponent {
       twitterRelatedAccounts,
       url,
       tweetText,
-      flags: { dark },
+      flags: { dark }
     } = this.props;
     const containerClasses = ['container', dark && 'container--inverse'].filter(i => i).join(' ');
     const sharingClasses = ['o-share', dark && 'o-share--inverse'].filter(i => i).join(' ');
@@ -41,23 +41,19 @@ class Share extends PureComponent {
               <li className="o-share__action o-share__action--twitter">
                 <a
                   className="o-share__icon o-share__icon--twitter"
-                  href={`https://twitter.com/intent/tweet?url=${url}&amp;text=${tweetText
-                    || twitterHeadline
-                    || socialHeadline
-                    || headline}${twitterRelatedAccounts
-                    && `&amp;related=${twitterRelatedAccounts.join(',')}`}&amp;via=FinancialTimes`}
+                  href={`https://twitter.com/intent/tweet?url=${url}&amp;text=${tweetText ||
+                    twitterHeadline ||
+                    socialHeadline ||
+                    headline}${twitterRelatedAccounts &&
+                    `&amp;related=${twitterRelatedAccounts.join(',')}`}&amp;via=FinancialTimes`}
                   rel="noopener"
                 >
-                  <span className="o-share__text">
-Share on Twitter. Opens in a new window.
-                  </span>
+                  <span className="o-share__text">Share on Twitter. Opens in a new window.</span>
                 </a>
               </li>
               <li className="o-share__action o-share__icon--facebook">
                 <a href={`http://www.facebook.com/sharer.php?u=${url}`} rel="noopener">
-                  <span className="o-share__text">
-Share on Facebook. Opens in a new window.
-                  </span>
+                  <span className="o-share__text">Share on Facebook. Opens in a new window.</span>
                 </a>
               </li>
               <li className="o-share__action o-share__icon--linkedin">
@@ -65,9 +61,7 @@ Share on Facebook. Opens in a new window.
                   href={`https://www.linkedin.com/shareArticle?mini=true&amp;url=${url}&amp;source=Financial%20Times`}
                   rel="noopener"
                 >
-                  <span className="o-share__text">
-Share on LinkedIn. Opens in a new window.
-                  </span>
+                  <span className="o-share__text">Share on LinkedIn. Opens in a new window.</span>
                 </a>
               </li>
               <li className="o-share__action o-share__icon--whatsapp">
@@ -77,9 +71,7 @@ Share on LinkedIn. Opens in a new window.
                   href={`whatsapp://send?text=${socialHeadline || headline}%20-%20${url}`}
                   data-trackable="whatsapp"
                 >
-                  <span className="o-share__text">
-Share on Whatsapp. Opens in a new window.
-                  </span>
+                  <span className="o-share__text">Share on Whatsapp. Opens in a new window.</span>
                 </a>
               </li>
             </ul>
@@ -97,7 +89,7 @@ Share.propTypes = {
   headline: PropTypes.string,
   twitterRelatedAccounts: PropTypes.arrayOf(PropTypes.string),
   tweetText: PropTypes.string,
-  flags: flagsPropType,
+  flags: flagsPropType
 };
 
 Share.defaultProps = {
@@ -107,8 +99,8 @@ Share.defaultProps = {
   headline: '',
   twitterRelatedAccounts: [],
   flags: {
-    dark: false,
-  },
+    dark: false
+  }
 };
 
 export default Share;
