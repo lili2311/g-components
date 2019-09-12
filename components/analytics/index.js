@@ -60,7 +60,7 @@ class Analytics extends PureComponent {
   render() {
     const { id, tracking, flags } = this.props;
     return (
-      <>
+      <Fragment>
         {/* Add fallback if browsers don't cut the mustard */}
         {spoorTrackingPixel({
           action: 'view',
@@ -110,7 +110,7 @@ class Analytics extends PureComponent {
           `
           }}
         />
-      </>
+      </Fragment>
     );
   }
 }

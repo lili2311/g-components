@@ -122,7 +122,7 @@ class Layout extends PureComponent {
       ) || !defaultContainer;
     const articleHeadComponent = customArticleHead || <ArticleHead {...props} flags={flags} />;
     return (
-      <>
+      <Fragment>
         {flags.analytics && <Analytics {...{ ...this.props, breakpoint }} />}
         {flags.ads && <TopAd />}
         {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
@@ -199,7 +199,7 @@ class Layout extends PureComponent {
         {flags.onwardjourney && <OnwardJourney key="oj" {...{ ...props, breakpoint }} />}
         {flags.comments && <Comments key="comments" {...{ ...props, flags, breakpoint }} />}
         {flags.footer && <Footer key="footer" {...{ ...props, flags, breakpoint }} />}
-      </>
+      </Fragment>
     );
   }
 }

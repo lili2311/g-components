@@ -122,7 +122,7 @@ export default class DataFilter extends PureComponent {
           <fieldset className={namedClass}>
             <div className="o-forms__group o-forms__group--inline-together">
               {isAllSelectable === false ? null : (
-                <>
+                <Fragment>
                   <input
                     type="radio"
                     className="o-forms__radio-button"
@@ -134,10 +134,10 @@ export default class DataFilter extends PureComponent {
                   <label htmlFor="g-data-filter-all" className="o-forms__label">
                     (All)
                   </label>
-                </>
+                </Fragment>
               )}
               {options.map(option => (
-                <>
+                <Fragment>
                   <input
                     type="radio"
                     className="o-forms__radio-button"
@@ -149,7 +149,7 @@ export default class DataFilter extends PureComponent {
                   <label htmlFor={`g-data-filter-${option}`} className="o-forms__label">
                     {option}
                   </label>
-                </>
+                </Fragment>
               ))}
             </div>
           </fieldset>

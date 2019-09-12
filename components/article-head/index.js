@@ -31,7 +31,7 @@ class ArticleHead extends PureComponent {
     const publishedDate = this.props.publishedDate || new Date().toISOString(); // eslint-disable-line
 
     return (
-      <>
+      <Fragment>
         <div>
           <a href={topic.url} className="o-typography-topic">
             {topic.name}
@@ -65,7 +65,7 @@ class ArticleHead extends PureComponent {
         {flags && flags.shareButtons && <Share headline={headline} {...{ ...props, flags }} />}
 
         <Byline names={bylines} date={publishedDate} />
-      </>
+      </Fragment>
     );
   }
 }

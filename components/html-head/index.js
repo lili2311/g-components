@@ -157,14 +157,14 @@ class HtmlHead extends PureComponent {
         />
 
         {flags.analytics && (
-          <>
+          <Fragment>
             <link rel="preconnect" href="https://spoor-api.ft.com" />
             <meta property="ft.track:is_live" content="true" />
             {tracking.product && <meta property="ft.track:product" content="tracking.product" />}
             {tracking.micrositeName && (
               <meta property="ft.track:microsite_name" content="tracking.micrositeName" />
             )}
-          </>
+          </Fragment>
         )}
 
         <title>{title || headline}</title>
