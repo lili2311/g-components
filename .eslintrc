@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:mdx/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "root": true,
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "prettier/prettier": ["error"],
+    "react/jsx-indent": 0,
+    "indent": 0,
+    "import/no-extraneous-dependencies": [2, {}],
+    "import/extensions": [0]
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "bower_components"]
+      }
+    }
+  }
+}
