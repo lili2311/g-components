@@ -45,12 +45,7 @@ export default class Byline extends PureComponent {
     const namesElements = namesList.reduce((a, name, i) => {
       /* eslint-disable no-nested-ternary */
       const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
-      const location = name.location && (
-<Fragment> 
-{' '}
-{name.location}
-</Fragment>
-);
+      const location = name.location && <Fragment> {name.location}</Fragment>;
       const author = name.url ? (
         <Fragment key={`author-${name.name}`}>
           <a href={name.url} className="o-typography-author">

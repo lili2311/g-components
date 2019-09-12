@@ -183,8 +183,7 @@ class Layout extends PureComponent {
                         >
                           Copyright
                         </a>{' '}
-                        <span itemProp="name">The Financial Times</span> Limited
-{' '}
+                        <span itemProp="name">The Financial Times</span> Limited{' '}
                         {strftime('%Y')(new Date())}. All rights reserved. You may share using our
                         article tools. Please don&apos;t cut articles from FT.com and redistribute
                         by email or post to the web.
