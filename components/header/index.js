@@ -20,8 +20,8 @@ class Header extends PureComponent {
   render() {
     const {
       props: {
-        flags: { dark }
-      }
+        flags: { dark },
+      },
     } = this;
 
     const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
@@ -58,11 +58,11 @@ class Header extends PureComponent {
 export default Header;
 
 Header.propTypes = {
-  flags: flagsPropType
+  flags: flagsPropType,
 };
 
 Header.defaultProps = {
   flags: {
-    dark: false
-  }
+    dark: false,
+  },
 };

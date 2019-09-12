@@ -11,7 +11,7 @@ import {
   mainImagePropType,
   trackingPropType,
   topicPropType,
-  dataMetaPropType
+  dataMetaPropType,
 } from '../../shared/proptypes';
 
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
@@ -46,7 +46,7 @@ class HtmlHead extends PureComponent {
       twitterHeadline,
       twitterImage,
       url,
-      polyfills
+      polyfills,
     } = this.props;
     const polyfillFeatures = polyfills.join(',');
     const mainImageUrl = getMainImage(mainImage);
@@ -90,7 +90,7 @@ class HtmlHead extends PureComponent {
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(dataMeta)
+              __html: JSON.stringify(dataMeta),
             }}
           />
         )}
@@ -102,8 +102,8 @@ class HtmlHead extends PureComponent {
               '@type': 'WebSite',
               name: 'Financial Times',
               alternateName: 'FT.com',
-              url: 'http://www.ft.com'
-            })
+              url: 'http://www.ft.com',
+            }),
           }}
         />
         {topic.name && topic.url && (
@@ -120,11 +120,11 @@ class HtmlHead extends PureComponent {
                     item: {
                       '@id': topic.url,
                       name: topic.name,
-                      image: getMainImage(mainImage)
-                    }
-                  }
-                ]
-              })
+                      image: getMainImage(mainImage),
+                    },
+                  },
+                ],
+              }),
             }}
           />
         )}
@@ -135,8 +135,8 @@ class HtmlHead extends PureComponent {
             data-o-errors-config
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
-                sentryEndpoint: 'https://ddbd80489ff549538250bbe37fa52bbd@sentry.io/71130'
-              })
+                sentryEndpoint: 'https://ddbd80489ff549538250bbe37fa52bbd@sentry.io/71130',
+              }),
             }}
           />
         )}
@@ -152,7 +152,7 @@ class HtmlHead extends PureComponent {
               cutsTheMustard = 'querySelector' in document && 'localStorage' in window &&
               'addEventListener' in window && typeof Function.prototype.bind !== 'undefined'; 
               if (cutsTheMustard) document.documentElement.className = document.documentElement.className.replace( /core/g, 'enhanced');
-              `
+              `,
           }}
         />
 
@@ -237,19 +237,19 @@ HtmlHead.propTypes = {
   twitterHeadline: PropTypes.string,
   twitterImage: PropTypes.string,
   url: PropTypes.string.isRequired,
-  polyfills: PropTypes.arrayOf(PropTypes.string)
+  polyfills: PropTypes.arrayOf(PropTypes.string),
 };
 
 const DEFAULTS = {
   headline: 'New Starter Kit Project',
-  desc: 'A Starter Kit page'
+  desc: 'A Starter Kit page',
 };
 
 HtmlHead.defaultProps = {
   children: null,
   dataMeta: undefined,
   mainImage: {
-    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4'
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
   },
   flags: {},
   topic: {},
@@ -269,9 +269,9 @@ HtmlHead.defaultProps = {
   stylesheets: [],
   summary: '',
   tracking: {
-    product: 'IG'
+    product: 'IG',
   },
-  polyfills: ['default', 'fetch']
+  polyfills: ['default', 'fetch'],
 };
 
 export default HtmlHead;

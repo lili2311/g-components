@@ -79,19 +79,19 @@ ArticleHead.propTypes = {
   publishedDate: PropTypes.string,
   buildTime: PropTypes.string,
   topic: topicPropType,
-  bylines: BylinesPropType
+  bylines: BylinesPropType,
 };
 
 ArticleHead.defaultProps = {
   mainImage: {
-    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4'
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
   },
   relatedArticle: {},
   publishedDate: false,
   buildTime: false,
   summary: '',
   topic: {},
-  bylines: []
+  bylines: [],
 };
 
 export default ArticleHead;

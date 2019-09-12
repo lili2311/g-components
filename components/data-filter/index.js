@@ -14,7 +14,7 @@ export default class DataFilter extends PureComponent {
     data: PropTypes.arrayOf(PropTypes.object),
     set: PropTypes.func,
     isAllSelectable: PropTypes.bool, // only if filtering by selection
-    isRadioSelectable: PropTypes.bool // only if filtering by selection
+    isRadioSelectable: PropTypes.bool, // only if filtering by selection
   };
 
   static defaultProps = {
@@ -26,7 +26,7 @@ export default class DataFilter extends PureComponent {
     data: [],
     set: () => {},
     isAllSelectable: false,
-    isRadioSelectable: false
+    isRadioSelectable: false,
   };
 
   constructor(props) {
@@ -39,7 +39,7 @@ export default class DataFilter extends PureComponent {
           !props.isAllSelectable &&
           props.data[0] &&
           props.data[0][props.selectFrom]) ||
-        ''
+        '',
     };
   }
 
@@ -96,7 +96,7 @@ export default class DataFilter extends PureComponent {
       searchPlaceholder,
       data,
       isAllSelectable,
-      isRadioSelectable
+      isRadioSelectable,
     } = this.props;
     if (selectFrom && searchOver.length > 0) {
       throw new Error('Cannot set selectFrom as well as searchOver!');

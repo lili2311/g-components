@@ -12,7 +12,7 @@ class Sticky extends PureComponent {
   static displayName = 'GSticky';
 
   state = {
-    current: null
+    current: null,
   };
 
   updateGraphic = label => {
@@ -39,7 +39,7 @@ class Sticky extends PureComponent {
 
 Sticky.propTypes = {
   article: PropTypes.func.isRequired,
-  graphic: PropTypes.func.isRequired
+  graphic: PropTypes.func.isRequired,
 };
 
 export default Sticky;

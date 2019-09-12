@@ -26,7 +26,7 @@ class Share extends PureComponent {
       twitterRelatedAccounts,
       url,
       tweetText,
-      flags: { dark }
+      flags: { dark },
     } = this.props;
     const containerClasses = ['container', dark && 'container--inverse'].filter(i => i).join(' ');
     const sharingClasses = ['o-share', dark && 'o-share--inverse'].filter(i => i).join(' ');
@@ -89,7 +89,7 @@ Share.propTypes = {
   headline: PropTypes.string,
   twitterRelatedAccounts: PropTypes.arrayOf(PropTypes.string),
   tweetText: PropTypes.string,
-  flags: flagsPropType
+  flags: flagsPropType,
 };
 
 Share.defaultProps = {
@@ -99,8 +99,8 @@ Share.defaultProps = {
   headline: '',
   twitterRelatedAccounts: [],
   flags: {
-    dark: false
-  }
+    dark: false,
+  },
 };
 
 export default Share;

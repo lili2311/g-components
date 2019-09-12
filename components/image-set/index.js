@@ -49,13 +49,13 @@ imageSet.propTypes = {
     sources: PropTypes.objectOf({
       small: PropTypes.string,
       medium: PropTypes.string,
-      large: PropTypes.string
-    }).isRequired
-  })
+      large: PropTypes.string,
+    }).isRequired,
+  }),
 };
 
 imageSet.defaultProps = {
-  graphicsData: {}
+  graphicsData: {},
 };
 
 export default imageSet;
