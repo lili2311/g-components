@@ -15,7 +15,7 @@ export const BylinesPropType = PropTypes.oneOfType([
       name: PropTypes.string.isRequired,
       url: PropTypes.string,
       location: PropTypes.string,
-    })
+    }),
   ),
 ]);
 

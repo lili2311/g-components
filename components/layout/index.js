@@ -118,7 +118,7 @@ class Layout extends PureComponent {
 
     const hasCustomChildren =
       React.Children.toArray(children).some(
-        el => (el.className || '').includes('o-grid-container') || el.type === GridContainer
+        el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
       ) || !defaultContainer;
     const articleHeadComponent = customArticleHead || <ArticleHead {...props} flags={flags} />;
     return (
@@ -145,8 +145,8 @@ class Layout extends PureComponent {
                 React.Children.map(children, child =>
                   React.cloneElement(
                     child,
-                    typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint }
-                  )
+                    typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint },
+                  ),
                 )
               ) : (
                 <GridContainer>
@@ -158,8 +158,8 @@ class Layout extends PureComponent {
                             child,
                             !child.type || typeof child.type === 'string'
                               ? {}
-                              : { ...props, breakpoint }
-                          )
+                              : { ...props, breakpoint },
+                          ),
                         )}
                       </div>
                     </GridChild>
@@ -183,7 +183,7 @@ class Layout extends PureComponent {
                         >
                           Copyright
                         </a>{' '}
-                        <span itemProp="name">The Financial Times</span> Limited{' '}
+                        <span itemProp="name">The Financial Times</span> Limited
                         {strftime('%Y')(new Date())}. All rights reserved. You may share using our
                         article tools. Please don&apos;t cut articles from FT.com and redistribute
                         by email or post to the web.

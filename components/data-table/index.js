@@ -20,14 +20,14 @@ export default class DataTable extends PureComponent {
         columnIsHeader: PropTypes.bool,
         columnIsSortable: PropTypes.bool,
         columnIsVerticallyCentred: PropTypes.bool,
-      })
+      }),
     ).isRequired,
     rows: PropTypes.arrayOf(PropTypes.object),
     footers: PropTypes.arrayOf(
       PropTypes.exact({
         contents: PropTypes.node.isRequired,
         secondary: PropTypes.node,
-      })
+      }),
     ),
     responsive: PropTypes.oneOf(['none', 'scroll', 'flat']),
     isHeaderHidden: PropTypes.bool,
@@ -61,7 +61,7 @@ export default class DataTable extends PureComponent {
 
   componentDidUpdate() {
     const tableRows = Array.from(this.table.current.querySelectorAll('tr')).filter(
-      row => Array.from(row.querySelectorAll('th')).length === 0
+      row => Array.from(row.querySelectorAll('th')).length === 0,
     );
     const tableHeaders = Array.from(this.table.current.querySelectorAll('thead th'));
     if (this.props.responsive === 'flat') {
@@ -113,9 +113,7 @@ export default class DataTable extends PureComponent {
               );
               return (
                 <th {...attributes}>
-                  {header.contents} 
-{' '}
-{secondary}
+                  {header.contents} {secondary}
                 </th>
               );
             }
@@ -190,9 +188,7 @@ export default class DataTable extends PureComponent {
                 );
                 return (
                   <th {...attributes}>
-                    {footer.contents} 
-{' '}
-{secondary}
+                    {footer.contents} {secondary}
                   </th>
                 );
               }

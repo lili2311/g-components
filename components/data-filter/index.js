@@ -80,7 +80,7 @@ export default class DataFilter extends PureComponent {
               .toString()
               .toLowerCase()
               .includes(keyword);
-          })
+          }),
         );
       });
       set(dataFiltered);

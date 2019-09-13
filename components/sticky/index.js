@@ -9,8 +9,6 @@ import Observer from 'react-scroll-percentage';
 import './styles.scss';
 
 class Sticky extends PureComponent {
-  static displayName = 'GSticky';
-
   state = {
     current: null,
   };
@@ -36,6 +34,8 @@ class Sticky extends PureComponent {
     );
   }
 }
+
+Sticky.displayName = 'GSticky';
 
 Sticky.propTypes = {
   article: PropTypes.func.isRequired,

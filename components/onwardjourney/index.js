@@ -27,8 +27,8 @@ class OnwardJourney extends React.Component {
           const limit = rows * 4;
           const url = `${urlBase}${list}/html/${layout}?limit=${limit}`;
           return fetch(url).then(res => res.text());
-        })
-      )
+        }),
+      ),
     );
 
     try {
@@ -62,7 +62,7 @@ OnwardJourney.propTypes = {
     PropTypes.shape({
       rows: PropTypes.number.isRequired,
       list: PropTypes.string,
-    })
+    }),
   ),
   urlBase: PropTypes.string,
   layout: PropTypes.string,
