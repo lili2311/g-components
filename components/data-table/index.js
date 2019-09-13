@@ -3,56 +3,9 @@ import PropTypes from 'prop-types';
 import OTable from 'o-table/main.js';
 import './styles.scss';
 
+// @TODO Find better keys than array indices
+/* eslint-disable react/no-array-index-key */
 export default class DataTable extends PureComponent {
-  static displayName = 'GDataTable';
-
-  static propTypes = {
-    className: PropTypes.string,
-    captionTop: PropTypes.string,
-    captionBottom: PropTypes.string,
-    headers: PropTypes.arrayOf(
-      PropTypes.exact({
-        contents: PropTypes.node.isRequired,
-        secondary: PropTypes.node,
-        columnName: PropTypes.string.isRequired,
-        columnType: PropTypes.oneOf(['string', 'number']),
-        columnSortField: PropTypes.string,
-        columnIsHeader: PropTypes.bool,
-        columnIsSortable: PropTypes.bool,
-        columnIsVerticallyCentred: PropTypes.bool,
-      }),
-    ).isRequired,
-    rows: PropTypes.arrayOf(PropTypes.object),
-    footers: PropTypes.arrayOf(
-      PropTypes.exact({
-        contents: PropTypes.node.isRequired,
-        secondary: PropTypes.node,
-      }),
-    ),
-    responsive: PropTypes.oneOf(['none', 'scroll', 'flat']),
-    isHeaderHidden: PropTypes.bool,
-    isSortable: PropTypes.bool,
-    isStriped: PropTypes.bool,
-    isLinedHorizontal: PropTypes.bool,
-    isLinedVertical: PropTypes.bool,
-    isCompact: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    className: null,
-    captionTop: null,
-    captionBottom: null,
-    rows: [],
-    footers: [],
-    responsive: 'none',
-    isHeaderHidden: false,
-    isSortable: true,
-    isStriped: false,
-    isLinedHorizontal: false,
-    isLinedVertical: false,
-    isCompact: false,
-  };
-
   table = React.createRef();
 
   componentDidMount() {
@@ -64,8 +17,10 @@ export default class DataTable extends PureComponent {
       row => Array.from(row.querySelectorAll('th')).length === 0,
     );
     const tableHeaders = Array.from(this.table.current.querySelectorAll('thead th'));
-    if (this.props.responsive === 'flat') {
-      this.tableOrigami._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
+    const { responsive } = this.props;
+    if (responsive === 'flat') {
+      // so it deals with data changing
+      this.tableOrigami._duplicateHeaders(tableRows, tableHeaders); // eslint-disable-line no-underscore-dangle
     }
   }
 
@@ -229,3 +184,54 @@ export default class DataTable extends PureComponent {
     );
   }
 }
+
+/* eslint-enable react/no-array-index-key */
+
+DataTable.propTypes = {
+  className: PropTypes.string,
+  captionTop: PropTypes.string,
+  captionBottom: PropTypes.string,
+  headers: PropTypes.arrayOf(
+    PropTypes.exact({
+      contents: PropTypes.node.isRequired,
+      secondary: PropTypes.node,
+      columnName: PropTypes.string.isRequired,
+      columnType: PropTypes.oneOf(['string', 'number']),
+      columnSortField: PropTypes.string,
+      columnIsHeader: PropTypes.bool,
+      columnIsSortable: PropTypes.bool,
+      columnIsVerticallyCentred: PropTypes.bool,
+    }),
+  ).isRequired,
+  rows: PropTypes.arrayOf(PropTypes.object),
+  footers: PropTypes.arrayOf(
+    PropTypes.exact({
+      contents: PropTypes.node.isRequired,
+      secondary: PropTypes.node,
+    }),
+  ),
+  responsive: PropTypes.oneOf(['none', 'scroll', 'flat']),
+  isHeaderHidden: PropTypes.bool,
+  isSortable: PropTypes.bool,
+  isStriped: PropTypes.bool,
+  isLinedHorizontal: PropTypes.bool,
+  isLinedVertical: PropTypes.bool,
+  isCompact: PropTypes.bool,
+};
+
+DataTable.defaultProps = {
+  className: null,
+  captionTop: null,
+  captionBottom: null,
+  rows: [],
+  footers: [],
+  responsive: 'none',
+  isHeaderHidden: false,
+  isSortable: true,
+  isStriped: false,
+  isLinedHorizontal: false,
+  isLinedVertical: false,
+  isCompact: false,
+};
+
+DataTable.displayName = 'GDataTable';

@@ -22,18 +22,6 @@ export const BylinesPropType = PropTypes.oneOfType([
 export default class Byline extends PureComponent {
   dateRef = React.createRef();
 
-  static displayName = 'GByline';
-
-  static propTypes = {
-    names: BylinesPropType,
-    date: PropTypes.string,
-  };
-
-  static defaultProps = {
-    names: null,
-    date: null,
-  };
-
   async componentDidMount() {
     new ODate(this.dateRef.current); // eslint-disable-line no-new
   }
@@ -83,3 +71,15 @@ export default class Byline extends PureComponent {
     );
   }
 }
+
+Byline.displayName = 'GByline';
+
+Byline.propTypes = {
+  names: BylinesPropType,
+  date: PropTypes.string,
+};
+
+Byline.defaultProps = {
+  names: null,
+  date: null,
+};

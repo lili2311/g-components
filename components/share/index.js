@@ -12,8 +12,6 @@ import './styles.scss';
 class Share extends PureComponent {
   ref = React.createRef();
 
-  static displayName = 'GShare';
-
   async componentDidMount() {
     new OShare(this.ref.current); // eslint-disable-line no-new
   }
@@ -102,5 +100,7 @@ Share.defaultProps = {
     dark: false,
   },
 };
+
+Share.displayName = 'GShare';
 
 export default Share;

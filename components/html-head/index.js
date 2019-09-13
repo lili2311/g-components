@@ -18,8 +18,6 @@ import {
 /* eslint-disable react/no-danger */
 
 class HtmlHead extends PureComponent {
-  static displayName = 'GHtmlHead';
-
   render() {
     const {
       children,
@@ -273,5 +271,7 @@ HtmlHead.defaultProps = {
   },
   polyfills: ['default', 'fetch'],
 };
+
+HtmlHead.displayName = 'GHtmlHead';
 
 export default HtmlHead;

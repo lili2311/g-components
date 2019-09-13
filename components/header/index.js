@@ -11,8 +11,6 @@ import { flagsPropType } from '../../shared/proptypes';
 class Header extends PureComponent {
   ref = React.createRef();
 
-  static displayName = 'GHeader';
-
   async componentDidMount() {
     new OHeader(this.ref.current); // eslint-disable-line no-new
   }
@@ -66,3 +64,5 @@ Header.defaultProps = {
     dark: false,
   },
 };
+
+Header.displayName = 'GHeader';
