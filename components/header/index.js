@@ -11,8 +11,6 @@ import { flagsPropType } from '../../shared/proptypes';
 class Header extends PureComponent {
   ref = React.createRef();
 
-  static displayName = 'GHeader';
-
   async componentDidMount() {
     new OHeader(this.ref.current); // eslint-disable-line no-new
   }
@@ -44,9 +42,7 @@ class Header extends PureComponent {
                   href="http://www.ft.com/"
                   title="Go to Financial Times homepage"
                 >
-                  <span className="o-header__visually-hidden">
-Financial Times
-                  </span>
+                  <span className="o-header__visually-hidden">Financial Times</span>
                 </a>
               </div>
             </div>
@@ -68,3 +64,5 @@ Header.defaultProps = {
     dark: false,
   },
 };
+
+Header.displayName = 'GHeader';

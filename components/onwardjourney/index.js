@@ -9,8 +9,6 @@ import { makeCancelable } from '../../shared/helpers';
 import './styles.scss';
 
 class OnwardJourney extends React.Component {
-  static displayName = 'GOnwardJourney';
-
   constructor(props) {
     super(props);
     this.state = {
@@ -73,5 +71,7 @@ OnwardJourney.defaultProps = {
   urlBase: 'https://ig.ft.com/onwardjourney/v3/',
   layout: '',
 };
+
+OnwardJourney.displayName = 'GOnwardJourney';
 
 export default OnwardJourney;

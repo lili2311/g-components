@@ -22,9 +22,7 @@ import Footer from '../footer';
 import './styles.scss';
 
 export const GridContainer = ({ bleed, children }) => (
-  <div className={`o-grid-container${bleed ? ' o-grid-container--bleed' : ''}`}>
-    {children}
-  </div>
+  <div className={`o-grid-container${bleed ? ' o-grid-container--bleed' : ''}`}>{children}</div>
 );
 
 GridContainer.displayName = 'GGridContainer';
@@ -39,9 +37,7 @@ GridContainer.defaultProps = {
 };
 
 export const GridRow = ({ compact, children }) => (
-  <div className={`o-grid-row ${compact ? ' o-grid-row--compact' : ''}`}>
-    {children}
-  </div>
+  <div className={`o-grid-row ${compact ? ' o-grid-row--compact' : ''}`}>{children}</div>
 );
 
 GridRow.displayName = 'GGridRow';
@@ -55,11 +51,7 @@ GridRow.defaultProps = {
   compact: false,
 };
 
-export const GridChild = ({ children, span }) => (
-  <div data-o-grid-colspan={span}>
-    {children}
-  </div>
-);
+export const GridChild = ({ children, span }) => <div data-o-grid-colspan={span}>{children}</div>;
 
 GridChild.displayName = 'GGridChild';
 
@@ -114,14 +106,20 @@ class Layout extends PureComponent {
 
   render() {
     const {
-      flags = {}, children, defaultContainer, customArticleHead, wrapArticleHead, ...props
+      flags = {},
+      children,
+      defaultContainer,
+      customArticleHead,
+      wrapArticleHead,
+      ...props
     } = this.props;
 
     const { breakpoint } = this.state;
 
-    const hasCustomChildren = React.Children.toArray(children).some(
-      el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
-    ) || !defaultContainer;
+    const hasCustomChildren =
+      React.Children.toArray(children).some(
+        el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
+      ) || !defaultContainer;
     const articleHeadComponent = customArticleHead || <ArticleHead {...props} flags={flags} />;
     return (
       <Fragment>
@@ -144,21 +142,25 @@ class Layout extends PureComponent {
 
             <div className="article-body o-typography-wrapper" itemProp="articleBody">
               {hasCustomChildren ? (
-                React.Children.map(children, child => React.cloneElement(
-                  child,
-                  typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint },
-                ))
+                React.Children.map(children, child =>
+                  React.cloneElement(
+                    child,
+                    typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint },
+                  ),
+                )
               ) : (
                 <GridContainer>
                   <GridRow>
                     <GridChild>
                       <div>
-                        {React.Children.map(children, child => React.cloneElement(
-                          child,
-                          !child.type || typeof child.type === 'string'
-                            ? {}
-                            : { ...props, breakpoint },
-                        ))}
+                        {React.Children.map(children, child =>
+                          React.cloneElement(
+                            child,
+                            !child.type || typeof child.type === 'string'
+                              ? {}
+                              : { ...props, breakpoint },
+                          ),
+                        )}
                       </div>
                     </GridChild>
                   </GridRow>
@@ -180,18 +182,11 @@ class Layout extends PureComponent {
                           data-trackable="link-copyright"
                         >
                           Copyright
-                        </a>
-                        {' '}
-                        <span itemProp="name">
-The Financial Times
-                        </span>
-                        {' '}
-Limited
-                        {' '}
-                        {strftime('%Y')(new Date())}
-                        . All rights reserved. You may share using our article tools. Please
-                        don&apos;t cut articles from FT.com and redistribute by email or post to the
-                        web.
+                        </a>{' '}
+                        <span itemProp="name">The Financial Times</span> Limited
+                        {strftime('%Y')(new Date())}. All rights reserved. You may share using our
+                        article tools. Please don&apos;t cut articles from FT.com and redistribute
+                        by email or post to the web.
                       </small>
                     </div>
                   </div>

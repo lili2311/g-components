@@ -9,13 +9,11 @@ import Observer from 'react-scroll-percentage';
 import './styles.scss';
 
 class Sticky extends PureComponent {
-  static displayName = 'GSticky';
-
   state = {
     current: null,
   };
 
-  updateGraphic = (label) => {
+  updateGraphic = label => {
     this.setState({ current: label });
   };
 
@@ -29,15 +27,15 @@ class Sticky extends PureComponent {
             <article className="sticky__text">
               {article({ percentage, inView, updateGraphic: this.updateGraphic })}
             </article>
-            <figure className="sticky__figure">
-              {graphic({ percentage, inView, current })}
-            </figure>
+            <figure className="sticky__figure">{graphic({ percentage, inView, current })}</figure>
           </div>
         )}
       </Observer>
     );
   }
 }
+
+Sticky.displayName = 'GSticky';
 
 Sticky.propTypes = {
   article: PropTypes.func.isRequired,

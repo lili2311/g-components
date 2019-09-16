@@ -12,8 +12,6 @@ import './styles.scss';
 class Comments extends PureComponent {
   ref = React.createRef();
 
-  static displayName = 'GComments';
-
   async componentDidMount() {
     const { title, id, url } = this.props;
 
@@ -40,8 +38,7 @@ class Comments extends PureComponent {
             data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
           >
             <div className="o--if-no-js">
-              To participate in this chat, you need to upgrade to a newer web browser.
-              {' '}
+              To participate in this chat, you need to upgrade to a newer web browser.{' '}
               <a href="http://help.ft.com/tools-services/browser-compatibility/">Learn more.</a>
             </div>
           </div>
@@ -74,3 +71,4 @@ Comments.defaultProps = {
 };
 
 export default Comments;
+Comments.displayName = 'GComments';
