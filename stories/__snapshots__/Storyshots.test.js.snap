@@ -3276,21 +3276,25 @@ exports[`Storyshots DataFilter default 1`] = `
         <option
           value="John"
         >
+           
           John
         </option>
         <option
           value="Paul"
         >
+           
           Paul
         </option>
         <option
           value="George"
         >
+           
           George
         </option>
         <option
           value="Ringo"
         >
+           
           Ringo
         </option>
       </select>
@@ -7084,7 +7088,6 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                       The Financial Times
                     </span>
                      Limited
-                     
                     2019
                     . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
                   </small>
@@ -9378,7 +9381,6 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                       The Financial Times
                     </span>
                      Limited
-                     
                     2019
                     . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
                   </small>
@@ -12202,7 +12204,6 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                       The Financial Times
                     </span>
                      Limited
-                     
                     2019
                     . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
                   </small>
@@ -14467,7 +14468,6 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                       The Financial Times
                     </span>
                      Limited
-                     
                     2019
                     . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
                   </small>
@@ -17295,7 +17295,6 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                       The Financial Times
                     </span>
                      Limited
-                     
                     2019
                     . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
                   </small>
