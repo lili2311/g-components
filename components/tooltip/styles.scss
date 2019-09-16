@@ -1,0 +1,10 @@
+@import 'o-tooltip/main.scss';
+
+.g-tooltip {
+  @include oTooltip();
+}
+
+.g-tooltip--content {
+  @include oTooltipContent();
+}
+
