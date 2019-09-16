@@ -2,9 +2,26 @@
 
 .g-tooltip {
   @include oTooltip();
-}
+  display: block;
 
-.g-tooltip--content {
-  @include oTooltipContent();
+  &--content {
+    @include oTooltipContent();
+  }
+
+  &--left {
+    @include oTooltipLeftArrow();
+  }
+
+  &--right {
+    @include oTooltipRightArrow();
+  }
+
+  &--top {
+    @include oTooltipDownArrow();
+  }
+
+  &--bottom {
+    @include oTooltipUpArrow();
+  }
 }
 
