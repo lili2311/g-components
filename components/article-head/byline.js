@@ -22,18 +22,6 @@ export const BylinesPropType = PropTypes.oneOfType([
 export default class Byline extends PureComponent {
   dateRef = React.createRef();
 
-  static displayName = 'GByline';
-
-  static propTypes = {
-    names: BylinesPropType,
-    date: PropTypes.string,
-  };
-
-  static defaultProps = {
-    names: null,
-    date: null,
-  };
-
   async componentDidMount() {
     new ODate(this.dateRef.current); // eslint-disable-line no-new
   }
@@ -45,12 +33,7 @@ export default class Byline extends PureComponent {
     const namesElements = namesList.reduce((a, name, i) => {
       /* eslint-disable no-nested-ternary */
       const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
-      const location = name.location && (
-      <Fragment>
-        {' '}
-        {name.location}
-      </Fragment>
-      );
+      const location = name.location && <Fragment> {name.location}</Fragment>;
       const author = name.url ? (
         <Fragment key={`author-${name.name}`}>
           <a href={name.url} className="o-typography-author">
@@ -60,9 +43,7 @@ export default class Byline extends PureComponent {
         </Fragment>
       ) : (
         <Fragment key={`author-${name.name}`}>
-          <span>
-            {name.name}
-          </span>
+          <span>{name.name}</span>
           {location}
         </Fragment>
       );
@@ -90,3 +71,15 @@ export default class Byline extends PureComponent {
     );
   }
 }
+
+Byline.displayName = 'GByline';
+
+Byline.propTypes = {
+  names: BylinesPropType,
+  date: PropTypes.string,
+};
+
+Byline.defaultProps = {
+  names: null,
+  date: null,
+};
