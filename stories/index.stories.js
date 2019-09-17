@@ -22,7 +22,7 @@ import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
-import Tooltip from '../components/tooltip';
+import Tooltip, { tooltipContext } from '../components/tooltip';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1041,23 +1041,21 @@ storiesOf('Tooltip', module)
     </Fragment>
   ))
   .add('Attached to an element', () => {
-    const TargetElement = ({ left, top, setTooltip, content }) => (
+    const TargetElement = ({ direction, children, left, top, setTooltip, content }) => (
       <div
         onMouseOver={evt => {
-          const bb = evt.currentTarget.getBoundingClientRect();
           setTooltip({
-            top: bb.top,
-            left: bb.left,
+            target: evt.currentTarget,
             visible: true,
+            arrow: direction,
             content,
           });
         }}
         onFocus={evt => {
-          const bb = evt.currentTarget.getBoundingClientRect();
           setTooltip({
-            top: bb.top,
-            left: bb.left,
+            target: evt.currentTarget,
             visible: true,
+            arrow: direction,
             content,
           });
         }}
@@ -1071,14 +1069,19 @@ storiesOf('Tooltip', module)
         }}
         style={{ position: 'absolute', left, top, background: 'red' }}
       >
-        Hey, tooltip me!
+        {children}
       </div>
     );
 
     const App = () => {
-      const [tooltip, setTooltip] = useState({ left: null, top: null, visible: false });
+      const [tooltip, setTooltip] = useState({
+        left: null,
+        top: null,
+        content: '',
+        visible: false,
+      });
       return (
-        <Fragment>
+        <tooltipContext.Provider value={{ ...tooltip, setTooltip }}>
           <div style={{ width: '100vw', height: '100vw' }}>
             <TargetElement
               content="First tooltip!"
@@ -1086,17 +1089,43 @@ storiesOf('Tooltip', module)
               rootId="root"
               left="50%"
               top="20%"
-            />
+              direction="left"
+            >
+              Target left!
+            </TargetElement>
             <TargetElement
               content="Second tooltip!"
               setTooltip={setTooltip}
               rootId="root"
               left="50%"
-              top="60%"
-            />
+              top="40%"
+              direction="right"
+            >
+              Target right!
+            </TargetElement>
+            <TargetElement
+              content="Third tooltip!"
+              setTooltip={setTooltip}
+              rootId="root"
+              left="50%"
+              top="70%"
+              direction="top"
+            >
+              Target top!
+            </TargetElement>
+            <TargetElement
+              content="Fourth tooltip!"
+              setTooltip={setTooltip}
+              rootId="root"
+              left="50%"
+              top="90%"
+              direction="bottom"
+            >
+              Target bottom!
+            </TargetElement>
           </div>
-          {tooltip.visible && <Tooltip {...tooltip}>{tooltip.content}</Tooltip>}
-        </Fragment>
+          <Tooltip {...tooltip}>{tooltip.content}</Tooltip>
+        </tooltipContext.Provider>
       );
     };
 
