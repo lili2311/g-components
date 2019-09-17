@@ -19,9 +19,9 @@ export const tooltipContext = createContext({
   arrow: null,
 });
 
-const Tooltip = ({ className }) => {
+const Tooltip = ({ className, visible: propVisible, children, ...props }) => {
   const tooltip = useContext(tooltipContext);
-  const { arrow, content, visible, target } = tooltip;
+  const { arrow = props.arrow, content, visible, target } = tooltip;
   const ref = useRef(null);
   const { Portal } = usePortal();
   const [state, setState] = useState({
@@ -69,9 +69,13 @@ const Tooltip = ({ className }) => {
       <div
         ref={ref}
         className={cx(className, 'g-tooltip', arrow && `g-tooltip--${arrow}`)}
-        style={{ left: state.left, top: state.top, display: state.visible ? 'block' : 'none' }}
+        style={{
+          left: state.left,
+          top: state.top,
+          display: state.visible || propVisible ? 'block' : 'none',
+        }}
       >
-        <div className={cx(className, 'g-tooltip--content')}>{content}</div>
+        <div className={cx(className, 'g-tooltip--content')}>{content || children}</div>
       </div>
     </Portal>
   );
@@ -79,10 +83,12 @@ const Tooltip = ({ className }) => {
 
 Tooltip.defaultProps = {
   className: null,
+  visible: false,
 };
 
 Tooltip.propTypes = {
   className: PropTypes.string,
+  visible: PropTypes.bool,
 };
 
 export default Tooltip;

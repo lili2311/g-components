@@ -1019,25 +1019,33 @@ storiesOf('Sticky', module)
   );
 
 storiesOf('Tooltip', module)
-  .add('default', () => <Tooltip>Here is your content</Tooltip>)
+  .add('default', () => <Tooltip visible>Here is your content</Tooltip>)
   .add('With directional arrows', () => (
     <Fragment>
-      <Tooltip arrow="left">Left tooltip</Tooltip>
+      <Tooltip visible arrow="left">
+        Left tooltip
+      </Tooltip>
       <br />
       <br />
       <br />
       <br />
-      <Tooltip arrow="right">Right tooltip</Tooltip>
+      <Tooltip visible arrow="right">
+        Right tooltip
+      </Tooltip>
       <br />
       <br />
       <br />
       <br />
-      <Tooltip arrow="top">Top tooltip</Tooltip>
+      <Tooltip visible arrow="top">
+        Top tooltip
+      </Tooltip>
       <br />
       <br />
       <br />
       <br />
-      <Tooltip arrow="bottom">Bottom tooltip</Tooltip>
+      <Tooltip visible arrow="bottom">
+        Bottom tooltip
+      </Tooltip>
     </Fragment>
   ))
   .add('Attached to an element', () => {
