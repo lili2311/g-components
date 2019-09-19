@@ -11,10 +11,11 @@ references:
   npm_cache_key: &npm_cache_key v1-dependency-npm-{{ checksum "package-lock.json" }}
 
   ssh_cache_key: &ssh_cache_key gcomponents-rev{{ .Revision }}
+
   restore_ssh: &restore_ssh
     restore_cache:
       keys:
-        - *cache_key_ssh
+        - *ssh_cache_key
 
   restore_node_modules: &restore_node_modules
     restore_cache:
@@ -38,7 +39,7 @@ jobs:
     steps:
       - checkout
       - save_cache:
-          key: *cache_key_ssh
+          key: *ssh_cache_key
           paths:
             - ~/.ssh
       - run:
@@ -79,6 +80,7 @@ jobs:
       - run:
           name: Publish to gh-pages
           command: npm run publish-storybook
+
   release_npm:
     <<: *default_container_config
     steps:
