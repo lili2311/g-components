@@ -13,8 +13,6 @@ import { spoorTrackingPixel } from '../../shared/helpers';
 /* eslint-disable react/no-danger */
 
 class Analytics extends PureComponent {
-  static displayName = 'GAnalytics';
-
   async componentDidMount() {
     if (!window.cutsTheMustard) return;
     const pageData = {
@@ -114,6 +112,8 @@ class Analytics extends PureComponent {
     );
   }
 }
+
+Analytics.displayName = 'GAnalytics';
 
 Analytics.propTypes = {
   id: PropTypes.string.isRequired,

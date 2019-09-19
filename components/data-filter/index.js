@@ -3,43 +3,17 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 export default class DataFilter extends PureComponent {
-  static displayName = 'GDataFilter';
-
-  static propTypes = {
-    className: PropTypes.string,
-    initial: PropTypes.string,
-    selectFrom: PropTypes.string, // for filtering by selection
-    searchOver: PropTypes.arrayOf(PropTypes.string), // for filtering by typing (default)
-    searchPlaceholder: PropTypes.string,
-    data: PropTypes.arrayOf(PropTypes.object),
-    set: PropTypes.func,
-    isAllSelectable: PropTypes.bool, // only if filtering by selection
-    isRadioSelectable: PropTypes.bool, // only if filtering by selection
-  };
-
-  static defaultProps = {
-    className: null,
-    initial: '',
-    selectFrom: '',
-    searchOver: [],
-    searchPlaceholder: null,
-    data: [],
-    set: () => {},
-    isAllSelectable: false,
-    isRadioSelectable: false,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
       isLoaded: false,
       text:
-        props.initial
-        || (props.selectFrom
-          && !props.isAllSelectable
-          && props.data[0]
-          && props.data[0][props.selectFrom])
-        || '',
+        props.initial ||
+        (props.selectFrom &&
+          !props.isAllSelectable &&
+          props.data[0] &&
+          props.data[0][props.selectFrom]) ||
+        '',
     };
   }
 
@@ -52,15 +26,13 @@ export default class DataFilter extends PureComponent {
     this.update();
   }
 
-  setText = (event) => {
+  setText = event => {
     event.stopPropagation();
     this.setState({ text: event.target.value });
   };
 
   update = () => {
-    const {
-      selectFrom, searchOver, data, set,
-    } = this.props;
+    const { selectFrom, searchOver, data, set } = this.props;
     const { text } = this.state;
     const textNormalised = text
       .trim()
@@ -73,15 +45,17 @@ export default class DataFilter extends PureComponent {
       set(dataFiltered);
     } else {
       const keywords = textNormalised.split(/ +/).filter(x => x);
-      const dataFiltered = data.filter((row) => {
+      const dataFiltered = data.filter(row => {
         const columns = searchOver.length > 0 ? searchOver : Object.keys(row);
-        return keywords.every(keyword => columns.some((column) => {
-          if (!row[column]) return false;
-          return row[column]
-            .toString()
-            .toLowerCase()
-            .includes(keyword);
-        }));
+        return keywords.every(keyword =>
+          columns.some(column => {
+            if (!row[column]) return false;
+            return row[column]
+              .toString()
+              .toLowerCase()
+              .includes(keyword);
+          }),
+        );
       });
       set(dataFiltered);
     }
@@ -131,7 +105,7 @@ export default class DataFilter extends PureComponent {
                     onChange={this.setText}
                     id="g-data-filter-all"
                   />
-                  <label htmlFor="g-data-filter-all" className="o-forms__label">
+                  <label htmlFor="g-data-filter-all" className="o-forms__label"> {/* eslint-disable-line */ /* Eslint bug? */}
                     (All)
                   </label>
                 </Fragment>
@@ -159,13 +133,9 @@ export default class DataFilter extends PureComponent {
         <div className={namedClass}>
           {options.length === 0 ? null : (
             <select className="o-forms__select" value={text} onChange={this.setText}>
-              {isAllSelectable === false ? null : (
-                <option value="">
-(All)
-                </option>
-              )}
+              {isAllSelectable === false ? null : <option value="">(All)</option>}
               {options.map((option, i) => (
-                <option key={i} value={option}>
+                <option key={i} value={option}> {/* eslint-disable-line */}
                   {option}
                 </option>
               ))}
@@ -187,3 +157,28 @@ export default class DataFilter extends PureComponent {
     );
   }
 }
+
+DataFilter.displayName = 'GDataFilter';
+DataFilter.propTypes = {
+  className: PropTypes.string,
+  initial: PropTypes.string,
+  selectFrom: PropTypes.string, // for filtering by selection
+  searchOver: PropTypes.arrayOf(PropTypes.string), // for filtering by typing (default)
+  searchPlaceholder: PropTypes.string,
+  data: PropTypes.arrayOf(PropTypes.object),
+  set: PropTypes.func,
+  isAllSelectable: PropTypes.bool, // only if filtering by selection
+  isRadioSelectable: PropTypes.bool, // only if filtering by selection
+};
+
+DataFilter.defaultProps = {
+  className: null,
+  initial: '',
+  selectFrom: '',
+  searchOver: [],
+  searchPlaceholder: null,
+  data: [],
+  set: () => {},
+  isAllSelectable: false,
+  isRadioSelectable: false,
+};

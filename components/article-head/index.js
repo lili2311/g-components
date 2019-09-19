@@ -7,13 +7,11 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Share from '../share';
 import { getMainImage } from '../../shared/helpers';
-import { mainImagePropType, topicPropType } from '../../shared/proptypes';
+import { mainImagePropType, topicPropType, flagsPropType } from '../../shared/proptypes';
 import Byline, { BylinesPropType } from './byline';
 import './styles.scss';
 
 class ArticleHead extends PureComponent {
-  static displayName = 'GArticleHead';
-
   render() {
     const {
       topic,
@@ -43,8 +41,7 @@ class ArticleHead extends PureComponent {
         </h1>
 
         <div className="o-typography-standfirst">
-          {summary}
-          {' '}
+          {summary}{' '}
           {relatedArticle && (
             <a href={relatedArticle.url} className="o-typography-link">
               {relatedArticle.text}
@@ -72,11 +69,14 @@ class ArticleHead extends PureComponent {
 }
 
 ArticleHead.propTypes = {
-  flags: PropTypes.shape({}).isRequired,
+  flags: flagsPropType.isRequired,
   headline: PropTypes.string.isRequired,
   summary: PropTypes.string,
   mainImage: mainImagePropType,
-  relatedArticle: PropTypes.shape({}),
+  relatedArticle: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  }),
   publishedDate: PropTypes.string,
   buildTime: PropTypes.string,
   topic: topicPropType,
@@ -94,6 +94,8 @@ ArticleHead.defaultProps = {
   topic: {},
   bylines: [],
 };
+
+ArticleHead.displayName = 'GArticleHead';
 
 export default ArticleHead;
 export { Byline };

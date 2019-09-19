@@ -23,23 +23,20 @@ const imageSet = ({ graphicsData }) => (
   <div className="g-imageset">
     <figure>
       <picture>
-        {graphicsData.sources
-          && graphicsData.sources.small && (
-            <source
-              media="screen and (max-width: 490px)"
-              srcSet={getImageURL(graphicsData.sources.small, 490)}
-            />
+        {graphicsData.sources && graphicsData.sources.small && (
+          <source
+            media="screen and (max-width: 490px)"
+            srcSet={getImageURL(graphicsData.sources.small, 490)}
+          />
         )}
-        {graphicsData.sources
-          && graphicsData.sources.large && (
-            <source
-              media="screen and (min-width: 980px)"
-              srcSet={getImageURL(graphicsData.sources.large, 1260)}
-            />
+        {graphicsData.sources && graphicsData.sources.large && (
+          <source
+            media="screen and (min-width: 980px)"
+            srcSet={getImageURL(graphicsData.sources.large, 1260)}
+          />
         )}
-        {graphicsData.sources
-          && graphicsData.sources.medium && (
-            <img srcSet={getImageURL(graphicsData.sources.medium, 700)} alt={graphicsData.alt} />
+        {graphicsData.sources && graphicsData.sources.medium && (
+          <img srcSet={getImageURL(graphicsData.sources.medium, 700)} alt={graphicsData.alt} />
         )}
       </picture>
     </figure>
