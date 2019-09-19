@@ -7,11 +7,11 @@
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook -o ./docs",
     "build:components": "webpack",
     "build": "npm run build:components && npm run build:storybook",
     "prepare": "npm run build:components",
-    "build-storybook": "build-storybook"
+    "build:storybook": "build-storybook",
+    "publish-storybook": "gh-pages -d storybook-static"
   },
   "keywords": [],
   "author": "Ændrew Rininsland <andrew.rininsland@ft.com",
@@ -62,6 +62,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "ftdomdelegate": "^3.0.0",
+    "gh-pages": "^2.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
     "jest-fetch-mock": "^1.6.5",
