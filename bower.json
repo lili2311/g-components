@@ -15,7 +15,7 @@
     "o-header": "^7.2.8",
     "o-footer": "^6.0.8",
     "o-teaser": "^2.3.2",
-    "o-comments": "^5",
+    "o-comments": "6.0.0-beta.50",
     "o-share": "^6.1.0",
     "o-ads": "^10.2.0",
     "o-date": "^2.10.3",

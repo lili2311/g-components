@@ -13,13 +13,12 @@ class Comments extends PureComponent {
   ref = React.createRef();
 
   async componentDidMount() {
-    const { title, id, url } = this.props;
+    const { id, url } = this.props;
 
     // prettier-ignore
     new OComments(this.ref.current, { // eslint-disable-line no-new
-      title,
-      url,
-      articleId: id,
+      articleUrl: url,
+      articleId: id
     });
   }
 
@@ -34,7 +33,6 @@ class Comments extends PureComponent {
             ref={this.ref}
             data-o-component="o-comments"
             id="comments"
-            data-o-comments-auto-init="false"
             data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
           >
             <div className="o--if-no-js">
