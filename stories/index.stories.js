@@ -3,12 +3,10 @@
  * Main Storybook.js stories
  */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, addDecorator } from '@storybook/react';
-import {
-  withKnobs, text, boolean, select, array,
-} from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select, array } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import Observer from 'react-scroll-percentage';
 import { TopAd, MiddleAd } from '../components/ads';
@@ -18,7 +16,7 @@ import Comments from '../components/comments';
 import Footer from '../components/footer';
 import Header from '../components/header';
 // import HtmlHead from '../components/html-head';
-import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
+import Layout, { GridContainer, GridRow, GridChild, Context } from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
 import DataTable from '../components/data-table';
@@ -141,7 +139,9 @@ storiesOf('Layout', module)
             <div>
               {text('Content', lorem)
                 .split(/\n\n/)
-                .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
+                .map((par, idx) => (
+                  <p key={idx /* eslint-disable-line */}>{par}</p>
+                ))}
             </div>
           </GridChild>
         </GridRow>
@@ -151,11 +151,7 @@ storiesOf('Layout', module)
   .add(
     'With custom article head',
     () => {
-      const CustomArticleHead = (
-        <h1>
-New starter kit site
-        </h1>
-      );
+      const CustomArticleHead = <h1>New starter kit site</h1>;
       return (
         <Layout
           flags={DEFAULT.flags}
@@ -187,10 +183,32 @@ New starter kit site
     to maintain typographic styles.
   `,
     },
-  );
+  )
+  .add('Using context', () => {
+    // Note that this accepts no props — we're purely consuming Layout's Context.
+    const DeepChild = () => {
+      const ctx = useContext(Context);
+      return <pre>{JSON.stringify(ctx)}</pre>;
+    };
+
+    return (
+      <Layout {...DEFAULT}>
+        <div width="100%" style={{ overflow: 'scroll' }}>
+          This should resemble config: <br />
+          <DeepChild
+            {
+              ...{
+                /* Look ma, no props! */
+              }
+            }
+          />
+        </div>
+      </Layout>
+    );
+  });
 
 storiesOf('Layout, dark theme', module)
-  .addDecorator((story) => {
+  .addDecorator(story => {
     document.documentElement.classList.add('dark');
     return story();
   })
@@ -242,7 +260,9 @@ storiesOf('Layout, dark theme', module)
             <div>
               {text('Content', lorem)
                 .split(/\n\n/)
-                .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
+                .map((par, idx) => (
+                  <p key={idx /* eslint-disable-line */}>{par}</p>
+                ))}
             </div>
           </GridChild>
         </GridRow>
@@ -722,9 +742,7 @@ storiesOf('Ads', module).add('Middle ad', () => <MiddleAd />);
 storiesOf('Analytics', module).add(
   'default',
   () => [
-    <h4 key="1">
-You won&apos;t see anything here as &quot;Analytics&quot; has no visual output
-    </h4>,
+    <h4 key="1">You won&apos;t see anything here as &quot;Analytics&quot; has no visual output</h4>,
     <Analytics key="2" id={DEFAULT.uuid} flags={DEFAULT.flags} />,
   ],
   {
@@ -839,15 +857,7 @@ storiesOf('Sticky', module)
         <Sticky
           graphic={({ percentage, inView }) => (
             <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
-              Percentage:
-              {' '}
-              {(percentage * 100).toFixed(1)}
-              %
-              {' '}
-              <br />
-              {' '}
-In viewport:
-              {' '}
+              Percentage: {(percentage * 100).toFixed(1)}% <br /> In viewport:{' '}
               {inView ? 'yes' : 'no'}
             </h1>
           )}
@@ -855,122 +865,102 @@ In viewport:
             <div style={{ fontSize: '500%' }}>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
             </div>
@@ -1010,22 +1000,10 @@ In viewport:
         <Sticky
           graphic={({ percentage, inView, current }) => (
             <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
-              Percentage:
-              {' '}
-              {(percentage * 100).toFixed(1)}
-              %
-              {' '}
-              <br />
-              {' '}
-Frame is in viewport:
-              {' '}
+              Percentage: {(percentage * 100).toFixed(1)}% <br /> Frame is in viewport:{' '}
               {inView ? 'yes' : 'no'}
-              <br />
-              {' '}
-Currently viewing line:
-              {/* prettier-ignore */}
-              {' '}
-              {current}
+              <br /> Currently viewing line:
+              {/* prettier-ignore */} {current}
             </h1>
           )}
           article={({ updateGraphic }) => (
@@ -1035,11 +1013,7 @@ Currently viewing line:
                   <Observer>
                     {({ inView }) => {
                       if (inView) updateGraphic(idx);
-                      return (
-                        <h1>
-                          {label}
-                        </h1>
-                      );
+                      return <h1>{label}</h1>;
                     }}
                   </Observer>
                 ),

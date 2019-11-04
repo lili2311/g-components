@@ -3,37 +3,31 @@
  * Component using IntersectionObserver for scrollytelling
  */
 
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Observer from 'react-scroll-percentage';
 import './styles.scss';
 
-class Sticky extends PureComponent {
-  state = {
-    current: null,
+const Sticky = ({ article, graphic }) => {
+  const [current, setCurrent] = useState();
+
+  const updateGraphic = label => {
+    setCurrent(label);
   };
 
-  updateGraphic = label => {
-    this.setState({ current: label });
-  };
-
-  render() {
-    const { article, graphic } = this.props;
-    const { current } = this.state;
-    return (
-      <Observer>
-        {({ percentage, inView }) => (
-          <div className="sticky__container">
-            <article className="sticky__text">
-              {article({ percentage, inView, updateGraphic: this.updateGraphic })}
-            </article>
-            <figure className="sticky__figure">{graphic({ percentage, inView, current })}</figure>
-          </div>
-        )}
-      </Observer>
-    );
-  }
-}
+  return (
+    <Observer>
+      {({ percentage, inView }) => (
+        <div className="sticky__container">
+          <article className="sticky__text">
+            {article({ percentage, inView, updateGraphic })}
+          </article>
+          <figure className="sticky__figure">{graphic({ percentage, inView, current })}</figure>
+        </div>
+      )}
+    </Observer>
+  );
+};
 
 Sticky.displayName = 'GSticky';
 
