@@ -3,18 +3,18 @@
  * OnwardJourney component
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { makeCancelable } from '../../shared/helpers';
 import './styles.scss';
 
 const OnwardJourney = ({ urlBase, layout, relatedContent }) => {
   const [sections, setSections] = useState([]);
-  let sectionP;
+  const sectionP = useRef();
 
   useEffect(() => {
     (async () => {
-      sectionP = makeCancelable(
+      sectionP.current = makeCancelable(
         Promise.all(
           relatedContent.map(({ list, rows = 1 }) => {
             const limit = rows * 4;
@@ -25,7 +25,7 @@ const OnwardJourney = ({ urlBase, layout, relatedContent }) => {
       );
 
       try {
-        const sections = await sectionP.promise;
+        const sections = await sectionP.current.promise;
         setSections(sections);
       } catch (e) {
         if (e.isCanceled) return;
@@ -35,7 +35,7 @@ const OnwardJourney = ({ urlBase, layout, relatedContent }) => {
 
     // Cleanup
     return () => {
-      sectionP.cancel();
+      sectionP.current.cancel();
     };
   }, []);
 

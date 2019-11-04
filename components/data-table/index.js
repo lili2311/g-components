@@ -164,24 +164,26 @@ const DataTable = ({
   isCompact,
 }) => {
   const tableRef = useRef();
-
-  let tableOrigami;
+  const tableOrigami = useRef();
 
   useEffect(() => {
-    tableOrigami = OTable.init(tableRef.current);
+    tableOrigami.current = OTable.init(tableRef.current);
   }, []);
 
-  useEffect(() => {
-    if (tableOrigami) {
-      const tableRows = Array.from(tableRef.current.querySelectorAll('tr')).filter(
-        row => Array.from(row.querySelectorAll('th')).length === 0,
-      );
-      const tableHeaders = Array.from(tableRef.current.querySelectorAll('thead th'));
-      if (responsive === 'flat') {
-        tableOrigami._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
+  useEffect(
+    () => {
+      if (tableOrigami.current) {
+        const tableRows = Array.from(tableRef.current.querySelectorAll('tr')).filter(
+          row => Array.from(row.querySelectorAll('th')).length === 0,
+        );
+        const tableHeaders = Array.from(tableRef.current.querySelectorAll('thead th'));
+        if (responsive === 'flat') {
+          tableOrigami.current._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
+        }
       }
-    }
-  });
+    },
+    [rows, headers],
+  );
 
   const attributes = tableAttributes(
     responsive,
