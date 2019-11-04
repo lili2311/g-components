@@ -3,57 +3,48 @@
  * Header component
  */
 
-import React, { PureComponent } from 'react';
+import React, { useEffect, useRef } from 'react';
 import OHeader from 'o-header/main.js';
 import './styles.scss';
 import { flagsPropType } from '../../shared/proptypes';
 
-class Header extends PureComponent {
-  ref = React.createRef();
+const Header = ({ flags, ...props }) => {
+  const ref = useRef();
 
-  async componentDidMount() {
-    new OHeader(this.ref.current); // eslint-disable-line no-new
-  }
+  const { dark } = flags;
 
-  render() {
-    const {
-      props: {
-        flags: { dark },
-      },
-    } = this;
+  const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
+    .filter(i => i)
+    .join(' ');
 
-    const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
-      .filter(i => i)
-      .join(' ');
+  useEffect(() => {
+    (async () => {
+      new OHeader(ref.current);
+    })();
+  }, []);
 
-    return (
-      <header
-        ref={this.ref}
-        className={headerClasses}
-        data-o-component="o-header"
-        data-o-header--no-js=""
-      >
-        <div className="o-header__row o-header__top">
-          <div className="o-header__container">
-            <div className="o-header__top-wrapper">
-              <div className="o-header__top-column o-header__top-column--center">
-                <a
-                  className="o-header__top-logo"
-                  href="http://www.ft.com/"
-                  title="Go to Financial Times homepage"
-                >
-                  <span className="o-header__visually-hidden">Financial Times</span>
-                </a>
-              </div>
+  return (
+    <header ref={ref} className={headerClasses} data-o-component="o-header" data-o-header--no-js="">
+      <div className="o-header__row o-header__top">
+        <div className="o-header__container">
+          <div className="o-header__top-wrapper">
+            <div className="o-header__top-column o-header__top-column--center">
+              <a
+                className="o-header__top-logo"
+                href="http://www.ft.com/"
+                title="Go to Financial Times homepage"
+              >
+                <span className="o-header__visually-hidden">Financial Times</span>
+              </a>
             </div>
           </div>
         </div>
-      </header>
-    );
-  }
-}
+      </div>
+    </header>
+  );
+};
 
-export default Header;
+Header.displayName = 'GHeader';
 
 Header.propTypes = {
   flags: flagsPropType,
@@ -65,4 +56,4 @@ Header.defaultProps = {
   },
 };
 
-Header.displayName = 'GHeader';
+export default Header;

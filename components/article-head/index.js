@@ -3,7 +3,7 @@
  * Top of the article
  */
 
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Share from '../share';
 import { getMainImage } from '../../shared/helpers';
@@ -11,62 +11,60 @@ import { mainImagePropType, topicPropType, flagsPropType } from '../../shared/pr
 import Byline, { BylinesPropType } from './byline';
 import './styles.scss';
 
-class ArticleHead extends PureComponent {
-  render() {
-    const {
-      topic,
-      headline,
-      summary,
-      relatedArticle,
-      mainImage,
-      flags,
-      bylines,
-      ...props
-    } = this.props;
+const ArticleHead = ({
+  topic,
+  headline,
+  summary,
+  relatedArticle,
+  mainImage,
+  flags,
+  bylines,
+  ...props
+}) => {
+  // These really mess with Storyshots' snapshot testing
+  const buildTime = props.buildTime || new Date().toISOString(); // eslint-disable-line
+  const publishedDate = props.publishedDate || new Date().toISOString(); // eslint-disable-line
 
-    // These really mess with Storyshots' snapshot testing
-    const buildTime = this.props.buildTime || new Date().toISOString(); // eslint-disable-line
-    const publishedDate = this.props.publishedDate || new Date().toISOString(); // eslint-disable-line
+  return (
+    <Fragment>
+      <div>
+        <a href={topic.url} className="o-typography-topic">
+          {topic.name}
+        </a>
+      </div>
 
-    return (
-      <Fragment>
-        <div>
-          <a href={topic.url} className="o-typography-topic">
-            {topic.name}
+      <h1 className="o-typography-headline" itemProp="headline">
+        {headline}
+      </h1>
+
+      <div className="o-typography-standfirst">
+        {summary}{' '}
+        {relatedArticle && (
+          <a href={relatedArticle.url} className="o-typography-link">
+            {relatedArticle.text}
           </a>
-        </div>
-
-        <h1 className="o-typography-headline" itemProp="headline">
-          {headline}
-        </h1>
-
-        <div className="o-typography-standfirst">
-          {summary}{' '}
-          {relatedArticle && (
-            <a href={relatedArticle.url} className="o-typography-link">
-              {relatedArticle.text}
-            </a>
-          )}
-        </div>
-        <meta itemProp="dateModified" content={buildTime} suppressHydrationWarning />
-
-        {(mainImage.url || mainImage.uuid) && (
-          <figure className="graphic graphic-b-1 graphic-pad-1">
-            <img alt={mainImage.description} src={getMainImage(mainImage)} />
-            <figcaption className="o-typography-caption">
-              {mainImage.description}
-              {mainImage.credit}
-            </figcaption>
-          </figure>
         )}
+      </div>
+      <meta itemProp="dateModified" content={buildTime} suppressHydrationWarning />
 
-        {flags && flags.shareButtons && <Share headline={headline} {...{ ...props, flags }} />}
+      {(mainImage.url || mainImage.uuid) && (
+        <figure className="graphic graphic-b-1 graphic-pad-1">
+          <img alt={mainImage.description} src={getMainImage(mainImage)} />
+          <figcaption className="o-typography-caption">
+            {mainImage.description}
+            {mainImage.credit}
+          </figcaption>
+        </figure>
+      )}
 
-        <Byline names={bylines} date={publishedDate} />
-      </Fragment>
-    );
-  }
-}
+      {flags && flags.shareButtons && <Share headline={headline} {...{ ...props, flags }} />}
+
+      <Byline names={bylines} date={publishedDate} />
+    </Fragment>
+  );
+};
+
+ArticleHead.displayName = 'GArticleHead';
 
 ArticleHead.propTypes = {
   flags: flagsPropType.isRequired,
