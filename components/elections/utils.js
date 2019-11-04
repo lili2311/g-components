@@ -81,7 +81,7 @@ export const getPartyInfo = name => {
         shortName: 'Ind/Oth',
       };
     default:
-      return name;
+      throw new Error('No party match found');
   }
 };
 
