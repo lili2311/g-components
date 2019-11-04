@@ -9,9 +9,7 @@ import OComments from 'o-comments/main.js';
 import { flagsPropType } from '../../shared/proptypes';
 import './styles.scss';
 
-const Comments = ({
-  title, id, url, flags,
-}) => {
+const Comments = ({ id, url, flags }) => {
   const ref = useRef();
 
   const { dark } = flags;
@@ -20,8 +18,7 @@ const Comments = ({
     (async () => {
       // prettier-ignore
       new OComments(ref.current, { // eslint-disable-line no-new
-        title,
-        url,
+        articleUrl: url,
         articleId: id,
       });
     })();
@@ -34,7 +31,6 @@ const Comments = ({
           ref={ref}
           data-o-component="o-comments"
           id="comments"
-          data-o-comments-auto-init="false"
           data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
         >
           <div className="o--if-no-js">
