@@ -83,14 +83,13 @@ const HtmlHead = ({
       <meta name="robots" content="index,follow" />
       <meta name="copyright" content="Financial Times" />
       <meta name="theme-color" content="#fff1e5" />
-      {flags.data
-        && dataMeta && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(dataMeta),
-            }}
-          />
+      {flags.data && dataMeta && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(dataMeta),
+          }}
+        />
       )}
       <script
         type="application/ld+json"
@@ -104,28 +103,27 @@ const HtmlHead = ({
           }),
         }}
       />
-      {topic.name
-        && topic.url && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'http://schema.org',
-                '@type': 'BreadcrumbList',
-                itemListElement: [
-                  {
-                    '@type': 'ListItem',
-                    position: 1,
-                    item: {
-                      '@id': topic.url,
-                      name: topic.name,
-                      image: getMainImage(mainImage),
-                    },
+      {topic.name && topic.url && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'http://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  item: {
+                    '@id': topic.url,
+                    name: topic.name,
+                    image: getMainImage(mainImage),
                   },
-                ],
-              }),
-            }}
-          />
+                },
+              ],
+            }),
+          }}
+        />
       )}
 
       {flags.errorReporting && (
@@ -166,9 +164,7 @@ const HtmlHead = ({
         </Fragment>
       )}
 
-      <title>
-        {title || headline}
-      </title>
+      <title>{title || headline}</title>
       <meta name="twitter:title" content={twitterHeadline || socialHeadline || headline} />
       <meta property="og:title" content={facebookHeadline || socialHeadline || headline} />
 
@@ -275,5 +271,7 @@ HtmlHead.defaultProps = {
   },
   polyfills: ['default', 'fetch'],
 };
+
+HtmlHead.displayName = 'GHtmlHead';
 
 export default HtmlHead;

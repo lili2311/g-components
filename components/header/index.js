@@ -34,9 +34,7 @@ const Header = ({ flags, ...props }) => {
                 href="http://www.ft.com/"
                 title="Go to Financial Times homepage"
               >
-                <span className="o-header__visually-hidden">
-Financial Times
-                </span>
+                <span className="o-header__visually-hidden">Financial Times</span>
               </a>
             </div>
           </div>

@@ -3,13 +3,11 @@
  * Data filter component
  */
 
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const RadioFilter = ({
-  namedClass, isAllSelectable, text, setText, options,
-}) => (
+const RadioFilter = ({ namedClass, isAllSelectable, text, setText, options }) => (
   <fieldset className={namedClass}>
     <div className="o-forms__group o-forms__group--inline-together">
       {isAllSelectable === false ? null : (
@@ -46,17 +44,11 @@ const RadioFilter = ({
   </fieldset>
 );
 
-const DropdownFilter = ({
-  namedClass, options, text, setText, isAllSelectable,
-}) => (
+const DropdownFilter = ({ namedClass, options, text, setText, isAllSelectable }) => (
   <div className={namedClass}>
     {options.length === 0 ? null : (
       <select className="o-forms__select" value={text} onChange={setText}>
-        {isAllSelectable === false ? null : (
-          <option value="">
-(All)
-          </option>
-        )}
+        {isAllSelectable === false ? null : <option value="">(All)</option>}
         {options.map((option, i) => (
           <option key={i} value={option}>
             {option}
@@ -83,7 +75,7 @@ const DataFilter = ({
     initial || (selectFrom && !isAllSelectable && data[0] && data[0][selectFrom]) || '',
   );
 
-  const update = () => {
+  const update = useCallback(() => {
     const textNormalised = text
       .trim()
       .toLowerCase()
@@ -96,21 +88,23 @@ const DataFilter = ({
       set(dataFiltered);
     } else {
       const keywords = textNormalised.split(/ +/).filter(x => x);
-      const dataFiltered = data.filter((row) => {
+      const dataFiltered = data.filter(row => {
         const columns = searchOver.length > 0 ? searchOver : Object.keys(row);
-        return keywords.every(keyword => columns.some((column) => {
-          if (!row[column]) return false;
-          return row[column]
-            .toString()
-            .toLowerCase()
-            .includes(keyword);
-        }));
+        return keywords.every(keyword =>
+          columns.some(column => {
+            if (!row[column]) return false;
+            return row[column]
+              .toString()
+              .toLowerCase()
+              .includes(keyword);
+          }),
+        );
       });
       set(dataFiltered);
     }
-  };
+  });
 
-  const setText = (event) => {
+  const setText = event => {
     event.stopPropagation();
     updateText(event.target.value);
   };
@@ -118,7 +112,7 @@ const DataFilter = ({
   useEffect(() => {
     setLoaded(true);
     update();
-  }, []);
+  }, [update]);
 
   useEffect(() => {
     update();

@@ -37,7 +37,7 @@ const OnwardJourney = ({ urlBase, layout, relatedContent }) => {
     return () => {
       sectionP.current.cancel();
     };
-  }, []);
+  }, [layout, relatedContent, urlBase]);
 
   return sections.map((section, idx) => (
     <section

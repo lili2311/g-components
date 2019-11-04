@@ -3,9 +3,7 @@
  * Main page layout view
  */
 
-import React, {
-  useState, useEffect, useRef, createContext,
-} from 'react';
+import React, { useState, useEffect, useRef, createContext } from 'react';
 import PropTypes from 'prop-types';
 import OAds from 'o-ads/main.js';
 import {
@@ -26,9 +24,7 @@ import './styles.scss';
 export const Context = createContext(null);
 
 export const GridContainer = ({ bleed, children }) => (
-  <div className={`o-grid-container${bleed ? ' o-grid-container--bleed' : ''}`}>
-    {children}
-  </div>
+  <div className={`o-grid-container${bleed ? ' o-grid-container--bleed' : ''}`}>{children}</div>
 );
 
 GridContainer.displayName = 'GGridContainer';
@@ -43,9 +39,7 @@ GridContainer.defaultProps = {
 };
 
 export const GridRow = ({ compact, children }) => (
-  <div className={`o-grid-row ${compact ? ' o-grid-row--compact' : ''}`}>
-    {children}
-  </div>
+  <div className={`o-grid-row ${compact ? ' o-grid-row--compact' : ''}`}>{children}</div>
 );
 
 GridRow.displayName = 'GGridRow';
@@ -59,11 +53,7 @@ GridRow.defaultProps = {
   compact: false,
 };
 
-export const GridChild = ({ children, span }) => (
-  <div data-o-grid-colspan={span}>
-    {children}
-  </div>
-);
+export const GridChild = ({ children, span }) => <div data-o-grid-colspan={span}>{children}</div>;
 
 GridChild.displayName = 'GGridChild';
 
@@ -76,9 +66,7 @@ GridChild.defaultProps = {
   span: '12 S11 Scenter M9 L8 XL7',
 };
 
-const Layout = ({
-  flags, ads, children, defaultContainer, customArticleHead, ...props
-}) => {
+const Layout = ({ flags, ads, children, defaultContainer, customArticleHead, ...props }) => {
   const [state, setState] = useState({
     breakpoint: 'default',
   });
@@ -117,13 +105,14 @@ const Layout = ({
       unregisterLayoutChangeEvents(listenersRef.current);
       window.removeEventListener('o-grid.layoutChange', update);
     };
-  }, []);
+  }, [ads.dfpTargeting, ads.gptSite, ads.gptZone, flags.ads]);
 
   const { breakpoint } = state;
 
-  const hasCustomChildren = React.Children.toArray(children).some(
-    el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
-  ) || !defaultContainer;
+  const hasCustomChildren =
+    React.Children.toArray(children).some(
+      el => (el.className || '').includes('o-grid-container') || el.type === GridContainer,
+    ) || !defaultContainer;
 
   const articleHeadComponent = customArticleHead || <ArticleHead {...props} flags={flags} />;
 
@@ -145,28 +134,30 @@ const Layout = ({
         <article className="article" itemScope itemType="http://schema.org/Article">
           <div className="article-head o-grid-container">
             <div className="o-grid-row">
-              <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
-                {articleHeadComponent}
-              </header>
+              <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">{articleHeadComponent}</header>
             </div>
           </div>
           <div className="article-body o-typography-wrapper" itemProp="articleBody">
             {hasCustomChildren ? (
-              React.Children.map(children, child => React.cloneElement(
-                child,
-                typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint },
-              ))
+              React.Children.map(children, child =>
+                React.cloneElement(
+                  child,
+                  typeof !child.type || child.type === 'string' ? {} : { ...props, breakpoint },
+                ),
+              )
             ) : (
               <GridContainer>
                 <GridRow>
                   <GridChild>
                     <div>
-                      {React.Children.map(children, child => React.cloneElement(
-                        child,
-                        !child.type || typeof child.type === 'string'
-                          ? {}
-                          : { ...props, breakpoint },
-                      ))}
+                      {React.Children.map(children, child =>
+                        React.cloneElement(
+                          child,
+                          !child.type || typeof child.type === 'string'
+                            ? {}
+                            : { ...props, breakpoint },
+                        ),
+                      )}
                     </div>
                   </GridChild>
                 </GridRow>
@@ -188,18 +179,11 @@ const Layout = ({
                         data-trackable="link-copyright"
                       >
                         Copyright
-                      </a>
-                      {' '}
-                      <span itemProp="name">
-The Financial Times
-                      </span>
-                      {' '}
-Limited
-                      {' '}
-                      {strftime('%Y')(new Date())}
-                      . All rights reserved. You may share using our article tools. Please
-                      don&apos;t cut articles from FT.com and redistribute by email or post to the
-                      web.
+                      </a>{' '}
+                      <span itemProp="name">The Financial Times</span> Limited{' '}
+                      {strftime('%Y')(new Date())}. All rights reserved. You may share using our
+                      article tools. Please don&apos;t cut articles from FT.com and redistribute by
+                      email or post to the web.
                     </small>
                   </div>
                 </div>
@@ -228,6 +212,7 @@ Layout.propTypes = {
   children: PropTypes.node,
   defaultContainer: PropTypes.bool,
   customArticleHead: PropTypes.node,
+  wrapArticleHead: PropTypes.bool,
 };
 
 Layout.defaultProps = {
@@ -240,6 +225,7 @@ Layout.defaultProps = {
   children: null,
   defaultContainer: true,
   customArticleHead: null,
+  wrapArticleHead: true,
 };
 
 export default Layout;

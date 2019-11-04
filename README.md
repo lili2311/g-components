@@ -42,11 +42,24 @@ $ npm link ../g-components
 
 # Releasing
 
-Tag a new release and push, eg.
+Make sure your local is up to date with the origin, then update the docs if necessary:
+
+```bash
+$ npm run build
+$ git add styles.css docs/*
+$ git commit -m 'Update docs'
+$ git push
+```
+
+Work out the next version number (use `git tag -l`, here `v9.9.9` is an example), then release:
 
 ```bash
 $ git tag v9.9.9
 $ git push origin v9.9.9
 ```
 
-(Where `v9.9.9` is the version number you want to use.)
+# Licence
+
+This software is published by the Financial Times under the [MIT licence](https://opensource.org/licenses/MIT).
+
+Please note the MIT licence only covers the software, and does not cover any FT content or branding incorporated into the software or made available using the software. FT content is copyright © The Financial Times Limited, and FT and 'Financial Times' are trademarks of The Financial Times Limited, all rights reserved. For more information about republishing FT content, please contact our [republishing department](https://ft.com/republishing).

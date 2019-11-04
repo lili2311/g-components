@@ -27,9 +27,7 @@ const Footer = () => {
         <div className="o-footer__row">
           <nav className="o-footer__matrix" aria-label="Useful links">
             <div className="o-footer__matrix-group o-footer__matrix-group--1">
-              <div className="o-footer__matrix-title">
-Support
-              </div>
+              <div className="o-footer__matrix-title">Support</div>
               <div className="o-footer__matrix-content" id="o-footer-section-0">
                 <div className="o-footer__matrix-column">
                   <a className="o-footer__matrix-link" href="//www.ft.com/help">
@@ -42,9 +40,7 @@ Support
               </div>
             </div>
             <div className="o-footer__matrix-group o-footer__matrix-group--1">
-              <div className="o-footer__matrix-title">
-Legal &amp; Privacy
-              </div>
+              <div className="o-footer__matrix-title">Legal &amp; Privacy</div>
               <div className="o-footer__matrix-content" id="o-footer-section-1">
                 <div className="o-footer__matrix-column">
                   <a className="o-footer__matrix-link" href="//www.ft.com/servicestools/help/terms">
@@ -188,18 +184,15 @@ Legal &amp; Privacy
 
         <div className="o-footer__copyright" role="contentinfo">
           <small>
-            Markets data delayed by at least 15 minutes. &#xA9; THE FINANCIAL TIMES LTD
-            {' '}
+            Markets data delayed by at least 15 minutes. &#xA9; THE FINANCIAL TIMES LTD{' '}
             {strftime('%Y')(new Date())}
             {'. '}
             <abbr title="Financial Times" aria-label="F T">
               FT
-            </abbr>
-            {' '}
+            </abbr>{' '}
             and &#x2018;Financial Times&#x2019; are trademarks of The Financial Times Ltd.
             <br />
-            The Financial Times and its journalism are subject to a self-regulation regime under the
-            {' '}
+            The Financial Times and its journalism are subject to a self-regulation regime under the{' '}
             <a
               href="http://aboutus.ft.com/en-gb/ft-editorial-code/"
               aria-label="F T Editorial Code of Practice"

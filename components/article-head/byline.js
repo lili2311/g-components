@@ -19,32 +19,26 @@ export const BylinesPropType = PropTypes.oneOfType([
   ),
 ]);
 
-const NamesElement = ({ namesList }) => namesList.reduce((a, name, i) => {
-  /* eslint-disable no-nested-ternary */
-  const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
-  const location = name.location && (
-  <Fragment>
-    {' '}
-    {name.location}
-  </Fragment>
-  );
-  const author = name.url ? (
-    <Fragment key={`author-${name.name}`}>
-      <a href={name.url} className="o-typography-author">
-        {name.name}
-      </a>
-      {location}
-    </Fragment>
-  ) : (
-    <Fragment key={`author-${name.name}`}>
-      <span>
-        {name.name}
-      </span>
-      {location}
-    </Fragment>
-  );
-  return a.concat(separator, author);
-}, []);
+const NamesElement = ({ namesList }) =>
+  namesList.reduce((a, name, i) => {
+    /* eslint-disable no-nested-ternary */
+    const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
+    const location = name.location && <Fragment> {name.location}</Fragment>;
+    const author = name.url ? (
+      <Fragment key={`author-${name.name}`}>
+        <a href={name.url} className="o-typography-author">
+          {name.name}
+        </a>
+        {location}
+      </Fragment>
+    ) : (
+      <Fragment key={`author-${name.name}`}>
+        <span>{name.name}</span>
+        {location}
+      </Fragment>
+    );
+    return a.concat(separator, author);
+  }, []);
 
 const DateElement = ({ dateRef, date }) => (
   <Fragment>

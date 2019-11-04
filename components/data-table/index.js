@@ -33,7 +33,7 @@ const cellAttributes = (header, row) => {
   return Object.assign(...attributes);
 };
 
-const footerAttributes = (header) => {
+const footerAttributes = header => {
   const classes = header.columnType === 'number' ? 'o-table__cell--numeric' : '';
   const attributes = [
     classes ? { className: classes } : {},
@@ -67,15 +67,11 @@ const Head = ({ headers, isSortable }) => (
         const attributes = headerAttributes(header, isSortable);
         if (header.secondary) {
           const secondary = (
-            <span className="o-table__cell--content-secondary">
-              {header.secondary}
-            </span>
+            <span className="o-table__cell--content-secondary">{header.secondary}</span>
           );
           return (
             <th {...attributes}>
-              {header.contents}
-              {' '}
-              {secondary}
+              {header.contents} {secondary}
             </th>
           );
         }
@@ -95,9 +91,10 @@ const Body = ({ rows, headers }) => (
       <tr key={i1}>
         {headers.map((header, i2) => {
           const attributes = cellAttributes(header, row);
-          const valueFormat = typeof row[header.columnName] === 'number'
-            ? value => value.toLocaleString()
-            : value => value;
+          const valueFormat =
+            typeof row[header.columnName] === 'number'
+              ? value => value.toLocaleString()
+              : value => value;
           const value = valueFormat(row[header.columnName] || '');
           if (header.columnIsHeader) {
             return (
@@ -126,23 +123,15 @@ const Foot = ({ footers, headers }) => (
         if (!footer) return <th {...attributes} />;
         if (footer.secondary) {
           const secondary = (
-            <span className="o-table__cell--content-secondary">
-              {footer.secondary}
-            </span>
+            <span className="o-table__cell--content-secondary">{footer.secondary}</span>
           );
           return (
             <th {...attributes}>
-              {footer.contents}
-              {' '}
-              {secondary}
+              {footer.contents} {secondary}
             </th>
           );
         }
-        return (
-          <th {...attributes}>
-            {header.contents}
-          </th>
-        );
+        return <th {...attributes}>{header.contents}</th>;
       })}
     </tr>
   </tfoot>
@@ -170,20 +159,17 @@ const DataTable = ({
     tableOrigami.current = OTable.init(tableRef.current);
   }, []);
 
-  useEffect(
-    () => {
-      if (tableOrigami.current) {
-        const tableRows = Array.from(tableRef.current.querySelectorAll('tr')).filter(
-          row => Array.from(row.querySelectorAll('th')).length === 0,
-        );
-        const tableHeaders = Array.from(tableRef.current.querySelectorAll('thead th'));
-        if (responsive === 'flat') {
-          tableOrigami.current._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
-        }
+  useEffect(() => {
+    if (tableOrigami.current) {
+      const tableRows = Array.from(tableRef.current.querySelectorAll('tr')).filter(
+        row => Array.from(row.querySelectorAll('th')).length === 0,
+      );
+      const tableHeaders = Array.from(tableRef.current.querySelectorAll('thead th'));
+      if (responsive === 'flat') {
+        tableOrigami.current._duplicateHeaders(tableRows, tableHeaders); // so it deals with data changing
       }
-    },
-    [rows, headers],
-  );
+    }
+  }, [rows, headers]);
 
   const attributes = tableAttributes(
     responsive,
@@ -198,16 +184,8 @@ const DataTable = ({
   return (
     <div className={namedClass}>
       <table {...attributes} ref={tableRef}>
-        {captionTop && (
-        <caption className="o-table__caption--top">
-          {captionTop}
-        </caption>
-        )}
-        {captionBottom && (
-        <caption className="o-table__caption--bottom">
-          {captionBottom}
-        </caption>
-        )}
+        {captionTop && <caption className="o-table__caption--top">{captionTop}</caption>}
+        {captionBottom && <caption className="o-table__caption--bottom">{captionBottom}</caption>}
         {!isHeaderHidden && <Head headers={headers} isSortable={isSortable} />}
         <Body rows={rows} headers={headers} />
         {footers.length !== 0 && <Foot footers={footers} headers={headers} />}

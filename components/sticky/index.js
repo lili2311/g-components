@@ -11,7 +11,7 @@ import './styles.scss';
 const Sticky = ({ article, graphic }) => {
   const [current, setCurrent] = useState();
 
-  const updateGraphic = (label) => {
+  const updateGraphic = label => {
     setCurrent(label);
   };
 
@@ -22,9 +22,7 @@ const Sticky = ({ article, graphic }) => {
           <article className="sticky__text">
             {article({ percentage, inView, updateGraphic })}
           </article>
-          <figure className="sticky__figure">
-            {graphic({ percentage, inView, current })}
-          </figure>
+          <figure className="sticky__figure">{graphic({ percentage, inView, current })}</figure>
         </div>
       )}
     </Observer>

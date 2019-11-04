@@ -30,10 +30,10 @@ const Analytics = ({ id, tracking, flags }) => {
         {},
       );
 
-      const id = document.documentElement.getAttribute('data-content-id');
+      const contentId = id || document.documentElement.getAttribute('data-content-id');
 
-      if (id) {
-        pageData.content.uuid = id;
+      if (contentId) {
+        pageData.content.uuid = contentId;
       }
 
       if (properties.microsite_name) {
@@ -56,7 +56,7 @@ const Analytics = ({ id, tracking, flags }) => {
       // Links
       OTracking.link.init();
     })();
-  }, []);
+  }, [id]);
 
   return (
     <Fragment>
@@ -112,6 +112,8 @@ const Analytics = ({ id, tracking, flags }) => {
     </Fragment>
   );
 };
+
+Analytics.displayName = 'GAnalytics';
 
 Analytics.displayName = 'GAnalytics';
 
