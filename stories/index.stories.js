@@ -22,6 +22,7 @@ import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
+import AutosuggestSearch from '../components/autosuggest-search';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1042,3 +1043,42 @@ storiesOf('Sticky', module)
   `,
     },
   );
+
+// Autosuggest search
+storiesOf('AutosuggestSearch', module).add(
+  'default',
+  () => (
+    <AutosuggestSearch
+      placeholder="Search here..."
+      width={300}
+      searchList={[
+        { value: 'jeremycorbyn', display: 'Jeremy Corbyn' },
+        { value: 'borisjohnson', display: 'Boris Johnson' },
+        { value: 'joswinson', display: 'Jo Swinson' },
+      ]}
+      validateInput={input => {
+        if (input === '') {
+          return { isError: true, errorMessage: 'ERROR!!!' };
+        }
+        return { isError: false, errorMessage: '' };
+      }}
+    />
+  ),
+  {
+    info: `
+      <AutosuggestSearch /> can be used to create a text input which automatically
+        suggests search queries based on a given list. It takes an array of objects
+        \`searchList\` which are filtered using the (or default) \`getSuggestions\`
+        function. The component takes these functions as (optional) props;
+        - \`getSuggestions(value, searchList)\` which should return a filtered searchList
+        - \`getSuggestionValue(suggestionObject)\` which should return the value to display
+          in the search input after a suggestion has been selected from the dropdown list
+        - \`renderSuggestion(suggestionObject)\` which should return how the suggestion should
+          rendered in the dropdown list.
+        - \`onSelectCallback(suggestionValue)\` which takes the value returned by getSuggestionValue
+        - \`onSubmitCallback(searchValue)\` which takes the current input searchValue
+        - \`validateInput(searchValue)\` which takes the current input searchValue and should return
+          an object with isError (boolean) and errorMessage (string) attributes
+    `,
+  },
+);
