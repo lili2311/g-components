@@ -504,15 +504,15 @@ exports[`Storyshots Analytics default 1`] = `
       dangerouslySetInnerHTML={
         Object {
           "__html": "
-          var spoorId = /spoor-id=([^;]+)/.exec(document.cookie)[1] || 'cj5y2utdx00003i5z6l6po8c1';
-          var endpoint = 'https://4235225.fls.doubleclick.net/activityi;src=4235225;type=homeo886;cat=ft-ne000;u10=' + spoorId + ';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + Date.now() + ';num=1';
-          var img = document.createElement('img');
-          img.setAttribute('width', 1);
-          img.setAttribute('height', 1);
-          img.setAttribute('src', endpoint);
-          img.style.position = 'absolute';
-          document.body.insertBefore(img, document.body.firstElementChild);
-          ",
+        var spoorId = /spoor-id=([^;]+)/.exec(document.cookie)[1] || 'cj5y2utdx00003i5z6l6po8c1';
+        var endpoint = 'https://4235225.fls.doubleclick.net/activityi;src=4235225;type=homeo886;cat=ft-ne000;u10=' + spoorId + ';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + Date.now() + ';num=1';
+        var img = document.createElement('img');
+        img.setAttribute('width', 1);
+        img.setAttribute('height', 1);
+        img.setAttribute('src', endpoint);
+        img.style.position = 'absolute';
+        document.body.insertBefore(img, document.body.firstElementChild);
+        ",
         }
       }
     />
@@ -2730,38 +2730,7 @@ exports[`Storyshots DataFilter default 1`] = `
         "zIndex": 0,
       }
     }
-  >
-    <div
-      className="g-data-filter o-forms o-forms--wide"
-    >
-      <select
-        className="o-forms__select"
-        onChange={[Function]}
-        value="Paul"
-      >
-        <option
-          value="John"
-        >
-          John
-        </option>
-        <option
-          value="Paul"
-        >
-          Paul
-        </option>
-        <option
-          value="George"
-        >
-          George
-        </option>
-        <option
-          value="Ringo"
-        >
-          Ringo
-        </option>
-      </select>
-    </div>
-  </div>
+  />
   <button
     onClick={[Function]}
     style={

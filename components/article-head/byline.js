@@ -3,7 +3,7 @@
  * Byline component
  */
 
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ODate from 'o-date/main.js';
 import { ftdate } from '../../shared/helpers';
@@ -19,74 +19,79 @@ export const BylinesPropType = PropTypes.oneOfType([
   ),
 ]);
 
-export default class Byline extends PureComponent {
-  dateRef = React.createRef();
+const NamesElement = ({ namesList }) => namesList.reduce((a, name, i) => {
+  /* eslint-disable no-nested-ternary */
+  const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
+  const location = name.location && (
+  <Fragment>
+    {' '}
+    {name.location}
+  </Fragment>
+  );
+  const author = name.url ? (
+    <Fragment key={`author-${name.name}`}>
+      <a href={name.url} className="o-typography-author">
+        {name.name}
+      </a>
+      {location}
+    </Fragment>
+  ) : (
+    <Fragment key={`author-${name.name}`}>
+      <span>
+        {name.name}
+      </span>
+      {location}
+    </Fragment>
+  );
+  return a.concat(separator, author);
+}, []);
 
-  static displayName = 'GByline';
+const DateElement = ({ dateRef, date }) => (
+  <Fragment>
+    {' '}
+    <span
+      ref={dateRef}
+      data-o-component="o-date"
+      className="o-date o-typography-timestamp"
+      dateTime={date}
+      suppressHydrationWarning
+    >
+      {ftdate(new Date(date))}
+    </span>
+  </Fragment>
+);
 
-  static propTypes = {
-    names: BylinesPropType,
-    date: PropTypes.string,
-  };
+const Byline = ({ names, date }) => {
+  const dateRef = useRef();
 
-  static defaultProps = {
-    names: null,
-    date: null,
-  };
+  useEffect(() => {
+    (async () => {
+      new ODate(dateRef.current); // eslint-disable-line no-new
+    })();
+  }, []);
 
-  async componentDidMount() {
-    new ODate(this.dateRef.current); // eslint-disable-line no-new
-  }
+  if (!names && !date) return null;
 
-  render() {
-    const { names, date } = this.props;
-    if (!names && !date) return null;
-    const namesList = Array.isArray(names) ? names : [names];
-    const namesElements = namesList.reduce((a, name, i) => {
-      /* eslint-disable no-nested-ternary */
-      const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
-      const location = name.location && (
-      <Fragment>
-        {' '}
-        {name.location}
-      </Fragment>
-      );
-      const author = name.url ? (
-        <Fragment key={`author-${name.name}`}>
-          <a href={name.url} className="o-typography-author">
-            {name.name}
-          </a>
-          {location}
-        </Fragment>
-      ) : (
-        <Fragment key={`author-${name.name}`}>
-          <span>
-            {name.name}
-          </span>
-          {location}
-        </Fragment>
-      );
-      return a.concat(separator, author);
-    }, []);
-    const dateElement = (
-      <Fragment>
-        {' '}
-        <span
-          ref={this.dateRef}
-          data-o-component="o-date"
-          className="o-date o-typography-timestamp"
-          dateTime={date}
-          suppressHydrationWarning
-        >
-          {ftdate(new Date(date))}
-        </span>
-      </Fragment>
-    );
-    return (
-      <div className="byline">
-        {names && namesElements}
-        {date && dateElement}
-      </div>
-    );
-  }
-}
+  const namesList = Array.isArray(names) ? names : [names];
+
+  return (
+    <div className="byline">
+      {names && <NamesElement namesList={namesList} />}
+      {date && <DateElement dateRef={dateRef} date={date} />}
+    </div>
+  );
+};
+
+Byline.displayName = 'GByline';
+
+Byline.propTypes = {
+  names: BylinesPropType,
+  date: PropTypes.string,
+};
+
+Byline.defaultProps = {
+  names: null,
+  date: null,
+};
+
+export default Byline;
