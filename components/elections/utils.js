@@ -93,6 +93,8 @@ export const getPartyInfo = name => {
         formattedName: 'Alliance',
       };
     case 'INDEPENDENT/OTHER':
+    case 'INDEPENDENT':
+    case 'OTHER':
       return {
         color: '#d9cace',
         shortName: 'Ind/Oth',
