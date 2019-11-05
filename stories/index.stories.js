@@ -23,6 +23,7 @@ import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
 import AutosuggestSearch from '../components/autosuggest-search';
+import ConstituencyLookup from '../components/elections/constituency-lookup';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1082,3 +1083,10 @@ storiesOf('AutosuggestSearch', module).add(
     `,
   },
 );
+
+// Constituency lookup
+storiesOf('ConstituencyLookup', module).add('default', () => <ConstituencyLookup />, {
+  info: `
+      <ConstituencyLookup /> can be used to...
+    `,
+});
