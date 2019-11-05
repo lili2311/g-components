@@ -1085,8 +1085,23 @@ storiesOf('AutosuggestSearch', module).add(
 );
 
 // Constituency lookup
-storiesOf('ConstituencyLookup', module).add('default', () => <ConstituencyLookup />, {
-  info: `
+storiesOf('ConstituencyLookup', module).add(
+  'default',
+  () => (
+    <ConstituencyLookup
+      constituencyList={[
+        { id: 'E14000739', name: 'Hemel Hempstead' },
+        { id: 'E14000887', name: 'Putney' },
+        { id: 'E14000763', name: 'Islington North' },
+        { id: 'E14000549', name: 'Battersea' },
+        { id: 'E14000768', name: 'Kensington' },
+      ]}
+      setOpenConstituency={c => window.alert(`Constituency ID: ${c}`)}
+    />
+  ),
+  {
+    info: `
       <ConstituencyLookup /> can be used to...
     `,
-});
+  },
+);
