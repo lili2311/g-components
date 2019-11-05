@@ -23,6 +23,7 @@ import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
 import AutosuggestSearch from '../components/autosuggest-search';
+import { getPartyInfo } from '../components/elections/utils';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1079,6 +1080,51 @@ storiesOf('AutosuggestSearch', module).add(
         - \`onSubmitCallback(searchValue)\` which takes the current input searchValue
         - \`validateInput(searchValue)\` which takes the current input searchValue and should return
           an object with isError (boolean) and errorMessage (string) attributes
+    `,
+  },
+);
+
+// Autosuggest search
+storiesOf('getPartyInfo', module).add(
+  'default',
+  () =>
+    [
+      'Conservative',
+      'Labour',
+      'Liberal Democrats',
+      'Green',
+      'ChangeUK',
+      'Brexit',
+      'UKIP',
+      'Plaid Cymru',
+      'SNP',
+      'DUP',
+      'Sinn Féin',
+      'UUP',
+      'SDLP',
+      'Alliance',
+      'Independent/Other',
+    ].map(p => {
+      const { color, shortName, formattedName } = getPartyInfo(p);
+      return (
+        <div>
+          <div style={{ height: 20, width: 20, backgroundColor: color }}></div>
+          <div>
+            <strong>shortName: </strong>
+            {`${shortName}`}
+          </div>
+          <div>
+            <strong>formattedName: </strong>
+            {`${formattedName}`}
+          </div>
+          <br />
+        </div>
+      );
+    }),
+  {
+    info: `
+      \`getPartyInfo(string)\` returns an object with party \`color\`, \`shortName\` and \`formattedName\`
+      for a given UK political party
     `,
   },
 );
