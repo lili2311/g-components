@@ -24,6 +24,8 @@ import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
 import AutosuggestSearch from '../components/autosuggest-search';
 import { getPartyInfo } from '../components/elections/utils';
+import LastUpdated from '../components/last-updated';
+import DateTime from '../components/datetime';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1108,7 +1110,7 @@ storiesOf('getPartyInfo', module).add(
       const { color, shortName, formattedName } = getPartyInfo(p);
       return (
         <div>
-          <div style={{ height: 20, width: 20, backgroundColor: color }}></div>
+          <div style={{ height: 20, width: 20, backgroundColor: color }} />
           <div>
             <strong>shortName: </strong>
             {`${shortName}`}
@@ -1128,3 +1130,13 @@ storiesOf('getPartyInfo', module).add(
     `,
   },
 );
+
+storiesOf('LastUpdated', module)
+  .add('default (live)', () => <LastUpdated lastUpdated={new Date('1987-01-05T00:00:00.00')} />)
+  .add('Light variant (live = false', () => (
+    <LastUpdated live={false} lastUpdated={new Date('1987-01-05T00:00:00.00')} />
+  ));
+
+storiesOf('DateTime', module).add('default', () => (
+  <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
+));
