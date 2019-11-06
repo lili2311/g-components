@@ -15,13 +15,12 @@ const Comments = ({ id, url, flags }) => {
   const { dark } = flags;
 
   useEffect(() => {
-    (async () => {
-      // prettier-ignore
+    if (id && url) {
       new OComments(ref.current, { // eslint-disable-line no-new
         articleUrl: url,
         articleId: id,
       });
-    })();
+    }
   }, [id, url]);
 
   const comments = (
@@ -53,15 +52,13 @@ Comments.displayName = 'GComments';
 
 Comments.propTypes = {
   title: PropTypes.string,
-  id: PropTypes.string,
-  url: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   flags: flagsPropType,
 };
 
 Comments.defaultProps = {
   title: 'Comments',
-  id: '3a499586-b2e0-11e4-a058-00144feab7de',
-  url: 'https://local.ft.com/comments-test',
   flags: {
     dark: false,
   },
