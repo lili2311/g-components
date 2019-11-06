@@ -4412,7 +4412,7 @@ exports[`Storyshots Comments default 1`] = `
                       }
                     }
                   >
-                    -
+                    yes
                   </td>
                   <td
                     style={
@@ -4422,16 +4422,7 @@ exports[`Storyshots Comments default 1`] = `
                       }
                     }
                   >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      3a499586-b2e0-11e4-a058-00144feab7de
-                    </span>
+                    -
                   </td>
                   <td
                     style={
@@ -4471,7 +4462,7 @@ exports[`Storyshots Comments default 1`] = `
                       }
                     }
                   >
-                    -
+                    yes
                   </td>
                   <td
                     style={
@@ -4481,16 +4472,7 @@ exports[`Storyshots Comments default 1`] = `
                       }
                     }
                   >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      https://local.ft.com/comments-test
-                    </span>
+                    -
                   </td>
                   <td
                     style={
