@@ -9,19 +9,19 @@ import OComments from 'o-comments/main.js';
 import { flagsPropType } from '../../shared/proptypes';
 import './styles.scss';
 
-const Comments = ({ id, url, flags }) => {
+const Comments = ({ id, url, linkPageUrl, flags }) => {
   const ref = useRef();
 
   const { dark } = flags;
 
   useEffect(() => {
-    if (id && url) {
+    if ((id && linkPageUrl) || (id && url)) {
       new OComments(ref.current, { // eslint-disable-line no-new
-        articleUrl: url,
+        articleUrl: linkPageUrl || url,
         articleId: id,
       });
     }
-  }, [id, url]);
+  }, [id, url, linkPageUrl]);
 
   const comments = (
     <div className="o-grid-container">
