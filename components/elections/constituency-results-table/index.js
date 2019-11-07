@@ -8,14 +8,7 @@ import PropTypes from 'prop-types';
 import { numberWithCommas, getPartyInfo } from '../utils';
 import './styles.scss';
 
-export const ConstituencyResultsTable = ({
-  className,
-  data,
-  tableHeaders,
-  showAsterickField,
-  note,
-  width,
-}) => (
+export const ConstituencyResultsTable = ({ className, data, tableHeaders, note }) => (
   <div className={className}>
     <table className={`${className}__table`}>
       <thead>
@@ -59,7 +52,6 @@ ConstituencyResultsTable.propTypes = {
     }),
   ).isRequired,
   tableHeaders: PropTypes.arrayOf(PropTypes.string).isRequired,
-  width: PropTypes.number,
   note: PropTypes.string,
 };
 
