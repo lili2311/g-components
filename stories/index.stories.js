@@ -1152,7 +1152,6 @@ storiesOf('ConstituencyResultsTable', module).add('default', () => (
       { party: 'Independent', candidate: 'Nick Yeomans', votes: 376 },
     ]}
     tableHeaders={['Party', 'Candidate', 'Total Votes']}
-    showAsterickField="candidate"
     note={'* Note to indicate outgoing candidate'}
   />
 ));

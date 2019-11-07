@@ -14,28 +14,31 @@ export const ConstituencyResultsTable = ({
   tableHeaders,
   showAsterickField,
   note,
+  width,
 }) => (
   <div className={className}>
     <table className={`${className}__table`}>
       <thead>
         <tr>
           {tableHeaders.map(t => (
-            <th>{t}</th>
+            <th key={`th_${t}`}>{t}</th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {data.map(d => {
-          const fields = Object.entries(d).filter(([field]) => field !== 'showAsterick');
-          const showAsterick = d.showAsterick;
+        {data.map(({ party, candidate, votes, showAsterick }) => {
+          const { shortName, color } = getPartyInfo(party);
           return (
-            <tr>
-              {fields.map(([field, value]) => (
-                <td>
-                  {value}
-                  {showAsterickField === field && showAsterick ? '*' : ''}
-                </td>
-              ))}
+            <tr key={`row_${party}`}>
+              <td>
+                <span className="party-badge" style={{ backgroundColor: color }} />
+                {shortName}
+              </td>
+              <td>
+                {candidate}
+                {showAsterick && '*'}
+              </td>
+              <td className="number">{numberWithCommas(votes)}</td>
             </tr>
           );
         })}
@@ -47,16 +50,21 @@ export const ConstituencyResultsTable = ({
 
 ConstituencyResultsTable.propTypes = {
   className: PropTypes.string,
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      party: PropTypes.string,
+      candidate: PropTypes.string,
+      votes: PropTypes.number,
+      showAsterick: PropTypes.bool.isOptional,
+    }),
+  ).isRequired,
   tableHeaders: PropTypes.arrayOf(PropTypes.string).isRequired,
   width: PropTypes.number,
   note: PropTypes.string,
-  showAsterickField: PropTypes.string,
 };
 
 ConstituencyResultsTable.defaultProps = {
   className: 'g-constituency-results-table',
-  width: 500,
 };
 
 export default ConstituencyResultsTable;
