@@ -1142,4 +1142,17 @@ storiesOf('DateTime', module).add('default', () => (
   <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
 ));
 
-storiesOf('ConstituencyResultsTable', module).add('default', () => <ConstituencyResultsTable />);
+storiesOf('ConstituencyResultsTable', module).add('default', () => (
+  <ConstituencyResultsTable
+    data={[
+      { party: 'Green', candidate: 'Caroline Lucas', votes: 30149, showAsterick: true },
+      { party: 'Labour', candidate: 'Solomon Curtis', votes: 15450 },
+      { party: 'Conservative', candidate: 'Emma Warman', votes: 11082 },
+      { party: 'Ukip', candidate: 'Ian Buchanan', votes: 630 },
+      { party: 'Independent', candidate: 'Nick Yeomans', votes: 376 },
+    ]}
+    tableHeaders={['Party', 'Candidate', 'Total Votes']}
+    showAsterickField="candidate"
+    note={'* Note to indicate outgoing candidate'}
+  />
+));
