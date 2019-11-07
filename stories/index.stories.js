@@ -26,6 +26,7 @@ import AutosuggestSearch from '../components/autosuggest-search';
 import { getPartyInfo } from '../components/elections/utils';
 import LastUpdated from '../components/last-updated';
 import DateTime from '../components/datetime';
+import ConstituencyResultsTable from '../components/elections/constituency-results-table';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1140,3 +1141,5 @@ storiesOf('LastUpdated', module)
 storiesOf('DateTime', module).add('default', () => (
   <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
 ));
+
+storiesOf('ConstituencyResultsTable', module).add('default', () => <ConstituencyResultsTable />);
