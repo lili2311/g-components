@@ -9,8 +9,12 @@ import { getPartyInfo } from '../utils';
 import './styles.scss';
 
 const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
-  const tableData = data.filter(({ isInTable }) => isInTable);
-  const footnoteData = data.filter(({ isInTable }) => !isInTable);
+  const tableData = data
+    .filter(({ isInTable }) => isInTable)
+    .sort((a, b) => b.projectedSeats - a.projectedSeats && b.isOthers - a.isOthers);
+  const footnoteData = data
+    .filter(({ isInTable }) => !isInTable)
+    .sort((a, b) => b.projectedSeats - a.projectedSeats);
 
   const maxSeats = tableData.reduce((acc, { projectedSeats }) => Math.max(acc, projectedSeats), 0);
   const maxValue = Math.max(majority, maxSeats);
