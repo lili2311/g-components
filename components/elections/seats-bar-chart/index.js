@@ -14,7 +14,21 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
   return (
     <div className={className}>
       <h3 className={`${className}__title`}>{title}</h3>
+
       <table className={`${className}__table`}>
+        <span className={`${className}__majority-line-container`}>
+          <span
+            className={`${className}__majority-line`}
+            style={{ left: `${calcPercentage(majority)}%` }}
+          />
+          <span
+            className={`${className}__majority-text`}
+            style={{ left: `${calcPercentage(majority)}%` }}
+          >
+            Majority
+          </span>
+        </span>
+
         <thead>
           <tr>
             {tableHeaders.map(t => (
@@ -22,11 +36,13 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
             ))}
           </tr>
         </thead>
+
         <tbody>
           {tableData.map(({ party, seats, projectedSeats, voteShare, isOthers }) => {
             const { shortName, color } = getPartyInfo(party);
+            const seatsMinusProjected = projectedSeats - seats;
             return (
-              <tr>
+              <tr className={`row${isOthers ? ' row--others' : ''}`}>
                 <td className={`party${isOthers ? ' party--others' : ''}`}>
                   <span className="party-badge" style={{ backgroundColor: color }} />
                   <span className="party-bar-container">
@@ -34,10 +50,18 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
                       className="party-bar"
                       style={{
                         backgroundColor: color,
-                        width: `${calcPercentage(projectedSeats)}%`,
+                        width: `${calcPercentage(seats)}%`,
                       }}
                     />
-                    {false && <span className="party-name">{shortName}</span>}
+                    <span
+                      className="party-bar party-bar--projected"
+                      style={{
+                        backgroundColor: `${color}50`,
+                        borderColor: color,
+                        width: `${calcPercentage(seatsMinusProjected)}%`,
+                      }}
+                    />
+                    <span className="party-name">{shortName}</span>
                   </span>
                 </td>
                 <td className="seats">{seats}</td>
@@ -47,6 +71,7 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
           })}
         </tbody>
       </table>
+
       <div className={`${className}__footnote`}>
         {footnoteData.map(({ party, seats }, index, arr) => {
           const { shortName, color } = getPartyInfo(party);

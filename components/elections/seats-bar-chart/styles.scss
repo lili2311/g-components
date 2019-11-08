@@ -1,8 +1,48 @@
 @import 'o-grid/main';
 
 .g-seats-bar-chart {
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: #000000;
+  }
+
+  &__majority-line-container {
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    display: block;
+    width: calc(60% - 8px);
+    height: 100%;
+  }
+
+  &__majority-line {
+    position: absolute;
+    bottom: 32px;
+    display: block;
+    box-sizing: border-box;
+    // 100% minus height size of bottom row
+    height: calc(100% - 32px);
+    width: 1px;
+    border-right: 1px dashed #000000;
+  }
+
+  &__majority-text {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-align: right;
+    color: #000000;
+    position: absolute;
+    top: -2px;
+    width: 80px;
+    margin-left: -85px;
+  }
+
   &__table {
     width: 100%;
+    position: relative;
     border-collapse: collapse;
 
     thead tr th {
@@ -17,19 +57,25 @@
 
       vertical-align: bottom;
 
-      // First two children
       &:first-child {
         text-align: left;
       }
 
       &:nth-child(n + 2) {
         text-align: right;
+      }
+
+      &:last-child {
         max-width: 40px;
 
         @include oGridRespondTo(M) {
           max-width: none;
         }
       }
+    }
+
+    tbody tr.row--others td {
+      border-bottom: none;
     }
 
     tbody tr td {
@@ -52,7 +98,6 @@
         font-feature-settings: 'tnum';
       }
 
-      // First two children
       &:first-child {
         text-align: left;
       }
@@ -77,10 +122,16 @@
             top: 4px;
             height: 100%;
 
-            .party-name {
-              position: absolute;
-              left: 0;
+            &--projected {
+              box-sizing: border-box;
+              border: 1px solid;
             }
+          }
+
+          .party-name {
+            position: absolute;
+            left: 16px;
+            top: 1px;
           }
         }
 
@@ -95,6 +146,12 @@
         }
 
         &--others {
+          .party-bar-container .party-bar,
+          .party-bar--projected {
+            box-sizing: border-box;
+            border: 1px solid #ccc1b7 !important;
+          }
+
           .party-badge {
             border: 1px solid #807973 !important;
           }
@@ -109,6 +166,7 @@
     line-height: 1.13;
     color: #33302e;
     margin-top: 8px;
+    margin-left: 16px;
 
     .seats {
       font-weight: 600;

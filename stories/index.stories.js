@@ -1203,8 +1203,8 @@ storiesOf('SeatsBarChart', module).add('default', () => (
       { party: 'Liberal Democrats', seats: 5, projectedSeats: 12, voteShare: 7.4, isInTable: true },
       {
         party: 'Others',
-        seats: 2,
-        projectedSeats: 10,
+        seats: 8,
+        projectedSeats: 30,
         voteShare: 3,
         isInTable: true,
         isOthers: true,
