@@ -18,11 +18,11 @@
       vertical-align: bottom;
 
       // First two children
-      &:nth-child(-n + 2) {
+      &:first-child {
         text-align: left;
       }
 
-      &:last-child {
+      &:nth-child(n + 2) {
         text-align: right;
         max-width: 40px;
 
@@ -33,6 +33,86 @@
     }
 
     tbody tr td {
+      height: 30px;
+      line-height: 30px;
+      font-size: 18px;
+      font-weight: normal;
+      color: #000000;
+      border-bottom: solid 1px;
+      border-bottom-color: #e6d9ce;
+      position: relative;
+
+      &.seats {
+        font-weight: 600;
+        font-feature-settings: 'tnum';
+      }
+
+      &.voteshare {
+        color: rgba(0, 0, 0, 0.6);
+        font-feature-settings: 'tnum';
+      }
+
+      // First two children
+      &:first-child {
+        text-align: left;
+      }
+
+      &:nth-child(n + 2) {
+        text-align: right;
+      }
+
+      &.party {
+        box-sizing: border-box;
+        width: 60%;
+        height: 30px;
+
+        .party-bar-container {
+          display: inline-block;
+          width: calc(100% - 8px);
+          height: 100%;
+
+          .party-bar {
+            position: relative;
+            display: inline-block;
+            top: 4px;
+            height: 100%;
+
+            .party-name {
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+
+        .party-badge {
+          box-sizing: border-box;
+          display: inline-block;
+          height: 100%;
+          width: 8px;
+          position: relative;
+          top: 4px;
+          border-right: 1px solid #ffffff;
+        }
+
+        &--others {
+          .party-badge {
+            border: 1px solid #807973 !important;
+          }
+        }
+      }
+    }
+  }
+
+  &__footnote {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.13;
+    color: #33302e;
+    margin-top: 8px;
+
+    .seats {
+      font-weight: 600;
+      font-feature-settings: 'tnum';
     }
   }
 }

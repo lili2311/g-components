@@ -1197,12 +1197,21 @@ storiesOf('SeatsBarChart', module).add('default', () => (
   <SeatsBarChart
     tableHeaders={['Party', 'Seats', 'Vote Share %']}
     data={[
-      { party: 'Conservative', seats: 317, voteShare: 42.4, isInTable: true },
-      { party: 'Labour', seats: 262, voteShare: 40, isInTable: true },
-      { party: 'SNP', seats: 35, voteShare: 3, isInTable: true },
-      { party: 'Liberal Democrats', seats: 12, voteShare: 7.4, isInTable: true },
-      { party: 'Others', seats: 10, voteShare: 3, isInTable: true, isOthers: true },
-      { party: 'Alliance', seats: 2, voteShare: 0.5, isInTable: false },
+      { party: 'Conservative', seats: 100, projectedSeats: 317, voteShare: 42.4, isInTable: true },
+      { party: 'Labour', seats: 70, projectedSeats: 262, voteShare: 40, isInTable: true },
+      { party: 'SNP', seats: 10, projectedSeats: 35, voteShare: 3, isInTable: true },
+      { party: 'Liberal Democrats', seats: 5, projectedSeats: 12, voteShare: 7.4, isInTable: true },
+      {
+        party: 'Others',
+        seats: 2,
+        projectedSeats: 10,
+        voteShare: 3,
+        isInTable: true,
+        isOthers: true,
+      },
+      { party: 'Alliance', seats: 1, projectedSeats: 2, voteShare: 0.5, isInTable: false },
+      { party: 'UUP', seats: 1, projectedSeats: 2, voteShare: 0.3, isInTable: false },
     ]}
+    majority={320}
   />
 ));
