@@ -26,7 +26,9 @@ import AutosuggestSearch from '../components/autosuggest-search';
 import { getPartyInfo } from '../components/elections/utils';
 import LastUpdated from '../components/last-updated';
 import DateTime from '../components/datetime';
+import ConstituencyResultsTable from '../components/elections/constituency-results-table';
 import RaceResult from '../components/elections/race-result-indicator';
+
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1140,6 +1142,21 @@ storiesOf('LastUpdated', module)
 
 storiesOf('DateTime', module).add('default', () => (
   <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
+));
+
+
+storiesOf('ConstituencyResultsTable', module).add('default', () => (
+  <ConstituencyResultsTable
+    data={[
+      { party: 'Green', candidate: 'Caroline Lucas', votes: 30149, showAsterick: true },
+      { party: 'Labour', candidate: 'Solomon Curtis', votes: 15450 },
+      { party: 'Conservative', candidate: 'Emma Warman', votes: 11082 },
+      { party: 'Ukip', candidate: 'Ian Buchanan', votes: 630 },
+      { party: 'Independent', candidate: 'Nick Yeomans', votes: 376 },
+    ]}
+    tableHeaders={['Party', 'Candidate', 'Total Votes']}
+    note={'* Note to indicate outgoing candidate'}
+  />
 ));
 
 storiesOf('RaceResult', module).add('default', () => (
