@@ -17,9 +17,9 @@ const defaultGetSuggestions = (value, searchList) => {
   return inputLength === 0
     ? []
     : searchList.filter(({ display }) => {
-      const words = display.toLowerCase().split(' ');
-      return words.some(word => word.toLowerCase().slice(0, inputLength) === inputValue);
-    });
+        const words = display.toLowerCase().split(' ');
+        return words.some(word => word.toLowerCase().slice(0, inputLength) === inputValue);
+      });
 };
 
 // Default component/function to render suggestion
@@ -56,22 +56,26 @@ const AutosuggestSearch = ({
   };
 
   // Run callback when suggestion selected from dropdown
-  const onSuggestionSelected = (event, { suggestionValue }) => {
-    if (onSelectCallback) onSelectCallback(suggestionValue);
+  const onSuggestionSelected = (event, { suggestionValue, suggestion }) => {
+    if (onSelectCallback) onSelectCallback(suggestion);
     setSearchValue(suggestionValue);
     inputRef.current.input.blur();
   };
 
   // Run callback on submit (ENTER)
-  const onSubmit = (event) => {
+  const onSubmit = async event => {
     event.preventDefault();
-    if (onSubmitCallback) onSubmitCallback(searchValue);
-    if (validateInput) setErrorState(validateInput(searchValue));
+    const validateInputResult = validateInput(searchValue);
+    if (validateInput && validateInputResult.isError) setErrorState(validateInputResult);
+    if (onSubmitCallback && !validateInputResult.isError) {
+      const callbackReturn = await onSubmitCallback(searchValue);
+      if (callbackReturn) setErrorState(callbackReturn);
+    }
     inputRef.current.input.blur();
   };
 
   // Update search value state on input change
-  const onChange = (event) => {
+  const onChange = event => {
     const {
       target: { value },
     } = event;
