@@ -23,12 +23,12 @@ import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
 import AutosuggestSearch from '../components/autosuggest-search';
+import ConstituencyLookup from '../components/elections/constituency-lookup';
 import { getPartyInfo } from '../components/elections/utils';
 import LastUpdated from '../components/last-updated';
 import DateTime from '../components/datetime';
 import ConstituencyResultsTable from '../components/elections/constituency-results-table';
 import RaceResult from '../components/elections/race-result-indicator';
-
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1089,6 +1089,28 @@ storiesOf('AutosuggestSearch', module).add(
   },
 );
 
+// Constituency lookup
+storiesOf('ConstituencyLookup', module).add(
+  'default',
+  () => (
+    <ConstituencyLookup
+      constituencyList={[
+        { id: 'E14000739', name: 'Hemel Hempstead' },
+        { id: 'E14000887', name: 'Putney' },
+        { id: 'E14000763', name: 'Islington North' },
+        { id: 'E14000549', name: 'Battersea' },
+        { id: 'E14000768', name: 'Kensington' },
+      ]}
+      setOpenConstituency={c => window.alert(`Constituency ID: ${c}`)}
+    />
+  ),
+  {
+    info: `
+      <ConstituencyLookup /> can be used to...
+    `,
+  },
+);
+
 // Autosuggest search
 storiesOf('getPartyInfo', module).add(
   'default',
@@ -1169,3 +1191,4 @@ storiesOf('RaceResult', module).add('default', () => (
     <RaceResult incumbent="Green" winner="Green" />
   </div>
 ));
+
