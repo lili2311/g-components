@@ -24,6 +24,11 @@ import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
 import AutosuggestSearch from '../components/autosuggest-search';
 import ConstituencyLookup from '../components/elections/constituency-lookup';
+import { getPartyInfo } from '../components/elections/utils';
+import LastUpdated from '../components/last-updated';
+import DateTime from '../components/datetime';
+import ConstituencyResultsTable from '../components/elections/constituency-results-table';
+import RaceResult from '../components/elections/race-result-indicator';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1105,3 +1110,85 @@ storiesOf('ConstituencyLookup', module).add(
     `,
   },
 );
+
+// Autosuggest search
+storiesOf('getPartyInfo', module).add(
+  'default',
+  () =>
+    [
+      'Conservative',
+      'Labour',
+      'Liberal Democrats',
+      'Green',
+      'ChangeUK',
+      'Brexit',
+      'UKIP',
+      'Plaid Cymru',
+      'SNP',
+      'DUP',
+      'Sinn Féin',
+      'UUP',
+      'SDLP',
+      'Alliance',
+      'Independent/Other',
+    ].map(p => {
+      const { color, shortName, formattedName } = getPartyInfo(p);
+      return (
+        <div>
+          <div style={{ height: 20, width: 20, backgroundColor: color }} />
+          <div>
+            <strong>shortName: </strong>
+            {`${shortName}`}
+          </div>
+          <div>
+            <strong>formattedName: </strong>
+            {`${formattedName}`}
+          </div>
+          <br />
+        </div>
+      );
+    }),
+  {
+    info: `
+      \`getPartyInfo(string)\` returns an object with party \`color\`, \`shortName\` and \`formattedName\`
+      for a given UK political party
+    `,
+  },
+);
+
+storiesOf('LastUpdated', module)
+  .add('default (live)', () => <LastUpdated lastUpdated={new Date('1987-01-05T00:00:00.00')} />)
+  .add('Light variant (live = false', () => (
+    <LastUpdated live={false} lastUpdated={new Date('1987-01-05T00:00:00.00')} />
+  ));
+
+storiesOf('DateTime', module).add('default', () => (
+  <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
+));
+
+
+storiesOf('ConstituencyResultsTable', module).add('default', () => (
+  <ConstituencyResultsTable
+    data={[
+      { party: 'Green', candidate: 'Caroline Lucas', votes: 30149, showAsterick: true },
+      { party: 'Labour', candidate: 'Solomon Curtis', votes: 15450 },
+      { party: 'Conservative', candidate: 'Emma Warman', votes: 11082 },
+      { party: 'Ukip', candidate: 'Ian Buchanan', votes: 630 },
+      { party: 'Independent', candidate: 'Nick Yeomans', votes: 376 },
+    ]}
+    tableHeaders={['Party', 'Candidate', 'Total Votes']}
+    note={'* Note to indicate outgoing candidate'}
+  />
+));
+
+storiesOf('RaceResult', module).add('default', () => (
+  <div style={{ width: '100%' }}>
+    <RaceResult incumbent="Labour" winner="Labour" />
+    <RaceResult incumbent="Conservative" winner="Labour" />
+    <RaceResult incumbent="Labour" winner="Conservative" />
+    <RaceResult incumbent="Liberal Democrats" winner="Liberal Democrats" />
+    <RaceResult incumbent="Conservative" winner="Liberal Democrats" />
+    <RaceResult incumbent="Green" winner="Green" />
+  </div>
+));
+
