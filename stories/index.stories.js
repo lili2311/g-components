@@ -26,6 +26,7 @@ import AutosuggestSearch from '../components/autosuggest-search';
 import { getPartyInfo } from '../components/elections/utils';
 import LastUpdated from '../components/last-updated';
 import DateTime from '../components/datetime';
+import RaceResult from '../components/elections/race-result-indicator';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1139,4 +1140,15 @@ storiesOf('LastUpdated', module)
 
 storiesOf('DateTime', module).add('default', () => (
   <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
+));
+
+storiesOf('RaceResult', module).add('default', () => (
+  <div style={{ width: '100%' }}>
+    <RaceResult incumbent="Labour" winner="Labour" />
+    <RaceResult incumbent="Conservative" winner="Labour" />
+    <RaceResult incumbent="Labour" winner="Conservative" />
+    <RaceResult incumbent="Liberal Democrats" winner="Liberal Democrats" />
+    <RaceResult incumbent="Conservative" winner="Liberal Democrats" />
+    <RaceResult incumbent="Green" winner="Green" />
+  </div>
 ));
