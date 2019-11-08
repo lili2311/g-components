@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Seats bar chart component
+ */
+
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { getPartyInfo } from '../utils';
