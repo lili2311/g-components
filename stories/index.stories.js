@@ -29,6 +29,7 @@ import LastUpdated from '../components/last-updated';
 import DateTime from '../components/datetime';
 import ConstituencyResultsTable from '../components/elections/constituency-results-table';
 import RaceResult from '../components/elections/race-result-indicator';
+import SeatsBarChart from '../components/elections/seats-bar-chart';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1131,6 +1132,7 @@ storiesOf('getPartyInfo', module).add(
       'SDLP',
       'Alliance',
       'Independent/Other',
+      'Others',
     ].map(p => {
       const { color, shortName, formattedName } = getPartyInfo(p);
       return (
@@ -1166,7 +1168,6 @@ storiesOf('DateTime', module).add('default', () => (
   <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
 ));
 
-
 storiesOf('ConstituencyResultsTable', module).add('default', () => (
   <ConstituencyResultsTable
     data={[
@@ -1192,3 +1193,16 @@ storiesOf('RaceResult', module).add('default', () => (
   </div>
 ));
 
+storiesOf('SeatsBarChart', module).add('default', () => (
+  <SeatsBarChart
+    tableHeaders={['Party', 'Seats', 'Vote Share %']}
+    data={[
+      { party: 'Conservative', seats: 317, voteShare: 42.4, isInTable: true },
+      { party: 'Labour', seats: 262, voteShare: 40, isInTable: true },
+      { party: 'SNP', seats: 35, voteShare: 3, isInTable: true },
+      { party: 'Liberal Democrats', seats: 12, voteShare: 7.4, isInTable: true },
+      { party: 'Others', seats: 10, voteShare: 3, isInTable: true, isOthers: true },
+      { party: 'Alliance', seats: 2, voteShare: 0.5, isInTable: false },
+    ]}
+  />
+));

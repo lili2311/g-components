@@ -1,0 +1,38 @@
+@import 'o-grid/main';
+
+.g-seats-bar-chart {
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead tr th {
+      color: #000000;
+      font-size: 13px;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: solid 1px;
+      border-bottom-color: #ccc1b7;
+
+      vertical-align: bottom;
+
+      // First two children
+      &:nth-child(-n + 2) {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+        max-width: 40px;
+
+        @include oGridRespondTo(M) {
+          max-width: none;
+        }
+      }
+    }
+
+    tbody tr td {
+    }
+  }
+}

@@ -100,6 +100,12 @@ export const getPartyInfo = name => {
         shortName: 'Ind/Oth',
         formattedName: 'Independent/Other',
       };
+    case 'OTHERS':
+      return {
+        color: '#ffffff',
+        shortName: 'Others',
+        formattedName: 'Others',
+      };
     default:
       throw new Error(`No party match found for ${name}`);
   }
