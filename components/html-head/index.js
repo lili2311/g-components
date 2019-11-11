@@ -60,7 +60,6 @@ const HtmlHead = ({
 
       {stylesheets && stylesheets.map(stylesheet => <link rel="stylesheet" href={stylesheet} />)}
 
-      <link href="https://plus.google.com/113457471429583444041/" rel="publisher" />
       <meta property="fb:app_id" content="429755910551755" />
       <link
         rel="icon"
