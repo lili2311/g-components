@@ -49,7 +49,7 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
 
         <tbody>
           {tableData.map(({ party, seats, projectedSeats, voteShare, isOthers }) => {
-            const { shortName, color } = getPartyInfo(party);
+            const { formattedName, color } = getPartyInfo(party);
             const seatsMinusProjected = projectedSeats - seats;
             return (
               <tr className={`row${isOthers ? ' row--others' : ''}`}>
@@ -71,7 +71,7 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
                         width: `${calcPercentage(seatsMinusProjected)}%`,
                       }}
                     />
-                    <span className="party-name">{shortName}</span>
+                    <span className="party-name">{formattedName}</span>
                   </span>
                 </td>
                 <td className="seats">{seats}</td>
