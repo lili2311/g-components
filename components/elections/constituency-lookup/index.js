@@ -101,8 +101,6 @@ const ConstituencyLookup = ({
 
   return (
     <div className={className}>
-      <h2 className={`${className}__title`}>{title}</h2>
-      <h3 className={`${className}__subhead`}>{subhead}</h3>
       <AutosuggestSearch
         placeholder="Search"
         width={'100%'}
@@ -143,8 +141,6 @@ ConstituencyLookup.propTypes = {
 
 ConstituencyLookup.defaultProps = {
   className: 'g-constituency-lookup',
-  title: 'Results by constituency',
-  subhead: 'Search by constituency name or postcode',
 };
 
 export default ConstituencyLookup;
