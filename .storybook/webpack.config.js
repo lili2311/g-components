@@ -8,7 +8,7 @@ const path = require('path');
 const BowerResolvePlugin = require('bower-resolve-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = ({ config }) => {
   const overrides = {
     resolve: {
       modules: ['bower_components'],
@@ -21,15 +21,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
         {
           test: /\.jsx?$/,
           loader: 'babel-loader',
-          exclude: /node_modules/,
-          options: {
-            plugins: [
-              'add-module-exports' /* <-- wtfits */,
-              'transform-runtime',
-              'transform-class-properties',
-              'syntax-dynamic-import',
-            ],
-          },
+          exclude: /(node_modules|bower_components)/,
         },
         {
           test: /\.scss$/,
@@ -54,5 +46,5 @@ module.exports = (baseConfig, env, defaultConfig) => {
     },
   };
 
-  return webpackMerge.smart(defaultConfig, overrides);
+  return webpackMerge.smart(config, overrides);
 };
