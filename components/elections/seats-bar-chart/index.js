@@ -1,6 +1,7 @@
 /**
  * @file
  * Seats bar chart component
+ * @tags ge2019
  */
 
 import React, { Fragment } from 'react';
