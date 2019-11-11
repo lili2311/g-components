@@ -50,7 +50,7 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
         <tbody>
           {tableData.map(({ party, seats, projectedSeats, voteShare, isOthers }) => {
             const { formattedName, color } = getPartyInfo(party);
-            const seatsMinusProjected = projectedSeats - seats;
+            const projectedSeatsOverWon = projectedSeats - seats;
             return (
               <tr className={`row${isOthers ? ' row--others' : ''}`}>
                 <td className={`party${isOthers ? ' party--others' : ''}`}>
@@ -60,15 +60,15 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
                       className="party-bar"
                       style={{
                         backgroundColor: color,
-                        width: `${calcPercentage(seats)}%`,
+                        width: `${calcPercentage(projectedSeats)}%`,
                       }}
                     />
                     <span
                       className="party-bar party-bar--projected"
                       style={{
-                        backgroundColor: `${color}50`,
-                        borderColor: color,
-                        width: `${calcPercentage(seatsMinusProjected)}%`,
+                        backgroundImage: `repeating-linear-gradient(50deg, transparent, transparent 3px, ${'#fff1e5'} 3px, ${'#fff1e5'} 5px)`,
+                        width: `${calcPercentage(projectedSeatsOverWon)}%`,
+                        left: `${calcPercentage(seats)}%`,
                       }}
                     />
                     <span className="party-name">{formattedName}</span>

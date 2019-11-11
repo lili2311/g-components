@@ -126,6 +126,7 @@
         .party-bar-container {
           display: inline-block;
           width: calc(100% - 8px);
+          position: relative;
           height: 32px;
 
           .party-bar {
@@ -135,12 +136,14 @@
 
             &--projected {
               box-sizing: border-box;
+              position: absolute;
+              height: 32px;
             }
           }
 
           .party-name {
             position: absolute;
-            left: 16px;
+            left: 6px;
             line-height: 32px;
           }
         }
