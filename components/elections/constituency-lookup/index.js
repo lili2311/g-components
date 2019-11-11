@@ -52,20 +52,17 @@ const ConstituencyLookup = ({
     const inputValueWords = inputValue.split(' ');
 
     // Match from the beginning of the string, after 3 characters
-    if (inputLength < 3) {
-      return [];
-    } else {
-      const constituencyMatches = searchList.filter(({ display }) => {
-        const words = display.toLowerCase().split(' ');
-        return words.some(word =>
-          inputValueWords.some(
-            inputValueWord => word.toLowerCase().slice(0, inputValueWord.length) === inputValueWord,
-          ),
-        );
-      });
-
-      return [...constituencyMatches];
-    }
+    return inputLength < 3
+      ? []
+      : searchList.filter(({ display }) => {
+          const words = display.toLowerCase().split(' ');
+          return words.some(word =>
+            inputValueWords.some(
+              inputValueWord =>
+                word.toLowerCase().slice(0, inputValueWord.length) === inputValueWord,
+            ),
+          );
+        });
   };
 
   const onSelectCallback = suggestion => {
@@ -93,7 +90,7 @@ const ConstituencyLookup = ({
     if (input === '' || (!findMatch(formattedConstituencyList, input) && !containsNumber(input))) {
       return { isError: true, errorMessage: 'No match found' };
     }
-    if (!isValidPostcode(input)) {
+    if (containsNumber(input) && !isValidPostcode(input)) {
       return { isError: true, errorMessage: 'Invalid postcode' };
     }
     return { isError: false, errorMessage: '' };
