@@ -19,12 +19,32 @@ const ConstituencyLookup = ({
   title,
   subhead,
   constituencyList,
+  candidateList,
   setOpenConstituency,
 }) => {
-  const formattedConstituencyList = constituencyList.map(({ id, name }) => ({
-    value: id,
-    display: name,
-  }));
+  const formattedConstituencyList = [
+    ...constituencyList.map(({ id, name }) => ({
+      value: id,
+      display: name,
+      type: 'constituency',
+    })),
+    ...candidateList.map(({ id, constituencyName, partyName, candidateName }) => ({
+      value: id,
+      display: candidateName,
+      displayConstituency: constituencyName,
+      type: 'candidate',
+    })),
+  ];
+
+  const RenderSuggestion = ({ display, type, displayConstituency }) => (
+    <div className={`suggestion-entry suggestion-entry--${type}`}>
+      {type === 'candidate' && <i className="candidate-icon" />}
+      {display}
+      {type === 'candidate' && <div className="candidate-constituency">{displayConstituency}</div>}
+    </div>
+  );
+  const getSuggestionValue = ({ display, type, displayConstituency }) =>
+    type === 'constituency' ? display : displayConstituency;
 
   const getSuggestions = (value, searchList) => {
     const inputValue = value.trim().toLowerCase();
@@ -32,17 +52,20 @@ const ConstituencyLookup = ({
     const inputValueWords = inputValue.split(' ');
 
     // Match from the beginning of the string, after 3 characters
-    return inputLength < 3
-      ? []
-      : searchList.filter(({ display }) => {
-          const words = display.toLowerCase().split(' ');
-          return words.some(word =>
-            inputValueWords.some(
-              inputValueWord =>
-                word.toLowerCase().slice(0, inputValueWord.length) === inputValueWord,
-            ),
-          );
-        });
+    if (inputLength < 3) {
+      return [];
+    } else {
+      const constituencyMatches = searchList.filter(({ display }) => {
+        const words = display.toLowerCase().split(' ');
+        return words.some(word =>
+          inputValueWords.some(
+            inputValueWord => word.toLowerCase().slice(0, inputValueWord.length) === inputValueWord,
+          ),
+        );
+      });
+
+      return [...constituencyMatches];
+    }
   };
 
   const onSelectCallback = suggestion => {
@@ -88,6 +111,8 @@ const ConstituencyLookup = ({
         onSubmitCallback={onSubmitCallback}
         validateInput={validateInput}
         getSuggestions={getSuggestions}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={RenderSuggestion}
       />
     </div>
   );
@@ -105,6 +130,14 @@ ConstituencyLookup.propTypes = {
       name: PropTypes.string,
     }),
   ).isRequired,
+  candidateList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      constituencyName: PropTypes.string,
+      partyName: PropTypes.string,
+      candidateName: PropTypes.string,
+    }),
+  ),
   setOpenConstituency: PropTypes.func.isRequired,
 };
 
