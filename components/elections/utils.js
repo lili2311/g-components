@@ -13,41 +13,46 @@ export const getPartyInfo = name => {
         color: '#149adb',
         shortName: 'Con',
         formattedName: 'Conservative',
+        adjective: 'Conservative party',
       };
     case 'LABOUR':
       return {
         color: '#cf4d3c',
         shortName: 'Lab',
         formattedName: 'Labour',
+        adjective: 'Labour party',
       };
     case 'LIBERALDEMOCRATS':
       return {
         color: '#f09000',
         shortName: 'Lib Dem',
         formattedName: 'Liberal Democrats',
+        adjective: 'Liberal Democrat',
       };
     case 'GREEN':
       return {
         color: '#8deb9d',
         shortName: 'Green',
         formattedName: 'Green',
+        adjective: 'Green party',
       };
     case 'CHANGEUK':
       return {
         color: '#fc8b9d',
         shortName: 'TIGfC',
-        formattedName: 'The Independent Group for Change',
+        formattedName: 'Independent Group for Change',
       };
     case 'BREXIT':
       return {
         color: '#80cfd6',
         shortName: 'Brexit',
         formattedName: 'Brexit',
+        adjective: 'Brexit party',
       };
     case 'UKIP':
       return {
         color: '#7200ab',
-        shortName: 'UKIP',
+        shortName: 'Ukip',
         formattedName: 'Ukip',
       };
     case 'PLAIDCYMRU':
@@ -91,14 +96,21 @@ export const getPartyInfo = name => {
         color: '#ffbe18',
         shortName: 'APNI',
         formattedName: 'Alliance',
+        adjective: 'Alliance party',
       };
     case 'INDEPENDENT/OTHER':
     case 'INDEPENDENT':
     case 'OTHER':
       return {
         color: '#d9cace',
-        shortName: 'Ind/Oth',
-        formattedName: 'Independent/Other',
+        shortName: 'Ind',
+        formattedName: 'Independent',
+      };
+    case 'OTHERS':
+      return {
+        color: '#ffffff',
+        shortName: 'Others',
+        formattedName: 'Others',
       };
     default:
       throw new Error(`No party match found for ${name}`);
