@@ -26,6 +26,25 @@ const ConstituencyLookup = ({
     display: name,
   }));
 
+  const getSuggestions = (value, searchList) => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+    const inputValueWords = inputValue.split(' ');
+
+    // Match from the beginning of the string, after 3 characters
+    return inputLength < 3
+      ? []
+      : searchList.filter(({ display }) => {
+          const words = display.toLowerCase().split(' ');
+          return words.some(word =>
+            inputValueWords.some(
+              inputValueWord =>
+                word.toLowerCase().slice(0, inputValueWord.length) === inputValueWord,
+            ),
+          );
+        });
+  };
+
   const onSelectCallback = suggestion => {
     const { value } = suggestion;
     setOpenConstituency(value);
@@ -68,6 +87,7 @@ const ConstituencyLookup = ({
         onSelectCallback={onSelectCallback}
         onSubmitCallback={onSubmitCallback}
         validateInput={validateInput}
+        getSuggestions={getSuggestions}
       />
     </div>
   );
