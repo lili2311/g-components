@@ -1,0 +1,233 @@
+@import 'o-grid/main';
+
+.g-seats-bar-chart {
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+
+  &__key {
+    font-family: Metric;
+    font-size: 16px;
+    color: #66605c;
+    line-height: 18px;
+    margin-bottom: 10px;
+
+    &-rect {
+      display: inline-block;
+      position: relative;
+      width: 26px;
+      height: 18px;
+      background-color: #ccc1b7;
+      margin-right: 5px;
+      top: 3px;
+
+      &-overlay {
+        position: absolute;
+        width: 26px;
+        height: 18px;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__majority-line-container {
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    display: block;
+    width: calc(60% - 8px);
+    height: 100%;
+  }
+
+  &__majority-line {
+    position: absolute;
+    bottom: 41px;
+    display: block;
+    box-sizing: border-box;
+    // 100% minus height size of bottom row
+    height: calc(100% - 41px);
+    width: 1px;
+    border-right: 1px dashed #000000;
+  }
+
+  &__majority-text {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-align: right;
+    color: #000000;
+    position: absolute;
+    top: -2px;
+    width: 80px;
+    margin-left: -92px;
+    padding-right: 2px;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 4px;
+      left: 100%;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid #33302e;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    position: relative;
+    border-collapse: collapse;
+
+    thead tr th {
+      color: #000000;
+      font-size: 13px;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: solid 1px;
+      border-bottom-color: #ccc1b7;
+
+      vertical-align: bottom;
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &:nth-child(n + 2) {
+        text-align: right;
+      }
+
+      &:last-child {
+        max-width: 40px;
+
+        @include oGridRespondTo(M) {
+          max-width: none;
+        }
+      }
+    }
+
+    tbody tr.row--others td {
+      border-bottom: none;
+    }
+
+    tbody tr td {
+      font-size: 18px;
+      font-weight: normal;
+      color: #000000;
+      border-bottom: solid 1px;
+      border-bottom-color: #e6d9ce;
+      position: relative;
+
+      &.seats {
+        font-weight: 600;
+        font-feature-settings: 'tnum';
+      }
+
+      &.voteshare {
+        color: rgba(0, 0, 0, 0.6);
+        font-feature-settings: 'tnum';
+      }
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &:nth-child(n + 2) {
+        text-align: right;
+      }
+
+      &.party {
+        box-sizing: border-box;
+        width: 60%;
+        padding-top: 4px;
+
+        .party-bar-container {
+          display: inline-block;
+          width: calc(100% - 8px);
+          position: relative;
+          height: 32px;
+
+          .party-bar {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+
+            &--projected {
+              box-sizing: border-box;
+              position: absolute;
+              height: 32px;
+              opacity: 0.7;
+            }
+
+            &--overlay {
+              height: 32px;
+              position: absolute;
+              left: 0;
+            }
+          }
+
+          .party-name {
+            position: absolute;
+            left: 6px;
+            line-height: 32px;
+            text-shadow: 0 0 2px #ffffff;
+
+            &--desktop {
+              @include oGridRespondTo($until: M) {
+                display: none;
+              }
+            }
+
+            &--mobile {
+              @include oGridRespondTo(M) {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .party-badge {
+          box-sizing: border-box;
+          display: inline-block;
+          height: 32px;
+          width: 8px;
+          border-right: 1px solid #ffffff;
+        }
+
+        &--others {
+          .party-bar-container .party-bar,
+          .party-bar--projected {
+            box-sizing: border-box;
+            border: 1px solid #ccc1b7 !important;
+          }
+
+          .party-badge {
+            border: 1px solid #807973 !important;
+          }
+        }
+      }
+    }
+  }
+
+  &__footnote {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.13;
+    color: #33302e;
+    margin-top: 8px;
+    margin-left: 16px;
+
+    .seats {
+      font-weight: 600;
+      font-feature-settings: 'tnum';
+    }
+  }
+}

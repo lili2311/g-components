@@ -1,0 +1,59 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import '../../../shared/critical-path.scss';
+import SeatsBarChart from './';
+
+<Meta title="Elections|GE2019/Seats Bar Chart" component={SeatsBarChart} />
+
+# Seats Bar Chart component
+
+<Preview>
+  <Story name="Basic">
+    <SeatsBarChart
+      tableHeaders={['Party', 'Seats', '% of vote']}
+      data={[
+        {
+          party: 'Conservative',
+          seats: 100,
+          projectedSeats: 317,
+          voteShare: 42.4,
+          isInTable: true,
+        },
+        { party: 'Labour', seats: 70, projectedSeats: 262, voteShare: 40, isInTable: true },
+        { party: 'SNP', seats: 10, projectedSeats: 35, voteShare: 3, isInTable: true },
+        {
+          party: 'Liberal Democrats',
+          seats: 8,
+          projectedSeats: 23,
+          voteShare: 7.4,
+          isInTable: true,
+        },
+        {
+          party: 'DUP',
+          seats: 3,
+          projectedSeats: 10,
+          voteShare: 0.7,
+          isInTable: true,
+        },
+        {
+          party: 'Sinn Fein',
+          seats: 3,
+          projectedSeats: 7,
+          voteShare: 0.6,
+          isInTable: true,
+        },
+        { party: 'Brexit', seats: 1, projectedSeats: 1, voteShare: 7, isInTable: true },
+        {
+          party: 'Others',
+          seats: 8,
+          projectedSeats: 30,
+          voteShare: 3,
+          isInTable: true,
+          isOthers: true,
+        },
+        { party: 'Alliance', seats: 1, projectedSeats: 2, voteShare: 0.5, isInTable: false },
+        { party: 'UUP', seats: 1, projectedSeats: 2, voteShare: 0.3, isInTable: false },
+      ]}
+      majority={320}
+    />
+  </Story>
+</Preview>
