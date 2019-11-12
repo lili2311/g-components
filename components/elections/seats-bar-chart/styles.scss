@@ -6,6 +6,32 @@
     font-weight: 600;
     line-height: 1.33;
     color: #000000;
+    margin-bottom: 10px;
+  }
+
+  &__key {
+    font-family: Metric;
+    font-size: 16px;
+    color: #66605c;
+    line-height: 18px;
+    margin-bottom: 10px;
+
+    &-rect {
+      display: inline-block;
+      position: relative;
+      width: 26px;
+      height: 18px;
+      background-color: #ccc1b7;
+      margin-right: 5px;
+      top: 3px;
+
+      &-overlay {
+        position: absolute;
+        width: 26px;
+        height: 18px;
+        opacity: 0.7;
+      }
+    }
   }
 
   &__majority-line-container {

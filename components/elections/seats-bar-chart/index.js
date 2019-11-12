@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { getPartyInfo } from '../utils';
 import './styles.scss';
 
-const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
+const SeatsBarChart = ({ className, title, keyText, tableHeaders, data, majority }) => {
   const tableData = [
     ...data
       .filter(({ isInTable, isOthers }) => isInTable && !isOthers)
@@ -27,6 +27,19 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
   return (
     <div className={className}>
       <h3 className={`${className}__title`}>{title}</h3>
+
+      <div className={`${className}__key`}>
+        <span className={`${className}__key-rect`}>
+          <span
+            className={`${className}__key-rect-overlay`}
+            style={{
+              backgroundImage: `repeating-linear-gradient(50deg, transparent, transparent 3px, ${'#fff1e5'} 3px, ${'#fff1e5'} 5px)`,
+            }}
+          />
+        </span>
+
+        <span className={`${className}__key-text`}>{`= ${keyText}`}</span>
+      </div>
 
       <table className={`${className}__table`}>
         <span className={`${className}__majority-line-container`}>
@@ -114,6 +127,7 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
 SeatsBarChart.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
+  keyText: PropTypes.string,
   tableHeaders: PropTypes.arrayOf(PropTypes.string).isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({
@@ -131,6 +145,7 @@ SeatsBarChart.propTypes = {
 SeatsBarChart.defaultProps = {
   className: 'g-seats-bar-chart',
   title: 'Number of seats won',
+  keyText: 'PA Projection',
 };
 
 export default SeatsBarChart;
