@@ -3946,16 +3946,6 @@ exports[`Storyshots Elections|GE2019/Constituency Lookup Basic 1`] = `
 <div
   className="g-constituency-lookup"
 >
-  <h2
-    className="g-constituency-lookup__title"
-  >
-    Results by constituency
-  </h2>
-  <h3
-    className="g-constituency-lookup__subhead"
-  >
-    Search by constituency name or postcode
-  </h3>
   <form
     className="g-autosuggest-search"
     onSubmit={[Function]}
