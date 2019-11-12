@@ -13,18 +13,21 @@ export const getPartyInfo = name => {
         color: '#149adb',
         shortName: 'Con',
         formattedName: 'Conservative',
+        whiteOverlayOpacity: 0.2,
       };
     case 'LABOUR':
       return {
         color: '#cf4d3c',
         shortName: 'Lab',
         formattedName: 'Labour',
+        whiteOverlayOpacity: 0.2,
       };
     case 'LIBERALDEMOCRATS':
       return {
         color: '#f09000',
         shortName: 'Lib Dem',
         formattedName: 'Liberal Democrats',
+        whiteOverlayOpacity: 0.2,
       };
     case 'GREEN':
       return {
@@ -61,6 +64,7 @@ export const getPartyInfo = name => {
         color: '#ffdf00',
         shortName: 'SNP',
         formattedName: 'Scottish National party',
+        whiteOverlayOpacity: 0,
       };
     case 'SINNFEIN':
       return {
@@ -73,6 +77,7 @@ export const getPartyInfo = name => {
         color: '#210066',
         shortName: 'DUP',
         formattedName: 'Democratic Unionist party',
+        whiteOverlayOpacity: 0.5,
       };
     case 'UUP':
       return {

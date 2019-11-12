@@ -10,9 +10,12 @@ import { getPartyInfo } from '../utils';
 import './styles.scss';
 
 const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
-  const tableData = data
-    .filter(({ isInTable }) => isInTable)
-    .sort((a, b) => b.projectedSeats - a.projectedSeats && b.isOthers - a.isOthers);
+  const tableData = [
+    ...data
+      .filter(({ isInTable, isOthers }) => isInTable && !isOthers)
+      .sort((a, b) => b.projectedSeats - a.projectedSeats),
+    ...data.filter(({ isOthers }) => isOthers),
+  ];
   const footnoteData = data
     .filter(({ isInTable }) => !isInTable)
     .sort((a, b) => b.projectedSeats - a.projectedSeats);
@@ -49,7 +52,7 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
 
         <tbody>
           {tableData.map(({ party, seats, projectedSeats, voteShare, isOthers }) => {
-            const { formattedName, color } = getPartyInfo(party);
+            const { formattedName, shortName, color, whiteOverlayOpacity } = getPartyInfo(party);
             const projectedSeatsOverWon = projectedSeats - seats;
             return (
               <tr className={`row${isOthers ? ' row--others' : ''}`}>
@@ -71,7 +74,18 @@ const SeatsBarChart = ({ className, title, tableHeaders, data, majority }) => {
                         left: `${calcPercentage(seats)}%`,
                       }}
                     />
-                    <span className="party-name">{formattedName}</span>
+                    <span
+                      className="party-bar party-bar--overlay"
+                      style={{
+                        width: `${calcPercentage(projectedSeats)}%`,
+                        backgroundColor:
+                          whiteOverlayOpacity !== undefined
+                            ? `rgba(255, 255, 255, ${whiteOverlayOpacity})`
+                            : 'rgba(255, 255, 255, 0.3)',
+                      }}
+                    />
+                    <span className="party-name party-name--desktop">{formattedName}</span>
+                    <span className="party-name party-name--mobile">{shortName}</span>
                   </span>
                 </td>
                 <td className="seats">{seats}</td>

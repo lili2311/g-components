@@ -138,6 +138,13 @@
               box-sizing: border-box;
               position: absolute;
               height: 32px;
+              opacity: 0.7;
+            }
+
+            &--overlay {
+              height: 32px;
+              position: absolute;
+              left: 0;
             }
           }
 
@@ -145,6 +152,19 @@
             position: absolute;
             left: 6px;
             line-height: 32px;
+            text-shadow: 0 0 2px #ffffff;
+
+            &--desktop {
+              @include oGridRespondTo($until: M) {
+                display: none;
+              }
+            }
+
+            &--mobile {
+              @include oGridRespondTo(M) {
+                display: none;
+              }
+            }
           }
         }
 
