@@ -5,8 +5,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { numberWithCommas, getPartyInfo } from '../utils';
+import { uk } from '@financial-times/politics';
+import { numberWithCommas } from '../utils';
 import './styles.scss';
+
+const { getPartyInfo } = uk;
 
 export const ConstituencyResultsTable = ({ className, data, tableHeaders, note }) => {
   const sortedData = data.sort((a, b) =>

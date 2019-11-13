@@ -6,8 +6,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getPartyInfo } from '../utils';
+import { uk } from '@financial-times/politics';
 import './styles.scss';
+
+const { getPartyInfo } = uk;
 
 const RaceResult = ({ incumbent, winner }) => {
   if (!incumbent || !winner) return null;
