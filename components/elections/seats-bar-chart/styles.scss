@@ -93,7 +93,7 @@
       text-transform: uppercase;
       padding-bottom: 6px;
       border-bottom: solid 1px;
-      border-bottom-color: #ccc1b7;
+      border-bottom-color: #000000;
 
       vertical-align: bottom;
 
@@ -127,11 +127,13 @@
       position: relative;
 
       &.seats {
+        font-size: 16px;
         font-weight: 600;
         font-feature-settings: 'tnum';
       }
 
       &.voteshare {
+        font-size: 16px;
         color: rgba(0, 0, 0, 0.6);
         font-feature-settings: 'tnum';
       }
@@ -206,11 +208,16 @@
           .party-bar-container .party-bar,
           .party-bar--projected {
             box-sizing: border-box;
-            border: 1px solid #ccc1b7 !important;
+            border: solid 1px rgba(102, 96, 92, 0.3);
+            border-left: none;
+          }
+
+          .party-bar--projected {
+            border-left: solid 1px rgba(102, 96, 92, 0.3) !important;
           }
 
           .party-badge {
-            border: 1px solid #807973 !important;
+            border: solid 1px rgba(102, 96, 92, 0.5);
           }
         }
       }
@@ -221,7 +228,7 @@
     display: inline-block;
     font-size: 16px;
     line-height: 1.13;
-    color: #33302e;
+    color: #000000;
     margin-top: 8px;
     margin-left: 16px;
 

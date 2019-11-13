@@ -1,0 +1,175 @@
+@import 'o-grid/main';
+
+.g-net-change-bar-chart {
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.11;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+
+  &__table {
+    width: 100%;
+    position: relative;
+    border-collapse: collapse;
+
+    thead tr th {
+      color: #000000;
+      font-size: 13px;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: solid 1px;
+      border-bottom-color: #000000;
+      vertical-align: bottom;
+
+      &.axis-label {
+        position: relative;
+        width: 50%;
+        font-weight: 600;
+        font-size: 16px;
+
+        span {
+          position: absolute;
+          text-align: center;
+          bottom: 3px;
+          width: 10px;
+          margin-left: -5px;
+        }
+      }
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+
+      &:last-child {
+        max-width: 40px;
+
+        @include oGridRespondTo(M) {
+          max-width: none;
+        }
+      }
+    }
+
+    tbody tr.row--others td {
+      border-bottom: none;
+    }
+
+    tbody tr td {
+      font-size: 18px;
+      font-weight: normal;
+      color: #000000;
+      border-bottom: solid 1px;
+      border-bottom-color: #e6d9ce;
+      position: relative;
+
+      &.change {
+        font-size: 16px;
+        width: 40px;
+        font-weight: 600;
+        font-feature-settings: 'tnum';
+      }
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &:nth-child(n + 2) {
+        text-align: right;
+      }
+
+      &.bar-change {
+        width: 50%;
+
+        box-sizing: border-box;
+        padding-top: 4px;
+
+        &--others {
+          .bar {
+            box-sizing: border-box;
+            border: solid 1px rgba(102, 96, 92, 0.3);
+            border-right: none;
+          }
+        }
+
+        .bar-container {
+          display: inline-block;
+          width: 100%;
+          position: relative;
+          height: 32px;
+
+          .bar {
+            position: absolute;
+            display: inline-block;
+            height: 100%;
+          }
+
+          .centre-line {
+            position: absolute;
+            display: inline-block;
+            height: 42px;
+            top: -4px;
+            width: 1px;
+            background-color: black;
+          }
+        }
+      }
+
+      &.party {
+        box-sizing: border-box;
+        padding-top: 4px;
+
+        .party-badge {
+          box-sizing: border-box;
+          display: inline-block;
+          height: 32px;
+          width: 8px;
+        }
+
+        .party-name {
+          position: absolute;
+          left: 14px;
+          line-height: 32px;
+
+          &--desktop {
+            @include oGridRespondTo($until: M) {
+              display: none;
+            }
+          }
+
+          &--mobile {
+            @include oGridRespondTo(M) {
+              display: none;
+            }
+          }
+        }
+
+        &--others {
+          .party-badge {
+            border: solid 1px rgba(102, 96, 92, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  &__footnote {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.13;
+    color: #000000;
+    margin-top: 8px;
+    margin-left: 16px;
+
+    .seats {
+      font-weight: 600;
+      font-feature-settings: 'tnum';
+    }
+  }
+}
