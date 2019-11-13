@@ -41,7 +41,7 @@ const ConstituencyLookup = ({
   ];
 
   const RenderSuggestion = ({ display, type, displayConstituency, partyName }) => {
-    const { color } = type === 'candidate' ? getPartyInfo(partyName) : { color: 'black' };
+    const color = type === 'candidate' ? getPartyInfo(partyName).color : 'black';
     return (
       <div className={`suggestion-entry suggestion-entry--${type}`}>
         {type === 'candidate' ? (
