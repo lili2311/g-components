@@ -1,29 +1,50 @@
 .g-constituency-lookup {
+  .react-autosuggest__suggestion {
+    padding: 10px 15px;
+  }
+
   .suggestion-entry {
     position: relative;
     font-weight: normal;
+    font-size: 16px;
+    color: #1a1817;
+    display: flex;
+    align-items: center;
 
-    &--candidate {
-      padding-left: 18px;
+    &__text {
+      margin-left: 10px;
+      vertical-align: middle;
     }
   }
 
-  .candidate-icon {
-    position: absolute;
-    top: -4px;
-    left: -8px;
-    width: 24px;
-    height: 24px;
+  .constituency-icon {
     display: inline-block;
+    width: 30px;
+    height: 30px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50%;
     background-color: transparent;
     vertical-align: baseline;
-    background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:user?source=build-service&tint=%23999189,%23999189&format=svg');
+    background-image: url('http://ft-ig-images-prod.s3-website-eu-west-1.amazonaws.com/v1/8426337409-2od8n.svg');
+  }
+
+  .candidate-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: transparent;
+    vertical-align: baseline;
+    background-image: url('http://ft-ig-images-prod.s3-website-eu-west-1.amazonaws.com/v1/8426337020-re5c0.svg');
   }
 
   .candidate-constituency {
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1a1817;
+    letter-spacing: 0;
   }
 }
