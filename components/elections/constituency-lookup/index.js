@@ -6,6 +6,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AutosuggestSearch from '../../autosuggest-search';
+import { uk } from '@financial-times/politics';
 import {
   getConstituencyIdFromPostcode,
   findMatch,
@@ -13,6 +14,8 @@ import {
   containsNumber,
 } from './helpers.js';
 import './styles.scss';
+
+const { getPartyInfo } = uk;
 
 const ConstituencyLookup = ({
   className,
@@ -32,17 +35,29 @@ const ConstituencyLookup = ({
       value: id,
       display: candidateName,
       displayConstituency: constituencyName,
+      partyName,
       type: 'candidate',
     })),
   ];
 
-  const RenderSuggestion = ({ display, type, displayConstituency }) => (
-    <div className={`suggestion-entry suggestion-entry--${type}`}>
-      {type === 'candidate' && <i className="candidate-icon" />}
-      {display}
-      {type === 'candidate' && <div className="candidate-constituency">{displayConstituency}</div>}
-    </div>
-  );
+  const RenderSuggestion = ({ display, type, displayConstituency, partyName }) => {
+    const color = type === 'candidate' ? getPartyInfo(partyName).color : 'black';
+    return (
+      <div className={`suggestion-entry suggestion-entry--${type}`}>
+        {type === 'candidate' ? (
+          <i className="candidate-icon" style={{ backgroundColor: color }} />
+        ) : (
+          <i className="constituency-icon" />
+        )}
+        <div className="suggestion-entry__text">
+          {type === 'candidate' ? display : <div className="candidate-constituency">{display}</div>}
+          {type === 'candidate' && (
+            <div className="candidate-constituency">{displayConstituency}</div>
+          )}
+        </div>
+      </div>
+    );
+  };
   const getSuggestionValue = ({ display, type, displayConstituency }) =>
     type === 'constituency' ? display : displayConstituency;
 
