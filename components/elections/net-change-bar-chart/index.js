@@ -6,8 +6,10 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { getPartyInfo } from '../utils';
+import { uk } from '@financial-times/politics';
 import './styles.scss';
+
+const { getPartyInfo } = uk;
 
 const NetChangeBarChart = ({ className, title, tableHeaders, data }) => {
   const tableData = [

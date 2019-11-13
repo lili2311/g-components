@@ -17,20 +17,18 @@
       padding-bottom: 6px;
       border-bottom: solid 1px;
       border-bottom-color: #999189;
+      text-align: left;
+      vertical-align: bottom;
 
       @include oGridRespondTo(M) {
         border-bottom-color: #ccc1b7;
       }
 
-      vertical-align: bottom;
-
-      // First two children
-      &:nth-child(-n + 2) {
-        text-align: left;
+      &:nth-child(3) {
+        text-align: right;
       }
 
       &:last-child {
-        text-align: right;
         max-width: 40px;
 
         @include oGridRespondTo(M) {
@@ -47,35 +45,47 @@
       color: rgba(0, 0, 0, 0.9);
       border-bottom: solid 1px;
       border-bottom-color: #ccc1b7;
+      text-align: left;
 
       @include oGridRespondTo(M) {
         border-bottom-color: #f2e5da;
       }
 
-      // First two children
-      &:nth-child(-n + 2) {
-        text-align: left;
+      &:nth-child(3) {
+        text-align: right;
       }
 
-      &:last-child {
-        text-align: right;
+      &.party {
+        width: 82px;
+
+        @include oGridRespondTo(M) {
+          width: 100px;
+        }
+
+        .party-badge {
+          display: inline-block;
+          height: 25px;
+          position: relative;
+          top: 7px;
+          margin-right: 10px;
+          width: 4px;
+
+          @include oGridRespondTo(M) {
+            width: 8px;
+          }
+        }
+
+        .party-name {
+          margin-right: 10px;
+        }
+      }
+
+      &.candidate-name {
+        line-height: 1.2;
       }
 
       &.number {
         font-feature-settings: 'tnum';
-      }
-
-      .party-badge {
-        display: inline-block;
-        height: 25px;
-        position: relative;
-        top: 7px;
-        margin-right: 10px;
-        width: 4px;
-
-        @include oGridRespondTo(M) {
-          width: 8px;
-        }
       }
     }
   }

@@ -3986,7 +3986,7 @@ exports[`Storyshots Elections|GE2019/Constituency Lookup Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
+exports[`Storyshots Elections|GE2019/Constituency Results Table With Results 1`] = `
 <div
   className="g-constituency-results-table"
 >
@@ -4008,7 +4008,9 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td
+          className="party"
+        >
           <span
             className="party-badge"
             style={
@@ -4017,9 +4019,15 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
               }
             }
           />
-          Green
+          <span
+            className="party-name"
+          >
+            Green
+          </span>
         </td>
-        <td>
+        <td
+          className="candidate-name"
+        >
           Caroline Lucas
           *
         </td>
@@ -4030,7 +4038,9 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="party"
+        >
           <span
             className="party-badge"
             style={
@@ -4039,9 +4049,15 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
               }
             }
           />
-          Lab
+          <span
+            className="party-name"
+          >
+            Lab
+          </span>
         </td>
-        <td>
+        <td
+          className="candidate-name"
+        >
           Solomon Curtis
         </td>
         <td
@@ -4051,7 +4067,9 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="party"
+        >
           <span
             className="party-badge"
             style={
@@ -4060,9 +4078,15 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
               }
             }
           />
-          Con
+          <span
+            className="party-name"
+          >
+            Con
+          </span>
         </td>
-        <td>
+        <td
+          className="candidate-name"
+        >
           Emma Warman
         </td>
         <td
@@ -4072,7 +4096,9 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="party"
+        >
           <span
             className="party-badge"
             style={
@@ -4081,9 +4107,15 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
               }
             }
           />
-          UKIP
+          <span
+            className="party-name"
+          >
+            Ukip
+          </span>
         </td>
-        <td>
+        <td
+          className="candidate-name"
+        >
           Ian Buchanan
         </td>
         <td
@@ -4093,7 +4125,38 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="party"
+        >
+          <span
+            className="party-badge"
+            style={
+              Object {
+                "backgroundColor": "#f09000",
+              }
+            }
+          />
+          <span
+            className="party-name"
+          >
+            Lib Dem
+          </span>
+        </td>
+        <td
+          className="candidate-name"
+        >
+          Callum Jameson Littlelonger
+        </td>
+        <td
+          className="number"
+        >
+          400
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="party"
+        >
           <span
             className="party-badge"
             style={
@@ -4102,15 +4165,194 @@ exports[`Storyshots Elections|GE2019/Constituency Results Table Basic 1`] = `
               }
             }
           />
-          Ind/Oth
+          <span
+            className="party-name"
+          >
+            Ind
+          </span>
         </td>
-        <td>
-          Nick Yeomans
+        <td
+          className="candidate-name"
+        >
+          Isabelle Amanda Parasram
         </td>
         <td
           className="number"
         >
           376
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="g-constituency-results-table__note"
+  >
+    * Note to indicate outgoing candidate
+  </div>
+</div>
+`;
+
+exports[`Storyshots Elections|GE2019/Constituency Results Table Without Results 1`] = `
+<div
+  className="g-constituency-results-table"
+>
+  <table
+    className="g-constituency-results-table__table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Party
+        </th>
+        <th>
+          Candidate
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          className="party"
+        >
+          <span
+            className="party-badge"
+            style={
+              Object {
+                "backgroundColor": "#f09000",
+              }
+            }
+          />
+          <span
+            className="party-name"
+          >
+            Lib Dem
+          </span>
+        </td>
+        <td
+          className="candidate-name"
+        >
+          Callum James Littlemore
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="party"
+        >
+          <span
+            className="party-badge"
+            style={
+              Object {
+                "backgroundColor": "#8deb9d",
+              }
+            }
+          />
+          <span
+            className="party-name"
+          >
+            Green
+          </span>
+        </td>
+        <td
+          className="candidate-name"
+        >
+          Caroline Lucas
+          *
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="party"
+        >
+          <span
+            className="party-badge"
+            style={
+              Object {
+                "backgroundColor": "#149adb",
+              }
+            }
+          />
+          <span
+            className="party-name"
+          >
+            Con
+          </span>
+        </td>
+        <td
+          className="candidate-name"
+        >
+          Emma Warman
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="party"
+        >
+          <span
+            className="party-badge"
+            style={
+              Object {
+                "backgroundColor": "#7200ab",
+              }
+            }
+          />
+          <span
+            className="party-name"
+          >
+            Ukip
+          </span>
+        </td>
+        <td
+          className="candidate-name"
+        >
+          Ian Buchanan
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="party"
+        >
+          <span
+            className="party-badge"
+            style={
+              Object {
+                "backgroundColor": "#d9cace",
+              }
+            }
+          />
+          <span
+            className="party-name"
+          >
+            Ind
+          </span>
+        </td>
+        <td
+          className="candidate-name"
+        >
+          Isabelle Amanda Parasram
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="party"
+        >
+          <span
+            className="party-badge"
+            style={
+              Object {
+                "backgroundColor": "#cf4d3c",
+              }
+            }
+          />
+          <span
+            className="party-name"
+          >
+            Lab
+          </span>
+        </td>
+        <td
+          className="candidate-name"
+        >
+          Solomon Curtis
         </td>
       </tr>
     </tbody>
@@ -5628,7 +5870,7 @@ exports[`Storyshots Elections|GE2019/Utilities Get Party Info Party String 1`] =
       <strong>
         formattedName: 
       </strong>
-      The Independent Group for Change
+      Independent Group for Change
     </div>
     <br />
   </div>
@@ -5670,7 +5912,7 @@ exports[`Storyshots Elections|GE2019/Utilities Get Party Info Party String 1`] =
       <strong>
         shortName: 
       </strong>
-      UKIP
+      Ukip
     </div>
     <div>
       <strong>
@@ -5844,7 +6086,7 @@ exports[`Storyshots Elections|GE2019/Utilities Get Party Info Party String 1`] =
       <strong>
         formattedName: 
       </strong>
-      Alliance
+      Alliance party
     </div>
     <br />
   </div>
@@ -5862,13 +6104,13 @@ exports[`Storyshots Elections|GE2019/Utilities Get Party Info Party String 1`] =
       <strong>
         shortName: 
       </strong>
-      Ind/Oth
+      Ind
     </div>
     <div>
       <strong>
         formattedName: 
       </strong>
-      Independent/Other
+      Independent
     </div>
     <br />
   </div>
