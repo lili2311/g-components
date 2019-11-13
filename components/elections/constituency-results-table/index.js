@@ -31,11 +31,11 @@ export const ConstituencyResultsTable = ({ className, data, tableHeaders, note }
             const { shortName, color } = getPartyInfo(party);
             return (
               <tr key={`row_${party}`}>
-                <td>
+                <td className="party">
                   <span className="party-badge" style={{ backgroundColor: color }} />
-                  {shortName}
+                  <span className="party-name">{shortName}</span>
                 </td>
-                <td>
+                <td className="candidate-name">
                   {candidate}
                   {showAsterick && '*'}
                 </td>

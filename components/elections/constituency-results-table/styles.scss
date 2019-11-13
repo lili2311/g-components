@@ -55,21 +55,37 @@
         text-align: right;
       }
 
-      &.number {
-        font-feature-settings: 'tnum';
-      }
-
-      .party-badge {
-        display: inline-block;
-        height: 25px;
-        position: relative;
-        top: 7px;
-        margin-right: 10px;
-        width: 4px;
+      &.party {
+        width: 82px;
 
         @include oGridRespondTo(M) {
-          width: 8px;
+          width: 100px;
         }
+
+        .party-badge {
+          display: inline-block;
+          height: 25px;
+          position: relative;
+          top: 7px;
+          margin-right: 10px;
+          width: 4px;
+
+          @include oGridRespondTo(M) {
+            width: 8px;
+          }
+        }
+
+        .party-name {
+          margin-right: 10px;
+        }
+      }
+
+      &.candidate-name {
+        line-height: 1.2;
+      }
+
+      &.number {
+        font-feature-settings: 'tnum';
       }
     }
   }
