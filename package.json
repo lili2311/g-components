@@ -9,9 +9,10 @@
     "storybook": "start-storybook -p 6006",
     "build:components": "webpack",
     "build": "npm run build:components && npm run build:storybook",
-    "prepare": "npm run build:components",
+    "prepare": "npm run snyk-protect && npm run build:components",
     "build:storybook": "build-storybook",
-    "publish-storybook": "gh-pages -d storybook-static"
+    "publish-storybook": "gh-pages -d storybook-static",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "Ændrew Rininsland <andrew.rininsland@ft.com",
@@ -28,7 +29,8 @@
     "react-autosuggest": "^9.4.3",
     "react-scroll-percentage": "^2.0.0",
     "remove-accents": "^0.4.2",
-    "remove-markdown": "^0.3.0"
+    "remove-markdown": "^0.3.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -100,5 +102,6 @@
   },
   "engines": {
     "node": ">= 8.6.0"
-  }
+  },
+  "snyk": true
 }
